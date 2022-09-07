@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-된다 ㅎㅎㅎㅎㅎㅎㅎ창률짱WKDKWKD
+된다 ㅎㅎㅎㅎㅎㅎㅎ창률짱? 확실?
 </body>
 </html>
