@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorator">
+	<decorator name="main" page="/haemin/decorator/view.jsp">
+		<pattern>/haemin/*</pattern>
+	</decorator>
+	<decorator name="news" page="/decorator/news_decorator.jsp">
+		<pattern>/news/*</pattern>
+	</decorator>
+	<excludes>
+		<pattern>/hello/exclude.jsp</pattern>
+		<pattern>/news/exclude.jsp</pattern>
+	</excludes>
+</decorators>
