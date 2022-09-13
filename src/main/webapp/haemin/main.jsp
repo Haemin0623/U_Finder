@@ -8,9 +8,9 @@
 </head>
 <body>
 
-	<div>
+	<div class="" width="100%" height="200px">
 		<ul>
-			<li></li>
+			<li><img alt="" src="chim.jpg"></li>
 		</ul>
 	</div>
 
