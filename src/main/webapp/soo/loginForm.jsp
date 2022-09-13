@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-div { text-align: center; }
+.container { 
+	text-align: center;
+}
 
 </style>
 </head>
@@ -17,6 +19,7 @@ div { text-align: center; }
 	<form action ="loginResult.jsp" method="post">
 		<h1>로그인</h1>
 		
+		<!-- input -->
 		<table align="center">
 			<tr>
 				<td> <input type="text" name="id" required="required" autofocus="autofocus"
@@ -28,7 +31,7 @@ div { text-align: center; }
 			</tr>
 		</table>
 		
-			<tr width=100%><input type="submit" value="로그인"  ></tr>				
+			<tr><input type="submit" value="로그인"></tr>				
 	</form>
 	
 		<a class = "btn" href="joinForm.do">회원가입</a> 
