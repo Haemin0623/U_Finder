@@ -4,8 +4,13 @@
 <configuration>
 	<properties resource="db.properties" />
 	<typeAliases>
-<!-- 		<typeAlias alias="member" type="project_semi.model.Member" /> -->
+		<typeAlias alias="actor" type="model.Actor" />
+		<typeAlias alias="calendar" type="model.Calendar" />
+		<typeAlias alias="member" type="model.Member" />
 		<typeAlias alias="movie" type="model.Movie" />
+		<typeAlias alias="pick" type="model.Pick" />
+		<typeAlias alias="review" type="model.Review" />
+		<typeAlias alias="tag" type="model.Tag" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

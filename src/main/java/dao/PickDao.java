@@ -33,4 +33,5 @@ public class PickDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
+	
 }

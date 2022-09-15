@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import model.Member;
+
 public class MemberDao {
 	
 	// 싱글턴 객체 생성
@@ -33,4 +35,9 @@ public class MemberDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
+
+	public Member select(String id) {
+		return (Member) session.selectOne("memberns.select", id);
+	}
+
 }

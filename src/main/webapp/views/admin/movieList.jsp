@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table>
-		<tr>
-			<th><button onclick="location.href='/project_semi/views/admin/movieList.do'">영화목록</button></th>
-		</tr>
-	</table>
+	왓당
 
 </body>
 </html>
