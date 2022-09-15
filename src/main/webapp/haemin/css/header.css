@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.header {
+	border: 1px solid;
+	width: 100%;
+	height: 50px;
+	
+}
+
+.header ul li {
+	list-style: none;
+	float: left;
+	
+}
+
+.search_box {
+	position: relative;
+	background-color: black;
+	left: 150px;
+	bottom: 5px;
+	height: 30px;
+	width: 900px;
+	
+}
+
+input {
+	width: 90%;
+}
+
+#main {
+	margin-right: 10px;
+}
+
+/* #search {
+	background: none;
+	border: none;
+	outline: none;
+	color: white;
+	width: 100%;
+} */
+
+#login {
+	float: right;
+	margin-left: 10px;
+}
+

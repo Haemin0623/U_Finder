@@ -23,20 +23,22 @@
 			</div>
 		</c:if> --%>
 		
-		<div class="main_hot">
-			<ul>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-				<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-			</ul>
-		</div>		
+		<fieldset><legend>인기작</legend>
+			<div class="main_hot">
+				<ul><!-- 리스트 가져와서 반복문 돌리기 -->
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+				</ul>
+			</div>
+		</fieldset>	
 	</div>
 
 </body>

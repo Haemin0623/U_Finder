@@ -9,17 +9,22 @@
 <body>
 	<div class="header">
 		<ul>
-			<li id="menu"><a href="menu.jsp">메뉴</a></li>
-
-			<li>
-				<form id="search" action="research.jsp">
-					<input type="search" name="search">
-					<input type="submit" value="검색">
-				</form>
-			</li>
+			<li id="main"><a href="/project_semi/haemin/main.jsp">메인</a></li>
+				<li>
+					<div class="search_box">
+						<form id="search" action="research.jsp">
+							<input type="text" name="search">
+							<a href="">검색</a>
+						</form>
+					</div>
+				</li>
 			<li id="login"><a href="login.jsp">로그인</a></li>
 			<li id="login"><a href="calendar.jsp">캘린더</a></li>
 		</ul>
 	</div>
+	
+	<div>
+		<div>
+	</div></div>
 </body>
 </html>
