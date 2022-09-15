@@ -65,4 +65,8 @@ public class Member {
 	public void setMemberout(String memberout) {
 		this.memberout = memberout;
 	}
+	public void setId(String id) {
+		// TODO Auto-generated method stub
+		
+	}
 }

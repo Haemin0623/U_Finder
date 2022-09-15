@@ -12,10 +12,6 @@ public class LoginResult implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String prevUrl = request.getParameter("prevUrl");
-//		System.out.println("prevUrl = "+prevUrl);
-		if (prevUrl.equals("/semojeon/views/member/joinResult.na"))
-			prevUrl = "/semojeon/views/display/dpMain.do?tab=1";
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
