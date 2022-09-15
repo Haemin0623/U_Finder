@@ -7,17 +7,17 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class MemberDao {
+public class PickDao {
 	
 	// 싱글턴 객체 생성
-	private static MemberDao instance = new MemberDao();
+	private static PickDao instance = new PickDao();
 	
 	// 유일한 생성자 private으로 객체생성 막음
-	private MemberDao() {
+	private PickDao() {
 	}
 	
 	// 싱글턴 객체 얻기(부르기)
-	public static MemberDao getInstance() {
+	public static PickDao getInstance() {
 		return instance;
 	}
 	
