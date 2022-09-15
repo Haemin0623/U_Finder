@@ -6,15 +6,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+	  #searchResult {
+	  	width: 100%;
+	  }
 	  #searchResult > li {
         display: inline-block;
         position: relative;
         top: 10px;
-        left: 260px;
+/*         left: 260px; */
       }
       #searchResult > li > a {
         display:block; position:relative; padding-bottom:19px;
-        margin: 50px;
+        margin: 40px;
       }
       #searchResult > li > a > img {
         width:200px; height:240px;
@@ -26,14 +29,14 @@
 </style>
 </head>
 <body>
-<div style="border: 0">
-<h2 style="text-align: ">이부분에 검색한 작품명(키워드) 가져와서 표기</h2>
-<ul id="searchResult">
-         <li><a href="#"><img src="공조2.jpg"><span>영화제목</span></a></li>
-         <li><a href="#"><img src="탑건.jpg"><span>영화제목</span></a></li>
-         <li><a href="#"><img src="로고.png"><span>영화제목</span></a></li>
-       </ul>
-	
-</div>
+	<div style="border: 0">
+		<h2 style="text-align:">이부분에 검색한 작품명(키워드) 가져와서 표기</h2>
+		<ul id="searchResult">
+			<li><a href="#"><img src="공조2.jpg"><span>영화제목</span></a></li>
+			<li><a href="#"><img src="탑건.jpg"><span>영화제목</span></a></li>
+			<li><a href="#"><img src="로고.png"><span>영화제목</span></a></li>
+		</ul>
+
+	</div>
 </body>
 </html>

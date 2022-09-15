@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+	table {
+		width: 70%;
+	}
 	#homebut1 {float: left;}
 	#homebut2 {float: right;}
 	#homeForm {position: absolute;
@@ -38,14 +41,19 @@
 </div>
 <div id="homebut2">
 	<button onclick="">로그인/회원가입</button>
+	
 </div>
 <div>
 	<div id="homeForm">
 		<img id="logo" src="로고.png" width="100%" height="50%">
 		<form action="searchResultForm" method="post">
-			<input id="homeSearch" type="text" name="title" placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." 
-					required="required" style="width: 85%;float: left; text-align: center">
-			<input type="submit" value="검색" style="float: right; margin-top: 5px" >
+			<table>
+				<tr>
+					<th><input id="homeSearch" type="text" name="title" placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." 
+						required="required" style="width: 85%;float: left; text-align: center"></th>
+					<th><input type="submit" value="검색" style="float: right; margin-top: 5px" ></th>
+				</tr>
+			</table>
 		</form>
 	</div>
 </div>
