@@ -31,7 +31,6 @@ public class LoginResult implements CommandProcess {
 			}else result=0;
 		}
 		request.setAttribute("result", result);
-		request.setAttribute("prevUrl", prevUrl);
 		return "loginResult";
 	}
 }
