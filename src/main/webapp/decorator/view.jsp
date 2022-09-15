@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-	@import url("/project_semi/haemin/css/main.css");
-	@import url("/project_semi/haemin/css/header.css");
+	@import url("/project_semi/css/main.css");
+	@import url("/project_semi/css/header.css");
 </style>
 
 </head>

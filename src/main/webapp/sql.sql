@@ -1,5 +1,5 @@
 -- 영화
-drop table movie;
+drop table movie cascade constraints;
 create table movie (
     movieno number(4) primary key not null,
     moviename varchar2(50) not null,
@@ -16,6 +16,7 @@ create table movie (
     trailer varchar2(500)
 );
 -- 회원
+drop table member cascade constraints;
 create table member (
     memberno number(4) primary key not null,
     email varchar2(30) not null,
@@ -54,6 +55,7 @@ create table pick (
 );
 
 -- 리뷰
+drop table review cascade constraints;
 create table review (
     reviewno number(4) primary key not null,
     movieno number(4) not null,

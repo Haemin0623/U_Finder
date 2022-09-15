@@ -11,7 +11,7 @@
 <body>
 	<div class="main">
 		<div class="main_ad">
-			<img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+			<img alt="ad" src="/project_semi/images/chim.jpg"></li>
 		</div>
 		<%-- <c:if test="${not empty id}">
 			<div class="zzim">
@@ -26,16 +26,16 @@
 		<fieldset><legend>인기작</legend>
 			<div class="main_hot">
 				<ul><!-- 리스트 가져와서 반복문 돌리기 -->
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/haemin/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
 				</ul>
 			</div>
 		</fieldset>	

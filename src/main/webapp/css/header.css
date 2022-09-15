@@ -15,7 +15,7 @@
 
 .search_box {
 	position: relative;
-	background-color: black;
+	background-color: gray;
 	left: 150px;
 	bottom: 5px;
 	height: 30px;
@@ -24,7 +24,7 @@
 }
 
 input {
-	width: 90%;
+	width: 85%;
 }
 
 #main {
@@ -42,5 +42,9 @@ input {
 #login {
 	float: right;
 	margin-left: 10px;
+}
+
+#search_btn {
+	color: white;
 }
 

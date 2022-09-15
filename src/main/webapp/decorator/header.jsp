@@ -14,7 +14,7 @@
 					<div class="search_box">
 						<form id="search" action="research.jsp">
 							<input type="text" name="search">
-							<a href="">검색</a>
+							<a id="search_btn" href="">검색</a>
 						</form>
 					</div>
 				</li>
