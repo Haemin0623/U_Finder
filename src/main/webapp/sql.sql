@@ -25,3 +25,36 @@ create table MEMBER (
 	TVING       varchar2(1) default 'N' not null,
 	MEMBEROUT   varchar2(1) default 'N' not null 
 );
+
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
+create table MOVIE 
+TEST 해민
+TEST 해민2
+test ㅅ인
