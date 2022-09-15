@@ -24,7 +24,12 @@
 		</environment>
 	</environments>
 	<mappers>
-<!-- 		<mapper resource="member.xml" /> -->
+		<mapper resource="actor.xml" />
+		<mapper resource="calendar.xml" />
+		<mapper resource="member.xml" />
 		<mapper resource="movie.xml" />
+		<mapper resource="pick.xml" />
+		<mapper resource="review.xml" />
+		<mapper resource="tag.xml" />
 	</mappers>
 </configuration>
