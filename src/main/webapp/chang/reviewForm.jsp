@@ -10,7 +10,7 @@
 th{ padding: 12px; border:1px solid pink;  }
 td{ padding: 12px; border:1px solid pink; width: 13% }
 h2{ font-size: 24px; }
-body{ background-image:url("../chang/텔레토비.jpg"); background-color: rgba( 255, 255, 255, 0.5 ); }
+body{ background-image:url("../chang/images/텔레토비.jpg"); }
 #title {
 	transform: translate(0%, 120%);
 	padding: 5px; 

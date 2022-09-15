@@ -19,7 +19,7 @@ td {
 }
 
 body {
-	background-image: url("../chang/텔레토비.jpg")
+	background-image: url("../chang/images/텔레토비.jpg")
 }
 
 #title {
@@ -49,11 +49,13 @@ table {
 			<table>
 				<tr>
 					<th>패스워드 <input type="text" name="password" autofocus="autofocus" required="required">
-					<input type="submit" name="password" value="확인">
-						<button onclick="location.href='mypageForm.jsp'">취소</button></th>
+					<input type="submit" value="확인">
+					<button onclick="location.href='mypageForm.jsp'">취소</button>
+					</th>
 				</tr>
 			</table>
 		</div>
+		
 	</form>
 </body>
 </html>

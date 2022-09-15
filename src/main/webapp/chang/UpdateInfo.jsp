@@ -5,31 +5,49 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title><style type="text/css">
-th{ padding: 12px; border:1px solid pink;  white:22}
-td{ padding: 12px; border:1px solid pink; width: 55% }
+th{ padding: 12px; border:1px solid pink;  width:25%}
+td{ padding: 12px; border:1px solid pink;  }
 h2{font-size: 24px;}
-body{ background-image:url("../chang/텔레토비.jpg") }
+/* body{ background-image:url("../chang/images/텔레토비.jpg") } */
 #title{
-	transform: translate(41%, 150%);
+	transform: translate(41%, 100%);
 	padding: 5px; 
 	margin: 0 auto;
-	width: 50%;
+	width: 40%;
 	height: 60px;
+	font-size: 16pt;
  }
 table {
 	border: 1px solid black;
 	margin: 0 auto;
 	transform: translate(0%, 50%);
 }
+.profileimg{
+	transform: translate(90%, 120%);
+	width: 40%;
+	height: 60px;
+}
 </style>
+<script type="text/javascript">
+	function delchk() {
+		if (confirm("정말 삭제하시겠습니까??") == true){
+			
+			location.href="ReviewDelete.jsp" /* 삭제 프로세스 이동 */
+			// 			DAO에서 리턴받아서 삭제 완료 시 
+			alert("탈퇴 완료");
+		}
+	}
+</script>
 </head>
 <body>
 <div id="title">
 	<h2>정보 수정</h2>
 </div>
-<!-- <img alt="" src="" onclick="location.href='이미지수정'"> -->
-<!-- <button onclick="location.href='무슨버튼인지모름'"></button> -->
 <form action="UpdateAction.jsp">
+<div class="profileimg">
+	<img alt="" src="../chang/images/기본이미지.jpg" onclick="location.href='UpdateAction.jsp'" width="100" height="100">
+	<input type="file">
+</div>
 	<table>
 		<tr>
 			<th>닉네임</th>
@@ -46,10 +64,9 @@ table {
 		<tr>	
 			<th>사용중인 OTT</th>
 			<td><input type="checkbox" name="OTT" value="m1">쿠팡플레이
-				<input type="checkbox" name="OTT" value="m2">디즈니플러스
+				<input type="checkbox" name="OTT" value="m2">디즈니+
 				<input type="checkbox" name="OTT" value="m3">넷플릭스
-				<input type="checkbox" name="OTT" value="m4">왓챠
-				<input type="checkbox" name="OTT" value="m5">티빙</td>
+				<input type="checkbox" name="OTT" value="m4">티빙</td>
 		</tr>
 		<tr>	
 			<th colspan="2"><input type="submit" value="확인">
