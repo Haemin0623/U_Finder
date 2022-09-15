@@ -1,0 +1,28 @@
+@charset "UTF-8";
+	.top {
+		width: 100%;
+	}
+	#main { float: left;}
+	#login { float: right;}
+	#join { float: right;}
+	
+	.home {
+				
+				transform: translate(-50%, -50%);
+				display: inline-block;
+          		text-align: center;
+	}
+	.home table {
+		width: 70%;
+	}
+	.home th {
+		text-align: center;
+		}
+	.homeSearch {
+		width: 100%;
+		border: 1px solid #bbb;
+		border-radius: 8px;
+		padding: 10px 12px;
+		font-size: 14px;
+	}
+	

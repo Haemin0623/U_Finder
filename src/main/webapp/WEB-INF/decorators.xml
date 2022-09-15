@@ -4,7 +4,6 @@
 		<pattern>/views/*</pattern>
 	</decorator>
 	<excludes>
-		<pattern>/hello/exclude.jsp</pattern>
-		<pattern>/news/exclude.jsp</pattern>
+		<pattern>/views/home.jsp</pattern>
 	</excludes>
 </decorators>

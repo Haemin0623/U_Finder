@@ -1,0 +1,21 @@
+@charset "UTF-8";
+	.movieInfoForm { 
+		width: 90% ;
+		height: 100%;
+		border: 1px solid;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.movieInfoForm th, td {
+   		border: 1px solid;
+	}
+	#th1 { width: 25%; }
+	#th2 { height: 40%; }
+	#th3 { width: 65%; }
+	
+	img {
+		width: 200px;
+		height: 240px;
+	}
+	

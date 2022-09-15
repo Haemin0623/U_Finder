@@ -1,0 +1,20 @@
+@charset "UTF-8";
+	  .searchResult {
+	  	width: 100%;
+	  }
+	  .searchResult li {
+        display: inline-block;
+        position: relative;
+        top: 10px;
+/*         left: 260px; */
+      }
+      .searchResult li a {
+        display:block; position:relative; padding-bottom:19px;
+        margin: 30px;
+      }
+      .searchResult li a img {
+        width:200px; height:240px;
+      }
+      .searchResult li a span {
+        position:absolute; bottom:0; left:50%; color:#666; line-height:1.462em; white-space:nowrap; transform:translate(-50%, 0)
+      }

@@ -10,6 +10,9 @@
 <style type="text/css">
 	@import url("/project_semi/css/main.css");
 	@import url("/project_semi/css/header.css");
+	@import url("/project_semi/css/home.css");
+	@import url("/project_semi/css/movie/movieInfoForm.css");
+	@import url("/project_semi/css/movie/searchResult.css");
 </style>
 
 </head>
