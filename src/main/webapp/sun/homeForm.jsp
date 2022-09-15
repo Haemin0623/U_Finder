@@ -35,7 +35,7 @@
 	}
 </style>
 </head>
-<body>
+<body bgcolor="black">
 <div id="homebut1">
 	<button onclick="">메인</button>
 </div>

@@ -17,7 +17,7 @@
       }
       #searchResult > li > a {
         display:block; position:relative; padding-bottom:19px;
-        margin: 40px;
+        margin: 30px;
       }
       #searchResult > li > a > img {
         width:200px; height:240px;
@@ -31,6 +31,7 @@
 <body>
 	<div style="border: 0">
 		<h2 style="text-align:">이부분에 검색한 작품명(키워드) 가져와서 표기</h2>
+		<pre>데이터 넣으면서 forif와 foreach로 해당하는 개수만큼만 나오도록</pre>
 		<ul id="searchResult">
 			<li><a href="#"><img src="공조2.jpg"><span>영화제목</span></a></li>
 			<li><a href="#"><img src="탑건.jpg"><span>영화제목</span></a></li>
