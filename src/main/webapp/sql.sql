@@ -15,6 +15,8 @@ create table movie (
     poster varchar2(50),
     trailer varchar2(500)
 );
+select * from movie;
+
 -- 회원
 drop table member cascade constraints;
 create table member (
@@ -28,6 +30,7 @@ create table member (
     tving varchar2(1) default 'N' not null,
     memberout varchar2(1) default 'N' not null
 );
+select * from member;
 
 -- 태그 
 drop table tag;
@@ -37,6 +40,7 @@ create table tag (
     movieno number(4) not null,
     constraint fk_tag foreign key(movieno) references movie(movieno)
 );
+select * from tag;
 -- 캘린더
 create table calendar (
     calno number(4) primary key not null,
@@ -44,6 +48,7 @@ create table calendar (
     opendate date not null,
     constraint fk_calendar foreign key(movieno) references movie(movieno)
 );
+select * from calendar;
 -- 찜
 drop table pick;
 create table pick (
@@ -53,6 +58,7 @@ create table pick (
     constraint fk_pick1 foreign key(movieno) references movie(movieno),
     constraint fk_pick2 foreign key(memberno) references member(memberno)
 );
+select * from pick;
 
 -- 리뷰
 drop table review cascade constraints;
@@ -66,6 +72,7 @@ create table review (
     constraint fk_review1 foreign key(movieno) references movie(movieno),
     constraint fk_review2 foreign key(memberno) references member(memberno)
 );
+select * from review;
 
 -- 배우
 create table actor (
@@ -74,5 +81,5 @@ create table actor (
     movieno number(4) not null,
     constraint fk_actor foreign key(movieno) references movie(movieno)
 );
-
+select * from actor;
 
