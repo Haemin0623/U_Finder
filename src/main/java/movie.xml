@@ -2,9 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="moviens">
 
-	<!-- 홈에서 영화 검색, 9월15일 : 데이터 다 안넣어서 영화이름으로만 검색 -->
+	<!-- 홈에서 영화 검색, 9월16일 작품명, 감독, 장르 검색만 가능 / 태그랑 배우는 테이블 채운 후 추가예정 -->
 	<select id="search" parameterType="string" resultType="movie">
-		select * from movie where moviename like '%'||#{searchWord}||'%'
+		select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' 
+								or genre like '%'||#{searchWord}||'%' 
 	</select>
 	<!-- 영화 상세 정보 -->
 	<select id="show" parameterType="integer" resultType="movie">

@@ -15,11 +15,11 @@
 				<p class="search_text">검색 결과가 없습니다.<br>다른 검색어를 입력해주세요.</p>
 			</c:if>
 			<c:if test="${mvList.size() != 0}">
-				<ul>
+				<ul class="searchList">
 					<c:forEach var="movie" items="${mvList}">
 						<li>
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-							<img src="/project_semi/images/${movie.moviename}.jpg"><span>${movie.moviename}</span></a>
+							<img src="/project_semi/images/${movie.moviename}.jpg"> <span> ${movie.moviename} </span> </a>
 						</li>
 					</c:forEach>
 				</ul>

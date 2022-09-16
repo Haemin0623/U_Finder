@@ -9,11 +9,6 @@
 </head>
 <body>
 <div>
-<div id="test">
-
-		
-
-</div>
 	<div>
 		<table class="movieInfoForm">
 			<tr>
@@ -22,7 +17,7 @@
 			<tr>
 				<th>감독 : ${mvInfo.director } , 배우 : 쿼리 작성 후 연결</th></tr>
 			<tr>
-				<th>tving : ${mvInfo.tving }</th></tr>
+				<th>NETFLIX: ${mvInfo.netflix }, DISNEY : ${mvInfo.disney }, COUPANG : ${mvInfo.coupang }, TVING : ${mvInfo.tving }</th></tr>
 		</table>
 	</div>
 	<div>
