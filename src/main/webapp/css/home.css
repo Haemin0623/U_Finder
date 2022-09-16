@@ -2,23 +2,29 @@
 	.top {
 		width: 100%;
 	}
-	#main { float: left;}
-	#login { float: right;}
-	#join { float: right;}
+/* 	.top ul { */
+/* 		text-align: right; */
+/* 	} */
+	.top ul li {
+		display: inline-block;
+	}
+ 	.main { float: left;} 
+ 	.left { float: right; margin: 5px;}
 	
 	.home {
-				
-				transform: translate(-50%, -50%);
-				display: inline-block;
-          		text-align: center;
+
+/* 		 transform: translate(50%, 50%); */
+        text-align: center;
 	}
 	.home table {
 		width: 70%;
-	}
-	.home th {
+		display: inline-block;
 		text-align: center;
-		}
-	.homeSearch {
+	}
+/* 	.home th { */
+/* 		text-align: center; */
+/* 		} */
+	.homeSearch input {
 		width: 100%;
 		border: 1px solid #bbb;
 		border-radius: 8px;

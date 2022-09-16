@@ -5,15 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/project_semi/css/home.css">
 </head>
 <body bgcolor="black">
+
 <div class="top">
 	<ul>
-		<li id="main"><a href="/project_semi/views/main.jsp">메인</a></li>
-		<li id="login"><a href="/project_semi/views/member/loginForm.jsp">로그인</a></li>
-		<li id="join"><a href="/project_semi/views/member/joinForm.jsp">회원가입</a></li>
+		<li class="main"><a href="/project_semi/views/main.jsp">메인</a></li>
+		<li class="left"><a href="/project_semi/views/member/loginForm.jsp">로그인</a></li>
+		<li class="left"><a href="/project_semi/views/member/joinForm.jsp">회원가입</a></li>
 	</ul>
 </div>
+
 <div class="home">
 	<form action="/project_semi/views/movie/searchResult.do" method="post">
 		<table>

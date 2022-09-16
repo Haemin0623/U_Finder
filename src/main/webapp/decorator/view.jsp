@@ -7,13 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<style type="text/css">
-	@import url("/project_semi/css/main.css");
-	@import url("/project_semi/css/header.css");
-	@import url("/project_semi/css/home.css");
-	@import url("/project_semi/css/movie/movieInfoForm.css");
-	@import url("/project_semi/css/movie/searchResult.css");
-</style>
+<link rel="stylesheet" type="text/css" href="/project_semi/css/main.css">
+<link rel="stylesheet" type="text/css" href="/project_semi/css/header.css">
+<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfoForm.css">
+<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">
+
 
 </head>
 <body>
