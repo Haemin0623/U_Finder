@@ -35,9 +35,18 @@ public class MemberDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
-
+	// joinResult, confirmId, loginResult
 	public Member select(String id) {
 		return (Member) session.selectOne("memberns.select", id);
+	}
+	
+	// confirmNick_nm
+	public Member confirmNick(String nickname) {
+		return (Member) session.selectOne("memberns.confirmNick", nickname);
+	}
+	// joinResult, 
+	public int insert(Member member) {
+		return session.insert("memberns.insert", member);
 	}
 
 }

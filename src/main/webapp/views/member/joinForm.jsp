@@ -5,66 +5,81 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
 
-/**.chk-btn {
-	display: inline-block;
-	position: absolute;
-	font-weight: 600;
-	text-align: right;
-	cursor: pointer;
-	
-}
-
-div { 
-	text-align: center;
- }
- 
-.container {
-   position: absolute;
-   top: 20%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
-*/
-
-</style>
-<!-- <style type="text/css">@import url("../.css")</style> -->
 
 <script type="text/javascript">
 /* 아이디 중복체크 */
 	function chkId() {
-		
+		if (!frm.id.value) {
+			alert("이메일을 입력하세요")
+			frm.id.focus();
+			return false;
+		} else {
+			$.post("confirmId.do", "id="+frm.id.value, function (data) {
+				$('#err_id').html(data);
+				
+			})
+		}
 	}
+	
+// 	function chkPass(){
+// 		var pw = $("#password").val();
+// 		if(pw.length<8) {
+// 			$('#err_pass').html("8자리 이상 입력해주세요");
+// 			frm.password.focus();
+// 			frm.password.value="";
+// 			return false;
+// 		}else {
+// 			$('#err_pass').html("사용가능한 비밀번호입니다");
+// 		}
+// 	}
 	
 /* 비밀번호 확인 일치여부 체크 */
-	function chkPassword() {
-		
-	}
-/* 닉네임 중복체크 */
-	function chkNick() {
-		
-	}
 	
-/* 아이디, 닉네임 중복확인 버튼 눌렀는지 체크	 */
+	function chkPassword() {
+		if (frm.password.value != frm.confirmPassword.value) {
+			alert("비밀번호가 일치하지 않습니다")
+			frm.password.focus();
+			frm.password.value = "";
+			frm.confirmPassworsd.value = "";
+			return false;
+		}
+
+	}
+	/* 닉네임 중복체크 */
+	function chkNick() {
+	if (!frm.nickname.value) {
+			alert("별명을 입력하세요")
+			frm.nickname.focus();
+			return false;
+		} else {
+			frm.checked_nick.value = "y";
+		}
+		$.post("confirmNick_nm.do", "nickname=" + frm.nickname.value, function(data) {
+			$('#err').html(data);
+		});
+	}
+
+	/* 아이디, 닉네임 중복확인 버튼 눌렀는지 체크	 */
 	function chk() {
-		
+
 	}
 </script>
 </head>
 <body>
 
 	<div class="container">
-	<form action="views/member/joinResult.do" method="post" name ="frm" onsubmit="return chk();">
+	<form action="joinResult.do" method="post" name ="frm" onsubmit="return chk();">
 	
 	<h1> 회원가입 </h1>
-	<table>
+	<table >
 		<tr>
 			<th>
 				<!-- 아이디 -->
 				<div class="check">
 					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)">
-					<a class ="chk-btn" onclick="chkId();">중복체크</a>
+					<button class ="chk-btn" onclick="chkId();">중복체크</button>
+					<div class="chk_msg" id="err_id"></div>
 				</div>
 			</th>
 		
@@ -72,35 +87,37 @@ div {
 			<th>
 			<!-- 비밀번호 -->
 				<div class="check">
-					<input type="password" name="password" id="password" placeholder="비밀번호" required="required">
+					<input type="password" name="password" id="password" placeholder="비밀번호" required="required" onChange="chkPass()" >
+					<div class="chk-msg" id="err_pass"></div>
 				</div>
-					<input type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required">		
+					<input type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required" onChange="chkPassword()">		
 			</th>
 		</tr>
 		<tr>
 			<th>
 				<!-- 닉네임 -->
 				<div class="check">
-					<input type="text" name="nickname" placeholder="닉네임">
-					<a class ="chk-btn" onclick="chkNick();">중복체크</a>
+					<input type="text" name="nickname" placeholder="닉네임" onchange="chkNick()">
+					<input type="hidden" name="checked_nick" value="">
+					<div class="chk-msg" id="err"></div>
 				</div>
 			</th>
 		</tr>
+		
 		<tr>
 			<td>
 				<!-- OTT 목록 -->
 				<div class="select-ott">
 					<fieldset>
-						<legend>가입한 ott 목록<br>
-							<input type="checkbox" name="ott" id="o1" value="넷플릭스">
+						<legend> 가입한 ott 목록</legend>
+							<input type="checkbox" name="netflix" id="o1" value="y">
 							<label for="o1">넷플릭스</label>
-							<input type="checkbox" name="ott" id="o2" value="디즈니+">
+							<input type="checkbox" name="disney" id="o2" value="y">
 							<label for="o2">디즈니+</label>
-							<input type="checkbox" name="ott" id="o3" value="쿠팡플레이">
+							<input type="checkbox" name="coupang" id="o3" value="y">
 							<label for="o3">쿠팡플레이</label>
-							<input type="checkbox" name="ott" id="o4" value="티빙">
+							<input type="checkbox" name="tving" id="o4" value="y">
 							<label for="o4">티빙</label>
-						</legend>
 					</fieldset>
 				</div>
 			</td>

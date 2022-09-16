@@ -14,21 +14,22 @@ public class LoginResult implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		
-		MemberDao md = MemberDao.getInstance();  
+
+		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(id);
-		
+
 		int result = 0;
-		if(member==null||member.getDel().equals("y"))
-			result=-1;
-		else {
-			if(member.getPassword().equals(password)) {
-				int mno = member.getMno();
+		if (member == null || member.getDel().equals("y")) {
+			result = -1;
+		} else {
+			if (member.getPassword().equals(password)) {
+				int mno = member.getMemberno();
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
 				session.setAttribute("mno", mno);
 				result = 1;
-			}else result=0;
+			} else
+				result = 0;
 		}
 		request.setAttribute("result", result);
 		return "loginResult";

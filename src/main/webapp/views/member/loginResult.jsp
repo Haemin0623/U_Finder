@@ -10,7 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			location.href="${prevUrl}";
+			location.href="main.jsp";
 		</script>
 	</c:if>
 	

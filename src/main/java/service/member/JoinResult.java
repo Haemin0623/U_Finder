@@ -15,14 +15,20 @@ public class JoinResult implements CommandProcess {
 		String password = request.getParameter("password");
 		String confirmPassword = request.getParameter("confirmPassword");
 		String nickname = request.getParameter("nickname");
-		String ott = request.getParameter("ott");
+		String netflix = request.getParameter("netflix");
+		String disney = request.getParameter("disney");
+		String coupang = request.getParameter("coupang");
+		String tving = request.getParameter("tving");
 
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
 		member.setConfirmPassword(confirmPassword);
 		member.setNickname(nickname);
-		member.setOtt(ott);
+		member.setNetflix(netflix);
+		member.setDisney(disney);
+		member.setCoupang(coupang);
+		member.setTving(tving);
 
 		MemberDao md = MemberDao.getInstance();
 		Member m1 = md.select(id);

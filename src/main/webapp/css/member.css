@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+ .container {
+   width: 555px;
+   margin: 0 auto;
+   margin-top:5%;
+
+}
+
+.chk-btn {
+	display: inline-block;
+	position: relative;
+	font-weight: 600;
+	text-align: right;
+	cursor: pointer;
+	border-radius: 3px;
+	background-color: lightgrey;
+
+}
+
+/* div {  */
+/* 	text-align: center; */
+/*  } */
+ 

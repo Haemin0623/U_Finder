@@ -2,9 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberns">
 
-	<!-- 예시 -->
+	<!-- 회원 아이디 조회 -->
 	<select id="select" parameterType="string" resultType="member">
-		select * from member where id=#{id} and del='n'
+		select * from member where id=#{id}
 	</select>
+	
+
+	<!-- 닉네임 중복확인 -->
+	<select id="confirmNick" parameterType="string" resultType="member">
+		select * from member where nickname=#{nickname}
+	</select>
+
+	<!-- 회원 가입 -->
+	<insert id="insert" parameterType="member">
+		<selectKey keyProperty="mno" order="BEFORE" resultType="integer">
+			select nvl(max(mno), 0) + 1 mno from member
+		</selectKey>
+		insert into member values(#{mno},#{id},#{password},#{nickname},
+			#{netflix},#{disney},#{coupang},#{tving},'n')
+	</insert>
+	
 	
 </mapper>
