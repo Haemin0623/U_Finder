@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="moviens">
-
 	<!-- 홈에서 영화 검색, 9월16일 작품명, 감독, 장르 검색만 가능 / 태그랑 배우는 테이블 채운 후 추가예정 -->
 	<select id="search" parameterType="string" resultType="movie">
 		select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' 
@@ -11,4 +10,23 @@
 	<select id="show" parameterType="integer" resultType="movie">
 		select * from movie where movieno = #{movieno}
 	</select>
+	<!-- DB에 등록된 총 영화 갯수 -->
+	<select id="getTotal" resultType="integer">
+		select count(*) from movie
+	</select>
+	<!-- 영화 리스트 뽑아오기 -->
+	<select id="list" parameterType="map" resultType="movie">
+		select * from (select rowNum rn, a.* from (select * from movie order by movieno) a)
+			where rn between #{startRow} and #{endRow}
+	</select>
+	<!-- DB에 영화 넣기 -->
+	<insert id="insert" parameterType="movie">
+		<selectKey keyProperty="movieno" order="BEFORE" resultType="integer">
+			select nvl(max(movieno), 0)+1 movieno from movie
+		</selectKey>
+		insert into movie values(#{movieno}, #{moviename}, #{story},
+		#{director}, #{playtime},
+		#{netflix}, #{disney}, #{coupang}, #{tving},
+		#{genre}, 0, #{poster}, #{trailer})
+	</insert>
 </mapper>

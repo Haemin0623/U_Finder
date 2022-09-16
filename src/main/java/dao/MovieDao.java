@@ -1,7 +1,9 @@
 package dao;
 
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -40,8 +42,26 @@ public class MovieDao {
 	public List<Movie> search(String searchWord) {
 		return session.selectList("moviens.search", searchWord);
 	}
+	
 	// 영화 상세 정보
 	public Movie show(int movieno) {
 		return (Movie) session.selectOne("moviens.show", movieno);
+	}
+	// DB에 등록된 총 영화 갯수 (페이징 용)
+	public int total() {
+		return (int) session.selectOne("moviens.getTotal");
+	}
+	
+	// DB에서 영화 리스트 뽑아오기
+	public List<Movie> movieList(int startRow, int endRow) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		return session.selectList("moviens.list", map);	// startRow, endRow 매개변수 2개를 보낼 수 없어서 map으로 묶어서 보냄
+	}
+
+	// DB에 영화정보 넣기
+	public int insert(Movie mv) {
+		return session.insert("moviens.insert", mv);
 	}
 }
