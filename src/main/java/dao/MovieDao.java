@@ -43,7 +43,7 @@ public class MovieDao {
 		return session.selectList("moviens.search", searchWord);
 	}
 	
-	// 영화 상세 정보
+	// 영화 상세 정보 (영화번호로 해당 영화 객체 반환)
 	public Movie show(int movieno) {
 		return (Movie) session.selectOne("moviens.show", movieno);
 	}
@@ -63,5 +63,10 @@ public class MovieDao {
 	// DB에 영화정보 넣기
 	public int insert(Movie mv) {
 		return session.insert("moviens.insert", mv);
+	}
+	
+	// DB 영화정보 수정
+	public int updateMovie(Movie mv) {
+		return session.update("moviens.update", mv);
 	}
 }

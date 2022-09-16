@@ -12,7 +12,7 @@ import dao.MovieDao;
 import model.Movie;
 import service.CommandProcess;
 
-public class MovieAddAction implements CommandProcess {
+public class MovieUpdateAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -27,7 +27,8 @@ public class MovieAddAction implements CommandProcess {
 		
 		try {
 			MultipartRequest mr = new MultipartRequest(request, real, maxSize, "utf-8", new DefaultFileRenamePolicy());
-						
+			
+			int movieno = Integer.valueOf(mr.getParameter("movieno"));
 			String moviename = mr.getParameter("moviename");
 			String story = mr.getParameter("story");
 			String director = mr.getParameter("director");
@@ -52,7 +53,7 @@ public class MovieAddAction implements CommandProcess {
 			if (tving == null) {
 				tving = "N";
 			}
-			
+			mv.setMovieno(movieno);
 			mv.setMoviename(moviename);
 			mv.setStory(story);
 			mv.setDirector(director);
@@ -61,7 +62,7 @@ public class MovieAddAction implements CommandProcess {
 			mv.setDisney(disney);
 			mv.setCoupang(coupang);
 			mv.setTving(tving);
-			mv.setGenre(genre);
+			mv.setGenre(genre);			
 			mv.setPoster(poster);
 			mv.setTrailer(trailer);		
 		
@@ -70,11 +71,11 @@ public class MovieAddAction implements CommandProcess {
 		}
 		
 		MovieDao md = MovieDao.getInstance();
-		result = md.insert(mv);
+		result = md.updateMovie(mv);
 		
 		request.setAttribute("result", result);
 		
-		return "movieAddResult";
+		return "movieUpdateResult";
 	}
 
 }

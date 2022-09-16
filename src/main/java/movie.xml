@@ -25,8 +25,18 @@
 			select nvl(max(movieno), 0)+1 movieno from movie
 		</selectKey>
 		insert into movie values(#{movieno}, #{moviename}, #{story},
-		#{director}, #{playtime},
-		#{netflix}, #{disney}, #{coupang}, #{tving},
-		#{genre}, 0, #{poster}, #{trailer})
+			#{director}, #{playtime},
+			#{netflix}, #{disney}, #{coupang}, #{tving},
+			#{genre}, 0, #{poster}, #{trailer})
 	</insert>
+	<update id="update" parameterType="movie">
+		update movie set moviename=#{moviename}, story=#{story}, director=#{director},
+			playtime=#{playtime}, netflix=#{netflix}, disney=#{disney},
+			coupang=#{coupang}, tving=#{tving}, genre=#{genre},
+			<if test="poster != null and poster != ''">
+				poster=#{poster},
+			</if>
+			trailer=#{trailer} where movieno=#{movieno}	
+	</update>
+	
 </mapper>

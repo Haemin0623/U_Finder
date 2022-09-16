@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-	<table><caption>영화 목록</caption>
+	<table><caption>영화 목록 (수정하려면 제목 클릭)</caption>
 		<tr>
 			<th>번호</th>
 			<th>제목</th>
@@ -37,7 +37,7 @@
 			<c:forEach var="movie" items="${list }">
 				<tr>
 					<td>${movie.movieno }</td>
-					<td>${movie.moviename }</td>
+					<td><a href="/project_semi/views/admin/movieUpdateForm.do?movieno=${movie.movieno }">${movie.moviename }</a></td>
 					<td>${movie.story }</td>
 					<td>${movie.director }</td>
 					<td>${movie.playtime }</td>
