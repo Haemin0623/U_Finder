@@ -8,20 +8,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="searchResult">
-		<c:forEach var="movie" items="${mvList}">
-			${movie.moviename}
-		</c:forEach>
-	
-	
-	
-		
-		<pre>데이터 넣으면서 forif와 foreach로 해당하는 개수만큼만 나오도록</pre>
-		<ul id="list">
-			<li><a href="#"><img src="/project_semi/images/공조2.jpg"><span>영화제목</span></a></li>
-			<li><a href="#"><img src="/project_semi/images/탑건.jpg"><span>영화제목</span></a></li>
-			<li><a href="#"><img src="/project_semi/images/한산.jpg"><span>영화제목</span></a></li>
-		</ul>
-	</div>
+	<div class="result_wide">
+		<h2>${searchWord }</h2>에 대한 검색 결과
+		<div class = "result_inner">
+			<c:if test="${mvList.size() == 0}">
+				<p class="search_text">검색 결과가 없습니다.<br>다른 검색어를 입력해주세요.</p>
+			</c:if>
+			<c:if test="${mvList.size() != 0}">
+				<ul>
+					<c:forEach var="movie" items="${mvList}">
+						<li>
+							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
+							<img src="/project_semi/images/${movie.moviename}.jpg"><span>${movie.moviename}</span></a>
+						</li>
+					</c:forEach>
+				</ul>
+			</c:if>
+		</div> <!-- result_inner -->
+	</div> <!-- result_wide -->
 </body>
 </html>

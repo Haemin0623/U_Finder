@@ -1,6 +1,5 @@
 package service;
 
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,19 +7,18 @@ import javax.servlet.http.HttpServletResponse;
 import dao.MovieDao;
 import model.Movie;
 
-public class SearchResult implements CommandProcess {
+public class MovieInfo implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		String searchWord = request.getParameter("searchWord");
+		int movieno = Integer.parseInt(request.getParameter("movieno"));
 		
 		MovieDao md = MovieDao.getInstance();
-		List<Movie> mvList = md.search(searchWord);
+		Movie mvInfo = md.show(movieno);
 		
-		request.setAttribute("mvList", mvList);
-		request.setAttribute("searchWord", searchWord);
+		request.setAttribute("mvInfo", mvInfo);
 		
-		return "searchResult";
+		return "movieInfo";
 	}
 
 }

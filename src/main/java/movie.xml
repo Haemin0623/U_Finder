@@ -6,5 +6,8 @@
 	<select id="search" parameterType="string" resultType="movie">
 		select * from movie where moviename like '%'||#{searchWord}||'%'
 	</select>
-	
+	<!-- 영화 상세 정보 -->
+	<select id="show" parameterType="integer" resultType="movie">
+		select * from movie where movieno = #{movieno}
+	</select>
 </mapper>

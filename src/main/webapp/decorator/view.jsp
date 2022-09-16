@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="/project_semi/css/main.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/header.css">
-<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfoForm.css">
+<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">
 
 

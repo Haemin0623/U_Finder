@@ -36,8 +36,12 @@ public class MovieDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
-
+	// 검색 결과 도출
 	public List<Movie> search(String searchWord) {
 		return session.selectList("moviens.search", searchWord);
+	}
+	// 영화 상세 정보
+	public Movie show(int movieno) {
+		return (Movie) session.selectOne("moviens.show", movieno);
 	}
 }

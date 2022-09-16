@@ -10,9 +10,9 @@
 	.movieInfoForm th, td {
    		border: 1px solid;
 	}
-	#th1 { width: 25%; }
-	#th2 { height: 40%; }
-	#th3 { width: 65%; }
+	.th1 { width: 25%; }
+	
+	
 	
 	img {
 		width: 200px;
