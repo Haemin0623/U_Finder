@@ -66,14 +66,20 @@
 		<div id="updateinfo">
 			<button onclick="location.href='InfoChk.jsp'">정보수정</button>
 		</div>
+	<div>
+		<button onclick="location.href='reviewForm.do'">내 리뷰</button>
+		<button>찜목록</button>
+		<button>시청한 영화</button>
+	</div>
 		<h2>사용중인 OTT</h2>
 		<img alt="" src="../chang/images/넷플릭스.jpg"> <img alt=""
 			src="../chang/images/디즈니플러스.jpg"> <img alt=""
 			src="../chang/images/티빙.jpg"> <img alt=""
 			src="../chang/images/쿠팡플레이.jpg">
 	</div>
+	
 	<div class="picklist">
-		<h2 align="center">찜목록</h2>
+		<h2 align="center">찜한영화</h2>
 		<a href=""><img class="picklist_movie" src="images/공조2.jpg"></a>
 		<a href=""><img class="picklist_movie" src="images/탑건.jpg"></a>
 		<a href=""><img class="picklist_movie" src="images/공조2.jpg"></a>
