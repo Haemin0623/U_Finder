@@ -2,8 +2,8 @@ package service.admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import dao.MemberDao;
 import service.CommandProcess;
 
 public class AdminLoginAction implements CommandProcess {
@@ -16,6 +16,8 @@ public class AdminLoginAction implements CommandProcess {
 		String password = request.getParameter("password");
 		
 		if(id.equals("master") && password.equals("123456") ) {
+			HttpSession session = request.getSession();
+			session.setAttribute("id", id);
 			result = 1;
 		}
 		

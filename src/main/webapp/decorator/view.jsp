@@ -13,8 +13,6 @@
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/member.css">
 
-
-
 </head>
 <body>
 

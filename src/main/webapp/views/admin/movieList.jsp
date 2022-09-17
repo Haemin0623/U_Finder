@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="admin_sessionChk.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,8 +49,13 @@
 					<td>${movie.tving }</td>
 					<td>${movie.genre }</td>
 					<td>${movie.cnt }</td>
-					<td>${movie.poster }</td>
-					<td>${movie.trailer }</td>
+					<c:if test="${not empty movie.poster }">
+						<td><img style="width: 100px" alt="" src="../../posterUpload/${movie.poster }"> ${movie.poster }</td>					
+					</c:if>
+					<c:if test="${empty movie.poster }">
+						<td>no poster</td>					
+					</c:if>
+					<td>${movie.trailer }</td>					
 				</tr>
 			</c:forEach>
 		</c:if>
@@ -69,6 +76,7 @@
 			<button onclick="/project_semi/views/admin/movieList.do?pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
+	<button onclick="location.href='/project_semi/views/admin/movieAddForm.do'">영화등록</button>
 
 </body>
 </html>

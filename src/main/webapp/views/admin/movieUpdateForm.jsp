@@ -74,7 +74,7 @@
 			</tr>
 			<tr>
 				<th>포스터</th>
-				<td><input type="file" name="poster" value="${movie.poster }">${movie.poster }</td>			
+				<td> (수정하지 않을거면 그냥 두시오)<input type="file" name="poster" value="${movie.poster }">${movie.poster }</td>			
 			</tr>
 			<tr>
 				<th>트레일러주소</th>

@@ -57,9 +57,9 @@ public class Controller extends HttpServlet {
 	     // message.do
 	     while( keyIter.hasNext() ) {
 	          String command = (String)keyIter.next(); 
-	          // command : list.do
+	          // command : views/movie/searchResult.do
 	          String className = pr.getProperty(command); 
-	          // className : ch14.service.ListAction문자
+	          // className : service.SearchResult문자
 	          try {
 	               Class<?> commandClass = Class.forName(className);
 	               // commandClass : service.ListAction 클래스
@@ -82,15 +82,15 @@ public class Controller extends HttpServlet {
 	    try { // map key:list.do   ListAction객체
 //	  url : http://localhost(ip번호):8080/ch14/list.do
 	    	  String command = request.getRequestURI();
-	    	  // command : /ch14/list.do
-	    	  // request.getCo ntextPath() : /ch14
+	    	  // command : /project_semi/views/movie/searchResult.do
+	    	  // request.getContextPath() : /project_semi
 	    	  
-	    	  // request.getContextPath().length()+1 : 6
+	    	  // request.getContextPath().length()+1 : 14 + 1
 		      command = command.substring(request.getContextPath().length()+1); 
-		      // command는 /ch14/ (길이:6)이 빠진 list.do가 된다
+		      // command는 /project_semi/ (길이:15)이 빠진 views/movie/searchResult.do가 된다
 		      
 	          com = (CommandProcess)commandMap.get(command);
-	          // command : key(list.do)로 value인 ListAction 객체를 받아옴
+	          // command : key(views/movie/searchResult.do)로 value인 ListAction 객체를 받아옴
 	          // com : service.ListAction객체를 CommandProcess로 형변환
 	          
 	          // 자식 즉 ListAction객체의 requestPro()메소드 실행
