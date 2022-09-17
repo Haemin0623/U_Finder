@@ -6,19 +6,23 @@
 		select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' 
 								or genre like '%'||#{searchWord}||'%' 
 	</select>
+	
 	<!-- 영화 상세 정보 -->
 	<select id="show" parameterType="integer" resultType="movie">
 		select * from movie where movieno = #{movieno}
 	</select>
+	
 	<!-- DB에 등록된 총 영화 갯수 -->
 	<select id="getTotal" resultType="integer">
 		select count(*) from movie
 	</select>
+	
 	<!-- 영화 리스트 뽑아오기 -->
 	<select id="list" parameterType="map" resultType="movie">
 		select * from (select rowNum rn, a.* from (select * from movie order by movieno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
+	
 	<!-- DB에 영화 넣기 -->
 	<insert id="insert" parameterType="movie">
 		<selectKey keyProperty="movieno" order="BEFORE" resultType="integer">

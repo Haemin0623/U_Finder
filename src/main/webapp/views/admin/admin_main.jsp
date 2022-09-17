@@ -21,6 +21,9 @@
 			<th><button onclick="location.href='/project_semi/views/admin/movieAddForm.do'">영화등록</button></th>
 		</tr>
 		<tr>
+			<th><button onclick="location.href='/project_semi/views/admin/memberList.do'">회원목록</button></th>
+		</tr>
+		<tr>
 			<th><button onclick="location.href='/project_semi/views/admin/admin_logout.do'">로그아웃</button></th>
 		</tr>
 	</table>

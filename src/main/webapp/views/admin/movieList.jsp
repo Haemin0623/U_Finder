@@ -66,17 +66,18 @@
 		</c:if>
 		<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			<c:if test="${i == currentPage }">
-				<button style="background: red" onclick="/project_semi/views/admin/movieList.do?pageNum=${i}'">${i }</button>
+				<button style="background: red" onclick="location.href='/project_semi/views/admin/movieList.do?pageNum=${i}'">${i }</button>
 			</c:if>
 			<c:if test="${i != currentPage }">
-				<button onclick="/project_semi/views/admin/movieList.do?pageNum=${i}'">${i }</button>
+				<button onclick="location.href='/project_semi/views/admin/movieList.do?pageNum=${i}'">${i }</button>
 			</c:if>		
 		</c:forEach>
 		<c:if test="${endPage < totalPage }">
-			<button onclick="/project_semi/views/admin/movieList.do?pageNum=${endPage + 1 }'">다음</button>
+			<button onclick="location.href='/project_semi/views/admin/movieList.do?pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
 	<button onclick="location.href='/project_semi/views/admin/movieAddForm.do'">영화등록</button>
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 
 </body>
 </html>

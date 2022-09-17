@@ -9,7 +9,7 @@ import dao.MovieDao;
 import model.Movie;
 import service.CommandProcess;
 
-public class MovieList implements CommandProcess {
+public class MovieListAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {

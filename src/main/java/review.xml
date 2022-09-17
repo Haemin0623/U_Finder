@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="reviewns">
 
-	<!-- 예시 -->
-	<select id="select" parameterType="string" resultType="member">
-		select * from member where id=#{id} and del='n'
+	<!-- 특정 회원이 작성한 모든 리뷰 -->
+	<select id="memberReviewList" parameterType="Integer" resultType="review">
+		select * from review where memberno = #{memberno}
 	</select>
 	
 </mapper>

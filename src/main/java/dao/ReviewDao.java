@@ -1,11 +1,14 @@
 package dao;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import model.Review;
 
 public class ReviewDao {
 	
@@ -32,5 +35,10 @@ public class ReviewDao {
 		}catch (Exception e) {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
+	}
+
+	// 특정 회원이 작성한 리뷰 읽어오기
+	public List<Review> memberReviewList(int memberno) {
+		return session.selectList("reviewns.memberReviewList", memberno);
 	}
 }

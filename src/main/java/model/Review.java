@@ -7,6 +7,7 @@ public class Review {
     private String content;
     private int movielike;
     private String del;
+    private String moviename;	// 작성리뷰에서 번호로 영화이름 가져올때 쓸 moviename
     
 	public int getReviewno() {
 		return reviewno;
@@ -43,5 +44,11 @@ public class Review {
 	}
 	public void setDel(String del) {
 		this.del = del;
+	}
+	public String getMoviename() {
+		return moviename;
+	}
+	public void setMoviename(String moviename) {
+		this.moviename = moviename;
 	}
 }

@@ -1,6 +1,9 @@
 package dao;
 
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -44,9 +47,26 @@ public class MemberDao {
 	public Member confirmNick(String nickname) {
 		return (Member) session.selectOne("memberns.confirmNick", nickname);
 	}
+	
 	// joinResult, 
 	public int insert(Member member) {
 		return session.insert("memberns.insert", member);
 	}
+
+	// DB에 등록된 회원 수 (페이징 용)
+	public int total() {
+		return (int) session.selectOne("memberns.getTotal");
+	}
+
+	// 모든 회원목록 가져오기
+	public List<Member> memberList(int startRow, int endRow) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		return session.selectList("memberns.list", map);	// startRow, endRow 매개변수 2개를 보낼 수 없어서 map으로 묶어서 보냄
+	}
+
+	
+	
 
 }

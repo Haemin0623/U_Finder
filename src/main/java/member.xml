@@ -5,8 +5,7 @@
 	<!-- 회원 아이디 조회 -->
 	<select id="select" parameterType="string" resultType="member">
 		select * from member where id=#{id}
-	</select>
-	
+	</select>	
 
 	<!-- 닉네임 중복확인 -->
 	<select id="confirmNick" parameterType="string" resultType="member">
@@ -22,5 +21,15 @@
 			#{netflix},#{disney},#{coupang},#{tving},'n')
 	</insert>
 	
+	<!-- DB에 등록된 총 회원 수 -->
+	<select id="getTotal" resultType="integer">
+		select count(*) from member
+	</select>
+	
+	<!-- 영화 리스트 뽑아오기 -->
+	<select id="list" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
+			where rn between #{startRow} and #{endRow}
+	</select>
 	
 </mapper>
