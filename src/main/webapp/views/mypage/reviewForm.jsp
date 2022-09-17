@@ -1,34 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-th{ padding: 12px; border:1px solid pink;  }
-td{ padding: 12px; border:1px solid pink; width: 13% }
-h2{ font-size: 24px; }
-body{ background-image:url("../chang/images/텔레토비.jpg"); }
-#title {
-	transform: translate(0%, 120%);
-	padding: 5px; 
-	margin: 0 auto;
-	width: 50%;
-	height: 60px;
-}
-
-#review {
-	transform: translate(0%, 150%);
-	border: 1px solid black;
-	padding: 5px;
-	width: 50%;
-	margin: 0 auto;
-}
-#historyback{
-	transform: translate(0%, 2500%);
-}
 
 </style>
 
@@ -63,7 +40,7 @@ body{ background-image:url("../chang/images/텔레토비.jpg"); }
 		</form>
 	</div>
 	<div id="historyback" align="center">
-		<button onclick="location.href='mypageForm.jsp'">이전</button>
+		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do'">이전</button>
 	</div>
 </body>
 </html>

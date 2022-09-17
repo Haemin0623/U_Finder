@@ -5,28 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title><style type="text/css">
-th{ padding: 12px; border:1px solid pink;  width:25%}
-td{ padding: 12px; border:1px solid pink;  }
-h2{font-size: 24px;}
-/* body{ background-image:url("../chang/images/텔레토비.jpg") } */
-#title{
-	transform: translate(41%, 100%);
-	padding: 5px; 
-	margin: 0 auto;
-	width: 40%;
-	height: 60px;
-	font-size: 16pt;
- }
-table {
-	border: 1px solid black;
-	margin: 0 auto;
-	transform: translate(0%, 50%);
-}
-.profileimg{
-	transform: translate(90%, 120%);
-	width: 40%;
-	height: 60px;
-}
 </style>
 <script type="text/javascript">
 	function delchk() {
@@ -43,11 +21,13 @@ table {
 <div id="title">
 	<h2>정보 수정</h2>
 </div>
-<form action="UpdateAction.jsp">
 <div class="profileimg">
-	<img alt="" src="../chang/images/기본이미지.jpg" onclick="location.href='UpdateAction.jsp'" width="100" height="100">
-	<input type="file">
-</div>
+	<form action="UpdateAction.jsp">
+		<img alt="" src="../../images/기본이미지.jpg" onclick="location.href='UpdateAction.jsp'" width="100" height="100">
+		<input type="file" >
+	</form>
+	</div>
+<form action="UpdateAction.jsp">
 	<table>
 		<tr>
 			<th>닉네임</th>
