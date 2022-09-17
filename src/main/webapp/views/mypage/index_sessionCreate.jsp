@@ -12,6 +12,5 @@
 		alert('세션 만들기');
 		location.href='/project_semi/views/mypage/sessionCreate.do';
 	</script>
-
 </body>
 </html>
