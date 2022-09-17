@@ -18,6 +18,7 @@
 		<tr>
 			<th>번호</th>
 			<th>영화번호</th>
+			<th>영화제목</th>
 			<th>리뷰내용</th>
 			<th>좋아요</th>
 			<th>삭제여부</th>
@@ -32,6 +33,7 @@
 				<tr>
 					<td>${review.reviewno }</td>
 					<td>${review.movieno }</td>
+					<td>${review.moviename }</td>
 					<td>${review.content }</td>
 					<td>${review.movielike }</td>
 					<td>${review.del }</td>

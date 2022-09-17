@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../member_sessionChk.jsp"%>
+<%@ include file="../member_sessionChk.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-
-</script>
 </head>
 <body>
+	
+	세션아이디 : ${id };
 	
 	<div id="profile">
 		<a href="/project_semi/views/mypage/InfoChk.do"><img alt="" src="../../images/기본이미지.jpg"
