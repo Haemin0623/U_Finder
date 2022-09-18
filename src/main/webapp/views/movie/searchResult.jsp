@@ -19,7 +19,7 @@
 					<c:forEach var="movie" items="${mvList}">
 						<li>
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-							<img src="/project_semi/images/${movie.moviename}.jpg"> <span> ${movie.moviename} </span> </a>
+							<img src="/project_semi/posterUpload/${movie.poster}"> <span> ${movie.moviename} </span> </a>
 						</li>
 					</c:forEach>
 				</ul>

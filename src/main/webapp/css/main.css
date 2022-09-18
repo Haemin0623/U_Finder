@@ -4,12 +4,6 @@
 	margin-top: 3%;
 }
 
-.main img {
-	width: 100%;
-	height: 150px;
-	
-}
-
 .main ul li {
 	list-style: none;
 	float: left;
@@ -17,6 +11,11 @@
 
 .main_hot {
 	clear: both;
+}
+
+.main_ad img {
+	width: 100%;
+	height: 150px;
 }
 
 .main_hot ul li {

@@ -12,7 +12,7 @@
 	<div>
 		<table class="movieInfoForm">
 			<tr>
-				<th class="th1" rowspan="3" ><img src="/project_semi/images/${mvInfo.poster}.jpg" ></th>
+				<th class="th1" rowspan="3" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th></tr>
 			<tr>
 				<th>감독 : ${mvInfo.director } , 배우 : 쿼리 작성 후 연결</th></tr>

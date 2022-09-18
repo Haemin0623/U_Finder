@@ -7,11 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+
+
 </head>
 <body>
 	<div class="main">
 		<div class="main_ad">
-			<img alt="ad" src="/project_semi/images/chim.jpg"></li>
+			<img alt="ad" src="/project_semi/images/chim.jpg">
 		</div>
 		<%-- <c:if test="${not empty id}">
 			<div class="zzim">
@@ -26,16 +28,12 @@
 		<fieldset><legend>인기작</legend>
 			<div class="main_hot">
 				<ul><!-- 리스트 가져와서 반복문 돌리기 -->
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
-					<li><img alt="ad" src="/project_semi/images/chim.jpg"></li>
+					<c:forEach var="movie" items="${list }" >
+						<li>
+							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
+							<img alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</fieldset>	

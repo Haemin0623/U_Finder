@@ -17,3 +17,5 @@ select * from REVIEW;
 insert into review values (1, 1, 1, '재밋어요', 1, 'N');
 
 select r.*, m.moviename from review r, movie m where r.movieno = m.movieno;
+
+select m.*, rowNum from movie m where rowNum  <=  10 order by cnt desc;

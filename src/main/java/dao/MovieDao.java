@@ -69,4 +69,9 @@ public class MovieDao {
 	public int updateMovie(Movie mv) {
 		return session.update("moviens.update", mv);
 	}
+	
+	// 조회수 TOP10 조회
+	public List<Movie> hotMovie() {
+		return session.selectList("moviens.hotList");
+	}
 }

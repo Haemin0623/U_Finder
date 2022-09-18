@@ -33,6 +33,8 @@
 			#{netflix}, #{disney}, #{coupang}, #{tving},
 			#{genre}, 0, #{poster}, #{trailer})
 	</insert>
+	
+	<!-- 영화정보 수정 -->
 	<update id="update" parameterType="movie">
 		update movie set moviename=#{moviename}, story=#{story}, director=#{director},
 			playtime=#{playtime}, netflix=#{netflix}, disney=#{disney},
@@ -42,5 +44,12 @@
 			</if>
 			trailer=#{trailer} where movieno=#{movieno}	
 	</update>
+	
+	<!-- 조회수 TOP10 리스트 조회 -->
+	<select id="hotList" resultType="movie">
+		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 10 order by cnt desc
+	</select>
+	
+	
 	
 </mapper>

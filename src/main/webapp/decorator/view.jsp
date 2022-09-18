@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" type="text/css" href="/project_semi/css/main.css">
+
 <link rel="stylesheet" type="text/css" href="/project_semi/css/header.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">
@@ -18,8 +19,6 @@
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<deco:body></deco:body>
-
-	
 
 </body>
 </html>
