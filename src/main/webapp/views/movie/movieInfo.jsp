@@ -12,6 +12,7 @@
 	function sessionChk() {
 		if (${empty id}) {
 			alert("리뷰는 회원만 적을 수 있습니다.");
+			return false;
 		}
 	}
 </script>
@@ -56,11 +57,11 @@
 	
 	
 	<!-- 짧은댓글리뷰자리 -->
-	<form action="reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="sessionChk()">
-		<h4 class="sub_title">리뷰와 별점 등록</h4>                   <!-- 세션체크넣기 -->
+	<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
+		<h4 class="sub_title">리뷰와 별점 등록</h4>                   
 		<table>
 			<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
-			<tr><th><input type="range" name="star" min="0" max="10" step="1" value="0" required="required">
+			<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required">
 			<tr><th><input type="submit" value="등록"></th></tr>
 		</table>
 	</form>

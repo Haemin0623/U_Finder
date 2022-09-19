@@ -13,11 +13,10 @@ public class ReviewWrite implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		HttpSession session = request.getSession();
 		String id = request.getParameter("id");
 		MemberDao md = MemberDao.getInstance();
 		
-		Member member = new Member();
+		Member member = md.select(id);
 		int memberno = member.getMemberno();
 	
 		int movieno = Integer.parseInt(request.getParameter("movieno"));
@@ -36,9 +35,9 @@ public class ReviewWrite implements CommandProcess {
 		int result = rd.insertRv(review);
 				
 		request.setAttribute("result", result);
+		request.setAttribute("movieno",	movieno);
 		
-		
-		return "movieInfo";
+		return "rvResult";
 	}
 
 }
