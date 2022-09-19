@@ -1,11 +1,14 @@
 package dao;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import model.Tag;
 
 public class TagDao {
 	
@@ -32,5 +35,9 @@ public class TagDao {
 		}catch (Exception e) {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
+	}
+
+	public List<Tag> tagList(int movieno) {
+		return session.selectList("tagns.taglist", movieno);
 	}
 }

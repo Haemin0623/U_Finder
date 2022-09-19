@@ -36,7 +36,7 @@
 			<c:forEach var="member" items="${list }">
 				<tr>
 					<td>${member.memberno }</td>
-					<td>${member.email }</td>
+					<td>${member.id }</td>
 					<td>${member.password }</td>
 					<td>${member.nickname }</td>
 					<td>${member.netflix }</td>

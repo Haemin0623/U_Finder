@@ -2,7 +2,7 @@
 select * from movie;
 
 insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
-insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'n', 'n', 'n', 'y', '액션', 0, 'TopGunMaverick.jpg', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
+insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'n', 'n', 'n', 'y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
 insert into movie values (3, '공조', '남/북 형사의 예측불가 공조수사', '김성훈', 125, 'y', 'n', 'n', 'y', '범죄', 0, 'ConfidentialAssignment.jpg', 'https://www.youtube.com/watch?v=g4qQXXtaMqc');
 insert into movie values (4, '공조2: 인터내셔날', 'FBI까지 합세!', '이석훈', 129, 'y', 'n', 'n', 'n', '범죄', 0, 'ConfidentialAssignment2.jpg', 'https://www.youtube.com/watch?v=fzUKUfHeIYA');
 insert into movie values (5, '헤어질 결심', '헤어진다 ㅠ', '박찬욱', 138, 'n', 'n', 'n', 'y', '멜로', 0, 'DecisionToLeave.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');

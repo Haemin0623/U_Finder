@@ -3,8 +3,8 @@
 <mapper namespace="tagns">
 
 	<!-- 예시 -->
-	<select id="select" parameterType="string" resultType="member">
-		select * from member where id=#{id} and del='n'
+	<select id="taglist" parameterType="integer" resultType="tag">
+		select * from tag where movieno=#{movieno}
 	</select>
 	
 </mapper>
