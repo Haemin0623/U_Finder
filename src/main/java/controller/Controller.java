@@ -56,9 +56,9 @@ public class Controller extends HttpServlet {
 	     Iterator<Object> keyIter = pr.keySet().iterator();
 	     // message.do
 	     while( keyIter.hasNext() ) {
-	          String command = (String)keyIter.next(); 
+	          String command = (String)keyIter.next();
 	          // command : views/movie/searchResult.do
-	          String className = pr.getProperty(command); 
+	          String className = pr.getProperty(command);
 	          // className : service.SearchResult문자
 	          try {
 	               Class<?> commandClass = Class.forName(className);
@@ -80,7 +80,7 @@ public class Controller extends HttpServlet {
 		String view = null;
 	    CommandProcess com=null;
 	    try { // map key:list.do   ListAction객체
-//	  url : http://localhost(ip번호):8080/ch14/list.do
+//	  url : http://localhost(ip번호):8080/project_semi/views/movie/searchResult.do
 	    	  String command = request.getRequestURI();
 	    	  // command : /project_semi/views/movie/searchResult.do
 	    	  // request.getContextPath() : /project_semi
@@ -97,7 +97,9 @@ public class Controller extends HttpServlet {
 	          view = com.requestPro(request, response);
 	          // 메서드의 결과로 "list" 문자열이 리턴됨
 	          
-	    } catch(Throwable e) { throw new ServletException(e); } 
+	    } catch(Throwable e) {
+	    	throw new ServletException(e);
+	    } 
 //	 view는 pgm article에 보여줄 프로그램
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(view + ".jsp");
 	    dispatcher.forward(request, response);

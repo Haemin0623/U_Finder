@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<c:set var="id" value="${sessionScope.id }"></c:set>
 
+<link rel="stylesheet" type="text/css" href="/project_semi/css/main.css">
 
 </head>
 <body>
@@ -15,7 +17,8 @@
 		<div class="main_ad">
 			<img alt="ad" src="/project_semi/images/chim.jpg">
 		</div>
-		<%-- <c:if test="${not empty id}">
+		
+		<c:if test="${not empty id}">
 			<div class="zzim">
 				<ul>
 					<c:forEach var="" items="" >
@@ -23,7 +26,7 @@
 					</c:forEach>
 				</ul>
 			</div>
-		</c:if> --%>
+		</c:if>
 		
 		<fieldset><legend>인기작</legend>
 			<div class="main_hot">

@@ -4,7 +4,7 @@
 
 	<!-- 특정 회원이 작성한 모든 리뷰 -->
 	<select id="memberReviewList" parameterType="Integer" resultType="review">
-		select r.*, m.moviename from review r, movie m where r.memberno = #{memberno} and r.movieno = m.movieno
+		select distinct r.*, m.moviename from review r, movie m where r.memberno = #{memberno} and r.movieno = m.movieno
 	</select>
 	
 </mapper>
