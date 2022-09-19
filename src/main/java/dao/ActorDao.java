@@ -1,11 +1,14 @@
 package dao;
 
 import java.io.Reader;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import model.Actor;
 
 public class ActorDao {
 	
@@ -33,4 +36,13 @@ public class ActorDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
+	
+	// 영화에 출연하는 배우 정보
+	public List<Actor> list(int movieno) {
+		return session.selectList("actorns.select", movieno);
+	}
+
+
+
+
 }

@@ -14,6 +14,10 @@ public class Movie {
    private int cnt;
    private String poster;
    private String trailer;
+   
+   /* 태그, 배우 검색용 저장 공간 */
+   private String tag;     
+   private String actorname;
 	   
 	public int getMovieno() {
 		return movieno;
@@ -92,5 +96,17 @@ public class Movie {
 	}
 	public void setTrailer(String trailer) {
 		this.trailer = trailer;
+	}
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+	public String getActorname() {
+		return actorname;
+	}
+	public void setActorname(String actorname) {
+		this.actorname = actorname;
 	}
 }

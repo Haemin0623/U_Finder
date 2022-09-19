@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="actorns">
 
-	<!-- 예시 -->
-	<select id="select" parameterType="string" resultType="member">
-		select * from member where id=#{id} and del='n'
+	<!-- // 영화에 출연하는 배우 정보 -->
+	<select id="select" parameterType="integer" resultType="actor">
+		select actorname from actor where movieno = #{movieno}
 	</select>
 	
 </mapper>

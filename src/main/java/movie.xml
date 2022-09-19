@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="moviens">
-	<!-- 홈에서 영화 검색, 9월16일 작품명, 감독, 장르 검색만 가능 / 태그랑 배우는 테이블 채운 후 추가예정 -->
+	<!-- 홈에서 영화 검색 -->
 	<select id="search" parameterType="string" resultType="movie">
-		select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' 
-								or genre like '%'||#{searchWord}||'%' 
+		select m.*, t.tag from (select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' or genre like '%'||#{searchWord}||'%') m, (select * from tag where tag like '%'||#{searchWord}||'%') t where m.movieno = t.movieno
+		
+		union select distinct m.*, a.actorname from movie m, actor a where m.movieno = a.movieno and actorname like '%'||#{searchWord}||'%'
 	</select>
 	
 	<!-- 영화 상세 정보 -->
@@ -50,6 +51,9 @@
 		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 10 order by cnt desc
 	</select>
 	
-	
+	<!-- 조회수 증가 -->
+	<update id="readCount" parameterType="integer">
+		update movie set cnt = #{cnt}+1 where movieno = #{movieno}
+	</update>
 	
 </mapper>

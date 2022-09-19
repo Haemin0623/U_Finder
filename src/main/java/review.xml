@@ -7,4 +7,11 @@
 		select distinct r.*, m.moviename from review r, movie m where r.memberno = #{memberno} and r.movieno = m.movieno
 	</select>
 	
+	<!-- 리뷰 테이블에 리뷰 등록 -->
+	<insert id="insertRv" parameterType="review">
+		<selectKey keyProperty="reviewno" order="BEFORE" resultType="integer">
+			select nvl(max(reviewno), 0) + 1 reviewno from review
+		</selectKey>
+		insert into review values(#{reviewno}, #{movieno}, #{memberno}, #{content}, #{movielike}, 'n')
+	</insert>
 </mapper>

@@ -38,7 +38,7 @@ public class MemberDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
-	// joinResult, confirmId, loginResult
+	// joinResult, confirmId, loginResult : id로 회원정보 찾기
 	public Member select(String id) {
 		return (Member) session.selectOne("memberns.select", id);
 	}

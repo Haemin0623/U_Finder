@@ -74,4 +74,8 @@ public class MovieDao {
 	public List<Movie> hotMovie() {
 		return session.selectList("moviens.hotList");
 	}
+	// 조회수 증가
+	public void readCount(int movieno) {
+		session.update("moviens.readCount", movieno);
+	}
 }

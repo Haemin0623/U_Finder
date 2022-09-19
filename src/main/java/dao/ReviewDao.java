@@ -41,4 +41,13 @@ public class ReviewDao {
 	public List<Review> memberReviewList(int memberno) {
 		return session.selectList("reviewns.memberReviewList", memberno);
 	}
+
+	public int insertRv(Review review) {
+		return session.insert("reviewns.insertRv", review);
+	}
+	
+	// 리뷰 등록
+
+
+
 }
