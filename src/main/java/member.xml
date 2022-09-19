@@ -31,5 +31,4 @@
 		select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
-	
 </mapper>

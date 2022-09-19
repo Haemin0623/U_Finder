@@ -52,7 +52,7 @@
 		<tr>	
 			<th colspan="2"><input type="submit" value="확인">
 			<button onclick="delchk()">회원탈퇴</button>
-			<button onclick="location.href='mypageForm.jsp'">취소</button>
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?memberno=1'">취소</button>
 		</tr>				
 	</table>
 </form>

@@ -66,7 +66,4 @@ public class MemberDao {
 		return session.selectList("memberns.list", map);	// startRow, endRow 매개변수 2개를 보낼 수 없어서 map으로 묶어서 보냄
 	}
 
-	
-	
-
 }

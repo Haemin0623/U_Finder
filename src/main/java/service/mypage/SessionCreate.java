@@ -14,7 +14,7 @@ public class SessionCreate implements CommandProcess {
 		// 테스트용 세션 만들기
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("id", "test");
+		session.setAttribute("id","test@test.com");
 		
 		return "mypageForm";
 	}

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="id" value="${sessionScope.id }"></c:set>
-
+<!-- 	헤더 수정 시 작동여부 확인 필요 -->
 <!-- <script type="text/javascript" src="../js/jquery.js"></script> -->
 <script type="text/javascript">
 	if(${empty id || id == ''}) {

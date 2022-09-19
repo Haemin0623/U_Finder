@@ -15,7 +15,7 @@
 	<div id="title">
 		<h2>패스워드를 입력해주세요</h2>
 	</div>
-	<form action="project_semi/views/mypage/UpdateInfo.do">
+	<form action="project_semi/views/mypage/UpdateInfo.do?memberno=${member.memberno }">
 		<div>
 			<table>
 				<tr>

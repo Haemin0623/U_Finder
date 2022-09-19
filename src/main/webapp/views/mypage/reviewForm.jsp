@@ -41,7 +41,7 @@
 		</form>
 	</div>
 	<div id="historyback" align="center">
-		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do'">이전</button>
+		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?memberno=${member.memberno }'">이전</button>
 	</div>
 </body>
 </html>
