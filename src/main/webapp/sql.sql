@@ -2,18 +2,18 @@
 drop table movie cascade constraints;
 create table movie (
     movieno number(4) primary key not null,
-    moviename varchar2(50) not null,
-    story varchar2(1000),
-    director varchar2(20),
+    moviename varchar2(100) not null,
+    story varchar2(4000),
+    director varchar2(50),
     playtime number(4),
     netflix varchar2(1) default 'N' not null,
     disney varchar2(1) default 'N' not null,
     coupang varchar2(1) default 'N' not null,
     tving varchar2(1) default 'N' not null,
-    genre varchar2(20),
-    cnt number(4) default 0 not null,
-    poster varchar2(50),
-    trailer varchar2(500)
+    genre varchar2(50),
+    cnt number(10) default 0 not null,
+    poster varchar2(100),
+    trailer varchar2(1000)
 );
 select * from movie;
 
@@ -21,7 +21,7 @@ select * from movie;
 drop table member cascade constraints;
 create table member (
     memberno number(4) primary key not null,
-    email varchar2(30) not null,
+    id varchar2(30) not null,
     password varchar2(30) not null,
     nickname varchar2(30) not null,
     netflix varchar2(1) default 'N' not null,
@@ -36,12 +36,14 @@ select * from member;
 drop table tag;
 create table tag (
     tagno number(4) primary key not null,
-    tag varchar2(20) not null,
+    tag varchar2(50) not null,
     movieno number(4) not null,
     constraint fk_tag foreign key(movieno) references movie(movieno)
 );
 select * from tag;
+
 -- 캘린더
+drop table calendar;
 create table calendar (
     calno number(4) primary key not null,
     movieno number(4) not null,
@@ -49,6 +51,7 @@ create table calendar (
     constraint fk_calendar foreign key(movieno) references movie(movieno)
 );
 select * from calendar;
+
 -- 찜
 drop table pick;
 create table pick (
@@ -66,7 +69,7 @@ create table review (
     reviewno number(4) primary key not null,
     movieno number(4) not null,
     memberno number(4) not null,
-    content varchar2(200) not null,
+    content varchar2(500) not null,
     movielike number(1) default 0 not null,
     del varchar2(1) default 'N' not null,
     constraint fk_review1 foreign key(movieno) references movie(movieno),
@@ -75,9 +78,10 @@ create table review (
 select * from review;
 
 -- 배우
+drop table actor;
 create table actor (
     actorno number(4) primary key not null,
-    actorname varchar2(30) not null,
+    actorname varchar2(100) not null,
     movieno number(4) not null,
     constraint fk_actor foreign key(movieno) references movie(movieno)
 );

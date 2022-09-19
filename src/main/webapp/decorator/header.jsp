@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,12 @@
 						</form>
 					</div>
 				</li>
-			<li id="login"><a href="login.jsp">로그인</a></li>
+			<c:if test="${empty id }">
+				<li id="login"><a href="login.jsp">로그인</a></li>			
+			</c:if>
+			<c:if test="${not empty id }">
+				<li id="login"><a href="login.jsp">마이페이지</a></li>			
+			</c:if>
 			<li id="login"><a href="calendar.jsp">캘린더</a></li>
 		</ul>
 	</div>

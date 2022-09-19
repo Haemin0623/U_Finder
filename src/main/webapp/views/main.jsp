@@ -17,15 +17,19 @@
 		<div class="main_ad">
 			<img alt="ad" src="/project_semi/images/chim.jpg">
 		</div>
-		
 		<c:if test="${not empty id}">
-			<div class="zzim">
-				<ul>
-					<c:forEach var="" items="" >
-						<li><img alt="ad" src="/project_semi/haemin/images/${img_name }.jpg"></li>
-					</c:forEach>
-				</ul>
-			</div>
+			<fieldset><legend>찜목록</legend>
+				<div class="main_hot">
+					<ul>
+						<c:forEach var="movie" items="${list }" >
+							<li>
+								<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
+								<img alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</fieldset>
 		</c:if>
 		
 		<fieldset><legend>인기작</legend>
