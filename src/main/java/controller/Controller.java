@@ -88,11 +88,9 @@ public class Controller extends HttpServlet {
 	    	  // request.getContextPath().length()+1 : 14 + 1
 		      command = command.substring(request.getContextPath().length()+1); 
 		      // command는 /project_semi/ (길이:15)이 빠진 views/movie/searchResult.do가 된다
-		      
 	          com = (CommandProcess)commandMap.get(command);
 	          // command : key(views/movie/searchResult.do)로 value인 ListAction 객체를 받아옴
 	          // com : service.ListAction객체를 CommandProcess로 형변환
-	          
 	          // 자식 즉 ListAction객체의 requestPro()메소드 실행
 	          view = com.requestPro(request, response);
 	          // 메서드의 결과로 "list" 문자열이 리턴됨

@@ -21,7 +21,7 @@
 				<tr>
 					<th>패스워드 <input type="text" name="password" autofocus="autofocus" required="required">
 					<input type="submit" value="확인">
-					<button onclick="location.href='/project_semi/views/mypage/mypageForm.do'">취소</button>
+					<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
 					</th>
 				</tr>
 			</table>

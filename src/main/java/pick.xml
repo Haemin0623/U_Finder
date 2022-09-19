@@ -6,5 +6,12 @@
 	<select id="select" parameterType="string" resultType="member">
 		select * from member where id=#{id} and del='n'
 	</select>
-	
+	<!--id로 찜한 영화 poster 출력 -->
+	<select id="pickPoster" parameterType="string" resultType="string">
+	select poster from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id}))
+	</select>
+	<select id="list" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from (select * from pick order by pickno) a)
+			where rn between #{startRow} and #{endRow}
+	</select>
 </mapper>

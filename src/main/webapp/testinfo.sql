@@ -174,13 +174,4 @@ select r.*, m.moviename from review r, movie m where r.movieno = m.movieno;
 
 select m.*, rowNum from movie m where rowNum  <=  10 order by cnt desc;
 
-alter table member rename column email to id;
-select * from pick;
-
-insert into pick (pickno, movieno, memberno)  values (1, 1, 1);
-insert into pick (pickno, movieno, memberno)  values (2, 2, 1);
-insert into pick (pickno, movieno, memberno)  values (3, 3, 1);
-select poster from movie where movieno in
-	(select movieno from pick where memberno in(select memberno from member where id = 'test@test.com'));
-
-select distinct p.*, m.poster from pick p, movie m where p.movieno=m.movieno and p.memberno=#{memberno};
+select moviename from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id));
