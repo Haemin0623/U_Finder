@@ -7,11 +7,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
-<c:set var="id" value='${sessionScope.id}'></c:set>
-<script>
+<link rel="stylesheet" href="/project_semi/js/jquery-ui.css">
+<style type="text/css">
+	.updateform {
 
-</script>
+		display: none;
+	}
+</style> 
+<c:set var="id" value='${sessionScope.id}'></c:set>
+<script type="text/javascript" src="/project_semi/js/jquery.js"></script>
+<script src="/project_semi/js/jquery-ui.min.js"></script>
+<script src="/project_semi/js/jquery-ui.js"></script>
 <script type="text/javascript">
+
+	$(function() {
+		$('.updateBtn').click(function() {
+			$('.updateform').show();
+		
+		});
+	});
+
 	// 리뷰 세션 체크
 	function sessionChk() {
 		if (${empty id}) {
@@ -65,7 +80,20 @@
 					<c:if test="${rv.del != 'y' }">
 						${rv.content } : ${rv.movielike }점 : ${rv.nickname }
 						<c:if test="${id == rv.id }">
-							<button onclick="location.href='/project_semi/views/movie/reviewUpdateForm.do?reviewno=${rv.reviewno }&movieno=${rv.movieno}'">수정</button> 
+							<button class="updateBtn" <%-- onclick="location.href='?reviewno=${rv.reviewno }&movieno=${rv.movieno}'" --%>>수정</button> 
+								<div class="updateform">
+									<h1>리뷰 수정</h1>
+									<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
+										<input type="hidden" name="reviewno" value = "${rv.reviewno }">
+										<input type="hidden" name="movieno" value = "${rv.movieno }">
+										<input type="hidden" name="memberno" value = "${rv.memberno }">
+									<table>
+										<tr><th><textarea name="content" >${rv.content }</textarea></th></tr>
+										<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
+										<tr><th><input type="submit" value="수정"></th></tr>
+									</table>
+									</form>
+								</div> 
 							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
 						</c:if><p>
 					</c:if>
