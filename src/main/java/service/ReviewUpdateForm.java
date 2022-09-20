@@ -4,8 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ReviewDao;
+import model.Review;
 
-public class ReviewDel implements CommandProcess {
+public class ReviewUpdateForm implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -13,13 +14,12 @@ public class ReviewDel implements CommandProcess {
 		int movieno = Integer.parseInt(request.getParameter("movieno"));
 		
 		ReviewDao rd = ReviewDao.getInstance();
-		int result = rd.reviewDel(reviewno);
+		Review review = rd.reviewShow(reviewno);
 		
-		
-		request.setAttribute("result", result);
+		request.setAttribute("review", review);
 		request.setAttribute("movieno", movieno);
 		
-		return "rvDelResult";
+		return "reviewUpdateForm";
 	}
 
 }

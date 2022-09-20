@@ -47,9 +47,24 @@ public class ReviewDao {
 		return session.insert("reviewns.insertRv", review);
 	}
 	
-	// 특정 영화에대한 리뷰 전체 불러오기
+	// 특정 영화에 대한 리뷰 전체 불러오기
 	public List<Review> reviewList(int movieno) {
 		return session.selectList("reviewns.reviewList", movieno);
+	}
+	
+	// 리뷰 삭제
+	public int reviewDel(int reviewno) {
+		return session.delete("reviewns.reviewDel", reviewno);
+	}
+	
+	// 리뷰 수정시 1개 불러오기
+	public Review reviewShow(int reviewno) {
+		return (Review) session.selectOne("reviewns.reviewShow", reviewno);
+	}
+	
+	// 리뷰 수정
+	public int reviewUpdate(Review review) {
+		return session.update("reviewns.reviewUpdate", review);
 	}
 	
 }

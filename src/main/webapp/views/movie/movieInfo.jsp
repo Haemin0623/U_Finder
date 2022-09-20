@@ -17,10 +17,10 @@
 		}
 	}
 	// 리뷰 삭제 확인
-	function reviewDel() {
+	function reviewDel(reviewno, movieno) {
 		var delchk = confirm("리뷰를 정말 삭제하시겠습니까?");
 		if (delchk) {
-			location.href="/project_semi/views/movie/reviewDel.do?movieno=${rv.movieno}&rvDel=${rv.del}";
+			location.href="/project_semi/views/movie/reviewDel.do?reviewno="+reviewno+"&movieno="+movieno;
 		}
 	}
 </script>
@@ -56,10 +56,15 @@
 		</c:if>
 		<c:if test="${not empty rvList}">
 				<c:forEach var="rv" items="${rvList}">
-					${rv.content } : ${rv.movielike }점 : ${rv.nickname } 
-					<c:if test="${id == rv.id }">
-						<button onclick="location.href='reviewUpdate.jsp?movieno=${movieno}'">수정</button> 
-						<button onclick="reviewDel()">삭제</button><p>
+					<c:if test="${rv.del == 'y' }">
+					 삭제된 리뷰입니다. <p>
+					</c:if>
+					<c:if test="${rv.del != 'y' }">
+						${rv.content } : ${rv.movielike }점 : ${rv.nickname }
+						<c:if test="${id == rv.id }">
+							<button onclick="location.href='/project_semi/views/movie/reviewUpdateForm.do?reviewno=${rv.reviewno }&movieno=${rv.movieno}'">수정</button> 
+							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
+						</c:if><p>
 					</c:if>
 				</c:forEach>
 		</c:if>
@@ -78,7 +83,7 @@
 		<h4 class="sub_title">리뷰와 별점 등록</h4>                   
 		<table>
 			<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
-			<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required">
+			<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>
 			<tr><th><input type="submit" value="등록"></th></tr>
 		</table>
 	</form>

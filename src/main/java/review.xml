@@ -19,4 +19,19 @@
 	<select id="reviewList" parameterType="integer" resultType="review">
 		select r.*, mm.nickname, mm.id from (select r.* from review r, movie m where r.movieno = m.movieno and m.movieno=#{movieno}) r, member mm where mm.memberno=r.memberno
 	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="reviewDel" parameterType="integer">
+		update review set del='y' where reviewno = #{reviewno}
+	</delete>
+	
+	<!-- 리뷰 1개 불러오기 -->
+	<select id="reviewShow" parameterType="integer" resultType="review">
+		select * from review where reviewno = #{reviewno}
+	</select>
+	
+	<!-- 리뷰 수정 -->
+	<update id="reviewUpdate" parameterType="review" >
+		update review set content = #{content}, movielike = #{movielike}
+	</update>
 </mapper>

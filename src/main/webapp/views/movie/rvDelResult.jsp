@@ -8,17 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <c:if test="${result > 0 }">
 	<script type="text/javascript">
-		alert("수정 성공");
+		alert("삭제 성공");
 		location.href="/project_semi/views/movie/movieInfo.do?movieno=${movieno}";
 	</script>
 </c:if>
 <c:if test="${result == 0 }">
 	<script type="text/javascript">
-		alert("수정 실패");
+		alert("삭제 실패");
 		history.back();
 	</script>
 </c:if>
+
 </body>
 </html>
