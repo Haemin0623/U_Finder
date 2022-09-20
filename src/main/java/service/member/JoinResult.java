@@ -19,7 +19,8 @@ public class JoinResult implements CommandProcess {
 		String disney = request.getParameter("disney");
 		String coupang = request.getParameter("coupang");
 		String tving = request.getParameter("tving");
-
+		
+		// member 화면에서 입력한 데이터를 받기위한 객체
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
@@ -29,11 +30,13 @@ public class JoinResult implements CommandProcess {
 		member.setDisney(disney);
 		member.setCoupang(coupang);
 		member.setTving(tving);
-
+		
+		//member2 DB에서 중복있는지 확인하기 위한 객체
 		MemberDao md = MemberDao.getInstance();
-		Member m1 = md.select(id);
+		Member member2 = md.select(id);
+		
 		int result = 0;
-		if (m1 == null) {
+		if (member2 == null) {
 			result = md.insert(member);
 		} else
 			result = -1;

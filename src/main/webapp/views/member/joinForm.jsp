@@ -8,31 +8,42 @@
 
 
 <script type="text/javascript">
-/* 아이디 중복체크 */
-	function chkId() {
-		if (!frm.id.value) {
-			alert("이메일을 입력하세요")
+ /* 아이디 중복체크 */
+ 
+function chkId(){
+	/* 이메일 유효성 검사 */
+	var reg_id = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+	
+	if(!frm.id.value) {
+		alert("이메일을 입력하세요")
+		frm.id.focus();
+		return false;
+	}else{
+		if(!reg_id.test(frm.id.value)){
+			alert("올바른 이메일 형식이 아닙니다.");
 			frm.id.focus();
 			return false;
-		} else {
-			$.post("confirmId.do", "id="+frm.id.value, function (data) {
+		}else{
+			
+			/* 아이디 중복확인 */
+			$.post("confirmId.do", "id="+frm.id.value, function(data){
 				$('#err_id').html(data);
-				
-			})
-		}
+			});
+		} 
 	}
+}
 	
-// 	function chkPass(){
-// 		var pw = $("#password").val();
-// 		if(pw.length<8) {
-// 			$('#err_pass').html("8자리 이상 입력해주세요");
-// 			frm.password.focus();
-// 			frm.password.value="";
-// 			return false;
-// 		}else {
-// 			$('#err_pass').html("사용가능한 비밀번호입니다");
-// 		}
-// 	}
+ 	function chkPass(){
+ 		var pw = $("#password").val();
+ 		if(pw.length<8) {
+ 			$('#err_pass').html("8자리 이상 입력해주세요");
+ 			frm.password.focus();
+ 			frm.password.value="";
+ 			return false;
+ 		}else {
+ 			$('#err_pass').html("사용가능한 비밀번호입니다");
+ 		}
+ 	}
 	
 /* 비밀번호 확인 일치여부 체크 */
 	
@@ -46,19 +57,19 @@
 		}
 
 	}
-	/* 닉네임 중복체크 */
-	function chkNick() {
-	if (!frm.nickname.value) {
-			alert("별명을 입력하세요")
-			frm.nickname.focus();
-			return false;
-		} else {
-			frm.checked_nick.value = "y";
-		}
-		$.post("confirmNick_nm.do", "nickname=" + frm.nickname.value, function(data) {
-			$('#err').html(data);
-		});
-	}
+// 	/* 닉네임 중복체크 */
+// 	function chkNick() {
+// 	if (!frm.nickname.value) {
+// 			alert("별명을 입력하세요")
+// 			frm.nickname.focus();
+// 			return false;
+// 		} else {
+// 			frm.checked_nick.value = "y";
+// 		}
+// 		$.post("confirmNick_nm.do", "nickname=" + frm.nickname.value, function(data) {
+// 			$('#err').html(data);
+// 		});
+// 	}
 
 	/* 아이디, 닉네임 중복확인 버튼 눌렀는지 체크	 */
 	function chk() {

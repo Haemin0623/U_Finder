@@ -1,9 +1,5 @@
 -- 영화
 select * from movie;
-delete from movie where movieno=1;
-delete from movie where movieno=2;
-delete from movie where movieno=3;
-delete from movie where movieno=4;
 
 insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
 insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'n', 'n', 'n', 'y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
