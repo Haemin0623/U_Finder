@@ -42,28 +42,28 @@
 			<tr>
 				<th>OTT</th>
 				<td>
-					<c:if test="${movie.netflix == 'Y' }">
+					<c:if test="${movie.netflix == 'y' }">
 						넷플릭스<input type="checkbox" name="netflix" checked="checked" value="Y">
 					</c:if>
-					<c:if test="${movie.netflix != 'Y' }">
+					<c:if test="${movie.netflix != 'y' }">
 						넷플릭스<input type="checkbox" name="netflix" value="Y">
 					</c:if>
-					<c:if test="${movie.disney == 'Y' }">
+					<c:if test="${movie.disney == 'y' }">
 						디즈니+<input type="checkbox" name="disney" checked="checked" value="Y">
 					</c:if>
-					<c:if test="${movie.disney != 'Y' }">
+					<c:if test="${movie.disney != 'y' }">
 						디즈니+<input type="checkbox" name="disney" value="Y">
 					</c:if>
-					<c:if test="${movie.coupang == 'Y' }">
+					<c:if test="${movie.coupang == 'y' }">
 						쿠팡플레이<input type="checkbox" name="coupang" checked="checked" value="Y">
 					</c:if>
-					<c:if test="${movie.coupang != 'Y' }">
+					<c:if test="${movie.coupang != 'y' }">
 						쿠팡플레이<input type="checkbox" name="coupang" value="Y">
 					</c:if>
-					<c:if test="${movie.tving == 'Y' }">
+					<c:if test="${movie.tving == 'y' }">
 						티빙<input type="checkbox" name="tving" checked="checked" value="Y">
 					</c:if>
-					<c:if test="${movie.tving != 'Y' }">
+					<c:if test="${movie.tving != 'y' }">
 						티빙<input type="checkbox" name="tving" value="Y">
 					</c:if>			
 				</td>

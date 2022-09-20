@@ -1,7 +1,5 @@
 package service.admin;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,21 +7,28 @@ import dao.TagDao;
 import model.Tag;
 import service.CommandProcess;
 
-public class MovieTagListAction implements CommandProcess {
+public class TagUpdateAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
+		int tagno = Integer.valueOf(request.getParameter("tagno"));
+		String tagcontent = request.getParameter("tag");
 		int movieno = Integer.valueOf(request.getParameter("movieno"));
 		
 		TagDao td = TagDao.getInstance();
+		Tag tag = new Tag();
 		
-		List<Tag> list = td.tagList(movieno);
+		tag.setTagno(tagno);
+		tag.setTag(tagcontent);
 		
-		request.setAttribute("list", list);
+		int result = 0;
+		result = td.update(tag);
+		
+		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);
 		
-		return "movieTagList";
+		return "tagUpdateResult";
 	}
 
 }

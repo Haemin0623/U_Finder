@@ -1,29 +1,28 @@
 package service.admin;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.TagDao;
-import model.Tag;
 import service.CommandProcess;
 
-public class MovieTagListAction implements CommandProcess {
+public class TagDeleteAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
-		int movieno = Integer.valueOf(request.getParameter("movieno"));
+		int tagno = Integer.parseInt(request.getParameter("tagno"));
+		int movieno = Integer.parseInt(request.getParameter("movieno"));
 		
 		TagDao td = TagDao.getInstance();
 		
-		List<Tag> list = td.tagList(movieno);
+		int result = 0;
+		result = td.delete(tagno);
 		
-		request.setAttribute("list", list);
+		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);
 		
-		return "movieTagList";
+		return "tagDeleteResult";
 	}
 
 }

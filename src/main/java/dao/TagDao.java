@@ -40,4 +40,16 @@ public class TagDao {
 	public List<Tag> tagList(int movieno) {
 		return session.selectList("tagns.taglist", movieno);
 	}
+
+	public int insert(Tag tag) {
+		return session.insert("tagns.insert", tag);
+	}
+
+	public int delete(int tagno) {
+		return session.delete("tagns.delete", tagno);
+	}
+
+	public int update(Tag tag) {
+		return session.update("tagns.update", tag);
+	}
 }

@@ -17,6 +17,8 @@
 		<tr>
 			<th>태그번호</th>
 			<th>태그</th>
+			<th>수정</th>
+			<th>삭제</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
@@ -28,9 +30,11 @@
 				<tr>
 					<td>${tag.tagno }</td>
 					<td>${tag.tag }</td>
+					<td><button onclick="location.href='/project_semi/views/admin/tagUpdateForm.do?tagno=${tag.tagno}&tag=${tag.tag }&movieno=${movieno}'">수정</button></td>
+					<td><button onclick="location.href='/project_semi/views/admin/tagDeleteAction.do?tagno=${tag.tagno}&movieno=${movieno}'">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</c:if>
 	</table>
-	
+	<button onclick="location.href='/project_semi/views/admin/tagAddForm.do?movieno=${movieno}'">태그추가</button>
 	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
