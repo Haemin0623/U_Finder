@@ -6,7 +6,6 @@
 	<excludes>
 		<pattern>/views/home.jsp</pattern>
 		<pattern>/views/admin/*</pattern>
-		<pattern>/views/mypage/*</pattern>
 		<!-- <pattern>/views/main.jsp</pattern> -->
 	</excludes>
 </decorators>

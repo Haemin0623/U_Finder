@@ -2,7 +2,7 @@ package model;
 
 public class Member {
 	private int memberno;
-	private String email;
+	private String id;
 	private String password;
 	private String nickname;
 	private String netflix;
@@ -10,18 +10,8 @@ public class Member {
 	private String coupang;
 	private String tving;
 	private String memberout;
-	private String id;
-	private String del;
-	private String confirmPassword;
 	
 
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
 
 	public int getMemberno() {
 		return memberno;
@@ -31,13 +21,6 @@ public class Member {
 		this.memberno = memberno;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getPassword() {
 		return password;
@@ -103,12 +86,6 @@ public class Member {
 		this.id = id;
 	}
 
-	public String getDel() {
-		return del;
-	}
-
-	public void setDel(String del) {
-		this.del = del;
-	}
+	
 
 }

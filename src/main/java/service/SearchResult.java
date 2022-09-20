@@ -20,6 +20,9 @@ public class SearchResult implements CommandProcess {
 		request.setAttribute("mvList", mvList);
 		request.setAttribute("searchWord", searchWord);
 		
+		
+		
+		
 		return "searchResult";
 	}
 

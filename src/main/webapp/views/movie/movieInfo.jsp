@@ -9,10 +9,18 @@
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript">
+	// 리뷰 세션 체크
 	function sessionChk() {
 		if (${empty id}) {
 			alert("리뷰는 회원만 적을 수 있습니다.");
 			return false;
+		}
+	}
+	// 리뷰 삭제 확인
+	function reviewDel() {
+		var delchk = confirm("리뷰를 정말 삭제하시겠습니까?");
+		if (delchk) {
+			location.href="/project_semi/views/movie/reviewDel.do?movieno=${rv.movieno}&rvDel=${rv.del}";
 		}
 	}
 </script>
@@ -40,12 +48,21 @@
 		</table>
 	</div> <!-- 영화 정보 -->
 	
-	<!-- 리뷰리스트  -->
+	<!-- 전체 리뷰 리스트  -->
 	<h4>리뷰</h4>
-	<div>
-		<form action="reviewList">
-			
-		</form>
+	<div> <!-- 전체리뷰 가져오고 + 수정 삭제 가능하게하기. 단 수정삭제시 그 글에대한 회원 id 와 로그인 세션과 id가 맞아야함 -->
+		<c:if test="${empty rvList }">
+			리뷰 없음
+		</c:if>
+		<c:if test="${not empty rvList}">
+				<c:forEach var="rv" items="${rvList}">
+					${rv.content } : ${rv.movielike }점 : ${rv.nickname } 
+					<c:if test="${id == rv.id }">
+						<button onclick="location.href='reviewUpdate.jsp?movieno=${movieno}'">수정</button> 
+						<button onclick="reviewDel()">삭제</button><p>
+					</c:if>
+				</c:forEach>
+		</c:if>
 	</div>
 	
 	

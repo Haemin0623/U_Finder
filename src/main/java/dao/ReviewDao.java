@@ -42,12 +42,14 @@ public class ReviewDao {
 		return session.selectList("reviewns.memberReviewList", memberno);
 	}
 
+	// 리뷰 등록
 	public int insertRv(Review review) {
 		return session.insert("reviewns.insertRv", review);
 	}
 	
-	// 리뷰 등록
-
-
-
+	// 특정 영화에대한 리뷰 전체 불러오기
+	public List<Review> reviewList(int movieno) {
+		return session.selectList("reviewns.reviewList", movieno);
+	}
+	
 }

@@ -7,7 +7,10 @@ public class Review {
     private String content;
     private int movielike;
     private String del;
+    
     private String moviename;	// 작성리뷰에서 번호로 영화이름 가져올때 쓸 moviename
+    private String nickname;	// 작성리뷰에서 해당영화의 리뷰에 대한 member의 닉네임 가져올 때 사용.
+    private String id;			// 작성리뷰에서 리뷰 삭제시 사용
     
 	public int getReviewno() {
 		return reviewno;
@@ -50,5 +53,17 @@ public class Review {
 	}
 	public void setMoviename(String moviename) {
 		this.moviename = moviename;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }
