@@ -14,8 +14,8 @@ public class ReviewWrite implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
-		MemberDao md = MemberDao.getInstance();
 		
+		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(id);
 		int memberno = member.getMemberno();
 	

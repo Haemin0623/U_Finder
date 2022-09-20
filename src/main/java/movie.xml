@@ -3,9 +3,11 @@
 <mapper namespace="moviens">
 	<!-- 홈에서 영화 검색 -->
 	<select id="search" parameterType="string" resultType="movie">
-		select m.*, t.tag from (select * from movie where moviename like '%'||#{searchWord}||'%' or director like '%'||#{searchWord}||'%' or genre like '%'||#{searchWord}||'%') m, (select * from tag where tag like '%'||#{searchWord}||'%') t where m.movieno = t.movieno
-		
-		union select distinct m.*, a.actorname from movie m, actor a where m.movieno = a.movieno and actorname like '%'||#{searchWord}||'%'
+		select m.* from movie m, tag t where m.movieno = t.movieno and (moviename like '%'||#{searchWord}||'%' 
+																	or director like '%'||#{searchWord}||'%' 
+																	or genre like '%'||#{searchWord}||'%' 
+																	or tag like '%'||#{searchWord}||'%')
+		union select m.* from movie m, actor a where m.movieno = a.movieno and actorname like '%'||#{searchWord}||'%'
 	</select>
 	
 	<!-- 영화 상세 정보 -->
