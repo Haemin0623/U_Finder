@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
 <c:set var="id" value='${sessionScope.id}'></c:set>
+<script>
+
+</script>
 <script type="text/javascript">
 	// 리뷰 세션 체크
 	function sessionChk() {

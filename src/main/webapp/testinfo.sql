@@ -62,6 +62,10 @@ insert into tag values (21, '부엉이', 11);
 insert into tag values (22, '지팡이', 11);
 insert into tag values (23, '부엉이', 12);
 insert into tag values (24, '지팡이', 12);
+insert into tag values (25, '부엉이', 13);
+insert into tag values (26, '지팡이', 13);
+insert into tag values (27, '부엉이', 14);
+insert into tag values (28, '지팡이', 14);
 
 
 -- 배우

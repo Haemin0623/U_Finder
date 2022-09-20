@@ -11,7 +11,7 @@ public class Movie {
    private String coupang;
    private String tving;
    private String genre;
-   private int cnt;
+   private int mvcnt;
    private String poster;
    private String trailer;
    
@@ -79,11 +79,11 @@ public class Movie {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public int getCnt() {
-		return cnt;
+	public int getMvcnt() {
+		return mvcnt;
 	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
+	public void setMvcnt(int mvcnt) {
+		this.mvcnt = mvcnt;
 	}
 	public String getPoster() {
 		return poster;

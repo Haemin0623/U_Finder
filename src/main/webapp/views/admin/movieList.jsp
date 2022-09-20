@@ -49,7 +49,7 @@
 					<td>${movie.coupang }</td>
 					<td>${movie.tving }</td>
 					<td>${movie.genre }</td>
-					<td>${movie.cnt }</td>
+					<td>${movie.mvcnt }</td>
 					<c:if test="${not empty movie.poster }">
 						<td><img style="width: 100px" alt="" src="/project_semi/posterUpload/${movie.poster }"> ${movie.poster }</td>					
 					</c:if>

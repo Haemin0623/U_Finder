@@ -16,6 +16,7 @@ create table movie (
     trailer varchar2(1000)
 );
 select * from movie;
+alter table movie rename column cnt to mvcnt;
 
 -- 회원
 drop table member cascade constraints;

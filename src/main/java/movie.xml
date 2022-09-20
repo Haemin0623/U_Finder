@@ -55,7 +55,7 @@
 	
 	<!-- 조회수 증가 -->
 	<update id="readCount" parameterType="integer">
-		update movie set cnt = #{cnt}+1 where movieno = #{movieno}
+		update movie set mvcnt = #{mvcnt}+1 where movieno = #{movieno}
 	</update>
 	
 </mapper>
