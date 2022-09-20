@@ -13,7 +13,6 @@ public class JoinResult implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		String confirmPassword = request.getParameter("confirmPassword");
 		String nickname = request.getParameter("nickname");
 		String netflix = request.getParameter("netflix");
 		String disney = request.getParameter("disney");
@@ -24,7 +23,6 @@ public class JoinResult implements CommandProcess {
 		Member member = new Member();
 		member.setId(id);
 		member.setPassword(password);
-		member.setConfirmPassword(confirmPassword);
 		member.setNickname(nickname);
 		member.setNetflix(netflix);
 		member.setDisney(disney);

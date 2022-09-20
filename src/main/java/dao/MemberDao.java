@@ -43,12 +43,12 @@ public class MemberDao {
 		return (Member) session.selectOne("memberns.select", id);
 	}
 	
-	// confirmNick_nm
+	// confirmNick_nm : 닉네임중복확인
 	public Member confirmNick(String nickname) {
 		return (Member) session.selectOne("memberns.confirmNick", nickname);
 	}
 	
-	// joinResult, 
+	// joinResult: 회원가입
 	public int insert(Member member) {
 		return session.insert("memberns.insert", member);
 	}
@@ -64,6 +64,11 @@ public class MemberDao {
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
 		return session.selectList("memberns.list", map);	// startRow, endRow 매개변수 2개를 보낼 수 없어서 map으로 묶어서 보냄
+	}
+
+	// id로 비번찾기
+	public Member findPassword(String id, String password) {
+		return (Member) session.selectOne("memberns.select",id);
 	}
 
 }

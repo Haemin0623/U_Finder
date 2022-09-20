@@ -10,7 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			location.href="main.jsp";
+			location.href="/project_semi/views/main.do";
 		</script>
 	</c:if>
 	

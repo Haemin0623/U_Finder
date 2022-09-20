@@ -8,42 +8,43 @@
 
 
 <script type="text/javascript">
+
  /* 아이디 중복체크 */
  
-function chkId(){
-	/* 이메일 유효성 검사 */
-	var reg_id = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+// function chkId(){
+// 	/* 이메일 유효성 검사 */
+// 	var reg_id = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 	
-	if(!frm.id.value) {
-		alert("이메일을 입력하세요")
-		frm.id.focus();
-		return false;
-	}else{
-		if(!reg_id.test(frm.id.value)){
-			alert("올바른 이메일 형식이 아닙니다.");
-			frm.id.focus();
-			return false;
-		}else{
-			
-			/* 아이디 중복확인 */
-			$.post("confirmId.do", "id="+frm.id.value, function(data){
-				$('#err_id').html(data);
-			});
-		} 
-	}
-}
-	
- 	function chkPass(){
- 		var pw = $("#password").val();
- 		if(pw.length<8) {
- 			$('#err_pass').html("8자리 이상 입력해주세요");
- 			frm.password.focus();
- 			frm.password.value="";
- 			return false;
- 		}else {
- 			$('#err_pass').html("사용가능한 비밀번호입니다");
- 		}
- 	}
+//  	if(!frm.id.value) {
+// 		alert("이메일을 입력하세요")
+// 		frm.id.focus();
+// 		return false;
+// 	}else{
+// 		if(!reg_id.test(frm.id.value)){
+// 			alert("올바른 이메일 형식이 아닙니다.");
+// 			frm.id.focus();
+// 			return false;
+//  		}
+// 		else{
+// 			/* 아이디 중복확인 */
+// 			$.post("/project_semi/views/member/confirmId.do", "id="+frm.id.value, function(data){
+// 				$('#err_id').html(data);
+// 			});
+// 		} 	
+} 
+
+
+// function chkPass(){
+//  		var pw = $("#password").val();
+//  		if(pw.length<8) {
+//  			$('#err_pass').html("8자리 이상 입력해주세요");
+//  			frm.password.focus();
+//  			frm.password.value="";
+//  			return false;
+//  		}else {
+//  			$('#err_pass').html("사용가능한 비밀번호입니다");
+//  		}
+//  	}
 	
 /* 비밀번호 확인 일치여부 체크 */
 	
@@ -88,8 +89,8 @@ function chkId(){
 			<th>
 				<!-- 아이디 -->
 				<div class="check">
-					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)">
-					<button class ="chk-btn" onclick="chkId();">중복체크</button>
+					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)" >
+<!-- 					<button class ="chk-btn" onclick="chkId();"> 중복체크 </button> -->
 					<div class="chk_msg" id="err_id"></div>
 				</div>
 			</th>

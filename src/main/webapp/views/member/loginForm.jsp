@@ -10,7 +10,7 @@
 <body>
 
 	<div class="container">
-	<form action ="views/member/loginResult.do" method="post">
+	<form action ="/project_semi/views/member/loginResult.do" method="post">
 		<h1>로그인</h1>
 		
 		<!-- input -->

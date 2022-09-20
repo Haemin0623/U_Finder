@@ -12,7 +12,7 @@
 <c:if test="${result>0 }">
 	<script type="text/javascript">
 		alert("회원가입을 축하드립니다.")
-		location.href="loginForm.do"
+		location.href="/project_semi/views/member/loginForm.do"
 	</script>
 </c:if>
 
