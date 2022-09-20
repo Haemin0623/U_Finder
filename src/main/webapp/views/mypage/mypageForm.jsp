@@ -48,38 +48,24 @@
 	<div class="picklist">
 		<h2 align="center">찜한영화</h2>
 <%-- 		<c:forEach var="pick" items="${plist }"> --%>
-<%-- 				<a href=""><img class="picklist_movie" src="../../images/${pick.poster }" width="120" height="120"></a> --%>
+<%-- 				<a href=""><img src="../posterUpload/${pick.poster }" width="120" height="120"></a> --%>
 <%-- 		</c:forEach> --%>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
-		<a href=""><img class="picklist_movie" src="../../images/공조2.jpg" width="120" height="120"></a>
+		<a href=""><img class="picklist_movie" src="../posterUpload/${pick.poster }" width="120" height="120"></a>
 		
 		<div align="center">
-		<c:if test="${currentPage > PAGE_PER_BLOCK }">
-			<button onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${startPage - 1 }'">이전</button>
+		<c:if test="${currentPage > PAGE_PER_BLOCK }" >
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?pageNum=${startPage - 1 }'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			<c:if test="${i == currentPage }">
-				<button style="background: red" onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${i}'">${i }</button>
+				<button style="background: red" onclick="location.href='/project_semi/views/mypage/mypageForm.do?pageNum=${i}'">${i }</button>
 			</c:if>
 			<c:if test="${i != currentPage }">
-				<button onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${i}'">${i }</button>
+				<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?pageNum=${i}'">${i }</button>
 			</c:if>		
 		</c:forEach>
 		<c:if test="${endPage < totalPage }">
-			<button onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${endPage + 1 }'">다음</button>
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
 	</div>

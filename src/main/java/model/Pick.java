@@ -4,6 +4,7 @@ public class Pick {
 	private int pickno;
     private int movieno;
     private int memberno;
+    private String poster;
     
 	public int getPickno() {
 		return pickno;
