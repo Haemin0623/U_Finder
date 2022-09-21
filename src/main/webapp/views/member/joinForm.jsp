@@ -81,7 +81,7 @@
 <body>
 
 	<div class="container">
-	<form action="joinResult.do" method="post" name ="frm" onsubmit="return chk();">
+	<form action="/project_semi/views/admin/joinResult.do" method="post" name ="frm" onsubmit="return chk();">
 	
 	<h1> 회원가입 </h1>
 	<table >
