@@ -37,5 +37,7 @@
 		select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
-
+	<update id="updateInfo" parameterType="member" >
+		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}where id= #{id}
+	</update>
 </mapper>

@@ -12,6 +12,7 @@ public class UpdateInfoAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		Member member = new Member();
 		int result = 0;
 		String id = request.getParameter("id");
 		String nickname = request.getParameter("nickname");
@@ -35,9 +36,16 @@ public class UpdateInfoAction implements CommandProcess {
 		}
 		
 		MemberDao mb = MemberDao.getInstance();
-		Member member = new Member();
 		
-		result = mb.insert(member);
+		member.setId(id);
+		member.setNickname(nickname);
+		member.setPassword(password);
+		member.setNetflix(netflix);
+		member.setDisney(disney);
+		member.setCoupang(coupang);
+		member.setTving(tving);
+		
+		result = mb.updateInfo(member);
 		
 		request.setAttribute("result", result);
 		

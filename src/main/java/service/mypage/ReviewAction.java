@@ -5,10 +5,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.CommandProcess;
 
-public class ReviewForm implements CommandProcess {
+public class ReviewAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		
+		String id = request.getParameter("id");
+		
+		
+		
 		return "reviewForm";
 	}
 

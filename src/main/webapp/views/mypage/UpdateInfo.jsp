@@ -39,7 +39,7 @@
 <!-- 		<input type="file" > -->
 <!-- 	</form> -->
 	</div>
-<form action="UpdateInfoResult.do" name="frm" onsubmit="return passwordchk()">
+<form action="/project_semi/views/mypage/UpdateInfoResult.do" name="frm" onsubmit="return passwordchk()">
 	<input type="hidden" name="id" value="${id }">
 	<table>
 		<tr>

@@ -71,6 +71,7 @@ public class MemberDao {
 		return session.update("memberns.reset", id);
 	}
 
-
-
+	public int updateInfo(Member member) {
+		return session.update("memberns.updateInfo", member);
+	}
 }

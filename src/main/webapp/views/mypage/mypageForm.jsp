@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<div>
-		<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${id}">내 리뷰</button>
+		<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${id}'">내 리뷰</button>
 		<button onclick="location.href='picklistForm.do?id=${id}'">찜목록</button>
 		<button onclick="location.href='seenmovieForm.do?id=${id}'">시청한 영화</button>
 	</div>
