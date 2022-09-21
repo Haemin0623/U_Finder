@@ -19,6 +19,25 @@ insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강�
 insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
 insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
+update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;
+update movie set trailer='https://www.youtube.com/embed/Mrj9XACVJ8U' where movieno=2;
+update movie set trailer='https://www.youtube.com/embed/g4qQXXtaMqc' where movieno=3;
+update movie set trailer='https://www.youtube.com/embed/fzUKUfHeIYA' where movieno=4;
+update movie set trailer='https://www.youtube.com/embed/A33AdB4u8GQ' where movieno=5;
+update movie set trailer='https://www.youtube.com/embed/GduEtmvwcI0' where movieno=6;
+update movie set trailer='https://www.youtube.com/embed/PbdM1db3JbY' where movieno=7;
+update movie set trailer='https://www.youtube.com/embed/s4Fh2WQ2Xbk' where movieno=8;
+update movie set trailer='https://www.youtube.com/embed/R69laoH02xg' where movieno=9;
+update movie set trailer='https://www.youtube.com/embed/7lJ6Suyp1ok' where movieno=10;
+update movie set trailer='https://www.youtube.com/embed/vz2_xS4TN6w' where movieno=11;
+update movie set trailer='https://www.youtube.com/embed/JYLdTuL9Wjw' where movieno=12;
+update movie set trailer='https://www.youtube.com/embed/tM7gsg1cGu0' where movieno=13;
+update movie set trailer='https://www.youtube.com/embed/mObK5XD8udk' where movieno=14;
+update movie set trailer='https://www.youtube.com/embed/n-dYGqVVgU4' where movieno=15;
+update movie set trailer='https://www.youtube.com/embed/DfqBfjboSNE' where movieno=16;
+update movie set trailer='https://www.youtube.com/embed/bdv76JwvfIE' where movieno=17;
+
+
 -- 회원
 select * from member;
 

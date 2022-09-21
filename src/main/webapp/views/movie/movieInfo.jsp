@@ -57,7 +57,7 @@
 	<div> <!-- 영화 정보 -->
 		<table class="movieInfoForm">
 			<tr>
-				<th class="th1" rowspan="4" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
+				<th class="th1" rowspan="5" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th></tr>
 			<tr>
 				<th>감독 : ${mvInfo.director } , 배우 :
@@ -70,8 +70,10 @@
 							</c:if>
 						</c:forEach>
 				</th></tr>
-			<tr><th> 줄거리 : ${mvInfo.story } <br>상영시간 : ${mvInfo.playtime } 분 
-					<br> <a href="${mvInfo.trailer }">예고편으로 이동하기</a></th>
+			<tr><th> 줄거리 : ${mvInfo.story } <br>상영시간 : ${mvInfo.playtime } 분 </th></tr>
+			<tr><th><%-- <a href="${mvInfo.trailer }">예고편으로 이동하기</a> --%>
+					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</th></tr>
 			<tr>
 				<th>NETFLIX: ${mvInfo.netflix }, DISNEY : ${mvInfo.disney }, COUPANG : ${mvInfo.coupang }, TVING : ${mvInfo.tving }</th></tr>
 		</table>
