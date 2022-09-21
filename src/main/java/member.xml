@@ -23,8 +23,8 @@
 	</insert>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  >
 	
 	<!--  비밀번호 초기화 -->
-	<update id="select" parameterType="int" resultType="integer">
-		update member set password = ${}password('123456') where id= ${id};
+	<update id="reset" parameterType="String" >
+		update member set password = '123456' where id= #{id};
 	</update>
 	
 	<!-- DB에 등록된 총 회원 수 -->
