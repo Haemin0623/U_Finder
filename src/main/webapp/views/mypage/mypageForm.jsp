@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../member_sessionChk.jsp" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -9,15 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../member_sessionChk.jsp" %>
 </head>
 <body>
-	세션 id:${member.id }
+	세션 id:${id }
 	사용 중인 ott: ${member.netflix },${member.disney },${member.coupang },${member.tving }
 	<c:forEach var="pick" items="${plist }">
 		${pick }
 	</c:forEach>
 	<div id="profile">
-		<a href="/project_semi/views/mypage/InfoChk.do"><img alt="" src="../../images/기본이미지.jpg"
+		<a href="/project_semi/views/mypage/InfoChk.do?id${id }"><img alt="" src="../../images/기본이미지.jpg"
 			width="120" height="120"></a>
 	</div>
 	<div id="otticon">

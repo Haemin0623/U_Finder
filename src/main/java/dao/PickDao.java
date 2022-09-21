@@ -43,7 +43,7 @@ public class PickDao {
 	public List<String> pickPoster(String id) {
 		return session.selectList("pickns.pickPoster",id);
 	}
-
+	// 찜리스트 페이징용
 	public List<Member> pickList(int startRow, int endRow) {
 		Map<String, Integer> map = new HashMap<>();
 		map.put("startRow", startRow);
