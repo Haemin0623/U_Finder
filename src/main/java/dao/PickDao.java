@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import model.Member;
+import model.Movie;
 import model.Pick;
 
 public class PickDao {
@@ -49,5 +50,10 @@ public class PickDao {
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
 		return session.selectList("pickns.list", map);
+	}
+
+	// 회원 한명의 찜리스트
+	public List<Movie> pickMovie(String id) {
+		return session.selectList("pickns.memberPickList", id);
 	}
 }

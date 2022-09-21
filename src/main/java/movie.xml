@@ -3,7 +3,7 @@
 <mapper namespace="moviens">
 	<!-- 홈에서 영화 검색 -->
 	<select id="search" parameterType="string" resultType="movie">
-		select m.* from movie m, tag t where m.movieno = t.movieno and (replace(moviename, ' ', '') like '%'||replace(#{searchWord}, ' ', '')||'%' 
+		select m.* from movie m, tag t where m.movieno = t.movieno(+) and (replace(moviename, ' ', '') like '%'||replace(#{searchWord}, ' ', '')||'%' 
 																	or replace(director, ' ', '') like '%'||replace(#{searchWord}, ' ', '')||'%' 
 																	or genre like '%'||replace(#{searchWord}, ' ', '')||'%' 
 																	or tag like '%'||replace(#{searchWord}, ' ', '')||'%')
@@ -55,7 +55,7 @@
 	
 	<!-- 조회수 증가 -->
 	<update id="readCount" parameterType="integer">
-		update movie set mvcnt = #{mvcnt}+1 where movieno = #{movieno}
+		update movie set mvcnt = mvcnt+1 where movieno = #{movieno}
 	</update>
 	
 	<!-- 현재 영화의 장르 가져오기 -->

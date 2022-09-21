@@ -10,8 +10,14 @@
 	<select id="pickPoster" parameterType="string" resultType="string">
 	select poster from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id}))
 	</select>
+	
 	<select id="list" parameterType="map" resultType="member">
 		select * from (select rowNum rn, a.* from (select * from pick order by pickno) a)
 			where rn between #{startRow} and #{endRow}
+	</select>	
+	
+	<select id="memberPickList" parameterType="string" resultType="movie">
+		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
+			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
 	</select>
 </mapper>

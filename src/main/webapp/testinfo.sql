@@ -217,3 +217,13 @@ select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * fro
 
 select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
 
+select m.* from movie m, tag t where m.movieno = t.movieno(+) and (replace(moviename, ' ', '') like '%'||'해리'||'%' 
+																	or replace(director, ' ', '') like '%'||'해리'||'%' 
+																	or genre like '%'||'해리'||'%' 
+																	or tag like '%'||'해리'||'%')
+		union select m.* from movie m, actor a where m.movieno = a.movieno and replace(actorname, ' ', '') like '%'||'해리'||'%';
+
+update movie set mvcnt = mvcnt+1 where movieno = 1;
+select mvcnt from movie where movieno=1;
+
+select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno and m.id='test@test.com') a, movie mv where a.movieno=mv.movieno;

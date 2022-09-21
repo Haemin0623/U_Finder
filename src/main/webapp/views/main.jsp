@@ -21,10 +21,10 @@
 			<fieldset><legend>찜목록</legend>
 				<div class="main_hot">
 					<ul>
-						<c:forEach var="movie" items="${list }" >
+						<c:forEach var="pickMovie" items="${pickList }" >
 							<li>
-								<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-								<img alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+								<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
+								<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
 							</li>
 						</c:forEach>
 					</ul>
@@ -35,7 +35,7 @@
 		<fieldset><legend>인기작</legend>
 			<div class="main_hot">
 				<ul><!-- 리스트 가져와서 반복문 돌리기 -->
-					<c:forEach var="movie" items="${list }" >
+					<c:forEach var="movie" items="${hotList }" >
 						<li>
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 							<img alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
