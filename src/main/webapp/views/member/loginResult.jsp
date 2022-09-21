@@ -10,7 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
-			alert("로그인 성공")
+			alert("🎬당신의 ott 파인더🎬\n\n       유 Finder🔍")
 			location.href="/project_semi/views/main.do";
 		</script>
 	</c:if>
@@ -19,7 +19,7 @@
 		<script>
 			alert("비밀번호가 일치하지 않습니다.\n다시 시도해주세요.")
 			history.back();
-		</script>
+		</script>	
 	</c:if>
 	
 	<c:if test="${result<0 }">
