@@ -11,6 +11,18 @@
 
 <link rel="stylesheet" type="text/css" href="/project_semi/css/admin/admin.css">
 
+<script type="text/javascript" src="../../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		func
+	});
+	
+	function pickCount(movieno) {
+		return $load('/project_semi/views/admin/pickCount.do?movieno'+movieno);
+	}
+	
+</script>
+
 </head>
 <body>
 	
@@ -29,6 +41,7 @@
 			<th>조회수</th>
 			<th>포스터</th>
 			<th>트레일러</th>
+			<th>찜한 회원 수</th>
 			<th>태그</th>
 			<th>리뷰</th>
 		</tr>
@@ -57,7 +70,8 @@
 					<c:if test="${empty movie.poster }">
 						<td>no poster</td>					
 					</c:if>
-					<td>${movie.trailer }</td>	
+					<td>${movie.trailer }</td>
+					<td>pickCount(${movie.movieno })</td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
 					<td><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'">확인</button></td>				
 				</tr>

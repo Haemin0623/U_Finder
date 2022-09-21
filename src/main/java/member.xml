@@ -26,7 +26,6 @@
 	<update id ="reset" parameterType="string">
 		update member set password='123456' where id=#{id}	
 	</update>
-	
 	<!-- DB에 등록된 총 회원 수 -->
 	<select id="getTotal" resultType="integer">
 		select count(*) from member
@@ -37,6 +36,7 @@
 		select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
+
 	<update id="updateInfo" parameterType="member" >
 		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}where id= #{id}
 	</update>

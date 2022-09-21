@@ -163,7 +163,6 @@ insert into pick values (31, 8, 11);
 insert into pick values (32, 7, 11);
 insert into pick values (33, 6, 11);
 
-
 -- 리뷰
 select * from review;
 
@@ -211,4 +210,10 @@ select count(*) from member;
 
 select moviename from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id));
 
+<<<<<<< HEAD
 select *from member where id = 'test@test.com';
+=======
+select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * from movie order by movieno) a) where rn between 1 and 10) mm, (select count(*) from pick, movie where pick.movieno=movie.movieno ) pp;
+
+select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
+>>>>>>> 3b21a8c (no message)
