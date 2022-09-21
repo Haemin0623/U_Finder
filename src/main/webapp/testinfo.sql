@@ -178,4 +178,6 @@ select r.*, m.moviename from review r, movie m where r.movieno = m.movieno;
 
 select m.*, rowNum from movie m where rowNum  <=  10 order by cnt desc;
 
+select count(*) from member;
+
 select moviename from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id));

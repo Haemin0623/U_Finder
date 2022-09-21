@@ -21,7 +21,7 @@
 			</tr>
 			<tr>
 				<th>조회수</th>
-				<td>${movie.cnt }</td>
+				<td>${movie.mvcnt }</td>
 			</tr>
 			<tr>
 				<th>제목*</th>
