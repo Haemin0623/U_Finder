@@ -4,16 +4,9 @@
 
 <c:set var="id" value='${sessionScope.id }'></c:set>
 
-<!-- <script type="text/javascript" src="../../js/jquery.js"></script> -->
-
 <script type="text/javascript">
 	if(${empty id || id != 'master'}) {
 		alert("관리자 로그인을 한 후 접속하세요")
 		location.href="/project_semi/views/admin/admin_loginForm.do"
-		
-		/* $(function() {
-			alert("관리자 로그인을 한 후 접속하세요")
-			location.href="/project_semi/views/admin/admin_loginForm.do"
-		}); */
 	}
 </script>

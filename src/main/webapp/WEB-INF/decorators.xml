@@ -3,9 +3,12 @@
 	<decorator name="main" page="/decorator/view.jsp">
 		<pattern>/views/*</pattern>
 	</decorator>
+	<decorator name="admin" page="/decorator/admin_view.jsp">
+		<pattern>/views/admin/*</pattern>
+	</decorator>
 	<excludes>
 		<pattern>/views/home.jsp</pattern>
-		<pattern>/views/admin/*</pattern>
+		<pattern>/views/admin/admin_loginForm.jsp</pattern>
 		<!-- <pattern>/views/main.jsp</pattern> -->
 	</excludes>
 </decorators>

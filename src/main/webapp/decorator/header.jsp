@@ -21,12 +21,12 @@
 					</div>
 				</li>
 			<c:if test="${empty id }">
-				<li id="login"><a href="login.jsp">로그인</a></li>			
+				<li id="login"><a href="">로그인</a></li>			
 			</c:if>
 			<c:if test="${not empty id }">
-				<li id="login"><a href="login.jsp">마이페이지</a></li>			
+				<li id="login"><a href="">마이페이지</a></li>			
 			</c:if>
-			<li id="login"><a href="calendar.jsp">캘린더</a></li>
+			<li id="login"><a href="">캘린더</a></li>
 		</ul>
 	</div>
 	
