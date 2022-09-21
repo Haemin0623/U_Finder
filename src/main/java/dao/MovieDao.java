@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import model.Actor;
 import model.Movie;
 
 public class MovieDao {
@@ -77,5 +78,24 @@ public class MovieDao {
 	// 조회수 증가
 	public void readCount(int movieno) {
 		session.update("moviens.readCount", movieno);
+	} 
+	
+	// 현재 영화의 장르 가져오기
+	public String mvGenre(int movieno) {
+		return (String) session.selectOne("moviens.mvGenre", movieno);
 	}
+	
+	// 장르가 같은 영화리스트
+	public List<Movie> genreList(String genre, int movieno) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("genre", genre);
+		map.put("movieno", movieno);
+		return session.selectList("moviens.genreList", map);
+	}
+	
+	// 배우가 같은 영화리스트
+	public List<Movie> actMvList(int movieno) {
+		return session.selectList("moviens.actMvList", movieno);
+	}
+	
 }

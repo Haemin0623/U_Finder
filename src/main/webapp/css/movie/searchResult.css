@@ -18,5 +18,4 @@
       .searchList li a span {
         position:absolute; bottom:0; left:50%; color:#666; line-height:1.462em; 
         white-space:nowrap; transform:translate(-50%, 0);
-      
       }

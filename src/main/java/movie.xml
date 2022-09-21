@@ -58,4 +58,24 @@
 		update movie set mvcnt = #{mvcnt}+1 where movieno = #{movieno}
 	</update>
 	
+	<!-- 현재 영화의 장르 가져오기 -->
+	<select id="mvGenre" parameterType="integer" resultType="string">
+		select genre from movie where movieno = #{movieno}
+	</select>
+	
+	<!-- 장르가 같은 영화리스트 -->
+	<select id="genreList" parameterType="map" resultType="movie">
+		select * from movie where genre = #{genre} and not(movieno = #{movieno})
+	</select>
+	
+	<!-- 영화에 출연하는 영화배우리스트 -->
+	<select id="actList" parameterType="integer" resultType="actor">
+		select a.* from actor a, movie m where a.movieno = m.movieno and m.movieno = #{movieno}
+	</select>
+	
+	<select id="actMvList" parameterType="integer" resultType="movie">
+		select m.* from movie m, (select movieno from actor where actorname in (select distinct actorname from actor a, movie m where a.movieno=m.movieno and m.movieno = #{movieno})) mm where m.movieno = mm.movieno and not(m.movieno = #{movieno})
+		
+	</select>
+
 </mapper>

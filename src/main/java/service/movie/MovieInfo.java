@@ -2,6 +2,7 @@ package service.movie;
 
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,9 +34,18 @@ public class MovieInfo implements CommandProcess {
 		// 리뷰 전체 리스트 불러오기
 		ReviewDao rd = ReviewDao.getInstance();
 		List<Review> rvList = rd.reviewList(movieno);
-		
 		request.setAttribute("rvList", rvList);
 		
+		// 장르가 같은 영화 리스트 불러오기
+		String genre = md.mvGenre(movieno);
+		MovieDao md2 = MovieDao.getInstance();
+		List<Movie> recGenre = md2.genreList(genre, movieno);
+		request.setAttribute("recGenre", recGenre);
+		
+		//배우가 같은 영화 리스트 불러오기
+		MovieDao md3 = MovieDao.getInstance();
+		List<Movie> recActor = md3.actMvList(movieno);
+		request.setAttribute("recActor", recActor);
 		
 		return "movieInfo";
 	}

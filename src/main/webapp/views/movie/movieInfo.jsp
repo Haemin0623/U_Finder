@@ -7,22 +7,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
-<link rel="stylesheet" href="/project_semi/js/jquery-ui.css">
 <style type="text/css">
 	.updateform {
-
+		display: none;
+	}
+	.recGenre, .recActor {
 		display: none;
 	}
 </style> 
 <c:set var="id" value='${sessionScope.id}'></c:set>
 <script type="text/javascript" src="/project_semi/js/jquery.js"></script>
-<script src="/project_semi/js/jquery-ui.min.js"></script>
-<script src="/project_semi/js/jquery-ui.js"></script>
 <script type="text/javascript">
-
+	// 추천작
+	$(function() {
+		$('#genBtn').click(function() {
+			$('.recGenre').toggle();
+		});
+		$('#actBtn').click(function() {
+			$('.recActor').toggle();
+		});
+	});
+	
+	// 수정
 	$(function() {
 		$('.updateBtn').click(function() {
-			$('.updateform').show();
+			$('.updateform').toggle();
 		
 		});
 	});
@@ -48,19 +57,21 @@
 	<div> <!-- 영화 정보 -->
 		<table class="movieInfoForm">
 			<tr>
-				<th class="th1" rowspan="3" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
+				<th class="th1" rowspan="4" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th></tr>
 			<tr>
 				<th>감독 : ${mvInfo.director } , 배우 :
-				<c:forEach varStatus="a" var="actor" items="${actorList}">
-					<c:if test="${a.last }">
-					  	${actor.actorname}
-					</c:if>
-					<c:if test="${!a.last }">
-						${actor.actorname} ,
-					</c:if>
-				</c:forEach>
+						<c:forEach varStatus="a" var="actor" items="${actorList}">
+							<c:if test="${a.last }">
+							  	${actor.actorname}
+							</c:if>
+							<c:if test="${!a.last }">
+								${actor.actorname} ,
+							</c:if>
+						</c:forEach>
 				</th></tr>
+			<tr><th> 줄거리 : ${mvInfo.story } <br>상영시간 : ${mvInfo.playtime } 분 
+					<br> <a href="${mvInfo.trailer }">예고편으로 이동하기</a></th>
 			<tr>
 				<th>NETFLIX: ${mvInfo.netflix }, DISNEY : ${mvInfo.disney }, COUPANG : ${mvInfo.coupang }, TVING : ${mvInfo.tving }</th></tr>
 		</table>
@@ -126,12 +137,30 @@
 	
 	<!-- 비슷한 컨텐츠 -->
 	<div> 
-		<c:forEach var="mvRec" items="${ }">
-			<li>
-				<a href="/project_semi/views/movie/movieInfo.do?movieno=${mvRec.movieno }">
-				<img src="/project_semi/posterUpload/${mvRec.poster}"> <span> ${mvRec.moviename} </span> </a>
-			</li>
-		</c:forEach>
+		<h1>추천작</h1>
+		<button id="genBtn">영화 장르</button> <button id="actBtn">출연 배우</button>
+		<div class="recGenre">
+		<h3> 장르 추천작</h3>
+			<ul class="searchList">
+				<c:forEach var="revGen" items="${recGenre}">
+					<li>
+						<a href="/project_semi/views/movie/movieInfo.do?movieno=${revGen.movieno }">
+						<img src="/project_semi/posterUpload/${revGen.poster}"> <span> ${revGen.moviename} </span> </a>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+		<div class="recActor">
+		<h3> 동일 배우 추천작</h3>
+			<ul class="searchList">
+				<c:forEach var="recActor" items="${recActor}">
+					<li>
+						<a href="/project_semi/views/movie/movieInfo.do?movieno=${recActor.movieno }">
+						<img src="/project_semi/posterUpload/${recActor.poster}"> <span> ${recActor.moviename} </span> </a>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
 	</div> <!-- 비슷한 컨텐츠 -->
 	
 </div> <!-- 전체 -->

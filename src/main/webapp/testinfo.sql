@@ -15,6 +15,9 @@ insert into movie values (11, '해리 포터와 불사조 기사단', '와! 볼�
 insert into movie values (12, '해리 포터와 혼혈 왕자', '와! 세베루스 스네이프!', '데이비드 예이츠', 153, 'n', 'n', 'y', 'n', '판타지', 0, 'HalfBloodPrince.jpg', 'https://www.youtube.com/watch?v=JYLdTuL9Wjw');
 insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 호크룩스!', '데이비드 예이츠', 146, 'n', 'n', 'y', 'n', '판타지', 0, 'DeathlyHallowsPart1.jpg', 'https://www.youtube.com/watch?v=tM7gsg1cGu0');
 insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'n', 'n', 'y', 'n', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
+insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
+insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
+insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
 -- 회원
 select * from member;
@@ -62,6 +65,8 @@ insert into tag values (25, '부엉이', 13);
 insert into tag values (26, '지팡이', 13);
 insert into tag values (27, '부엉이', 14);
 insert into tag values (28, '지팡이', 14);
+insert into tag values (29, '베트남', 15);
+insert into tag values (30, '베트남', 16);
 
 
 -- 배우
@@ -91,6 +96,11 @@ insert into actor values (21, '다니엘 래드클리프', 11);
 insert into actor values (22, '엠마 왓슨', 11);
 insert into actor values (23, '다니엘 래드클리프', 12);
 insert into actor values (24, '루퍼트 그린트', 12);
+insert into actor values (25, '마동석', 15);
+insert into actor values (26, '마동석', 16);
+insert into actor values (27, '윤계상', 15);
+insert into actor values (28, '손석구', 16);
+insert into actor values (29, '마동석', 17);
 
 -- 캘린더 (나중에)
 select * from calendar;
