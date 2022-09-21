@@ -1,29 +1,25 @@
 package service.mypage;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.ReviewDao;
-import model.Review;
 import service.CommandProcess;
 
-public class ReviewAction implements CommandProcess {
+public class ReviewDeleteAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
-		int memberno = Integer.valueOf(request.getParameter("memberno"));
+		int reviewno = Integer.parseInt(request.getParameter("reviewno"));
 		
 		ReviewDao rd = ReviewDao.getInstance();
 		
-		List<Review> rlist = rd.memberReviewList(memberno);
+		int result = rd.reviewDel(reviewno);
 		
-		request.setAttribute("rlist", rlist);
+		request.setAttribute("result", result);
 		
-		
-		return "reviewForm";
+		return "reviewDeleteResult";
 	}
 
 }

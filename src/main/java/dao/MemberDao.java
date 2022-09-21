@@ -70,7 +70,7 @@ public class MemberDao {
 	public int resetPassword(String id) {
 		return session.update("memberns.reset", id);
 	}
-
+	//회원정보 수정
 	public int updateInfo(Member member) {
 		return session.update("memberns.updateInfo", member);
 	}

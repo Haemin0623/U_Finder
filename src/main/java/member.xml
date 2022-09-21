@@ -37,6 +37,7 @@
 			where rn between #{startRow} and #{endRow}
 	</select>
 
+<!-- 	회원정보 수정 -->
 	<update id="updateInfo" parameterType="member" >
 		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}where id= #{id}
 	</update>

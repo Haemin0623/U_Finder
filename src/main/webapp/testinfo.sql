@@ -17,7 +17,7 @@ insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 
 insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'n', 'n', 'y', 'n', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
 insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
 insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
-insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE');
+insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
 update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;
 update movie set trailer='https://www.youtube.com/embed/Mrj9XACVJ8U' where movieno=2;
@@ -210,20 +210,6 @@ select count(*) from member;
 
 select moviename from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id));
 
-
-select *from member where id = 'test@test.com';
-
 select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * from movie order by movieno) a) where rn between 1 and 10) mm, (select count(*) from pick, movie where pick.movieno=movie.movieno ) pp;
 
 select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
-
-select m.* from movie m, tag t where m.movieno = t.movieno(+) and (replace(moviename, ' ', '') like '%'||'해리'||'%' 
-																	or replace(director, ' ', '') like '%'||'해리'||'%' 
-																	or genre like '%'||'해리'||'%' 
-																	or tag like '%'||'해리'||'%')
-		union select m.* from movie m, actor a where m.movieno = a.movieno and replace(actorname, ' ', '') like '%'||'해리'||'%';
-
-update movie set mvcnt = mvcnt+1 where movieno = 1;
-select mvcnt from movie where movieno=1;
-
-select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno and m.id='test@test.com') a, movie mv where a.movieno=mv.movieno;
