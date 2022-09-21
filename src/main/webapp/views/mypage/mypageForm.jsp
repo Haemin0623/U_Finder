@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 
 <!DOCTYPE html>
 <html>
@@ -13,6 +11,7 @@
 </head>
 <body>
 	세션 id:${id }
+
 	사용 중인 ott: ${member.netflix },${member.disney },${member.coupang },${member.tving }
 	<c:forEach var="pick" items="${plist }">
 		${pick }
@@ -42,7 +41,7 @@
 			<c:if test="${member.coupang == 'Y' }">
 				<img alt="" src="../../images/티빙.jpg"> 
 			</c:if>
-			<c:if test="${member.tving == 'Y' }">
+			<c:if test="${member.tving == 'Y' }">	
 				<img alt=""	src="../../images/쿠팡플레이.jpg">
 			</c:if>
 	</div>

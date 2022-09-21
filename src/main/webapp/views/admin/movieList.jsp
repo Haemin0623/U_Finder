@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="admin_sessionChk.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -29,10 +30,11 @@
 			<th>포스터</th>
 			<th>트레일러</th>
 			<th>태그</th>
+			<th>리뷰</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<td colspan="14">DB에 영화가 없다!</td>
+				<td colspan="15">DB에 영화가 없다!</td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">
@@ -56,6 +58,7 @@
 						<td>no poster</td>					
 					</c:if>
 					<td>${movie.trailer }</td>	
+					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
 				</tr>
 			</c:forEach>

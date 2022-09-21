@@ -17,7 +17,6 @@
 </head>
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
 	<deco:body></deco:body>
 
 </body>
