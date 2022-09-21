@@ -10,16 +10,11 @@
 <body>
 
 	<div class="container">
-		<h1 class="title">비밀번호 찾기 결과</h1>
-		<c:if test="${member != null }">
-		 비밀번호는  <Strong> ${member.password} </Strong>입니다.
+		<h1 class="title">비밀번호 초기화</h1>
+		<c:if test="${member.id ==  }">
+		 비밀번호가  <Strong> ${member.password} </Strong> 으로 초기화 되었습니다.
 		</c:if>
 		
-		<c:if test="${member = null }">
-		존재하는 회원이 없습니다.<br>
-		
-		</c:if>
-			
 	</div>
 
 </body>

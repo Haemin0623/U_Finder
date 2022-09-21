@@ -14,12 +14,18 @@
 
 	<!-- 회원 가입 -->
 	<insert id="insert" parameterType="member">
-<!-- 		<selectKey keyProperty="mno" order="BEFORE" resultType="integer"> 
- 			select nvl(max(mno), 0) + 1 mno from member 
- 		</selectKey> -->
-		insert into member values(#{memberno},#{id},#{password},#{nickname},
-			#{netflix},#{disney},#{coupang},#{tving},'n')
-	</insert>
+ 		<selectKey keyProperty="memberno" order="BEFORE" resultType="integer"> 
+ 			select nvl(max(memberno), 0) + 1 memberno from member 
+ 		</selectKey>
+ 		
+		insert into member values(#{memberno}, #{id}, #{password}, #{nickname}, #{netflix},
+			#{disney}, #{coupang}, #{tving}, 'n')
+	</insert>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  >
+	
+	<!--  비밀번호 초기화 -->
+	<update id="select" parameterType="int" resultType="integer">
+		update member set password = ${}password('123456') where id= ${id};
+	</update>
 	
 	<!-- DB에 등록된 총 회원 수 -->
 	<select id="getTotal" resultType="integer">
@@ -31,4 +37,5 @@
 		select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
+
 </mapper>

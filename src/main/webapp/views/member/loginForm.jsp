@@ -28,8 +28,8 @@
 			</tr>				
 		</table>
 	</form>
-		<a class = "btn" href="joinForm.jsp">회원가입</a> 
-		<a class = "btn" href="findForm.jsp">비밀번호 찾기</a> 
+		<a class = "btn" href="/project_semi/views/member/joinForm.do">회원가입</a> 
+		<a class = "btn" href="/project_semi/views/member/findPwForm.do">비밀번호 찾기</a> 
 	</div>
 	
 </body>

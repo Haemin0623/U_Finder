@@ -19,6 +19,19 @@ public class JoinResult implements CommandProcess {
 		String coupang = request.getParameter("coupang");
 		String tving = request.getParameter("tving");
 		
+		if (netflix == null) {
+			netflix = "N";
+		}
+		if (disney == null) {
+			disney = "N";
+		}
+		if (coupang == null) {
+			coupang = "N";
+		}
+		if (tving == null) {
+			tving = "N";
+		}
+		
 		// member 화면에서 입력한 데이터를 받기위한 객체
 		Member member = new Member();
 		member.setId(id);
