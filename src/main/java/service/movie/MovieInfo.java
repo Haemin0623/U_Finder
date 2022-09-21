@@ -1,4 +1,4 @@
-package service;
+package service.movie;
 
 
 import java.util.List;
@@ -12,6 +12,7 @@ import dao.ReviewDao;
 import model.Actor;
 import model.Movie;
 import model.Review;
+import service.CommandProcess;
 
 public class MovieInfo implements CommandProcess {
 

@@ -1,4 +1,4 @@
-package service;
+package service.movie;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.MovieDao;
 import model.Movie;
+import service.CommandProcess;
 
 public class SearchResult implements CommandProcess {
 
