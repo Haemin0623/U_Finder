@@ -23,7 +23,7 @@
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<td colspan="2">DB에 태그가 없다!</td>
+				<td colspan="4">DB에 태그가 없다!</td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">

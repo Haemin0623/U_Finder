@@ -59,7 +59,7 @@
 					</c:if>
 					<td>${movie.trailer }</td>	
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
-					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
+					<td><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'">확인</button></td>				
 				</tr>
 			</c:forEach>
 		</c:if>
