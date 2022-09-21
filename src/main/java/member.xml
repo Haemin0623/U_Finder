@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="memberns">
+<mapper namespace="memberns"> 
 
 	<!-- 회원 아이디 조회 -->
 	<select id="select" parameterType="string" resultType="member">
@@ -12,19 +12,19 @@
 		select * from member where nickname = #{nickname}
 	</select>
 
-	<!-- 회원 가입 -->
+	<!-- 회원가입 -->
 	<insert id="insert" parameterType="member">
- 		<selectKey keyProperty="memberno" order="BEFORE" resultType="integer"> 
- 			select nvl(max(memberno), 0) + 1 memberno from member 
- 		</selectKey>
- 		
+		<selectKey keyProperty="memberno" order="BEFORE" resultType="integer">
+			select nvl(max(memberno),0) +1 memberno from member		
+		</selectKey>
+		 
 		insert into member values(#{memberno}, #{id}, #{password}, #{nickname}, #{netflix},
-			#{disney}, #{coupang}, #{tving}, 'n')
-	</insert>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  >
+			#{disney}, #{coupang}, #{tving}, 'n')	
+	</insert>
 	
-	<!--  비밀번호 초기화 -->
-	<update id="reset" parameterType="String" >
-		update member set password = '123456' where id= #{id};
+	<!-- 비밀번호 초기화 -->
+	<update id ="reset" parameterType="string">
+		update member set password='123456' where id=#{id}	
 	</update>
 	
 	<!-- DB에 등록된 총 회원 수 -->

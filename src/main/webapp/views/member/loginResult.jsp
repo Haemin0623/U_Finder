@@ -10,6 +10,7 @@
 <body>
 	<c:if test="${result>0 }">
 		<script>
+			alert("로그인 성공")
 			location.href="/project_semi/views/main.do";
 		</script>
 	</c:if>
