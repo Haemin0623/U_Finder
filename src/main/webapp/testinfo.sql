@@ -214,13 +214,10 @@ select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * fro
 
 select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
 
-select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
-			where rn between 11 and 20
-select rowNum rn, a.* from (select * from member order by memberno) a where rowNum between 11 and 13;
+<
+update review set del='N' where memberno=1;
 
-select count(*) from pick where movieno=1;
+select * from (select rowNum rn, a.* from
+		(select p.*, m.poster from pick p, movie m, member mb where p.movieno=m.movieno and p.memberno=mb.memberno and id='test@test.com') a)
+	where rn between 3 and 4;
 
-select * from (select rowNum rn, a.* from (select m.*, p.movieno from movie m, pick p where m.movieno = p.movieno order by m.movieno) a)
-			where rn between #{startRow} and #{endRow};
-			
-			select m.*, p.movieno, p.memberno from movie m, pick p where m.movieno = p.movieno;

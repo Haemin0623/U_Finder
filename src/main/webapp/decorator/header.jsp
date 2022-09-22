@@ -31,7 +31,7 @@
 			</c:if>
 			<c:if test="${not empty id }">
 				<li id="login"><a href="/project_semi/views/member/logout.do">로그아웃</a></li>			
-				<li id="login"><a href="/project_semi/views/mypage/mypageForm.do">마이페이지</a></li>			
+				<li id="login"><a href="/project_semi/views/mypage/mypageForm.do?id=${id}">마이페이지</a></li>			
 			</c:if>
 			<li id="login"><a href="">캘린더</a></li>
 		</ul>

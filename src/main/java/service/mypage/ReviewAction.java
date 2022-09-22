@@ -21,7 +21,7 @@ public class ReviewAction implements CommandProcess {
 		List<Review> rlist = rd.memberReviewList(memberno);
 		
 		request.setAttribute("rlist", rlist);
-		
+		request.setAttribute("memberno", memberno);
 		
 		return "reviewForm";
 	}

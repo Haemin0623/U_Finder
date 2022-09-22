@@ -10,7 +10,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import model.Member;
 import model.Movie;
 import model.Pick;
 
@@ -45,7 +44,7 @@ public class PickDao {
 		return session.selectList("pickns.pickPoster",id);
 	}
 	// 찜리스트 페이징용
-	public List<Member> pickList(int startRow, int endRow) {
+	public List<Pick> pickList(int startRow, int endRow) {
 		Map<String, Integer> map = new HashMap<>();
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
@@ -55,5 +54,18 @@ public class PickDao {
 	// 회원 한명의 찜리스트
 	public List<Movie> pickMovie(String id) {
 		return session.selectList("pickns.memberPickList", id);
+	}
+	// 특정 회원의 찜 총 갯수(페이징용)
+	public int total(String id) {
+		return (int) session.selectOne("pickns.getTotal",id);
+	}
+
+	public List<Pick> pickListPage(int startRow, int endRow, String id) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("id", id);
+		
+		return session.selectList("pickns.pickListPage", map);
 	}
 }

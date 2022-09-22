@@ -16,9 +16,18 @@
 			where rn between #{startRow} and #{endRow}
 	</select>	
 	
-	<select id="memberPickList" parameterType="string" resultType="movie">
+	<select id="memberPickList" parameterType="map" resultType="movie">
 		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
 			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
+	</select>
+
+	<select id="getTotal" parameterType="string" resultType="integer">
+		select count(*) from member m, pick p where m.memberno= p.memberno and id=#{id}
+	</select>
+	<select id="pickListPage" parameterType="map" resultType="Pick">
+		select * from (select rowNum rn, a.* from
+		(select p.*, m.poster from pick p, movie m, member mb where p.movieno=m.movieno and p.memberno=mb.memberno and id=#{id}) a)
+	where rn between #{startRow} and #{endRow}
 	</select>
 	
 </mapper>

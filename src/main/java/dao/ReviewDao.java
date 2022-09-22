@@ -66,5 +66,4 @@ public class ReviewDao {
 	public int reviewUpdate(Review review) {
 		return session.update("reviewns.reviewUpdate", review);
 	}
-	
 }

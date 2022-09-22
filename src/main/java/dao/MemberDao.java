@@ -74,4 +74,8 @@ public class MemberDao {
 	public int updateInfo(Member member) {
 		return session.update("memberns.updateInfo", member);
 	}
+	//회원 탈퇴
+	public int memberOut(String id) {
+		return session.update("memberns.memberOut", id);
+	}
 }

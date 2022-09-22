@@ -34,4 +34,5 @@
 	<update id="reviewUpdate" parameterType="review" >
 		update review set content = #{content}, movielike = #{movielike} where reviewno = #{reviewno}
 	</update>
+	
 </mapper>

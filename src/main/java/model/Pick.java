@@ -23,5 +23,11 @@ public class Pick {
 	}
 	public void setMemberno(int memberno) {
 		this.memberno = memberno;
+	}
+	public String getPoster() {
+		return poster;
+	}
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}    
 }

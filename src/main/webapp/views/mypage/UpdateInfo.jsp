@@ -5,16 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title><style type="text/css">
-</style>
+<title>Insert title here</title>
 <%@include file="../member_sessionChk.jsp"%>
+<style type="text/css">
+</style>
 <script type="text/javascript">
-	function delchk() {
+	function delchk1() {
 		if (confirm("정말 탈퇴하시겠습니까??") == true){
-			
-			location.href="ReviewDelete.jsp" /* 탈퇴 프로세스 이동 */
-			// 			DAO에서 리턴받아서 삭제 완료 시 
-			alert("탈퇴 완료");
+			location.href="/project_semi/views/mypage/memberOutResult.do?id=${id}";
 		}
 	}
 	function passwordchk() {
@@ -68,10 +66,10 @@
 				</tr>
 		<tr>	
 			<th colspan="2"><input type="submit" value="확인">
-			<button onclick="delchk()">회원탈퇴</button>
 			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
 		</tr>				
 	</table>
 </form>
+<button id="delchk" onclick="delchk1()">회원탈퇴</button>
 </body>
 </html>

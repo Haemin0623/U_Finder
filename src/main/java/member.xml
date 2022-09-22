@@ -41,4 +41,8 @@
 	<update id="updateInfo" parameterType="member" >
 		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}where id= #{id}
 	</update>
+<!-- 	회원 탈퇴 -->
+	<update id="memberOut" parameterType="string" >
+		update member set memberout='Y' where id=#{id}
+	</update>
 </mapper>

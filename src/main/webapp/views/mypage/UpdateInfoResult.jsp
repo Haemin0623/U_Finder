@@ -9,11 +9,11 @@
     <%@ include file="../member_sessionChk.jsp" %>
 </head>
 <body>
-
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
 			alert("수정 완료");
 			location.href="/project_semi/views/mypage/mypageForm.do?id=${id}";
+			session.invalidate();
 		</script>
 	</c:if>
 	<c:if test="${result == 0 }">
