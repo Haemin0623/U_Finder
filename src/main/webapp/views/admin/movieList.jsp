@@ -13,12 +13,9 @@
 
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script type="text/javascript">
-	$(function() {
-		func
-	});
 	
 	function pickCount(movieno) {
-		return $load('/project_semi/views/admin/pickCount.do?movieno'+movieno);
+		$('#id').$load('/project_semi/views/admin/pickCount.do?movieno='+movieno);
 	}
 	
 </script>
@@ -71,7 +68,7 @@
 						<td>no poster</td>					
 					</c:if>
 					<td>${movie.trailer }</td>
-					<td>pickCount(${movie.movieno })</td>
+					<td id="count"><button onclick="pickCount(${movie.movieno })">확인</button></td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
 					<td><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'">확인</button></td>				
 				</tr>

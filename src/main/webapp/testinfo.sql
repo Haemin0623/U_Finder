@@ -213,3 +213,14 @@ select moviename from movie where movieno in(select movieno from pick where memb
 select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * from movie order by movieno) a) where rn between 1 and 10) mm, (select count(*) from pick, movie where pick.movieno=movie.movieno ) pp;
 
 select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
+
+select * from (select rowNum rn, a.* from (select * from member order by memberno) a)
+			where rn between 11 and 20
+select rowNum rn, a.* from (select * from member order by memberno) a where rowNum between 11 and 13;
+
+select count(*) from pick where movieno=1;
+
+select * from (select rowNum rn, a.* from (select m.*, p.movieno from movie m, pick p where m.movieno = p.movieno order by m.movieno) a)
+			where rn between #{startRow} and #{endRow};
+			
+			select m.*, p.movieno, p.memberno from movie m, pick p where m.movieno = p.movieno;

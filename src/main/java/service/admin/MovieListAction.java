@@ -30,7 +30,7 @@ public class MovieListAction implements CommandProcess {
 		MovieDao md = MovieDao.getInstance();
 		
 		int total = md.total();
-		int totalPage = (int) Math.ceil((double) total / PAGE_PER_BLOCK);
+		int totalPage = (int) Math.ceil((double) total / ROW_PER_PAGE);
 		int startPage = currentPage - (currentPage - 1) % PAGE_PER_BLOCK;
 		int endPage = startPage + PAGE_PER_BLOCK - 1;
 		

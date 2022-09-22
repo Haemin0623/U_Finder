@@ -16,6 +16,7 @@
 	<div class="header">
 		<ul>
 			<li id="main"><a href="/project_semi/views/main.do">메인</a></li>
+			<li id="main"><a href="/project_semi/views/home.do">홈</a></li>
 				<li>
 					<div class="search_box">
 						<form id="search" action="/project_semi/views/movie/searchResult.do">

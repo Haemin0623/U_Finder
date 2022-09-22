@@ -49,10 +49,10 @@
 			</c:forEach>
 		</c:if>
 	</table>
-	<div align="center">
+	<div align="center">	
 		<c:if test="${currentPage > PAGE_PER_BLOCK }">
 			<button onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${startPage - 1 }'">이전</button>
-		</c:if>
+		</c:if>		
 		<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			<c:if test="${i == currentPage }">
 				<button style="background: red" onclick="location.href='/project_semi/views/admin/memberList.do?pageNum=${i}'">${i }</button>

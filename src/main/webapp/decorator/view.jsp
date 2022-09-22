@@ -10,8 +10,6 @@
 <!-- 페이지의 헤드부분을 가져옴, (각 페이지의 css파일, 스크립트코드)  -->
 <deco:head></deco:head>
 
-<script type="text/javascript" src="/project_semi/js/jquery.js"></script>
-
 <link rel="stylesheet" type="text/css" href="/project_semi/css/header.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">

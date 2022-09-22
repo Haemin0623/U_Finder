@@ -20,4 +20,5 @@
 		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
 			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
 	</select>
+	
 </mapper>
