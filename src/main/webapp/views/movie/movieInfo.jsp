@@ -60,13 +60,14 @@
 				<th class="th1" rowspan="5" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th></tr>
 			<tr>
-				<th>감독 : ${mvInfo.director } , 배우 :
+				<th>감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }"> ${mvInfo.director }</a>, 
+					배우 :
 						<c:forEach varStatus="a" var="actor" items="${actorList}">
 							<c:if test="${a.last }">
-							  	${actor.actorname}
+							  	<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}"> ${actor.actorname}</a>
 							</c:if>
 							<c:if test="${!a.last }">
-								${actor.actorname} ,
+								<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname} , </a>
 							</c:if>
 						</c:forEach>
 				</th></tr>

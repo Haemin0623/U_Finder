@@ -12,12 +12,9 @@
 
 fieldset {
  width: 80%;
- text-align: left;
+
 }
 
-#o1, o2, o3, o4 {
- text-align: "center";
-} 
 
 </style>
 

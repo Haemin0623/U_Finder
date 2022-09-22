@@ -24,7 +24,7 @@
 	
 	<c:if test="${result<0 }">
 		<script>
-			alert("일치하는 아이디가 없습니다")
+			alert("일치하는 아이디가 없습니다.")
 			history.back();
 		</script>
 	</c:if>
