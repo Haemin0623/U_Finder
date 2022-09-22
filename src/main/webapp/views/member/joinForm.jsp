@@ -128,13 +128,13 @@ fieldset {
 					<fieldset>
 						<legend> 가입한 ott 목록</legend>
 							
-							<input type="checkbox" name="netflix" id="o1" value="y">
+							<input type="checkbox" name="netflix" id="o1" value="Y">
 							<label class="checkbox-inline">넷플릭스</label>
-							<input type="checkbox" name="disney" id="o2" value="y">
+							<input type="checkbox" name="disney" id="o2" value="Y">
 							<label class="checkbox-inline">디즈니+</label>
-							<input type="checkbox" name="coupang" id="o3" value="y">
+							<input type="checkbox" name="coupang" id="o3" value="Y">
 							<label class="checkbox-inline">쿠팡플레이</label>
-							<input type="checkbox" name="tving" id="o4" value="y">
+							<input type="checkbox" name="tving" id="o4" value="Y">
 							<label class="checkbox-inline">티빙</label>
 					</fieldset>
 				</div>
@@ -142,7 +142,7 @@ fieldset {
 				<br>
 				<input type="submit" value="회원가입">
 
-	</div>
 	</form>
+	</div>
 </body>
 </html>

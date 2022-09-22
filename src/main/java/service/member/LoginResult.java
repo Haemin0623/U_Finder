@@ -19,7 +19,7 @@ public class LoginResult implements CommandProcess {
 		Member member = md.select(id);
 
 		int result = 0;
-		if (member == null || member.getMemberout().equals("y")) {
+		if (member == null || member.getMemberout().equals("Y")) {
 			result = -1;
 		} else {
 			if (member.getPassword().equals(password)) {
