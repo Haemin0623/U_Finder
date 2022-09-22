@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	input {
+	width: 85%;
+}
+</style>
 </head>
 <body>
 	<div class="header">

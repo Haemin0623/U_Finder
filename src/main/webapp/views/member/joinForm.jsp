@@ -5,6 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+. check input {
+	width: 85%;
+}
+
+fieldset {
+ width: 80%;
+ text-align: left;
+}
+
+#o1, o2, o3, o4 {
+ text-align: "center";
+} 
+
+</style>
 
 
 <script type="text/javascript">
@@ -84,63 +99,50 @@
 	<form action="/project_semi/views/admin/joinResult.do" method="post" name ="frm" onsubmit="return chk();">
 	
 	<h1> 회원가입 </h1>
-	<table >
-		<tr>
-			<th>
+
 				<!-- 아이디 -->
 				<div class="check">
 					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)" >
 <!-- 					<button class ="chk-btn" onclick="chkId();"> 중복체크 </button> -->
 					<div class="chk_msg" id="err_id"></div>
 				</div>
-			</th>
-		
-		<tr>
-			<th>
+
 			<!-- 비밀번호 -->
 				<div class="check">
 					<input type="password" name="password" id="password" placeholder="비밀번호" required="required" onChange="chkPass()" >
 					<div class="chk-msg" id="err_pass"></div>
-				</div>
 					<input type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required" onChange="chkPassword()">		
-			</th>
-		</tr>
-		<tr>
-			<th>
+				</div>
+
 				<!-- 닉네임 -->
 				<div class="check">
 					<input type="text" name="nickname" placeholder="닉네임" onchange="chkNick()">
 					<input type="hidden" name="checked_nick" value="">
 					<div class="chk-msg" id="err"></div>
 				</div>
-			</th>
-		</tr>
+	
 		
-		<tr>
-			<td>
+
 				<!-- OTT 목록 -->
-				<div class="select-ott">
+				<div class="ott-select">
 					<fieldset>
 						<legend> 가입한 ott 목록</legend>
+							
 							<input type="checkbox" name="netflix" id="o1" value="y">
-							<label for="o1">넷플릭스</label>
+							<label class="checkbox-inline">넷플릭스</label>
 							<input type="checkbox" name="disney" id="o2" value="y">
-							<label for="o2">디즈니+</label>
+							<label class="checkbox-inline">디즈니+</label>
 							<input type="checkbox" name="coupang" id="o3" value="y">
-							<label for="o3">쿠팡플레이</label>
+							<label class="checkbox-inline">쿠팡플레이</label>
 							<input type="checkbox" name="tving" id="o4" value="y">
-							<label for="o4">티빙</label>
+							<label class="checkbox-inline">티빙</label>
 					</fieldset>
 				</div>
-			</td>
-		</tr>
-		<tr>
-			<td>
+				
+				<br>
 				<input type="submit" value="회원가입">
-			</td>
-		</tr>
-	</table>
-	</form>
+
 	</div>
+	</form>
 </body>
 </html>

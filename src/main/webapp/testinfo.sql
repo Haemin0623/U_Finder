@@ -1,4 +1,4 @@
--- 영화
+]-- 영화
 select * from movie;
 
 insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
