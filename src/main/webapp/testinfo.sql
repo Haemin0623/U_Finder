@@ -223,3 +223,7 @@ select * from (select rowNum rn, a.* from
 	where rn between 3 and 4;
 
 select *from member;
+
+select * from movie where trim(both '''' from '''disney''') = 'y';
+
+select trim(both '''' from ' ''disney'' ') from dual;

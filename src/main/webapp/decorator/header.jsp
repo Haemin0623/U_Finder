@@ -34,10 +34,10 @@
 				<li id="login"><a href="/project_semi/views/mypage/mypageForm.do?id=${id}">마이페이지</a></li>			
 			</c:if>
 			<li id="login"><a href="">캘린더</a></li>
-			<li id="login"><a href="/project_semi/views/member/ottResult.do">티</a></li>
-			<li id="login"><a href="/project_semi/views/member/ottResult.do">쿠</a></li>
-			<li id="login"><a href="/project_semi/views/member/ottResult.do">디</a></li>
-			<li id="login"><a href="/project_semi/views/member/ottResult.do">넷</a></li>
+			<li id="login"><a href="/project_semi/views/movie/ottResult.do?ottName=tving">티빙</a></li>
+			<li id="login"><a href="/project_semi/views/movie/ottResult.do?ottName=coupang">쿠팡</a></li>
+			<li id="login"><a href="/project_semi/views/movie/ottResult.do?ottName=disney">디즈니</a></li>
+			<li id="login"><a href="/project_semi/views/movie/ottResult.do?ottName=netflix">넷플릭스</a></li>
 		</ul>
 	</div>
 	

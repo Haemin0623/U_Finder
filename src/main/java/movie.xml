@@ -82,4 +82,11 @@
 <!-- 	<update id="readCount" parameterType="integer"> -->
 <!-- 		update movie set mvcnt = mvcnt-1 where movieno = #{movieno} -->
 <!-- 	</update> -->
+	
+<!-- 	ott별 영화리스트 가져오기 -->
+	<select id="ottSearch" parameterType="map" resultType="movie">
+		select * from movie where ${ottName} = 'y'								 
+	</select>
+
+
 </mapper>

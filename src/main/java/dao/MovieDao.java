@@ -98,6 +98,15 @@ public class MovieDao {
 		return session.selectList("moviens.actMvList", movieno);
 	}
 
+	
+	// ott가 같은 영화리스트
+	public List<Movie> ottSearch(String ottName) {
+		Map<String, String> map = new HashMap<>();
+		map.put("ottName", ottName);
+		return session.selectList("moviens.ottSearch", map);
+	}
+
+
 	// 수정시 reload되면서 조회수 증가하는 것 방지
 //	public void minusCount(int movieno) {
 //		session.update("moviens.minusCount", movieno);
