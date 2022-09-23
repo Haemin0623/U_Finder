@@ -9,6 +9,7 @@
 		<pattern>/views/member_sessionChk.*</pattern>
 		<pattern>/views/movie/pickDel.*</pattern>
 		<pattern>/views/movie/pickPick.*</pattern>
-		<!-- <pattern>/views/main.jsp</pattern> -->
+		<pattern>/views/movie/pickUpdate.*</pattern>
+		<pattern>/project_semi/views/_11_carousel.do</pattern>
 	</excludes>
 </decorators>

@@ -5,61 +5,64 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Insert title here</title>
 
 <c:set var="id" value="${sessionScope.id }"></c:set>
 
-<link rel="stylesheet" type="text/css" href="/project_semi/css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <script type="text/javascript" src="../js/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
-	$(function () {
-	    // 슬라이더를 움직여주는 함수
-	    function moveSlider(index) {
-	        // 슬라이더를 이동합니다.
-	        var willMoveLeft = -(index * 2000);
-	        $('.slider_panel').animate({ left: willMoveLeft }, 'slow');
-	        // control_button에 active클래스를 부여/제거합니다.
-	        $('.control_button[data-index=' + index + ']').addClass('active');
-	        $('.control_button[data-index!=' + index + ']').removeClass('active');
-	    }
-	
-	    // 컨트롤 버튼의 클릭 핸들러 지정 및 data-index 할당
-	    $('.control_button').each(function (index) {	// 각 컨트롤 버튼의 인덱스번호를 'data-index'라는 속성에 넣음
-	        $(this).attr('data-index', index);
-	    }).click(function () {
-	        var index = $(this).attr('data-index');	// 클릭하면 해당 인덱스 번호 받아옴
-	        moveSlider(index);	// 해당 인덱스 번호로 슬라이더 이동
-	    });
-	 // 초기 슬라이더 위치 지정
-	    var randomNumber = Math.floor(Math.random() * 5);
-	    moveSlider(randomNumber);
-	
-	});
 </script>
 
 </head>
 <body>
-	<div class="main">	
-		<!-- <div class="main_ad">
-			<img alt="ad" src="../images/chim1.jpg">
-		</div> -->
-		<div class="animation_canvas">
-	        <div class="slider_panel">
-	            <img src="../images/chim1.jpg" class="slider_image"/>
-	            <img src="../images/chim2.png" class="slider_image"/>
-	            <img src="../images/chim3.jpg" class="slider_image"/>
-	            <img src="../images/chim4.jpeg" class="slider_image"/>
-	            <img src="../images/chim5.jpeg" class="slider_image"/>
-	        </div>
-	        <div class="control_panel">
-	            <div class="control_button"></div>
-	            <div class="control_button"></div>
-	            <div class="control_button"></div>
-	            <div class="control_button"></div>
-	            <div class="control_button"></div>
-	        </div>
-	    </div>
-		
+	<div id="carouselExampleFade" class="carousel slide carousel-fade"
+		data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		</div>
+				
+		<div class="carousel-inner" style="height: 200px">
+			<div class="carousel-item active">
+				<img class="d-block w-100" height="200px" src="../images/chim1.jpg" alt="First slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" height="200px" src="../images/chim2.png" alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" height="200px" src="../images/chim3.jpg" alt="Third slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" height="200px" src="../images/chim4.jpeg" alt="Fourth slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" height="200px" src="../images/chim5.jpeg" alt="Fifth slide">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button"
+			data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button"
+			data-bs-target="#carouselExampleFade" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<div class="main">		
 		<c:if test="${not empty id}">
 			<fieldset><legend>찜목록</legend>
 				<div class="main_hot">
