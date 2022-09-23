@@ -31,32 +31,30 @@
 	where rn between #{startRow} and #{endRow}
 	</select>
 	
-<<<<<<< HEAD
-=======
 
-	<!-- 영화정보페이지 찜삭제 -->
->>>>>>> a314bf8 (작업 중)
+	<!-- pick 정보 -->
+
 	<select id="getPick" parameterType="map" resultType="pick">
 		select p.* from pick p, member m where p.memberno=m.memberno and m.id=#{id} and p.movieno=#{movieno}
 	</select>
 	
-<<<<<<< HEAD
+	<!-- 영화정보페이지 찜삭제-->
 	<select id="delPick" parameterType="map">
 		delete from pick where movieno = #{movieno} and memberno = #{memberno}
 	</select>
+	
 <!-- 	찜취소 -->
 	<delete id="pickDelete" parameterType="map">
 		delete from pick where pickno=(select pickno from member m, pick p where m.memberno=p.memberno and id=#{id} and movieno=#{movieno})
 	</delete>
-=======
+
 	<!-- 영화정보페이지 찜추가-->
 	<insert id="pickPick" parameterType="map">
 		<selectKey keyProperty="pkno" order="BEFORE" resultType="integer">
 			select nvl(max(pickno), 0)+1 pkno from pick
 		</selectKey>
-		insert into pick values (${pkno}, ${movieno}, ${memberno});
+		insert into pick values (${pkno}, ${movieno}, ${memberno})
 	</insert>
 	
 
->>>>>>> a314bf8 (작업 중)
 </mapper>
