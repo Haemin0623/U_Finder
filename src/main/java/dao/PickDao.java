@@ -55,6 +55,7 @@ public class PickDao {
 	public List<Movie> pickMovie(String id) {
 		return session.selectList("pickns.memberPickList", id);
 	}
+<<<<<<< HEAD
 	// 특정 회원의 찜 총 갯수(페이징용)
 	public int total(String id) {
 		return (int) session.selectOne("pickns.getTotal",id);
@@ -68,4 +69,22 @@ public class PickDao {
 		
 		return session.selectList("pickns.pickListPage", map);
 	}
+=======
+
+	public Pick getPick(String id, int movieno) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("movieno", movieno);
+		return (Pick) session.selectOne("pickns.getPick", map);
+	}
+
+	public int delPcik(int movieno, int memberno) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("movieno", movieno);
+		map.put("memberno", memberno);
+		return session.delete("pickns.delPick", map);
+	}
+
+
+>>>>>>> 5342404 (찜 작업중)
 }

@@ -97,5 +97,10 @@ public class MovieDao {
 	public List<Movie> actMvList(int movieno) {
 		return session.selectList("moviens.actMvList", movieno);
 	}
-	
+
+	// 수정시 reload되면서 조회수 증가하는 것 방지
+//	public void minusCount(int movieno) {
+//		session.update("moviens.minusCount", movieno);
+//	}
+
 }

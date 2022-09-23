@@ -27,7 +27,7 @@ public class LoginResult implements CommandProcess {
 				
 				HttpSession session = request.getSession();
 				session.setAttribute("id", id);
-				session.setAttribute("mno", mno);
+				session.setAttribute("memberno", mno);
 				result = 1;
 			} else
 				result = 0;

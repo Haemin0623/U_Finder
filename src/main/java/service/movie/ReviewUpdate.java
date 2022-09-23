@@ -3,6 +3,7 @@ package service.movie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.MovieDao;
 import dao.ReviewDao;
 import model.Review;
 import service.CommandProcess;
@@ -27,6 +28,10 @@ public class ReviewUpdate implements CommandProcess {
 		// 리뷰dao 연결해서 수정 등록
 		ReviewDao rd = ReviewDao.getInstance();
 		int result = rd.reviewUpdate(review);
+		
+		// 수정시  reload되면서 조회수 1 증가하는 것 방지.
+//		MovieDao md = MovieDao.getInstance();
+//		md.minusCount(movieno);
 		
 		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);

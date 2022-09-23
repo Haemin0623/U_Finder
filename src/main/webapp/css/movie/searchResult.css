@@ -1,21 +1,27 @@
 @charset "UTF-8";
-	  .result_wide {
+ 	  .result_wide {
 	  	width: 100%;
 	  	margin-bottom: 80px;
-	  }
-	  .searchList > li {
+	  } 
+ 	  .searchList > li {
 	  	display: inline-block;
 	  	position: relative;
 	  	top: 10px;
 	  	
-	  }
-	  .searchList > li > a {
-	  	display: inline-block;
-	  	position: relative;
-	  	padding-bottom: 20px;
-	  	margin: 50px;
-	  }
-      .searchList li a span {
-        position:absolute; bottom:0; left:50%; color:#666; line-height:1.462em; 
-        white-space:nowrap; transform:translate(-50%, 0);
-      }
+    }
+    .searchList ul > li > a {
+  		display: inline-block;
+  		position: relative;
+  	   padding-bottom: 20px;
+  		margin: 50px;
+	 }
+	 
+     .searchList li a span {
+       position:absolute; bottom:0; left:50%; color:#666; line-height:1.462em; 
+       white-space:nowrap; transform:translate(-50%, 0);
+     }
+
+     img {
+      width: 200px;
+      height: 240px;
+     }

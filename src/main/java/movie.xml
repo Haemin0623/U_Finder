@@ -73,9 +73,13 @@
 		select a.* from actor a, movie m where a.movieno = m.movieno and m.movieno = #{movieno}
 	</select>
 	
+	<!-- 영화배우가 같은 영화리스트 -->
 	<select id="actMvList" parameterType="integer" resultType="movie">
-		select m.* from movie m, (select movieno from actor where actorname in (select distinct actorname from actor a, movie m where a.movieno=m.movieno and m.movieno = #{movieno})) mm where m.movieno = mm.movieno and not(m.movieno = #{movieno})
-		
+		select m.* from movie m, (select movieno from actor where actorname in (select distinct actorname from actor a, movie m where a.movieno=m.movieno and m.movieno = #{movieno})) mm where m.movieno = mm.movieno and not(m.movieno = #{movieno})		
 	</select>
-
+	
+	<!-- 수정시 reload되면서 조회수 증가하는 것 방지 -->
+<!-- 	<update id="readCount" parameterType="integer"> -->
+<!-- 		update movie set mvcnt = mvcnt-1 where movieno = #{movieno} -->
+<!-- 	</update> -->
 </mapper>

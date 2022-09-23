@@ -19,6 +19,7 @@ insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강�
 insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
 insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
+update movie set poster='CriminalCity2.jpg' where movieno=16;
 update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;
 update movie set trailer='https://www.youtube.com/embed/Mrj9XACVJ8U' where movieno=2;
 update movie set trailer='https://www.youtube.com/embed/g4qQXXtaMqc' where movieno=3;

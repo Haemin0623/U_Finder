@@ -11,8 +11,6 @@
 <deco:head></deco:head>
 
 <link rel="stylesheet" type="text/css" href="/project_semi/css/header.css">
-<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/movieInfo.css">
-<link rel="stylesheet" type="text/css" href="/project_semi/css/movie/searchResult.css">
 <link rel="stylesheet" type="text/css" href="/project_semi/css/member.css">
 
 </head>
