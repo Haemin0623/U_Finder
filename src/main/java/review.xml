@@ -34,5 +34,14 @@
 	<update id="reviewUpdate" parameterType="review" >
 		update review set content = #{content}, movielike = #{movielike} where reviewno = #{reviewno}
 	</update>
-	
+	<!-- 특정 회원의 총 리뷰 수 (페이징용)-->
+	<select id="getTotal" parameterType="string" resultType="integer">
+		select count(*) from review where memberno=#{memberno}
+	</select>
+	<!-- 리뷰리스트 페이징 -->
+	<select id="memberListPage" parameterType="map" resultType="Review">
+		select * from (select rowNum rn, a.* from
+			( select r.*, m.moviename from review r, movie m where r.movieno=m.movieno and memberno=#{memberno}) a)
+		where rn between #{startRow} and #{endRow}
+	</select>
 </mapper>

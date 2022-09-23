@@ -55,6 +55,4 @@
 		</selectKey>
 		insert into pick values (#{pickno}, #{movieno}, #{memberno})
 	</insert>
-	
-
 </mapper>

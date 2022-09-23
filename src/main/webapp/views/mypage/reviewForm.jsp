@@ -28,7 +28,7 @@
 		<form>
 			<table>
 				<tr>
-					<c:forEach var="movieReview" items="${rlist }">
+					<c:forEach var="movieReview" items="${list }">
 						<c:if test="${movieReview.del !='Y'}">
 							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
 							<th>${movieReview.content }</th>		<!-- db에서 받아올 값 -->
@@ -41,6 +41,22 @@
 				</tr>
 			</table>
 		</form>
+	</div>
+	<div align="center">
+			<c:if test="${currentPage > PAGE_PER_BLOCK }" >
+				<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${startPage - 1 }'">이전</button>
+			</c:if>
+				<c:forEach var="i" begin="${startPage }" end="${endPage }">
+					<c:if test="${i == currentPage }">
+						<button style="background: red" onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
+					</c:if>
+					<c:if test="${i != currentPage }">
+						<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
+					</c:if>		
+				</c:forEach>
+			<c:if test="${endPage < totalPage }">
+				<button onclick="location.href='/project_semi/views/mypage/reviewForm?id=${member.memberno}&${id}&pageNum=${endPage + 1 }'">다음</button>
+			</c:if>
 	</div>
 	<div id="historyback" align="center">
 		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>

@@ -1,7 +1,9 @@
 package dao;
 
 import java.io.Reader;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -66,4 +68,17 @@ public class ReviewDao {
 	public int reviewUpdate(Review review) {
 		return session.update("reviewns.reviewUpdate", review);
 	}
+//	특정회원의 총 리뷰 수 페이징용
+	public int total(int memberno) {
+		return (int) session.selectOne("reviewns.getTotal",memberno);
+	}
+
+	public List<Review> memberListPage(int startRow, int endRow, int memberno) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("memberno", memberno);
+		return session.selectList("reviewns.memberListPage", map);
+	}
+	
 }

@@ -19,8 +19,8 @@ public class PickListForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		
-		final int ROW_PER_PAGE = 2;
-		final int PAGE_PER_BLOCK = 5;
+		final int ROW_PER_PAGE = 10;
+		final int PAGE_PER_BLOCK = 10;
 		
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) {
