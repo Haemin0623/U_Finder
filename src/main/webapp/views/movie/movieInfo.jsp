@@ -49,7 +49,7 @@
                });
 		});
 		$("#noPick").click(function(){
-			$.post("/project_semi/views/movie/pickUpdate.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
+			$.post("/project_semi/views/movie/pickPick.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
 					function (data) {
 						alert("1");
 			          	$('#noPick').hide();	//   성공하면 #nosPick 숨기고

@@ -8,6 +8,7 @@
 		<pattern>/views/admin/*</pattern>
 		<pattern>/views/member_sessionChk.*</pattern>
 		<pattern>/views/movie/pickDel.*</pattern>
-		<pattern>/views/movie/pickUpdate.*</pattern>
+		<pattern>/views/movie/pickPick.*</pattern>
+		<!-- <pattern>/views/main.jsp</pattern> -->
 	</excludes>
 </decorators>

@@ -76,12 +76,21 @@ public class PickDao {
 		map.put("movieno", movieno);
 		return (Pick) session.selectOne("pickns.getPick", map);
 	}
-
+	
+	// 영화정보페이지 찜삭제
 	public int delPick(int movieno, int memberno) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("movieno", movieno);
 		map.put("memberno", memberno);
 		return session.delete("pickns.delPick", map);
+	}
+	
+	// 영화정보페이지 찜추가
+	public int pickPick(int movieno, int memberno) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("movieno", movieno);
+		map.put("memberno", memberno);
+		return session.insert("pickns.pickPick", map);
 	}
 
 	// 특정 회원의 찜 삭제

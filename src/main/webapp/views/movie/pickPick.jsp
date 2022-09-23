@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html><body>
 <c:if test="${result > 0 }">
-	찜 해제 완료
+	찜 성공
 </c:if>
 <c:if test="${result == 0 }">
-	찜 해제 실패
+	찜 성공 실패
 </c:if>
 </body></html>
