@@ -24,7 +24,7 @@
 		<form action="/project_semi/views/member/findPwResult.do" method="post">
 			<input type="email" name="id" placeholder="아이디(이메일)" required="required" ><p>
 			<input type="submit" value="비밀번호 초기화" ><br>
-			
+			<input type=
 			<a class = "btn" href="/project_semi/views/member/loginForm.do">이전</a> 
 		</form>
 		</div>

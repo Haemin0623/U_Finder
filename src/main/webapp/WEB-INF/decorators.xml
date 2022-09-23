@@ -6,10 +6,8 @@
 	<excludes>
 		<pattern>/views/home.*</pattern>
 		<pattern>/views/admin/*</pattern>
-		<pattern>/views/member_sessionChk.jsp</pattern>
+		<pattern>/views/member_sessionChk.*</pattern>
 		<pattern>/views/movie/pickDel.*</pattern>
 		<pattern>/views/movie/pickUpdate.*</pattern>
-		
-		<!-- <pattern>/views/main.jsp</pattern> -->
 	</excludes>
 </decorators>

@@ -144,11 +144,12 @@
 		</c:if>
 		<c:if test="${not empty rvList}">
 				<c:forEach var="rv" items="${rvList}">
-					<c:if test="${rv.del == 'y' }">
+					<c:if test="${rv.del == 'Y' }">
 					 삭제된 리뷰입니다. <p>
 					</c:if>
-					<c:if test="${rv.del != 'y' }">
+					<c:if test="${rv.del != 'Y' }">
 						${rv.reviewno } : ${rv.content } : ${rv.movielike }점 : ${rv.nickname }
+
 						<c:if test="${id == rv.id }">
 							<button class="updateBtn" <%-- onclick="location.href='?reviewno=${rv.reviewno }&movieno=${rv.movieno}'" --%>>수정</button> 
 								<div class="updateform">

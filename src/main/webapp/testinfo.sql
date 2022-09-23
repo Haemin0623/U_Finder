@@ -1,23 +1,23 @@
 ]-- 영화
 select * from movie;
 
-insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
-insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'n', 'n', 'n', 'y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
-insert into movie values (3, '공조', '남/북 형사의 예측불가 공조수사', '김성훈', 125, 'y', 'n', 'n', 'y', '범죄', 0, 'ConfidentialAssignment.jpg', 'https://www.youtube.com/watch?v=g4qQXXtaMqc');
-insert into movie values (4, '공조2: 인터내셔날', 'FBI까지 합세!', '이석훈', 129, 'y', 'n', 'n', 'n', '범죄', 0, 'ConfidentialAssignment2.jpg', 'https://www.youtube.com/watch?v=fzUKUfHeIYA');
-insert into movie values (5, '헤어질 결심', '헤어진다 ㅠ', '박찬욱', 138, 'n', 'n', 'n', 'y', '멜로', 0, 'DecisionToLeave.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
-insert into movie values (6, '한산: 용의 출현', '와! 이순신!', '김한민', 129, 'n', 'n', 'y', 'n', '사극', 0, 'Hansan.jpg', 'https://www.youtube.com/watch?v=GduEtmvwcI0');
-insert into movie values (7, '해리 포터와 마법사의 돌', '와! 해리포터!', '크리스 콜롬버스', 152, 'n', 'n', 'y', 'n', '판타지', 0, 'SorcerersStone.jpg', 'https://www.youtube.com/watch?v=PbdM1db3JbY');
-insert into movie values (8, '해리 포터와 비밀의 방', '와! 도비!', '크리스 콜롬버스', 161, 'n', 'n', 'y', 'n', '판타지', 0, 'ChamberofSecrets.jpg', 'https://www.youtube.com/watch?v=s4Fh2WQ2Xbk');
-insert into movie values (9, '해리 포터와 아즈카반의 죄수', '와! 시리우스 블랙!', '알폰소 쿠아론', 141, 'n', 'n', 'y', 'n', '판타지', 0, 'PrisonerofAzkaban.jpg', 'https://www.youtube.com/watch?v=R69laoH02xg');
-insert into movie values (10, '해리 포터와 불의 잔', '와! 트라이위저드!', '마이크 뉴웰', 157, 'n', 'n', 'y', 'n', '판타지', 0, 'GobletofFire.jpg', 'https://www.youtube.com/watch?v=7lJ6Suyp1ok');
-insert into movie values (11, '해리 포터와 불사조 기사단', '와! 볼드모트!', '데이비드 예이츠', 138, 'n', 'n', 'y', 'n', '판타지', 0, 'OrderofthePhoenix.jpg', 'https://www.youtube.com/watch?v=vz2_xS4TN6w');
-insert into movie values (12, '해리 포터와 혼혈 왕자', '와! 세베루스 스네이프!', '데이비드 예이츠', 153, 'n', 'n', 'y', 'n', '판타지', 0, 'HalfBloodPrince.jpg', 'https://www.youtube.com/watch?v=JYLdTuL9Wjw');
-insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 호크룩스!', '데이비드 예이츠', 146, 'n', 'n', 'y', 'n', '판타지', 0, 'DeathlyHallowsPart1.jpg', 'https://www.youtube.com/watch?v=tM7gsg1cGu0');
-insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'n', 'n', 'y', 'n', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
-insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
-insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'n', 'y', 'n', 'n', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
-insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'y', 'y', 'n', 'n', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
+insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
+insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'N', 'N', 'N', 'Y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
+insert into movie values (3, '공조', '남/북 형사의 예측불가 공조수사', '김성훈', 125, 'Y', 'N', 'N', 'Y', '범죄', 0, 'ConfidentialAssignment.jpg', 'https://www.youtube.com/watch?v=g4qQXXtaMqc');
+insert into movie values (4, '공조2: 인터내셔날', 'FBI까지 합세!', '이석훈', 129, 'Y', 'N', 'N', 'N', '범죄', 0, 'ConfidentialAssignment2.jpg', 'https://www.youtube.com/watch?v=fzUKUfHeIYA');
+insert into movie values (5, '헤어질 결심', '헤어진다 ㅠ', '박찬욱', 138, 'N', 'N', 'N', 'Y', '멜로', 0, 'DecisionToLeave.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
+insert into movie values (6, '한산: 용의 출현', '와! 이순신!', '김한민', 129, 'N', 'N', 'Y', 'N', '사극', 0, 'Hansan.jpg', 'https://www.youtube.com/watch?v=GduEtmvwcI0');
+insert into movie values (7, '해리 포터와 마법사의 돌', '와! 해리포터!', '크리스 콜롬버스', 152, 'N', 'N', 'Y', 'N', '판타지', 0, 'SorcerersStone.jpg', 'https://www.youtube.com/watch?v=PbdM1db3JbY');
+insert into movie values (8, '해리 포터와 비밀의 방', '와! 도비!', '크리스 콜롬버스', 161, 'N', 'N', 'Y', 'N', '판타지', 0, 'ChamberofSecrets.jpg', 'https://www.youtube.com/watch?v=s4Fh2WQ2Xbk');
+insert into movie values (9, '해리 포터와 아즈카반의 죄수', '와! 시리우스 블랙!', '알폰소 쿠아론', 141, 'N', 'N', 'Y', 'N', '판타지', 0, 'PrisonerofAzkaban.jpg', 'https://www.youtube.com/watch?v=R69laoH02xg');
+insert into movie values (10, '해리 포터와 불의 잔', '와! 트라이위저드!', '마이크 뉴웰', 157, 'N', 'N', 'Y', 'N', '판타지', 0, 'GobletofFire.jpg', 'https://www.youtube.com/watch?v=7lJ6Suyp1ok');
+insert into movie values (11, '해리 포터와 불사조 기사단', '와! 볼드모트!', '데이비드 예이츠', 138, 'N', 'N', 'Y', 'N', '판타지', 0, 'OrderofthePhoenix.jpg', 'https://www.youtube.com/watch?v=vz2_xS4TN6w');
+insert into movie values (12, '해리 포터와 혼혈 왕자', '와! 세베루스 스네이프!', '데이비드 예이츠', 153, 'N', 'N', 'Y', 'N', '판타지', 0, 'HalfBloodPrince.jpg', 'https://www.youtube.com/watch?v=JYLdTuL9Wjw');
+insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 호크룩스!', '데이비드 예이츠', 146, 'N', 'N', 'Y', 'N', '판타지', 0, 'DeathlyHallowsPart1.jpg', 'https://www.youtube.com/watch?v=tM7gsg1cGu0');
+insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'N', 'N', 'Y', 'N', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
+insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
+insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
+insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
 update movie set poster='CriminalCity2.jpg' where movieno=16;
 update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;

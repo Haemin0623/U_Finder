@@ -12,7 +12,7 @@
 		<selectKey keyProperty="reviewno" order="BEFORE" resultType="integer">
 			select nvl(max(reviewno), 0) + 1 reviewno from review
 		</selectKey>
-		insert into review values(#{reviewno}, #{movieno}, #{memberno}, #{content}, #{movielike}, 'n')
+		insert into review values(#{reviewno}, #{movieno}, #{memberno}, #{content}, #{movielike}, 'N')
 	</insert>
 	
 	<!-- 특정 영화에대한 리뷰 전체 불러오기 -->
@@ -22,7 +22,7 @@
 	
 	<!-- 리뷰 삭제 -->
 	<delete id="reviewDel" parameterType="integer">
-		update review set del='y' where reviewno = #{reviewno}
+		update review set del='Y' where reviewno = #{reviewno}
 	</delete>
 	
 	<!-- 리뷰 1개 불러오기 -->

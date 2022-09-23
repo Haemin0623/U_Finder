@@ -29,7 +29,7 @@
 			<table>
 				<tr>
 					<c:forEach var="movieReview" items="${rlist }">
-						<c:if test="${movieReview.del !='y'}">
+						<c:if test="${movieReview.del !='Y'}">
 							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
 							<th>${movieReview.content }</th>		<!-- db에서 받아올 값 -->
 							<td>
