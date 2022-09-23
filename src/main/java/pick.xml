@@ -50,10 +50,10 @@
 
 	<!-- 영화정보페이지 찜추가-->
 	<insert id="pickPick" parameterType="map">
-		<selectKey keyProperty="pkno" order="BEFORE" resultType="integer">
-			select nvl(max(pickno), 0)+1 pkno from pick
+		<selectKey keyProperty="pickno" order="BEFORE" resultType="integer">
+			select nvl(max(pickno), 0 ) + 1 pickno from pick
 		</selectKey>
-		insert into pick values (${pkno}, ${movieno}, ${memberno})
+		insert into pick values (#{pickno}, #{movieno}, #{memberno})
 	</insert>
 	
 

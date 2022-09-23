@@ -32,32 +32,32 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-	// 하트 <img id="yesHeart" src="../../images/하트o.png"></div>
-	$('#noHeart').attr("src", "../../images/하트o.png");
-	$('#yesHeart').attr("src", "../../images/하트x.png");
 	
 	$(function(){
 		// 찜되있는 상태에서 누를시 찜 삭제
 		$("#yesPick").click(function(){
-			alert('1');
 			$.post("/project_semi/views/movie/pickDel.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
 					function (data) {
-						var dt = data.split("<body>");
-						alert(dt[2]);
+						alert(data);
+						location.reload();
                 		$('#yesPick').hide();	//   성공하면 #yesPick 숨기고
                 		$('#noPick').show(); 	//			#noPick 보여주기
+                		$('.zzim').load(`/book/${res['book_id']} #noPick`);
                });
 		});
+		// 누를시 찜 추가
 		$("#noPick").click(function(){
 			$.post("/project_semi/views/movie/pickPick.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
 					function (data) {
-						alert("1");
+						alert(data);
+						location.reload();
 			          	$('#noPick').hide();	//   성공하면 #nosPick 숨기고
                 		$('#yesPick').show(); 	//			#yesPick 보여주기
-                		$('#pi').html(data);
-                		alert("2");
+
                });
 		});
+		
+
 	});
 	
 	
@@ -109,16 +109,18 @@
 							<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
 						</div>
 					</c:if>
-					<c:if test="${not empty id }">
-							<c:if test="${pickResult == 1 }">	<!-- 찜O인 상태 -->
-								<button id="yesPick" type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-heart"></span>찜하기</button>
-							</c:if>
-							<c:if test="${pickResult == 0 }">    <!-- 찜x인 상태 -->
-								<button  id="noPick" type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-							</c:if>
-					</c:if>
+					<div id="zzim">
+						<c:if test="${not empty id }">
+								<c:if test="${pickResult == 1 }">	<!-- 찜O인 상태 -->
+									<button id="yesPick" type="button" class="btn btn-default">
+										<span class="glyphicon glyphicon-heart"></span>찜하기</button>
+								</c:if>
+								<c:if test="${pickResult == 0 }">    <!-- 찜x인 상태 -->
+									<button  id="noPick" type="button" class="btn btn-default">
+										<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
+								</c:if>
+						</c:if>
+					</div>
 					</th></tr>
 			<tr><th colspan="2">감독 : ${mvInfo.director }<br>
 					배우 :<c:forEach varStatus="a" var="actor" items="${actorList}">

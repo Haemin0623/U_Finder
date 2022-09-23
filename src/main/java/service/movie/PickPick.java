@@ -20,6 +20,7 @@ public class PickPick implements CommandProcess {
 		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);
 		
+		
 		return "pickPick";
 	}
 
