@@ -12,7 +12,7 @@
 <body>
 
 	<div id="profile">
-		<a href="/project_semi/views/mypage/InfoChk.do?id${id }"><img alt="" src="../../images/기본이미지.jpg"
+		<a href="/project_semi/views/mypage/InfoChk.do?id${id }"><img alt="" src="/project_semi/posterUpload/${member.profile }"
 			width="120" height="120"></a>
 	</div>
 	<div id="otticon">

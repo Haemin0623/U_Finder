@@ -31,6 +31,7 @@ create table member (
     tving varchar2(1) default 'N' not null,
     memberout varchar2(1) default 'N' not null
 );
+alter table member add profile varchar2(100);
 select * from member;
 
 -- 태그 

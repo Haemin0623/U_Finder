@@ -10,7 +10,14 @@ public class Member {
 	private String coupang;
 	private String tving;
 	private String memberout;
+	private String profile;
 	
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
 	public int getMemberno() {
 		return memberno;
 	}

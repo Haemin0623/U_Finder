@@ -31,15 +31,12 @@
 <body>
 <div id="title">
 	<h2>정보 수정</h2>
-<!-- </div>  정보수정 회원 이미지 기능 보류-->
-<!-- <div class="profileimg"> -->
-<!-- 	<form action="UpdateAction.jsp"> -->
-<!-- 		<img alt="" src="../../images/기본이미지.jpg" onclick="location.href='UpdateAction.jsp'" width="100" height="100"> -->
-<!-- 		<input type="file" > -->
-<!-- 	</form> -->
-	</div>
-<form action="/project_semi/views/mypage/UpdateInfoResult.do" name="frm" onsubmit="return passwordchk()">
+</div>
+<form action="/project_semi/views/mypage/UpdateInfoResult.do" method="post" name="frm" onsubmit="return passwordchk()" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${id }">
+	<img alt="" src="/project_semi/posterUpload/${member.profile }" width="120" height="120">
+	<input type="file" name="profile">
+	
 	<table>
 		<tr>
 			<th>아이디</th>
