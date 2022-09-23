@@ -42,7 +42,6 @@
 						location.reload();
                 		$('#yesPick').hide();	//   성공하면 #yesPick 숨기고
                 		$('#noPick').show(); 	//			#noPick 보여주기
-                		$('.zzim').load(`/book/${res['book_id']} #noPick`);
                });
 		});
 		// 누를시 찜 추가
@@ -139,8 +138,9 @@
 	</div> <!-- 영화 정보 -->
 	
 	<!-- 전체 리뷰 리스트  -->
-	<h4>리뷰</h4>
+	<h1>리뷰</h1>
 	<div> <!-- 전체리뷰 가져오고 + 수정 삭제 가능하게하기. 단 수정삭제시 그 글에대한 회원 id 와 로그인 세션과 id가 맞아야함 -->
+	<table>
 		<c:if test="${empty rvList }">
 			리뷰 없음
 		</c:if>
@@ -150,7 +150,7 @@
 					 삭제된 리뷰입니다. <p>
 					</c:if>
 					<c:if test="${rv.del != 'Y' }">
-						${rv.reviewno } : ${rv.content } : ${rv.movielike }점 : ${rv.nickname }
+						${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
 
 						<c:if test="${id == rv.id }">
 							<button class="updateBtn" <%-- onclick="location.href='?reviewno=${rv.reviewno }&movieno=${rv.movieno}'" --%>>수정</button> 
@@ -172,10 +172,11 @@
 					</c:if>
 				</c:forEach>
 		</c:if>
+	</table>
 	</div>
 	
 	
-	<!-- 평균별점??????? -->
+	<!-- 평균 점수? -->
 	<div></div>
 	<!-- 리뷰 리스트 페이징 -->
 	<div></div>
@@ -183,8 +184,9 @@
 	
 	
 	<!-- 짧은댓글리뷰자리 -->
+	<hr>
 	<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
-		<h4 class="sub_title">리뷰와 별점 등록</h4>                   
+		<h1 class="sub_title">리뷰와 점수 등록</h1>                   
 		<table>
 			<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
 			<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>

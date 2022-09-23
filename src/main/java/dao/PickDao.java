@@ -104,4 +104,12 @@ public class PickDao {
 	public int pickmemberno(String id) {
 		return (int)session.selectOne("pickns.pickmemberno", id);
 	}
+	
+	// 찜목록에 이미 추가되있는지 확인
+	public Pick chkPick(int movieno, int memberno) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("movieno", movieno);
+		map.put("memberno", memberno);
+		return (Pick) session.selectOne("pickns.chkPick", map);
+	}
 }

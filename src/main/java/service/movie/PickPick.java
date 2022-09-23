@@ -4,9 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PickDao;
+import model.Pick;
 import service.CommandProcess;
 
 public class PickPick implements CommandProcess {
+
+	private Object result;
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -15,8 +18,15 @@ public class PickPick implements CommandProcess {
 		
 		// 찜 추가
 		PickDao pd = PickDao.getInstance();
-		int result = pd.pickPick(movieno, memberno);
+		Pick chk = pd.chkPick(movieno, memberno);
 		
+		if (chk == null) {
+			result = pd.pickPick(movieno, memberno);
+		} else {
+			result = 0;
+		}
+		
+
 		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);
 		

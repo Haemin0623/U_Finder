@@ -55,4 +55,10 @@
 		</selectKey>
 		insert into pick values (#{pickno}, #{movieno}, #{memberno})
 	</insert>
+	
+	<!-- 찜목록에 이미 추가되있는지 확인 -->
+	<select id="chkPick" parameterType="map" resultType="pick">
+		select * from pick where movieno=#{movieno} and memberno=#{memberno}
+	</select>
+
 </mapper>
