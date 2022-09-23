@@ -10,11 +10,6 @@
 <%@ include file="../member_sessionChk.jsp" %>
 </head>
 <body>
-	${currentPage }
-	${startPage }
-	${endPage }
-	${totalPage }
-	${PAGE_PER_BLOCK }
 
 	<div id="profile">
 		<a href="/project_semi/views/mypage/InfoChk.do?id${id }"><img alt="" src="../../images/기본이미지.jpg"

@@ -60,7 +60,7 @@ public class PickDao {
 	public int total(String id) {
 		return (int) session.selectOne("pickns.getTotal",id);
 	}
-
+	// 특정회원의 찜리스트 (페이징용)
 	public List<Pick> pickListPage(int startRow, int endRow, String id) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("startRow", startRow);
@@ -69,7 +69,6 @@ public class PickDao {
 		
 		return session.selectList("pickns.pickListPage", map);
 	}
-
 
 	public Pick getPick(String id, int movieno) {
 		Map<String, Object> map = new HashMap<>();
@@ -85,6 +84,15 @@ public class PickDao {
 		return session.delete("pickns.delPick", map);
 	}
 
-
-
+	// 특정 회원의 찜 삭제
+	public int pickdelete(int movieno, String id) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("movieno", movieno);
+		map.put("id", id);
+		return session.delete("pickns.pickDelete", map);
+	}
+	// 특정회원의 movieno 조회
+	public int pickmemberno(String id) {
+		return (int)session.selectOne("pickns.pickmemberno", id);
+	}
 }

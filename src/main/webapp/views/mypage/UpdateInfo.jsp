@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -46,7 +47,7 @@
 		</tr>
 		<tr>
 			<th>닉네임</th>
-			<td><input type="text" name="nickname" autofocus="autofocus" required="required"></td>
+			<td><input type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
@@ -59,10 +60,31 @@
 		<tr>	
 			<th>사용중인 OTT</th>
 			<td>
-				넷플릭스<input type="checkbox"name="netflix" value="Y">
-				디즈니+<input type="checkbox" name="disney" value="Y">
-				쿠팡플레이<input type="checkbox" name="coupang" value="Y">
-				티빙<input type="checkbox" name="tving" value="Y"></td>
+				<c:if test="${member.netflix != 'Y' }">
+					넷플릭스<input type="checkbox"name="netflix" value="Y">
+				</c:if>
+				<c:if test="${member.netflix == 'Y' }">
+					넷플릭스<input type="checkbox"name="netflix" checked="checked" value="Y">
+				</c:if>
+				<c:if test="${member.disney != 'Y' }">
+					디즈니+<input type="checkbox" name="disney" value="Y">
+				</c:if>
+				<c:if test="${member.disney == 'Y' }">
+					디즈니+<input type="checkbox" name="disney" checked="checked" value="Y">
+				</c:if>
+				<c:if test="${member.coupang != 'Y' }">
+					쿠팡플레이<input type="checkbox" name="coupang" value="Y">
+				</c:if>
+				<c:if test="${member.coupang == 'Y' }">
+					쿠팡플레이<input type="checkbox" name="coupang" checked="checked" value="Y">
+				</c:if>
+				<c:if test="${member.tving != 'Y' }">
+					티빙<input type="checkbox" name="tving" value="Y">
+				</c:if>
+				<c:if test="${member.tving == 'Y' }">
+					티빙<input type="checkbox" name="tving" checked="checked" value="Y">
+				</c:if>
+			</td>
 				</tr>
 		<tr>	
 			<th colspan="2"><input type="submit" value="확인">

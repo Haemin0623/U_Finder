@@ -20,7 +20,7 @@ public class PickListForm implements CommandProcess {
 		
 		
 		final int ROW_PER_PAGE = 2;
-		final int PAGE_PER_BLOCK = 10;
+		final int PAGE_PER_BLOCK = 5;
 		
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) {
@@ -37,7 +37,7 @@ public class PickListForm implements CommandProcess {
 		PickDao pd = PickDao.getInstance();
 		
 		int total = pd.total(id);
-		int totalPage = (int) Math.ceil((double) total / PAGE_PER_BLOCK);
+		int totalPage = (int) Math.ceil((double) total / ROW_PER_PAGE);
 		int startPage = currentPage - (currentPage - 1) % PAGE_PER_BLOCK;
 		int endPage = startPage + PAGE_PER_BLOCK - 1;
 		
@@ -54,6 +54,7 @@ public class PickListForm implements CommandProcess {
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
+
 
 		
 		return "pickListForm";
