@@ -80,5 +80,17 @@ public class ReviewDao {
 		map.put("memberno", memberno);
 		return session.selectList("reviewns.memberListPage", map);
 	}
+
+	public int totalMvRv(int movieno) {
+		return (int) session.selectOne("reviewns.totalMvRv", movieno);
+	}
+
+	public List<Review> rvList(int startRow, int endRow, int movieno) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		map.put("movieno", movieno);
+		return session.selectList("reviewns.rvList", map);
+	}
 	
 }

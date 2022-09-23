@@ -139,13 +139,12 @@
 	
 	<!-- 전체 리뷰 리스트  -->
 	<h1>리뷰</h1>
-	<div> <!-- 전체리뷰 가져오고 + 수정 삭제 가능하게하기. 단 수정삭제시 그 글에대한 회원 id 와 로그인 세션과 id가 맞아야함 -->
-	<table>
-		<c:if test="${empty rvList }">
+	<div> <!-- 전체리뷰  -->
+		<c:if test="${empty rvPaging }">
 			리뷰 없음
 		</c:if>
-		<c:if test="${not empty rvList}">
-				<c:forEach var="rv" items="${rvList}">
+		<c:if test="${not empty rvPaging}">
+				<c:forEach var="rv" items="${rvPaging}">
 					<c:if test="${rv.del == 'Y' }">
 					 삭제된 리뷰입니다. <p>
 					</c:if>
@@ -153,9 +152,10 @@
 						${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
 
 						<c:if test="${id == rv.id }">
-							<button class="updateBtn" <%-- onclick="location.href='?reviewno=${rv.reviewno }&movieno=${rv.movieno}'" --%>>수정</button> 
+							<button class="updateBtn">수정</button> 
+							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
 								<div class="updateform">
-									<h1>리뷰 수정</h1>
+									<h3>리뷰 수정하기</h3>
 									<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
 										<input type="hidden" name="reviewno" value = "${rv.reviewno }">
 										<input type="hidden" name="movieno" value = "${rv.movieno }">
@@ -163,23 +163,36 @@
 										<table>
 											<tr><th><textarea name="content" >${rv.content }</textarea></th></tr>
 											<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
-											<tr><th><input type="submit" value="수정"></th></tr>
+											<tr><th><input type="submit" value="확인"></th></tr>
 										</table>
 									</form>
 								</div> 
-							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
 						</c:if><p>
 					</c:if>
 				</c:forEach>
 		</c:if>
-	</table>
 	</div>
 	
 	
 	<!-- 평균 점수? -->
 	<div></div>
 	<!-- 리뷰 리스트 페이징 -->
-	<div></div>
+	<div align="center">
+		<c:if test="${currentPage > PAGE_PER_BLOCK }">
+			<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${startPage - 1 }'">이전</button>
+		</c:if>
+		<c:forEach var="i" begin="${startPage }" end="${endPage }">
+			<c:if test="${i == currentPage }">
+				<button style="background: red" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+			</c:if>
+			<c:if test="${i != currentPage }">
+				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+			</c:if>		
+		</c:forEach>
+		<c:if test="${endPage < totalPage }">
+			<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${endPage + 1 }'">다음</button>
+		</c:if>
+	</div>
 	
 	
 	

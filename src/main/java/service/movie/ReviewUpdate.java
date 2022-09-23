@@ -1,9 +1,9 @@
 package service.movie;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.MovieDao;
 import dao.ReviewDao;
 import model.Review;
 import service.CommandProcess;
@@ -12,8 +12,8 @@ public class ReviewUpdate implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int reviewno = Integer.parseInt(request.getParameter("reviewno"));
 		int movieno = Integer.parseInt(request.getParameter("movieno"));
+		int reviewno = Integer.parseInt(request.getParameter("reviewno"));
 		int memberno = Integer.parseInt(request.getParameter("memberno"));
 		String content = request.getParameter("content");
 		int movielike = Integer.parseInt(request.getParameter("star"));

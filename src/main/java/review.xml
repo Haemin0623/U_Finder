@@ -44,4 +44,16 @@
 			( select r.*, m.moviename from review r, movie m where r.movieno=m.movieno and memberno=#{memberno}) a)
 		where rn between #{startRow} and #{endRow}
 	</select>
+	
+	<!-- 특정 영화의 리뷰 개수 -->
+	<select id="totalMvRv" parameterType="integer" resultType="integer">
+		select count(*) from review where movieno = #{movieno}
+	</select>
+	
+	<!-- 리뷰 리스트 뽑아오기 -->
+	<select id="rvList" parameterType="map" resultType="review">
+		select * from (select rowNum rn, a.* from 
+		(select r.* from review r, movie m where r.movieno=m.movieno and m.movieno=#{movieno}) a)
+			where rn between #{startRow} and #{endRow}
+	</select>
 </mapper>
