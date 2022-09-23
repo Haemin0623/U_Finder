@@ -40,7 +40,7 @@
 		// 찜되있는 상태에서 누를시 찜 삭제
 		$("#yesPick").click(function(){
 			alert('1');
-			$.post("/project_semi/views/movie/pickUpdate.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
+			$.post("/project_semi/views/movie/pickDel.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
 					function (data) {
 						var dt = data.split("<body>");
 						alert(dt[2]);
@@ -107,23 +107,16 @@
 						<div id="nonoPick">
 						<button type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-<!-- 						<img id="noHeart" src="../../images/하트x.png"> -->
 						</div>
 					</c:if>
 					<c:if test="${not empty id }">
 							<c:if test="${pickResult == 1 }">	<!-- 찜O인 상태 -->
-								<!-- <div id="yesPick"> -->
 								<button id="yesPick" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-heart"></span>찜하기</button>
- 									<!-- <img id="yesHeart" src="../../images/하트o.png"> -->
-								<!-- </div> -->
 							</c:if>
 							<c:if test="${pickResult == 0 }">    <!-- 찜x인 상태 -->
-							<!-- 	<div id="noPick"> -->
 								<button  id="noPick" type="button" class="btn btn-default">
 									<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-								<!-- 	<img id="noHeart" src="../../images/하트x.png"> -->
-								<!-- </div> -->
 							</c:if>
 					</c:if>
 					</th></tr>

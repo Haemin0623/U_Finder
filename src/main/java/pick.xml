@@ -20,7 +20,7 @@
 		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
 			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
 	</select>
-<<<<<<< HEAD
+
 
 	<select id="getTotal" parameterType="string" resultType="integer">
 		select count(*) from member m, pick p where m.memberno= p.memberno and id=#{id}
@@ -31,7 +31,7 @@
 	where rn between #{startRow} and #{endRow}
 	</select>
 	
-=======
+
 	
 	<select id="getPick" parameterType="map" resultType="pick">
 		select p.* from pick p, member m where p.memberno=m.memberno and m.id=#{id} and p.movieno=#{movieno}
@@ -40,5 +40,5 @@
 	<select id="delPick" parameterType="map">
 		delete from pick where movieno = #{movieno} and memberno = #{memberno}
 	</select>
->>>>>>> 5342404 (찜 작업중)
+
 </mapper>

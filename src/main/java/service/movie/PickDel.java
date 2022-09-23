@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.PickDao;
 import service.CommandProcess;
 
-public class PickUpdate implements CommandProcess {
+public class PickDel implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -15,11 +15,14 @@ public class PickUpdate implements CommandProcess {
 		System.out.println(movieno + "," +  memberno);
 		// 찜 삭제
 		PickDao pd = PickDao.getInstance();
-		int result = pd.delPcik(movieno, memberno);
+		int result = pd.delPick(movieno, memberno);
 		
 		request.setAttribute("result", result);
 		request.setAttribute("movieno", movieno);
 		System.out.println("result = "+ result);
+		
+		
+		
 		
 		return "pickDel";
 	}
