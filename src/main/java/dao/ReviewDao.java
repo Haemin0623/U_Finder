@@ -68,7 +68,7 @@ public class ReviewDao {
 	public int reviewUpdate(Review review) {
 		return session.update("reviewns.reviewUpdate", review);
 	}
-//	특정회원의 총 리뷰 수 페이징용
+	// 특정회원의 총 리뷰 수 페이징용
 	public int total(int memberno) {
 		return (int) session.selectOne("reviewns.getTotal",memberno);
 	}
@@ -91,6 +91,11 @@ public class ReviewDao {
 		map.put("endRow", endRow);
 		map.put("movieno", movieno);
 		return session.selectList("reviewns.rvList", map);
+	}
+
+	// 해당 영화 리뷰들의 평균 점수
+	public float avgScore(int movieno) {
+		return (float) session.selectOne("reviewns.avgScore", movieno);
 	}
 	
 }

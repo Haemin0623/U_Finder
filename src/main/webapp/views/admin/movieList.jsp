@@ -21,6 +21,13 @@
            });
 	}
 	
+	function avgRvScore(movieno) {
+		$.post("/project_semi/views/admin/movieReviewScore.do","movieno="+movieno,
+				function (data) {
+					$('#score'+movieno).prepend(data);
+           });
+	}
+	
 </script>
 
 </head>
@@ -43,7 +50,7 @@
 			<th>트레일러</th>
 			<th>찜한 회원 수</th>
 			<th>태그</th>
-			<th>리뷰</th>
+			<th>평균리뷰점수</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
@@ -71,9 +78,9 @@
 						<td>no poster</td>					
 					</c:if>
 					<td>${movie.trailer }</td>
-					<td id="count${movie.movieno }"><script type="text/javascript">pickCount(${movie.movieno })</script> </td>
+					<td id="count${movie.movieno }"><script type="text/javascript">pickCount(${movie.movieno })</script></td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
-					<td><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'">확인</button></td>				
+					<td id="score${movie.movieno }"><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'"><script type="text/javascript">avgRvScore(${movie.movieno })</script>리뷰확인</button></td>				
 				</tr>
 			</c:forEach>
 		</c:if>

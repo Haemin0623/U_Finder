@@ -1,19 +1,27 @@
 @charset "UTF-8";
 
+body {
+	background-color: black;
+}
+
 table {
-	background-color: rgb(242, 242, 153);
+	background-color: white;
 	width: 100%;
 }
 
-td {
-	background-color: rgb(255, 204, 204);
+table caption {
+	color: white;
 }
 
 th {
-	background-color: rgb(203, 35, 78);
+	background-color: #E50914;
+}
+
+td {
+	background-color: rgb(255, 191, 193);
 }
 
 td, th {
 	padding: 15px;
-	border: 1px solid purple;
+	border: 1px solid #E50914;
 }

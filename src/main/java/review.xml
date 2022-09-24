@@ -56,4 +56,9 @@
 		(select r.* from review r, movie m where r.movieno=m.movieno and m.movieno=#{movieno}) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
+	
+	<!-- 해당 영화 리뷰들의 평균 점수 -->
+	<select id="avgScore" parameterType="integer" resultType="float">
+		select avg(movielike) from review where movieno = #{movieno}
+	</select>
 </mapper>

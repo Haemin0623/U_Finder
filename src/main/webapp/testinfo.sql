@@ -224,10 +224,11 @@ select * from (select rowNum rn, a.* from
 		(select p.*, m.poster from pick p, movie m, member mb where p.movieno=m.movieno and p.memberno=mb.memberno and id='test@test.com') a)
 	where rn between 3 and 4;
 
-select *from member;
+select * from review;
 
 select * from movie where trim(both '''' from '''disney''') = 'y';
 
 select trim(both '''' from ' ''disney'' ') from dual;
 
 select count(*) from pick where movieno=1;
+select avg(movielike) from review where movieno = 1;
