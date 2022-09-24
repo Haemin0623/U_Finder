@@ -121,13 +121,13 @@
 						</c:if>
 					</div>
 					</th></tr>
-			<tr><th colspan="2">감독 : ${mvInfo.director }<br>
-					배우 :<c:forEach varStatus="a" var="actor" items="${actorList}">
+			<tr><th colspan="2">감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }">${mvInfo.director }</a><br>
+					배우 : <c:forEach varStatus="a" var="actor" items="${actorList}">
 							 <c:if test="${a.last }">
-							 	${actor.actorname}
+							 	<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname}</a>
 							 </c:if>
 							 <c:if test="${!a.last }">
-								${actor.actorname} ,
+								<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname} , </a>
 							 </c:if>
 						 </c:forEach></th>
 			<tr><th colspan="2">줄거리 : ${mvInfo.story }<br>
@@ -149,7 +149,13 @@
 					 삭제된 리뷰입니다. <p>
 					</c:if>
 					<c:if test="${rv.del != 'Y' }">
-						${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
+						<!--  마이페이지의 내 리뷰 중 수정할 리뷰를 클릭시 movieInfo 페이지에서 바로 볼수있게 표시하는 기능 -->
+						<c:if test="${reviewno == rv.reviewno }">
+							<strong> ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname } </strong>
+						</c:if>
+						<c:if test="${reviewno != rv.reviewno }">
+							${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
+						</c:if>
 
 						<c:if test="${id == rv.id }">
 							<button class="updateBtn">수정</button> 

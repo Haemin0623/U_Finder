@@ -32,8 +32,8 @@
 						<c:if test="${movieReview.del !='Y'}">
 							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
 							<th>${movieReview.content }</th>		<!-- db에서 받아올 값 -->
-							<td>
-								<input type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}'" value="수정"> <!-- 영화 정보 페이지로 이동 -->
+							<td>																										      <!-- 영화정보 페이지에서 수정할 리뷰 표시  -->
+								<input type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}&reviewno=${movieReview.reviewno}'" value="수정"> <!-- 영화 정보 페이지로 이동 -->
 								<input type="button" onclick="delchk(${movieReview.reviewno})" value="삭제">
 							</td>
 						</c:if>	

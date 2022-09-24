@@ -29,7 +29,14 @@ public class MovieInfo implements CommandProcess {
 		
 		int movieno = Integer.parseInt(request.getParameter("movieno"));
 		
-		//
+		
+		String reviewnoo = request.getParameter("reviewno");
+		if (reviewnoo == null || reviewnoo.equals("")) {
+			reviewnoo = "0";
+		}
+		int reviewno = Integer.valueOf(reviewnoo);
+		//마이페이지-내 리뷰에서 수정 클릭시 영화정보페이지에서 표시하기 위한 reviewno
+		
 
 		final int ROW_PER_PAGE = 10;
 		final int PAGE_PER_BLOCK = 10;
@@ -63,6 +70,8 @@ public class MovieInfo implements CommandProcess {
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
+		request.setAttribute("reviewno", reviewno);
+		
 		
 		
 		// 리뷰 전체 리스트 불러오기
@@ -80,7 +89,7 @@ public class MovieInfo implements CommandProcess {
 		
 		MovieDao md = MovieDao.getInstance();
 		md.readCount(movieno);
-		Movie mvInfo = md.show(movieno);
+		Movie mvInfo = md.show(movieno); 
 		request.setAttribute("mvInfo", mvInfo);
 		
 		ActorDao ad = ActorDao.getInstance();
