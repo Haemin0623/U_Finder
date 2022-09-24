@@ -39,10 +39,12 @@ public class PickDao {
 			System.out.println("초기화 에러 " + e.getMessage());
 		}
 	}
+	
 	// 찜한 영화리스트 poster명 받아오기
 	public List<String> pickPoster(String id) {
 		return session.selectList("pickns.pickPoster",id);
 	}
+	
 	// 찜리스트 페이징용
 	public List<Pick> pickList(int startRow, int endRow) {
 		Map<String, Integer> map = new HashMap<>();
@@ -111,5 +113,10 @@ public class PickDao {
 		map.put("movieno", movieno);
 		map.put("memberno", memberno);
 		return (Pick) session.selectOne("pickns.chkPick", map);
+	}
+
+	// 해당 영화를 찜한 회원의 수가 몇명인가 조회
+	public int moviePickCount(int movieno) {
+		return (int) session.selectOne("pickns.pickCount", movieno);
 	}
 }

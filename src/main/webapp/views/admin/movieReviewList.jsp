@@ -15,7 +15,7 @@
 	<table>
 		<tr>
 			<th>리뷰번호</th>
-			<th>영화번호</th>
+			<th>회원번호</th>
 			<th>내용</th>
 			<th>점수</th>
 			<th>삭제여부</th>

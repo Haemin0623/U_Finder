@@ -6,31 +6,35 @@
 	<select id="select" parameterType="string" resultType="member">
 		select * from member where id=#{id} and del='N'
 	</select>
+	
 	<!--id로 찜한 영화 poster 출력 -->
 	<select id="pickPoster" parameterType="string" resultType="string">
 	select poster from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id}))
 	</select>
 	
+	<!-- 찜리스트 페이징용 -->
 	<select id="list" parameterType="map" resultType="member">
 		select * from (select rowNum rn, a.* from (select * from pick order by pickno) a)
 			where rn between #{startRow} and #{endRow}
 	</select>	
 	
+	<!-- 회원 한명의 찜리스트 -->
 	<select id="memberPickList" parameterType="map" resultType="movie">
 		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
 			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
 	</select>
-<!-- 	특정 회원 찜리스트 페이징용 -->
+	
+	<!-- 특정 회원 찜리스트 페이징용 -->
 	<select id="getTotal" parameterType="string" resultType="integer">
 		select count(*) from member m, pick p where m.memberno= p.memberno and id=#{id}
 	</select>
-<!-- 	찜리스트 페이징용 -->
+	
+	<!-- 찜리스트 페이징용 -->
 	<select id="pickListPage" parameterType="map" resultType="Pick">
 		select * from (select rowNum rn, a.* from
 		(select p.*, m.poster from pick p, movie m, member mb where p.movieno=m.movieno and p.memberno=mb.memberno and id=#{id}) a)
 	where rn between #{startRow} and #{endRow}
-	</select>
-	
+	</select>	
 
 	<!-- pick 정보 -->
 
@@ -43,7 +47,7 @@
 		delete from pick where movieno = #{movieno} and memberno = #{memberno}
 	</select>
 	
-<!-- 	찜취소 -->
+	<!-- 찜취소 -->
 	<delete id="pickDelete" parameterType="map">
 		delete from pick where pickno=(select pickno from member m, pick p where m.memberno=p.memberno and id=#{id} and movieno=#{movieno})
 	</delete>
@@ -59,6 +63,11 @@
 	<!-- 찜목록에 이미 추가되있는지 확인 -->
 	<select id="chkPick" parameterType="map" resultType="pick">
 		select * from pick where movieno=#{movieno} and memberno=#{memberno}
+	</select>
+	
+	<!-- 해당 영화를 찜한 회원의 수가 몇명인가 조회 -->
+	<select id="pickCount" parameterType="integer" resultType="integer">
+		select count(*) from pick where movieno=#{movieno }
 	</select>
 
 </mapper>

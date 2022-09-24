@@ -227,3 +227,5 @@ select *from member;
 select * from movie where trim(both '''' from '''disney''') = 'y';
 
 select trim(both '''' from ' ''disney'' ') from dual;
+
+select count(*) from pick where movieno=1;

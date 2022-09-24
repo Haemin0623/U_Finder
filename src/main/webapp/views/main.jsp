@@ -23,8 +23,7 @@
 
 </head>
 <body>
-	<div id="carouselExampleFade" class="carousel slide carousel-fade"
-		data-bs-ride="carousel">
+	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-indicators">
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -33,7 +32,7 @@
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
 				
-		<div class="carousel-inner" style="height: 200px">
+<!-- 		<div class="carousel-inner" style="height: 200px"> -->
 			<div class="carousel-item active">
 				<img class="d-block w-100" height="200px" src="../images/chim1.jpg" alt="First slide">
 			</div>
