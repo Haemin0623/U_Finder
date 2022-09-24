@@ -1,42 +1,51 @@
 @charset "UTF-8";
-	.movieInfoForm { 
-		width: 90% ;
-		height: 100%;
-		border: 1px solid;
-		border-collapse: collapse;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.movieInfoForm th, td {
-   		border: 1px solid;
-	}
-	.th1 { width: 25%; }
-	
-	
-	
-	table img {
-		width: 100%;
-		height: 100%;
-	}
-	  .searchList > li {
-	  	display: inline-block;
-	  	position: relative;
-	  	top: 10px;
-	  	
-	  }
-	  .searchList > li > a {
-	  	display: inline-block;
-	  	position: relative;
-	  	padding-bottom: 20px;
-	  	margin: 50px;
-	  }
-      .searchList li a span {
-        position:absolute; bottom:0; left:50%; color:#666; line-height:1.462em; 
-        white-space:nowrap; transform:translate(-50%, 0);
-      }
-      
-      #yesHeart, #noHeart {
-      	width: 40px;
-      	height: 40px;
-      }
-	
+
+.movieInfoForm {
+	width: 90%;
+	height: 100%;
+	border: 1px solid;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.movieInfoForm th, td {
+	border: 1px solid;
+}
+
+.th1 {
+	width: 25%;
+}
+
+table img {
+	width: 400px;
+	height: 480px;
+}
+
+.searchList>li {
+	display: inline-block;
+	position: relative;
+	top: 10px;
+}
+
+.searchList>li>a {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 20px;
+	margin: 50px;
+}
+
+.searchList li a span {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	color: #666;
+	line-height: 1.462em;
+	white-space: nowrap;
+	transform: translate(-50%, 0);
+}
+
+#yesHeart, #noHeart {
+	width: 40px;
+	height: 40px;
+}

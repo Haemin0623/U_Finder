@@ -54,6 +54,8 @@ insert into member values (9, 'dddd@kakao.com', '888', '탈퇴', 'N', 'N', 'Y', 
 insert into member values (10, 'abcd@test.com', '999', '유재석', 'Y', 'Y', 'Y', 'N', 'N');
 insert into member values (11, 'dcba@test.com', '000', '박명수', 'Y', 'Y', 'Y', 'Y', 'N');
 
+update member set id='master', password='123456', nickname='마스터' where memberno=1;
+
 -- 태그
 select * from tag;
 

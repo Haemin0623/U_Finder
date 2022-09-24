@@ -40,7 +40,7 @@ public class MovieUpdateAction implements CommandProcess {
 			String genre = mr.getParameter("genre");
 			String poster = mr.getFilesystemName("poster");
 			String trailer = mr.getParameter("trailer");
-			System.out.println(moviename);
+
 			if (netflix == null) {
 				netflix = "N";
 			}

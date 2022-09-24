@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+body {
+	background-color: black;
+	color: white;
+	
+}
+
 .header {
 	border: 1px solid;
 	width: 100%;
@@ -23,25 +29,13 @@
 	
 }
 
-
-#main {
-	margin-right: 10px;
-}
-
-/* #search {
-	background: none;
-	border: none;
-	outline: none;
-	color: white;
-	width: 100%;
-} */
-
-#login {
-	float: right;
-	margin-left: 10px;
-}
-
 #search_btn {
 	width: 50px;
 }
+
+img#mv {
+	width: 200px;
+	height: 240px;
+}
+
 

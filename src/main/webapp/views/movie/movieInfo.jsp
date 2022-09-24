@@ -99,7 +99,7 @@
 <div> <!-- 전체 -->
 	<div> <!-- 영화 정보 -->
 		<table class="movieInfoForm">
-			<tr><th class="th1" rowspan="6" ><img src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
+			<tr><th class="th1" rowspan="6" ><img id="bigMv" src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th>
 				<th>
 					<c:if test="${empty id }">

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
 
 /* .find{ */
@@ -12,6 +13,9 @@
 /* } */
 
 </style>
+
+<link rel="stylesheet" type="text/css" href="../../css/member.css">
+
 </head>
 <body>
 

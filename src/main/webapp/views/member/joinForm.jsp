@@ -5,18 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
-. check input {
-	width: 85%;
-}
-
-fieldset {
- width: 80%;
-
-}
-
-
+	. check input {
+		width: 85%;
+	}
+	
+	fieldset {
+	 width: 80%;
+	
+	}
 </style>
+<link rel="stylesheet" type="text/css" href="../../css/member.css">
 
 
 <script type="text/javascript">

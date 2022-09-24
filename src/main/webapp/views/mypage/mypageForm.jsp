@@ -45,7 +45,7 @@
 		<h2 align="center">찜한영화</h2>
 		<c:forEach var="pick" items="${list }">
 				<a href="/project_semi/views/movie/movieInfo.do?movieno=${pick.movieno }">
-				<img src="/project_semi/posterUpload/${pick.poster }"></a>
+				<img id="mv" src="/project_semi/posterUpload/${pick.poster }"></a>
 		</c:forEach>
 	</div>
 		<div align="center">

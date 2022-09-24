@@ -23,7 +23,8 @@
 
 </head>
 <body>
-	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+	
+	<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-indicators">
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -31,33 +32,30 @@
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
-				
-<!-- 		<div class="carousel-inner" style="height: 200px"> -->
+		<div class="carousel-inner" style="height: 200px">
 			<div class="carousel-item active">
-				<img class="d-block w-100" height="200px" src="../images/chim1.jpg" alt="First slide">
+				<img id="banner" class="d-block w-75" height="200px" src="../images/chim1.jpg" alt="First slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" height="200px" src="../images/chim2.png" alt="Second slide">
+				<img id="banner" class="d-block w-75" height="200px" src="../images/chim2.png" alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" height="200px" src="../images/chim3.jpg" alt="Third slide">
+				<img id="banner" class="d-block w-75" height="200px" src="../images/chim3.jpg" alt="Third slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" height="200px" src="../images/chim4.jpeg" alt="Fourth slide">
+				<img id="banner" class="d-block w-75" height="200px" src="../images/chim4.jpeg" alt="Fourth slide">
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" height="200px" src="../images/chim5.jpeg" alt="Fifth slide">
+				<img id="banner" class="d-block w-75" height="200px" src="../images/chim5.jpeg" alt="Fifth slide">
 			</div>
 		</div>
-		<button class="carousel-control-prev" type="button"
-			data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-				class="visually-hidden">Previous</span>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
 		</button>
-		<button class="carousel-control-next" type="button"
-			data-bs-target="#carouselExampleFade" data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
-				class="visually-hidden">Next</span>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
 
@@ -72,7 +70,7 @@
 								<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
 							</li>
 						</c:forEach>
-					</ul>
+ 					</ul>
 				</div>
 			</fieldset>
 		</c:if>
