@@ -156,8 +156,9 @@
 						<c:if test="${reviewno != rv.reviewno }">
 							${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
 						</c:if>
-
-						<c:if test="${id == rv.id }">
+						<!-- 리뷰수정 -->
+						<%-- <c:forEach var="rv2" items="rvList2"> --%>
+						<c:if test="${id == rv.id }"> 
 							<button class="updateBtn">수정</button> 
 							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
 								<div class="updateform">
@@ -174,6 +175,8 @@
 									</form>
 								</div> 
 						</c:if><p>
+					<%-- 	</c:forEach> --%>	<!-- 리뷰수정 -->
+						
 					</c:if>
 				</c:forEach>
 		</c:if>

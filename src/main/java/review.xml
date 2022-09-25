@@ -52,9 +52,12 @@
 	
 	<!-- 리뷰 리스트 뽑아오기 -->
 	<select id="rvList" parameterType="map" resultType="review">
-		select * from (select rowNum rn, a.* from 
+		select r.*, mm.nickname, mm.id from 
+		(select * from (select rowNum rn, a.* from 
 		(select r.* from review r, movie m where r.movieno=m.movieno and m.movieno=#{movieno}) a)
-			where rn between #{startRow} and #{endRow}
+			where rn between #{startRow} and #{endRow}) r,
+		 member mm where mm.memberno=r.memberno
+		
 	</select>
 	
 	<!-- 해당 영화 리뷰들의 평균 점수 -->
