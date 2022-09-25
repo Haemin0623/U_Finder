@@ -19,6 +19,63 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+	function loopNext1(){
+	    $('#scroll').stop().animate({scrollLeft:'+=30'}, 'fast', 'linear', loopNext1);
+	}
+	function loopNext2(){
+	    $('#scroll').stop().animate({scrollLeft:'+=50'}, 'fast', 'linear', loopNext2);
+	}
+	function loopNext3(){
+	    $('#scroll').stop().animate({scrollLeft:'+=70'}, 'fast', 'linear', loopNext3);
+	}
+	
+	function loopPrev1(){
+	    $('#scroll').stop().animate({scrollLeft:'-=30'}, 'fast', 'linear', loopPrev1);
+	}
+	function loopPrev2(){
+	    $('#scroll').stop().animate({scrollLeft:'-=50'}, 'fast', 'linear', loopPrev2);
+	}
+	function loopPrev3(){
+	    $('#scroll').stop().animate({scrollLeft:'-=70'}, 'fast', 'linear', loopPrev3);
+	}
+	
+	function stop(){
+	    $('#scroll').stop();
+	}
+	
+	$(function() {
+		
+		$('#scroll').on('scroll', function() {
+			var scleft = $('#scroll').scrollLeft();
+			var clleft = $('#scroll').clientWidth;
+		    $("span").text("scLeft:" + scleft + "clLeft:" + clleft);	
+		});
+	    
+		$('#leftScroll3').hover(function() {
+			 loopNext3();
+		});
+		$('#leftScroll2').hover(function() {
+			 loopNext2();
+		});
+		$('#leftScroll1').hover(function() {
+			 loopNext1();
+		});
+		
+		
+		$('#rightScroll1').hover(function() {
+			 loopPrev1();
+		});
+		$('#rightScroll2').hover(function() {
+			 loopPrev2();
+		});
+		$('#rightScroll3').hover(function() {
+			 loopPrev3();
+		});
+		
+		$('#leftScroll1, #rightScroll1, #leftScroll2, #rightScroll2, #leftScroll3, #rightScroll3').mouseleave(function() {
+			$('#scroll').stop();
+		});
+	});
 </script>
 
 </head>
@@ -61,33 +118,38 @@
 
 	<div class="main">		
 		<c:if test="${not empty id}">
-			<fieldset><legend>찜목록</legend>
-				<div class="main_hot">
-					<ul>
-						<c:forEach var="pickMovie" items="${pickList }" >
-							<li>
-								<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
-								<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
-							</li>
-						</c:forEach>
- 					</ul>
-				</div>
-			</fieldset>
-		</c:if>
-		
-		<fieldset><legend>인기작</legend>
+			찜목록
 			<div class="main_hot">
-				<ul><!-- 리스트 가져와서 반복문 돌리기 -->
-					<c:forEach var="movie" items="${hotList }" >
+				<ul>
+					<c:forEach var="pickMovie" items="${pickList }" >
 						<li>
-							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-							<img id="mv" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+							<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
+							<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
 						</li>
 					</c:forEach>
 				</ul>
-			</div>
-		</fieldset>	
+			</div>			
+		</c:if>
+		
+		인기작
+		<div class="main_hot">
+		<div id="leftScroll3"style="background-color: red; width:33px; height:250px; position:absolute;"></div>
+		<div id="leftScroll2"style="background-color: orange; width:33px; height:250px; position:absolute; left: 33px;"></div>
+		<div id="leftScroll1"style="background-color: yellow; width:33px; height:250px; position:absolute; left: 66px"></div>
+		<div id="rightScroll1"style="background-color: green; width:33px; height:250px; position:absolute; right: 66px;"></div>
+		<div id="rightScroll2"style="background-color: blue; width:33px; height:250px; position:absolute; right: 33px;"></div>
+		<div id="rightScroll3"style="background-color: violet; width:33px; height:250px; position:absolute; right: 0;"></div>
+			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
+				<c:forEach var="movie" items="${hotList }" >
+					<li>
+						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
+						<img id="mv" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
 	</div>
-
+	<span></span>
+	
 </body>
 </html>

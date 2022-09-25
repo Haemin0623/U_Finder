@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-body {
+#background {
 	background-color: black;
 	color: white;
-	
 }
 
 .header {

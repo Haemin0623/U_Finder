@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="/project_semi/css/common.css">
 
 </head>
-<body>
+<body id="background">
 
 	<jsp:include page="header.jsp"></jsp:include>
 	<deco:body></deco:body>

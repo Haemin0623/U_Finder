@@ -29,6 +29,9 @@
 		<tr>
 			<th><button onclick="location.href='/project_semi/views/admin/admin_logout.do'">로그아웃</button></th>
 		</tr>
+		<tr>
+			<th><button onclick="location.href='/project_semi/views/home.do'">사이트</button></th>
+		</tr>
 	</table>
 	
 

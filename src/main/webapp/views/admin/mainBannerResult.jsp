@@ -8,8 +8,10 @@
 </head>
 <body>
 
-	${banner } 등록 완료
-	<button onclick="location.href='/project_semi/views/admin/mainBannerChangeForm.do'">이동</button>
+	<script type="text/javascript">
+		alert("${banner } 등록 완료");
+		location.href="/project_semi/views/admin/mainBannerChangeForm.do";
+	</script>
 
 </body>
 </html>
