@@ -24,6 +24,9 @@
 			<th><button onclick="location.href='/project_semi/views/admin/memberList.do'">회원목록</button></th>
 		</tr>
 		<tr>
+			<th><button onclick="location.href='/project_semi/views/admin/mainBannerChangeForm.do'">메인배너교체</button></th>
+		</tr>
+		<tr>
 			<th><button onclick="location.href='/project_semi/views/admin/admin_logout.do'">로그아웃</button></th>
 		</tr>
 	</table>

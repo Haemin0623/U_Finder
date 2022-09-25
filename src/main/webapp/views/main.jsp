@@ -34,19 +34,19 @@
 		</div>
 		<div class="carousel-inner" style="height: 200px">
 			<div class="carousel-item active">
-				<img id="banner" class="d-block w-75" height="200px" src="../images/chim1.jpg" alt="First slide">
+				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="../images/chim2.png" alt="Second slide">
+				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="../images/chim3.jpg" alt="Third slide">
+				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="../images/chim4.jpeg" alt="Fourth slide">
+				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="../images/chim5.jpeg" alt="Fifth slide">
+				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner5.jpg" alt="Fifth slide">
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
