@@ -25,10 +25,10 @@
 			<tr>
 				<th colspan="2"><img src="/project_semi/images/로고.png"></th>
 			</tr>
-			<tr>
+			<tr id="search">
 				<th class="homeSearch"><input type="text" name="searchWord" placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." 
 											required="required" ></th>
-				<th><input type="submit" value="검색"></th>
+				<th><input class="btn" type="submit" value="검색"></th>
 			</tr>
 		</table>
 	</form>

@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="result_wide">
-		<h2>${searchWord }</h2>에 대한 검색 결과
+		<span class="word">${searchWord }</span><span class="line">에 대한 검색 결과</span>
 		<div class = "result_inner">
 			<c:if test="${mvList.size() == 0}">
 				<p class="search_text">검색 결과가 없습니다.<br>다른 검색어를 입력해주세요.</p>

@@ -55,6 +55,10 @@
 
                });
 		});
+		//로그인 안 됐을 때 누르면 찜 로그인하라고 안내
+		$('#nonoPick').click(function() {
+			alert("회원만 찜할 수 있습니다.");
+		});
 		
 
 	});
@@ -95,18 +99,15 @@
 </script>
 </head>
 <body>
-<div id="pi"></div>
-<div> <!-- 전체 -->
+<div class="all_list"> <!-- 전체 -->
 	<div> <!-- 영화 정보 -->
 		<table class="movieInfoForm">
 			<tr><th class="th1" rowspan="6" ><img id="bigMv" src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
 				<th>${mvInfo.moviename}</th>
-				<th>
+				<th class="zzim">
 					<c:if test="${empty id }">
-						<div id="nonoPick">
-						<button type="button" class="btn btn-default">
+						<button id="nonoPick" type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-						</div>
 					</c:if>
 					<div id="zzim">
 						<c:if test="${not empty id }">
@@ -138,86 +139,87 @@
 	</div> <!-- 영화 정보 -->
 	
 	<!-- 전체 리뷰 리스트  -->
-	<h1>리뷰</h1>
-	<!-- 평균 점수? -->
-	<div>평균 리뷰 점수 : ${rvPoint } 점<p></div>
-	<div> <!-- 전체리뷰  -->
-		<c:if test="${empty rvPaging }">
-			리뷰 없음
-		</c:if>
-		<c:if test="${not empty rvPaging}">
-				<c:forEach var="rv" items="${rvPaging}">
-					<c:if test="${rv.del == 'Y' }">
-					 삭제된 리뷰입니다. <p>
-					</c:if>
-					<c:if test="${rv.del != 'Y' }">
-						<!--  마이페이지의 내 리뷰 중 수정할 리뷰를 클릭시 movieInfo 페이지에서 바로 볼수있게 표시하는 기능 -->
-						<c:if test="${reviewno == rv.reviewno }">
-							<strong> ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname } </strong>
-						</c:if>
-						<c:if test="${reviewno != rv.reviewno }">
-							${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
-						</c:if>
-						<!-- 리뷰수정 -->
-						<%-- <c:forEach var="rv2" items="rvList2"> --%>
-						<c:if test="${id == rv.id }"> 
-							<button class="updateBtn">수정</button> 
-							<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
-								<div class="updateform">
-									<h3>리뷰 수정하기</h3>
-									<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
-										<input type="hidden" name="reviewno" value = "${rv.reviewno }">
-										<input type="hidden" name="movieno" value = "${rv.movieno }">
-										<input type="hidden" name="memberno" value = "${rv.memberno }">
-										<table>
-											<tr><th><textarea name="content" >${rv.content }</textarea></th></tr>
-											<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
-											<tr><th><input type="submit" value="확인"></th></tr>
-										</table>
-									</form>
-								</div> 
-						</c:if><p>
-					<%-- 	</c:forEach> --%>	<!-- 리뷰수정 -->
-						
-					</c:if>
-				</c:forEach>
-		</c:if>
-	</div>
-	
-	
-	
-	<!-- 리뷰 리스트 페이징 -->
-	<div align="center">
-		<c:if test="${currentPage > PAGE_PER_BLOCK }">
-			<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${startPage - 1 }'">이전</button>
-		</c:if>
-		<c:forEach var="i" begin="${startPage }" end="${endPage }">
-			<c:if test="${i == currentPage }">
-				<button style="background: red" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+	<div class="review_list">
+		<h1>리뷰</h1>
+		<!-- 평균 점수? -->
+		<div>평균 리뷰 점수 : ${rvPoint } 점<p></div>
+		<div> <!-- 전체리뷰  -->
+			<c:if test="${empty rvPaging }">
+				리뷰 없음
 			</c:if>
-			<c:if test="${i != currentPage }">
-				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
-			</c:if>		
-		</c:forEach>
-		<c:if test="${endPage < totalPage }">
-			<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${endPage + 1 }'">다음</button>
-		</c:if>
-	</div>
-	
-	
-	
-	<!-- 짧은댓글리뷰자리 -->
-	<hr>
-	<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
-		<h1 class="sub_title">리뷰와 점수 등록</h1>                   
-		<table>
-			<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
-			<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>
-			<tr><th><input type="submit" value="등록"></th></tr>
-		</table>
-	</form>
-	
-	
+			<c:if test="${not empty rvPaging}">
+					<c:forEach var="rv" items="${rvPaging}">
+						<c:if test="${rv.del == 'Y' }">
+						 삭제된 리뷰입니다. <p>
+						</c:if>
+						<c:if test="${rv.del != 'Y' }">
+							<!--  마이페이지의 내 리뷰 중 수정할 리뷰를 클릭시 movieInfo 페이지에서 바로 볼수있게 표시하는 기능 -->
+							<c:if test="${reviewno == rv.reviewno }">
+								<strong> ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname } </strong>
+							</c:if>
+							<c:if test="${reviewno != rv.reviewno }">
+								 ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
+							</c:if>
+							<!-- 리뷰수정 -->
+							<%-- <c:forEach var="rv2" items="rvList2"> --%>
+							<c:if test="${id == rv.id }"> 
+								<button class="updateBtn">수정</button> 
+								<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
+									<div class="updateform">
+										<h3>리뷰 수정하기</h3>
+										<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
+											<input type="hidden" name="reviewno" value = "${rv.reviewno }">
+											<input type="hidden" name="movieno" value = "${rv.movieno }">
+											<input type="hidden" name="memberno" value = "${rv.memberno }">
+											<table>
+												<tr><th><textarea name="content" >${rv.content }</textarea></th></tr>
+												<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
+												<tr><th><input type="submit" value="확인"></th></tr>
+											</table>
+										</form>
+									</div> 
+							</c:if><p>
+						<%-- 	</c:forEach> --%>	<!-- 리뷰수정 -->
+							
+						</c:if>
+					</c:forEach>
+			</c:if>
+		</div>
+		
+		
+		
+		
+		<!-- 리뷰 리스트 페이징 -->
+		<div align="center">
+			<c:if test="${currentPage > PAGE_PER_BLOCK }">
+				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${startPage - 1 }'">이전</button>
+			</c:if>
+			<c:forEach var="i" begin="${startPage }" end="${endPage }">
+				<c:if test="${i == currentPage }">
+					<button style="background: red" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+				</c:if>
+				<c:if test="${i != currentPage }">
+					<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+				</c:if>		
+			</c:forEach>
+			<c:if test="${endPage < totalPage }">
+				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${endPage + 1 }'">다음</button>
+			</c:if>
+		</div>
+		
+		
+		
+		<!-- 짧은댓글리뷰자리 -->
+		<hr>
+		<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
+			<h1 class="sub_title">리뷰와 점수 등록</h1>                   
+			<table>
+				<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
+				<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>
+				<tr><th><input type="submit" value="등록"></th></tr>
+			</table>
+		</form>
+	</div>		<!-- review_list -->
 	
 	
 	

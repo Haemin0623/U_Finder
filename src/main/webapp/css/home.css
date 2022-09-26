@@ -6,10 +6,9 @@
 	
 	.top {
 		width: 100%;
+		
 	}
-/* 	.top ul { */
-/* 		text-align: right; */
-/* 	} */
+
 	.top ul li {
 		display: inline-block;
 	}
@@ -17,23 +16,43 @@
  	.left { float: right; margin: 5px;}
 	
 	.home {
+		/* margin-top: 50px; */
+		/* align-items: center; */
+		width: 80%;
+		height: 100vh; 
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox; 
+        display: flex; 
+ 
+            -webkit-box-align: center; 
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; /* 수직 정렬 */
+ 
+            -webkit-box-pack: center;
+            -moz-box-pack: center; 
+            -ms-flex-pack: center; 
+            justify-content: center; /* 수평 정렬 */		
 
-/* 		 transform: translate(50%, 50%); */
-        text-align: center;
 	}
 	.home table {
 		width: 70%;
 		display: inline-block;
 		text-align: center;
 	}
-/* 	.home th { */
-/* 		text-align: center; */
-/* 		} */
+
+
 	.homeSearch input {
 		width: 100%;
 		border: 1px solid #bbb;
 		border-radius: 8px;
 		padding: 10px 12px;
 		font-size: 14px;
+		
+	}
+	.btn, .homeSearch {
+		margin-right: 0;
+		margin-left: 0;
 	}
 	
