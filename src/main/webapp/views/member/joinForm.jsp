@@ -7,17 +7,21 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-. check input {
-		width: 85%;
-	}
-	
+.
+check input {
+	width: 85%;
+}
+
 fieldset {
-	 width: 300px;
-	
-	}
-	
+	width: 300px;
+}
+
 .ott-select legend {
-	color:white;
+	color: white;
+}
+
+input[type=checkbox] {
+	width: 10px;
 }
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/member.css">
