@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <link rel="stylesheet" type="text/css" href="../../css/member.css">
+<style type="text/css">
+
+
+</style>
 
 </head>
 <body>
@@ -28,14 +31,14 @@
 		</div>
 		<br>
 		<div class="form-group">
-			<input type="submit" value="로그인">
+			<input type="submit" value="로그인" >
 		</div>
 	</form>
 		<div class="form-group">
 		<a class = "btn" href="/project_semi/views/member/joinForm.do">회원가입</a> 
 		<a class = "btn" href="/project_semi/views/member/findPwForm.do">비밀번호 찾기</a> 
 		</div>
-	</div>
+	</div> <!-- container -->
 	
 </body>
 </html>

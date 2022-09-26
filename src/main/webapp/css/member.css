@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 .container {
-   width: 555px;
+   width: 400px;
    margin: 0 auto;
    margin-top:5%;
 
 }
+
 
 .chk-btn {
 	display: inline-block;
@@ -18,7 +19,21 @@
 
 }
 
-/* div {  */
-/* 	text-align: center; */
-/*  } */
- 
+div.form-group {
+	width: 350px;
+    height: 15px;
+    border-radius: 5px;	
+}
+
+div.form-group input[type="submit"] {
+	color:black;
+	background-color: #C01616;
+	font-weight: bold;
+	height: 30px;
+	border-radius: 5px;
+	
+}
+
+input[type="email"] {
+	color:black;
+}

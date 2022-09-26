@@ -7,14 +7,18 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-	. check input {
+. check input {
 		width: 85%;
 	}
 	
-	fieldset {
-	 width: 80%;
+fieldset {
+	 width: 300px;
 	
 	}
+	
+.ott-select legend {
+	color:white;
+}
 </style>
 <link rel="stylesheet" type="text/css" href="../../css/member.css">
 
@@ -98,25 +102,26 @@
 	<h1> 회원가입 </h1>
 
 				<!-- 아이디 -->
-				<div class="check">
+				<div class="form-group">
 					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)" >
 <!-- 					<button class ="chk-btn" onclick="chkId();"> 중복체크 </button> -->
 					<div class="chk_msg" id="err_id"></div>
 				</div>
 
 			<!-- 비밀번호 -->
-				<div class="check">
+				<div class="form-group">
 					<input type="password" name="password" id="password" placeholder="비밀번호" required="required" onChange="chkPass()" >
 					<div class="chk-msg" id="err_pass"></div>
 					<input type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required" onChange="chkPassword()">		
 				</div>
 
 				<!-- 닉네임 -->
-				<div class="check">
+				<div class="form-group">
 					<input type="text" name="nickname" placeholder="닉네임" onchange="chkNick()">
-					<input type="hidden" name="checked_nick" value="">
+					<input type="hidden" name="checked_nick" value=""><p>
 					<div class="chk-msg" id="err"></div>
 				</div>
+				
 	
 		
 
@@ -137,7 +142,9 @@
 				</div>
 				
 				<br>
+				<div class="form-group">
 				<input type="submit" value="회원가입">
+				</div>
 
 	</form>
 	</div>
