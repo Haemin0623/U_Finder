@@ -17,7 +17,7 @@ public class MypageAction implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
-		final int ROW_PER_PAGE = 2;
+		final int ROW_PER_PAGE = 5;
 		final int PAGE_PER_BLOCK = 5;
 		
 		String pageNum = request.getParameter("pageNum");
