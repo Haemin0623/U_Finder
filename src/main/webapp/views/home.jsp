@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +14,15 @@
 
 <div class="top">
 	<ul>
-		<li class="main"><a href="/project_semi/views/main.do">메인</a></li>
-		<li class="left"><a href="/project_semi/views/member/loginForm.do">로그인</a></li>
-		<li class="left"><a href="/project_semi/views/member/joinForm.do">회원가입</a></li>
+		<li class="main"><a href="/project_semi/views/main.do">메인</a></li>		
+		<c:if test="${empty id }">
+			<li class="left"><a href="/project_semi/views/member/loginForm.do">로그인</a></li>
+			<li class="left"><a href="/project_semi/views/member/joinForm.do">회원가입</a></li>
+		</c:if>
+		<c:if test="${not empty id }">
+			<li class="left"><a href="/project_semi/views/mypage/mypageForm.do?id=${id}">마이페이지</a></li>		
+			<li class="left"><a href="/project_semi/views/member/logout.do">로그아웃</a></li>
+		</c:if>
 	</ul>
 </div>
 
