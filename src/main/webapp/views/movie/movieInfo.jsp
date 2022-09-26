@@ -139,6 +139,7 @@
 	</div> <!-- 영화 정보 -->
 	
 	<!-- 전체 리뷰 리스트  -->
+	<div class="a">
 	<div class="review_list">
 		<h1>리뷰</h1>
 		<!-- 평균 점수? -->
@@ -161,7 +162,6 @@
 								 ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
 							</c:if>
 							<!-- 리뷰수정 -->
-							<%-- <c:forEach var="rv2" items="rvList2"> --%>
 							<c:if test="${id == rv.id }"> 
 								<button class="updateBtn">수정</button> 
 								<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
@@ -179,7 +179,6 @@
 										</form>
 									</div> 
 							</c:if><p>
-						<%-- 	</c:forEach> --%>	<!-- 리뷰수정 -->
 							
 						</c:if>
 					</c:forEach>
@@ -196,7 +195,7 @@
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				<c:if test="${i == currentPage }">
-					<button style="background: red" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+					<button style="background: #C01616" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
 				</c:if>
 				<c:if test="${i != currentPage }">
 					<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
@@ -252,6 +251,7 @@
 			</ul>
 		</div>
 	</div> <!-- 비슷한 컨텐츠 -->
+	</div> <!-- a -->
 	
 </div> <!-- 전체 -->
 </body>

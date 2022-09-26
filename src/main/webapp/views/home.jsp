@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/project_semi/css/home.css">
 
 </head>
-<body bgcolor="black">
+<body style="background-color: rgb(27, 27, 27)">
 
 <div class="top">
 	<ul>
@@ -28,16 +28,15 @@
 
 <div class="home">
 	<form action="/project_semi/views/movie/searchResult.do" method="post">
-		<table>
-			<tr>
-				<th colspan="2"><img src="/project_semi/images/로고.png"></th>
-			</tr>
-			<tr id="search">
-				<th class="homeSearch"><input type="text" name="searchWord" placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." 
-											required="required" ></th>
-				<th><input class="btn" type="submit" value="검색"></th>
-			</tr>
-		</table>
+			<div>
+				<img id="search" src="/project_semi/images/로고.png">
+			</div>
+			<div>
+			<span>
+				<input id="homeSearch" type="text" name="searchWord" placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." 
+											required="required" >
+			</span>
+			</div>
 	</form>
 </div>
 </body>
