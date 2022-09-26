@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-input {
+#search {
 	width: 85%;
 }
 
 .header {
-	border: 1px solid;
 	width: 100%;
 	height: 50px;
 	
@@ -15,11 +14,16 @@ input {
 	color: white;
 }
 
-td {
+table.header {
 	text-align: center;
 }
 
 #search_btn {
 	width: 50px;
 	color: black;
+}
+
+#ottIcon {
+	height: 40px;
+	width: 40px;
 }

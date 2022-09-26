@@ -21,18 +21,43 @@
 	<form action="/project_semi/views/movie/searchResult.do">
 		<table class="header">
 			<tr>
-				<td id="main"><a id="headerLink" href="/project_semi/views/home.do">홈</a></td>			
+				<td id="main"><a id="headerLink" href="/project_semi/views/home.do">
+					<img id="ottIcon" alt="" src="/project_semi/images/logoIcon.png">
+				</a></td>			
 				<td id="main"><a id="headerLink" href="/project_semi/views/main.do">메인</a></td>
 				
-				<td><input id="search"  type="text" name="searchWord"
+				<td><input id="search" type="text" name="searchWord"
 					placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." required="required"></td>
-				<td><input id="search_btn" type="submit" value="검색"></td>		
-					
-				<td id="login"><a id="headerLink" href="/project_semi/views/movie/ottResult.do?ottName=netflix">넷플릭스</a></td>
-				<td id="login"><a id="headerLink" href="/project_semi/views/movie/ottResult.do?ottName=disney">디즈니</a></td>
-				<td id="login"><a id="headerLink" href="/project_semi/views/movie/ottResult.do?ottName=coupang">쿠팡</a></td>
-				<td id="login"><a id="headerLink" href="/project_semi/views/movie/ottResult.do?ottName=tving">티빙</a></td>
 				
+				<td class="dropdown">
+					<a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+						id="dropdownMenuLink" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						<c:if test="${empty ottName }">
+							OTT
+						</c:if>
+						<c:if test="${ottName == 'netflix' }">
+							<img id="ottIcon" alt="" src="/project_semi/images/netflix.png">
+						</c:if>
+						<c:if test="${ottName == 'disney' }">
+							<img id="ottIcon" alt="" src="/project_semi/images/disney.png">
+						</c:if>
+						<c:if test="${ottName == 'coupang' }">
+							<img id="ottIcon" alt="" src="/project_semi/images/coupang.png">
+						</c:if>
+						<c:if test="${ottName == 'tving' }">
+							<img id="ottIcon" alt="" src="/project_semi/images/tving.png">
+						</c:if>
+					</a>
+
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<li><a class="dropdown-item" href="/project_semi/views/movie/ottResult.do?ottName=netflix">넷플릭스</a></li>
+						<li><a class="dropdown-item" href="/project_semi/views/movie/ottResult.do?ottName=disney">디즈니</a></li>
+						<li><a class="dropdown-item" href="/project_semi/views/movie/ottResult.do?ottName=coupang">쿠팡</a></li>
+						<li><a class="dropdown-item" href="/project_semi/views/movie/ottResult.do?ottName=tving">티빙</a></li>
+					</ul>
+				</td>
+
 				<!-- <td id="login"><a href="">캘린더</a></td> -->
 				
 				<c:if test="${empty id }">

@@ -13,10 +13,6 @@
 <c:set var="id" value="${sessionScope.id }"></c:set>
 
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
 	function loopNext1(){
@@ -70,6 +66,7 @@
 	    
 		$('#leftScroll3').hover(function() {
 			loopNext3();
+			
 		});
 		$('#leftScroll2').hover(function() {
 			loopNext2();
@@ -164,11 +161,6 @@
 					<li>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 						<img id="mv" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
-						<c:if test="${v.last == true}">
-							<script type="text/javascript">
-								loopPrev1();
-							</script>
-						</c:if> 
 					</li>
 				</c:forEach>
 			</ul>
