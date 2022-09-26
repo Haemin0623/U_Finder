@@ -10,37 +10,39 @@
 </head>
 <body>
 <c:if test="${not empty id}">
-			<fieldset><legend>찜목록</legend>
-			
-				<div class="main_hot">
-					<ul>
-						<c:forEach var="pickMovie" items="${list }" >
-							<li>
-								<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
-								<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
-							</li>
-								<button onclick="location.href='/project_semi/views/mypage/pickDeleteForm.do?movieno=${pickMovie.movieno }&id=${id }'">찜취소</button>
-						</c:forEach>
-					</ul>
-				</div>
-			</fieldset>
-		</c:if>
-		<div align="center">
-			<c:if test="${currentPage > PAGE_PER_BLOCK }" >
-				<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
-			</c:if>
-				<c:forEach var="i" begin="${startPage }" end="${endPage }">
-					<c:if test="${i == currentPage }">
-						<button style="background: red" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
-					</c:if>
-					<c:if test="${i != currentPage }">
-						<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
-					</c:if>		
+	<fieldset><legend>찜목록</legend>
+		<div>
+			<ul>
+				<c:if test="${empty list[0].pickno }">
+					찜한 영화가 없습니다.
+				</c:if>
+				<c:forEach var="pickMovie" items="${list }" >
+					<li>
+						<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
+						<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
+					</li>
+						<button onclick="location.href='/project_semi/views/mypage/pickDeleteForm.do?movieno=${pickMovie.movieno }&id=${id }'">찜취소</button>
 				</c:forEach>
-			<c:if test="${endPage < totalPage }">
-				<button onclick="location.href='/project_semi/views/mypage/pickListForm?id=${id}&pageNum=${endPage + 1 }'">다음</button>
+			</ul>
+		</div>
+	</fieldset>
+</c:if>
+	<div align="center">
+		<c:if test="${currentPage > PAGE_PER_BLOCK }" >
+			<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
+		</c:if>
+		<c:forEach var="i" begin="${startPage }" end="${endPage }">
+			<c:if test="${i == currentPage }">
+				<button style="background: red" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
 			</c:if>
+			<c:if test="${i != currentPage }">
+				<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
+			</c:if>		
+		</c:forEach>
+		<c:if test="${endPage < totalPage }">
+			<button onclick="location.href='/project_semi/views/mypage/pickListForm?id=${id}&pageNum=${endPage + 1 }'">다음</button>
+		</c:if>
 	</div>
-		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
+	<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
 </body>
 </html>

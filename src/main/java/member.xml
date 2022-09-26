@@ -39,7 +39,10 @@
 
 <!-- 	회원정보 수정 -->
 	<update id="updateInfo" parameterType="member" >
-		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving},profile=#{profile} where id=#{id}
+		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}
+		<if test="profile != null and profile != ''">
+				,profile=#{profile}
+		</if> where id=#{id}
 	</update>
 <!-- 	회원 탈퇴 -->
 	<update id="memberOut" parameterType="string" >

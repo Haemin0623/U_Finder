@@ -9,6 +9,18 @@
 <title>Insert title here</title>
 <%@include file="../member_sessionChk.jsp"%>
 <style type="text/css">
+
+#background{width: 100%; height: 100%;  }
+h2{text-align: center;}
+td{border: 1px solid gray; }
+.profile{ margin-left: 45%;}
+.profile > img{width: 120px; height: 140px;}
+table {width:500px; margin:0 auto;}
+td{margin: 1px;}
+#memberout {width: 50px;}
+input[type=checkbox]{ width:10px; } 
+#boutton {width: 50px;}
+#hide {border: 1px ;}
 </style>
 <script type="text/javascript">
 	function delchk1() {
@@ -29,14 +41,20 @@
 
 </head>
 <body>
-<div id="title">
+<div id="background">
 	<h2>정보 수정</h2>
-</div>
 <form action="/project_semi/views/mypage/UpdateInfoResult.do" method="post" name="frm" onsubmit="return passwordchk()" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${id }">
-	<img alt="" src="/project_semi/posterUpload/${member.profile }" width="120" height="120">
-	<input type="file" name="profile" value="${member.profile }">
-	
+		<div class="profile">
+			<c:if test="${empty member.profile }">
+				<img alt="" src="/project_semi/images/기본이미지.jpg">
+				<input type="file" name="profile" value="${member.profile }">
+			</c:if>
+			<c:if test="${not empty member.profile }">
+				<img alt="" src="/project_semi/posterUpload/${member.profile }">
+				<input type="file" name="profile" value="${member.profile }">
+			</c:if>
+		</div>
 	<table>
 		<tr>
 			<th>아이디</th>
@@ -58,10 +76,11 @@
 			<th>사용중인 OTT</th>
 			<td>
 				<c:if test="${member.netflix != 'Y' }">
-					넷플릭스<input type="checkbox"name="netflix" value="Y">
+					<label>넷플릭스</label>
+					<input type="checkbox"name="netflix" value="Y">
 				</c:if>
 				<c:if test="${member.netflix == 'Y' }">
-					넷플릭스<input type="checkbox"name="netflix" checked="checked" value="Y">
+					<label>넷플릭스</label><input type="checkbox"name="netflix" checked="checked" value="Y">
 				</c:if>
 				<c:if test="${member.disney != 'Y' }">
 					디즈니+<input type="checkbox" name="disney" value="Y">
@@ -82,13 +101,15 @@
 					티빙<input type="checkbox" name="tving" checked="checked" value="Y">
 				</c:if>
 			</td>
-				</tr>
-		<tr>	
-			<th colspan="2"><input type="submit" value="확인">
-			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
-		</tr>				
+		</tr>
+		<tr>
+		<th>
+			</th>
+			<td id="hide"><input type="submit" value="확인" id="boutton">
+				<button id="delchk" onclick="delchk1()">회원탈퇴</button>
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button></td></tr>
 	</table>
 </form>
-<button id="delchk" onclick="delchk1()">회원탈퇴</button>
+</div>
 </body>
 </html>

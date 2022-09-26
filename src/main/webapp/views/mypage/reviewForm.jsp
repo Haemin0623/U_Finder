@@ -23,7 +23,6 @@
 	<div id="title">
 		<h2 align="center">리뷰 목록</h2>
 	</div>
-<!-- if문으로 DB에서 회원정보를 확인하여 리뷰내역 있으면 div review노출 -->
 	<div id="#">
 		<form>
 			<table>
@@ -37,6 +36,13 @@
 								<input type="button" onclick="delchk(${movieReview.reviewno})" value="삭제">
 							</td>
 						</c:if>	
+						<c:if test="${movieReview.del =='Y'}">
+							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
+							<td>삭제된 댓글입니다.<br></td>		<!-- db에서 받아올 값 -->
+							<td>
+								<input type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}'" value="리뷰쓰기"> <!-- 영화 정보 페이지로 이동 -->
+							</td>
+						</c:if>
 					</c:forEach>
 				</tr>
 			</table>
