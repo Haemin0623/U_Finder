@@ -48,11 +48,11 @@ input[type=checkbox]{ width:10px; }
 		<div class="profile">
 			<c:if test="${empty member.profile }">
 				<img alt="" src="/project_semi/images/기본이미지.jpg">
-				<input type="file" name="profile" value="${member.profile }">
+				<input class="blackText" type="file" name="profile" value="${member.profile }">
 			</c:if>
 			<c:if test="${not empty member.profile }">
 				<img alt="" src="/project_semi/posterUpload/${member.profile }">
-				<input type="file" name="profile" value="${member.profile }">
+				<input class="blackText" type="file" name="profile" value="${member.profile }">
 			</c:if>
 		</div>
 	<table>
@@ -62,15 +62,15 @@ input[type=checkbox]{ width:10px; }
 		</tr>
 		<tr>
 			<th>닉네임</th>
-			<td><input type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
+			<td><input class="blackText" type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
-			<td><input type="password" name="password" required="required"></td>
+			<td><input class="blackText" type="password" name="password" required="required"></td>
 		</tr>	
 		<tr>
 			<th>패스워드 확인</th>
-			<td><input type="password" name="passconfirm" required="required"></td>
+			<td><input class="blackText" type="password" name="passconfirm" required="required"></td>
 		</tr>
 		<tr>	
 			<th>사용중인 OTT</th>
@@ -105,9 +105,9 @@ input[type=checkbox]{ width:10px; }
 		<tr>
 		<th>
 			</th>
-			<td id="hide"><input type="submit" value="확인" id="boutton">
-				<button id="delchk" onclick="delchk1()">회원탈퇴</button>
-			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button></td></tr>
+			<td id="hide"><input class="blackText" type="submit" value="확인" id="boutton">
+				<button style="color: black;" id="delchk" onclick="delchk1()">회원탈퇴</button>
+			<button style="color: black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button></td></tr>
 	</table>
 </form>
 </div>

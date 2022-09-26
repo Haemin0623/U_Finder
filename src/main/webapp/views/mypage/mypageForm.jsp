@@ -26,12 +26,12 @@
 			<img alt="" src="/project_semi/posterUpload/${member.profile }"></a>
 		</c:if>
 		<span id="updateinfo">
-			<button onclick="location.href='/project_semi/views/mypage/InfoChk.do?id=${id}'">정보수정</button>
+			<button style="color: black;" onclick="location.href='/project_semi/views/mypage/InfoChk.do?id=${id}'">정보수정</button>
 		</span>
 	</span>
 	<span>
-		<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?memberno=${member.memberno}'">내 리뷰</button>
-		<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}'">찜목록</button>
+		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/reviewForm.do?memberno=${member.memberno}'">내 리뷰</button>
+		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}'">찜목록</button>
 <%-- 		<button onclick="location.href='seenmovieForm.do?id=${id}'">시청한 영화</button> --%>
 	</span>
 	<div class="otticon">

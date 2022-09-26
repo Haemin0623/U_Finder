@@ -103,21 +103,21 @@ fieldset {
 
 				<!-- 아이디 -->
 				<div class="form-group">
-					<input type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)" >
+					<input class="blackText" type="text" name="id" required="required" autofocus="autofocus" placeholder="아이디(이메일)" >
 <!-- 					<button class ="chk-btn" onclick="chkId();"> 중복체크 </button> -->
 					<div class="chk_msg" id="err_id"></div>
 				</div>
 
 			<!-- 비밀번호 -->
 				<div class="form-group">
-					<input type="password" name="password" id="password" placeholder="비밀번호" required="required" onChange="chkPass()" >
+					<input class="blackText" type="password" name="password" id="password" placeholder="비밀번호" required="required" onChange="chkPass()" >
 					<div class="chk-msg" id="err_pass"></div>
-					<input type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required" onChange="chkPassword()">		
+					<input class="blackText" type="password" name="confirmPassword" placeholder="비밀번호 확인" required="required" onChange="chkPassword()">		
 				</div>
 
 				<!-- 닉네임 -->
 				<div class="form-group">
-					<input type="text" name="nickname" placeholder="닉네임" onchange="chkNick()">
+					<input class="blackText" type="text" name="nickname" placeholder="닉네임" onchange="chkNick()">
 					<input type="hidden" name="checked_nick" value=""><p>
 					<div class="chk-msg" id="err"></div>
 				</div>
@@ -143,7 +143,7 @@ fieldset {
 				
 				<br>
 				<div class="form-group">
-				<input type="submit" value="회원가입">
+				<input class="blackText" type="submit" value="회원가입">
 				</div>
 
 	</form>

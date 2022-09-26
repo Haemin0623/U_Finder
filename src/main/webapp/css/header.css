@@ -18,3 +18,8 @@ input {
 td {
 	text-align: center;
 }
+
+#search_btn {
+	width: 50px;
+	color: black;
+}

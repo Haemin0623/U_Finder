@@ -21,9 +21,9 @@
 			<table>
 				<tr>
 				<th><input type="hidden" name="id" value="${id }">
-					<th>패스워드 <input type="password" name="password" autofocus="autofocus" required="required">
-					<input type="submit" value="확인">
-					<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
+					<th>패스워드 <input class="blackText" type="password" name="password" autofocus="autofocus" required="required">
+					<input class="blackText" type="submit" value="확인">
+					<button style="color: black;"onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button>
 					</th>
 				</tr>
 			</table>
