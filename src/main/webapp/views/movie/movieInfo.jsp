@@ -139,6 +139,8 @@
 	
 	<!-- 전체 리뷰 리스트  -->
 	<h1>리뷰</h1>
+	<!-- 평균 점수? -->
+	<div>평균 리뷰 점수 : ${rvPoint } 점<p></div>
 	<div> <!-- 전체리뷰  -->
 		<c:if test="${empty rvPaging }">
 			리뷰 없음
@@ -183,8 +185,7 @@
 	</div>
 	
 	
-	<!-- 평균 점수? -->
-	<div></div>
+	
 	<!-- 리뷰 리스트 페이징 -->
 	<div align="center">
 		<c:if test="${currentPage > PAGE_PER_BLOCK }">
@@ -225,6 +226,7 @@
 	<div> 
 		<h1>추천작</h1>
 		<button id="genBtn">영화 장르</button> <button id="actBtn">출연 배우</button>
+		
 		<div class="recGenre">
 		<h3> 장르 추천작</h3>
 			<ul class="searchList">

@@ -62,6 +62,7 @@
 	
 	<!-- 해당 영화 리뷰들의 평균 점수 -->
 	<select id="avgScore" parameterType="integer" resultType="float">
-		select avg(movielike) from review where movieno = #{movieno}
+		select nvl(round(avg(movielike), 2), 0) movielike from review where movieno = #{movieno} and del='N'
 	</select>
+	
 </mapper>

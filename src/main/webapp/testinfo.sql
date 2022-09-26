@@ -232,3 +232,5 @@ select trim(both '''' from ' ''disney'' ') from dual;
 
 select count(*) from pick where movieno=1;
 select avg(movielike) from review where movieno = 1;
+
+select nvl(round(avg(movielike),2),0) movielike from review where movieno = 16 and del='N';

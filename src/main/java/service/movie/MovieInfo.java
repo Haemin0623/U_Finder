@@ -63,11 +63,14 @@ public class MovieInfo implements CommandProcess {
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
 		
+		//리뷰 평균 점수
+		float rvPoint = (float) rd2.avgScore(movieno);
+		request.setAttribute("rvPoint", rvPoint);
 		
 		// 리뷰 전체 리스트 불러오기
-		ReviewDao rd = ReviewDao.getInstance();
-		List<Review> rvList2 = rd.reviewList(movieno);
-		request.setAttribute("rvList2", rvList2);
+//		ReviewDao rd = ReviewDao.getInstance();
+//		List<Review> rvList2 = rd.reviewList(movieno);
+//		request.setAttribute("rvList2", rvList2);
 		
 		
 
