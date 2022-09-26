@@ -8,6 +8,8 @@
 	list-style: none;
 	float: left;
 } */
+
+	
 .main_hot {
 	max-width: 100%;
 	width: 100%;
@@ -30,12 +32,4 @@
 
 img#banner {
 	margin: auto;
-}
-
-input#search {
-	width: 100%;
-	border: 1px solid #bbb;
-	border-radius: 8px;
-	padding: 10px 12px;
-	font-size: 14px;
 }

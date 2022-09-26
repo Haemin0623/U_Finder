@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+	a {
+		color: white;
+	}
+	
 	.top {
 		width: 100%;
 	}

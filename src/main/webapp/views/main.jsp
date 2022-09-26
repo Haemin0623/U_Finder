@@ -20,23 +20,23 @@
 
 <script type="text/javascript">
 	function loopNext1(){
-	    $('#scroll').stop().animate({scrollLeft:'+=30'}, 'fast', 'linear', loopNext1);
+	    $('#scroll').stop().animate({scrollLeft:'+=20'}, 'fast', 'linear', loopNext1);
 	}
 	function loopNext2(){
 	    $('#scroll').stop().animate({scrollLeft:'+=50'}, 'fast', 'linear', loopNext2);
 	}
 	function loopNext3(){
-	    $('#scroll').stop().animate({scrollLeft:'+=70'}, 'fast', 'linear', loopNext3);
+	    $('#scroll').stop().animate({scrollLeft:'+=90'}, 'fast', 'linear', loopNext3);
 	}
 	
 	function loopPrev1(){
-	    $('#scroll').stop().animate({scrollLeft:'-=30'}, 'fast', 'linear', loopPrev1);
+	    $('#scroll').stop().animate({scrollLeft:'-=20'}, 'fast', 'linear', loopPrev1);
 	}
 	function loopPrev2(){
 	    $('#scroll').stop().animate({scrollLeft:'-=50'}, 'fast', 'linear', loopPrev2);
 	}
 	function loopPrev3(){
-	    $('#scroll').stop().animate({scrollLeft:'-=70'}, 'fast', 'linear', loopPrev3);
+	    $('#scroll').stop().animate({scrollLeft:'-=90'}, 'fast', 'linear', loopPrev3);
 	}
 	
 	function stop(){
@@ -45,35 +45,55 @@
 	
 	$(function() {
 		
+		loopNext1();
+		
+		$('#scroll').mouseenter(function() {
+			stop();
+		});
+		$('#scroll').mouseleave(function() {
+			loopNext1();
+		});
+		
+		
 		$('#scroll').on('scroll', function() {
 			var scleft = $('#scroll').scrollLeft();
-			var clleft = $('#scroll').clientWidth;
-		    $("span").text("scLeft:" + scleft + "clLeft:" + clleft);	
+			var browser = window.innerWidth;
+		    
+			if (scleft == 0) {
+				loopNext1();
+			}
+			
+			if ((scleft + browser) > 2555) {
+				loopPrev1();
+			}
 		});
 	    
 		$('#leftScroll3').hover(function() {
-			 loopNext3();
+			loopNext3();
 		});
 		$('#leftScroll2').hover(function() {
-			 loopNext2();
+			loopNext2();
 		});
 		$('#leftScroll1').hover(function() {
-			 loopNext1();
+			loopNext1();
 		});
 		
 		
 		$('#rightScroll1').hover(function() {
-			 loopPrev1();
+			loopPrev1();
 		});
 		$('#rightScroll2').hover(function() {
-			 loopPrev2();
+			loopPrev2();
 		});
 		$('#rightScroll3').hover(function() {
-			 loopPrev3();
+			loopPrev3();
 		});
 		
-		$('#leftScroll1, #rightScroll1, #leftScroll2, #rightScroll2, #leftScroll3, #rightScroll3').mouseleave(function() {
-			$('#scroll').stop();
+		$('#leftScroll1, #rleftScroll2, #leftScroll3').mouseleave(function() {
+			loopNext1();
+		});
+		$('#rightScroll1, #rightScroll2, #rightScroll3').mouseleave(function() {
+			loopPrev1();
 		});
 	});
 </script>
@@ -133,23 +153,28 @@
 		
 		인기작
 		<div class="main_hot">
-		<div id="leftScroll3"style="background-color: red; width:33px; height:250px; position:absolute;"></div>
-		<div id="leftScroll2"style="background-color: orange; width:33px; height:250px; position:absolute; left: 33px;"></div>
-		<div id="leftScroll1"style="background-color: yellow; width:33px; height:250px; position:absolute; left: 66px"></div>
-		<div id="rightScroll1"style="background-color: green; width:33px; height:250px; position:absolute; right: 66px;"></div>
-		<div id="rightScroll2"style="background-color: blue; width:33px; height:250px; position:absolute; right: 33px;"></div>
-		<div id="rightScroll3"style="background-color: violet; width:33px; height:250px; position:absolute; right: 0;"></div>
+		<div id="leftScroll3" style="background-color: red; opacity:0; width:33px; height:250px; position:absolute;"></div>
+		<div id="leftScroll2" style="background-color: orange; opacity:0; width:33px; height:250px; position:absolute; left: 33px;"></div>
+		<div id="leftScroll1" style="background-color: yellow; opacity:0; width:33px; height:250px; position:absolute; left: 66px"></div>
+		<div id="rightScroll1" style="background-color: green; opacity:0; width:33px; height:250px; position:absolute; right: 66px;"></div>
+		<div id="rightScroll2" style="background-color: blue; opacity:0; width:33px; height:250px; position:absolute; right: 33px;"></div>
+		<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
 			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
-				<c:forEach var="movie" items="${hotList }" >
+				<c:forEach var="movie" items="${hotList }" varStatus="v">
 					<li>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 						<img id="mv" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+						<c:if test="${v.last == true}">
+							<script type="text/javascript">
+								loopPrev1();
+							</script>
+						</c:if> 
 					</li>
 				</c:forEach>
 			</ul>
 		</div>
 	</div>
-	<span></span>
+	<span id="check"></span>
 	
 </body>
 </html>

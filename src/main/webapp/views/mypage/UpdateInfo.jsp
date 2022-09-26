@@ -35,7 +35,7 @@
 <form action="/project_semi/views/mypage/UpdateInfoResult.do" method="post" name="frm" onsubmit="return passwordchk()" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${id }">
 	<img alt="" src="/project_semi/posterUpload/${member.profile }" width="120" height="120">
-	<input type="file" name="profile">
+	<input type="file" name="profile" value="${member.profile }">
 	
 	<table>
 		<tr>

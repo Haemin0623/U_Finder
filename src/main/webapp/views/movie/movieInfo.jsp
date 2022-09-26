@@ -233,7 +233,7 @@
 				<c:forEach var="revGen" items="${recGenre}">
 					<li>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${revGen.movieno }">
-						<img src="/project_semi/posterUpload/${revGen.poster}"> <span> ${revGen.moviename} </span> </a>
+						<img id="mv" src="/project_semi/posterUpload/${revGen.poster}"> <span> ${revGen.moviename} </span> </a>
 					</li>
 				</c:forEach>
 			</ul>
@@ -244,7 +244,7 @@
 				<c:forEach var="recActor" items="${recActor}">
 					<li>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${recActor.movieno }">
-						<img src="/project_semi/posterUpload/${recActor.poster}"> <span> ${recActor.moviename} </span> </a>
+						<img id="mv" src="/project_semi/posterUpload/${recActor.poster}"> <span> ${recActor.moviename} </span> </a>
 					</li>
 				</c:forEach>
 			</ul>

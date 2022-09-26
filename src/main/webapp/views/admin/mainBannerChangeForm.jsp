@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
+<link rel="stylesheet" type="text/css" href="/project_semi/css/admin/admin.css">
 
 <style type="text/css">
 	img {

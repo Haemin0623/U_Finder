@@ -34,7 +34,7 @@ public class UpdateInfoAction implements CommandProcess {
 		String coupang = mr.getParameter("coupang");
 		String tving = mr.getParameter("tving");
 		String profile = mr.getFilesystemName("profile");
-		
+		System.out.println(profile);
 		
 		if (netflix == null) {
 			netflix = "N";
