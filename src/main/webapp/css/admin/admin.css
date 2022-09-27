@@ -25,3 +25,12 @@ td, th {
 	padding: 15px;
 	border: 1px solid #E50914;
 }
+
+#search {
+	width: 20%;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	padding: 5px 6px;
+	font-size: 14px;
+	text-align: center;
+}

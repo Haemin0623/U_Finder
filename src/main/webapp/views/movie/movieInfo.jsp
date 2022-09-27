@@ -159,7 +159,7 @@
 								<strong> ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname } </strong>
 							</c:if>
 							<c:if test="${reviewno != rv.reviewno }">
-								 ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
+								 ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
 							</c:if>
 							<!-- 리뷰수정 -->
 							<c:if test="${id == rv.id }"> 

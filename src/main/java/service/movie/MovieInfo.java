@@ -80,7 +80,7 @@ public class MovieInfo implements CommandProcess {
 		request.setAttribute("mvInfo", mvInfo);
 		
 		ActorDao ad = ActorDao.getInstance();
-		List<Actor> actorList = ad.list(movieno);
+		List<Actor> actorList = ad.actorList(movieno);
 		request.setAttribute("actorList", actorList);
 		
 		
@@ -107,6 +107,10 @@ public class MovieInfo implements CommandProcess {
 			}
 			request.setAttribute("pickResult", result);
 		}
+		
+		// 마이페이지 - 내리뷰에서 수정하기로 넘어올 때 구분하기 위한 용도
+		String reviewno = request.getParameter("reviewno");
+		request.setAttribute("reviewno", reviewno);
 		
 		
 		return "movieInfo";

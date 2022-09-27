@@ -16,9 +16,9 @@
 	</insert>
 	
 	<!-- 해당 태그 삭제 -->
-	<select id="delete" parameterType="integer">
+	<delete id="delete" parameterType="integer">
 		delete from tag where tagno=#{tagno}
-	</select>
+	</delete>
 	
 	<update id="update" parameterType="tag">
 		update tag set tag=#{tag} where tagno=#{tagno}

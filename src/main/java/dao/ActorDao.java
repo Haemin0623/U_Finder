@@ -38,8 +38,20 @@ public class ActorDao {
 	}
 	
 	// 영화에 출연하는 배우 정보
-	public List<Actor> list(int movieno) {
+	public List<Actor> actorList(int movieno) {
 		return session.selectList("actorns.select", movieno);
+	}
+
+	public int updateActor(Actor actor) {
+		return session.update("actorns.update", actor);
+	}
+
+	public int delete(int actorno) {
+		return session.delete("actorns.delete", actorno);
+	}
+
+	public int insert(Actor actor) {
+		return session.insert("actorns.insert", actor);
 	}
 
 

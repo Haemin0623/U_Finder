@@ -1,4 +1,4 @@
-package service.movie;
+package service.admin;
 
 import java.util.List;
 
@@ -9,19 +9,20 @@ import dao.MovieDao;
 import model.Movie;
 import service.CommandProcess;
 
-public class SearchResult implements CommandProcess {
+public class AdminMovieSearchAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String searchWord = request.getParameter("searchWord");
 		
 		MovieDao md = MovieDao.getInstance();
-		List<Movie> mvList = md.search(searchWord);
+		List<Movie> list = md.search(searchWord);
 		
-		request.setAttribute("mvList", mvList);
-		request.setAttribute("searchWord", searchWord);		
+		request.setAttribute("list", list);
+		request.setAttribute("searchWord", searchWord);
 		
-		return "searchResult";
+		
+		return "movieList";
 	}
 
 }

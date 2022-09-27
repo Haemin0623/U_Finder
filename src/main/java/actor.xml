@@ -4,7 +4,25 @@
 
 	<!-- // 영화에 출연하는 배우 정보 -->
 	<select id="select" parameterType="integer" resultType="actor">
-		select actorname from actor where movieno = #{movieno}
+		select * from actor where movieno = #{movieno}
 	</select>
+	
+	<!-- 해당 영화에 배우정보 수정 -->
+	<update id="update" parameterType="actor">
+		update actor set actorname=#{actorname} where actorno = #{actorno}
+	</update>
+	
+	<!-- 해당 배우 정보 삭제 -->
+	<delete id="delete" parameterType="Integer">
+		delete from actor where actorno=#{actorno}
+	</delete>
+	
+	<!-- 해당 배우 정보 추가 -->
+	<insert id="insert" parameterType="actor">
+		<selectKey keyProperty="actorno" order="BEFORE" resultType="integer">
+			select nvl(max(actorno),0) +1 actorno from actor		
+		</selectKey>		 
+		insert into actor values(#{actorno}, #{actorname}, #{movieno})
+	</insert>
 	
 </mapper>

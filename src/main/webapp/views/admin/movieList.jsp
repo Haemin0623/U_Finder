@@ -32,11 +32,13 @@
 
 </head>
 <body>
-	
-	<table><caption>영화 목록 (수정하려면 제목 클릭)</caption>
+	<form action="/project_semi/views/admin/adminMovieSearch.do">
+		<input id="search" type="text" name="searchWord"  placeholder="작품명(또는 키워드)을 입력해주세요.">
+	</form>
+	<table>
 		<tr>
 			<th>번호</th>
-			<th>제목</th>
+			<th>제목(수정)</th>
 			<th>줄거리</th>
 			<th>감독</th>
 			<th>상영시간</th>
@@ -49,6 +51,7 @@
 			<th>포스터</th>
 			<th>트레일러</th>
 			<th>찜한 회원 수</th>
+			<th>배우</th>
 			<th>태그</th>
 			<th>평균리뷰점수</th>
 		</tr>
@@ -79,6 +82,7 @@
 					</c:if>
 					<td>${movie.trailer }</td>
 					<td id="count${movie.movieno }"><script type="text/javascript">pickCount(${movie.movieno })</script></td>
+					<td><button onclick="location.href='/project_semi/views/admin/movieActorList.do?movieno=${movie.movieno }'">확인</button></td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				
 					<td id="score${movie.movieno }"><button onclick="location.href='/project_semi/views/admin/movieReviewList.do?movieno=${movie.movieno }'"><script type="text/javascript">avgRvScore(${movie.movieno })</script>리뷰확인</button></td>				
 				</tr>

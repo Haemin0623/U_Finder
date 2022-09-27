@@ -106,7 +106,7 @@
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
 		    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
 		</div>
-		<div class="carousel-inner" style="height: 200px">
+		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
 			</div>
@@ -114,7 +114,7 @@
 				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
+				<a href="sdfsdfsd/movieinfo?movieno=${movieno }">aad</a><img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
 			</div>
 			<div class="carousel-item">
 				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
