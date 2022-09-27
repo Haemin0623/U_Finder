@@ -11,8 +11,8 @@
 <style type="text/css">
 
 #background{width: 100%; height: 100%;  }
-h2{text-align: center;}
-td{border: 1px solid gray; }
+ h2{text-align: center;}
+ td{border: 1px solid gray; } 
 .profile{ margin-left: 45%;}
 .profile > img{width: 120px; height: 140px;}
 table {width:500px; margin:0 auto;}
@@ -20,7 +20,8 @@ td{margin: 1px;}
 #memberout {width: 50px;}
 input[type=checkbox]{ width:10px; } 
 #boutton {width: 50px;}
-#hide {border: 1px ;}
+#line {position: absolute; top:48%; left:50%;}
+
 </style>
 <script type="text/javascript">
 	function delchk1() {
@@ -106,10 +107,12 @@ input[type=checkbox]{ width:10px; }
 		<th>
 			</th>
 			<td id="hide"><input class="blackText" type="submit" value="확인" id="boutton">
-				<button style="color: black;" id="delchk" onclick="delchk1()">회원탈퇴</button>
-			<button style="color: black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">취소</button></td></tr>
 	</table>
 </form>
+	<div id="line">
+		<button style="color: black;" id="delchk" onclick="delchk1()">회원탈퇴</button>
+		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>
+	</div>
 </div>
 </body>
 </html>

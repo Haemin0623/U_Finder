@@ -32,40 +32,41 @@
 							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
 							<th>${movieReview.content }</th>		<!-- db에서 받아올 값 -->
 							<td>																										      <!-- 영화정보 페이지에서 수정할 리뷰 표시  -->
-								<input type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}&reviewno=${movieReview.reviewno}'" value="수정"> <!-- 영화 정보 페이지로 이동 -->
-								<input type="button" onclick="delchk(${movieReview.reviewno})" value="삭제">
+								<input class="blackText" type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}&reviewno=${movieReview.reviewno}'" value="수정"> <!-- 영화 정보 페이지로 이동 -->
+								<input class="blackText" type="button" onclick="delchk(${movieReview.reviewno})" value="삭제">
 							</td>
 						</c:if>	
 						<c:if test="${movieReview.del =='Y'}">
 							<th>${movieReview.moviename }</th>		<!-- db에서 받아올 값 -->
 							<td>삭제된 댓글입니다.<br></td>		<!-- db에서 받아올 값 -->
 							<td>
-								<input type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}'" value="리뷰쓰기"> <!-- 영화 정보 페이지로 이동 -->
+								<input class="blackText" type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}'" value="리뷰쓰기"> <!-- 영화 정보 페이지로 이동 -->
 							</td>
 						</c:if>
 					</c:forEach>
 				</tr>
 			</table>
+			
 		</form>
 	</div>
 	<div align="center">
 			<c:if test="${currentPage > PAGE_PER_BLOCK }" >
-				<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${startPage - 1 }'">이전</button>
+				<button class="blackText" onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${startPage - 1 }'">이전</button>
 			</c:if>
 				<c:forEach var="i" begin="${startPage }" end="${endPage }">
 					<c:if test="${i == currentPage }">
-						<button style="background: red" onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
+						<button class="blackText" style="background: red" onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
 					</c:if>
 					<c:if test="${i != currentPage }">
-						<button onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
+						<button class="blackText" onclick="location.href='/project_semi/views/mypage/reviewForm.do?id=${member.memberno}&${id}&pageNum=${i}'">${i }</button>
 					</c:if>		
 				</c:forEach>
 			<c:if test="${endPage < totalPage }">
-				<button onclick="location.href='/project_semi/views/mypage/reviewForm?id=${member.memberno}&${id}&pageNum=${endPage + 1 }'">다음</button>
+				<button class="blackText" onclick="location.href='/project_semi/views/mypage/reviewForm?id=${member.memberno}&${id}&pageNum=${endPage + 1 }'">다음</button>
 			</c:if>
 	</div>
 	<div id="historyback" align="center">
-		<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>
+		<button class="blackText" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>
 	</div>
 </body>
 </html>
