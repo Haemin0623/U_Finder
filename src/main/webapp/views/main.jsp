@@ -108,19 +108,19 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
+				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
+				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
 			</div>
 			<div class="carousel-item">
-				<a href="sdfsdfsd/movieinfo?movieno=${movieno }">aad</a><img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
+				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
+				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" height="200px" src="/project_semi/bannerImage/banner5.jpg" alt="Fifth slide">
+				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner5.jpg" alt="Fifth slide">
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -141,7 +141,7 @@
 					<c:forEach var="pickMovie" items="${pickList }" >
 						<li>
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
-							<img id="mv" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
+							<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
 						</li>
 					</c:forEach>
 				</ul>
@@ -160,7 +160,7 @@
 				<c:forEach var="movie" items="${hotList }" varStatus="v">
 					<li>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-						<img id="mv" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+						<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
 					</li>
 				</c:forEach>
 			</ul>

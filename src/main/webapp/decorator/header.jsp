@@ -27,7 +27,10 @@
 				<td id="main"><a id="headerLink" href="/project_semi/views/main.do">메인</a></td>
 				
 				<td><input id="search" type="text" name="searchWord"
-					placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." required="required"></td>
+					placeholder="보고싶은 작품명(또는 키워드)을 입력해주세요." required="required">
+					<input type="submit" value="검색">
+					</td>
+					
 				
 				<td class="dropdown">
 					<a class="btn btn-secondary dropdown-toggle" href="#" role="button"

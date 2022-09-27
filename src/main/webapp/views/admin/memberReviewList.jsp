@@ -25,7 +25,7 @@
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
-				<td colspan="5">작성리뷰가 없다!</td>
+				<td colspan="6">작성리뷰가 없다!</td>
 			</tr>
 		</c:if>
 		<c:if test="${not empty list }">

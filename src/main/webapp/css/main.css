@@ -14,7 +14,6 @@
 	max-width: 100%;
 	width: 100%;
 	height: 300px;
-	margin: 0 auto;
 }
 
 .main_hot ul {
@@ -26,7 +25,6 @@
 
 .main_hot ul li {
 	display: inline-block;
-	padding: 10px 20px;
 	margin-right: 10px;
 }
 
