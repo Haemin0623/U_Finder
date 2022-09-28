@@ -8,14 +8,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#up {width: 100%; margin-left: 37%;  margin-top: 2%; margin-bottom: 3%}
+	#up {width: 50%; margin-left: 37%;  margin-top: 2%; margin-bottom: 3%}
 	.profile img {width:160px; height:210px; margin: 2px;}
-	.picklist { border:1px solid gray; margin-left:19%; text-align: center; width: 1200px; ;height: 350px;
+	.picklist { border:1px solid gray; margin-left:15%; text-align: center; width: 1200px; ;height: 350px;
 	}
 	.otticon > img{height:60px;width:60px; left:20%} 
 	.otticon { position: absolute; left:48%; top:13%;  }
 	#updateinfo {position: absolute; top:28%; left: 48%;}
-	#paging{position: absolute; left:50%; top:80%}
+	#paging{width:50% position: absolute; left:49%; top:80%; text-align: center; }
 
 </style>
 <%@ include file="../member_sessionChk.jsp" %>
@@ -63,21 +63,21 @@
 				<img id="mv" src="/project_semi/posterUpload/${pick.poster }"></a>
 		</c:forEach>
 	</div>
-		<div id="paging">
-			<c:if test="${currentPage > PAGE_PER_BLOCK }" >
-				<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
-			</c:if>
-				<c:forEach var="i" begin="${startPage }" end="${endPage }">
-					<c:if test="${i == currentPage }">
-						<button style="background: red" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
-					</c:if>
-					<c:if test="${i != currentPage }">
-						<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
-					</c:if>		
-				</c:forEach>
-			<c:if test="${endPage < totalPage }">
-				<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${endPage + 1 }'">다음</button>
-			</c:if>
+	<div id="paging">
+		<c:if test="${currentPage > PAGE_PER_BLOCK }" >
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
+		</c:if>
+			<c:forEach var="i" begin="${startPage }" end="${endPage }">
+				<c:if test="${i == currentPage }">
+					<button style="background: red" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
+				</c:if>
+				<c:if test="${i != currentPage }">
+					<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
+				</c:if>		
+			</c:forEach>
+		<c:if test="${endPage < totalPage }">
+			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${endPage + 1 }'">다음</button>
+		</c:if>
 	</div>
 </body>
 </html>

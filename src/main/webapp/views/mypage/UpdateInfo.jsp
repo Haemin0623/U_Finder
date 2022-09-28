@@ -21,6 +21,7 @@ td{margin: 1px;}
 input[type=checkbox]{ width:10px; } 
 #boutton {width: 50px;}
 #line {position: absolute; top:48%; left:50%;}
+.value{width: 410px;}
 
 </style>
 <script type="text/javascript">
@@ -63,15 +64,15 @@ input[type=checkbox]{ width:10px; }
 		</tr>
 		<tr>
 			<th>닉네임</th>
-			<td><input class="blackText" type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
+			<td><input class="blackText value" type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
-			<td><input class="blackText" type="password" name="password" required="required"></td>
+			<td><input class="blackText value" type="password" name="password" required="required"></td>
 		</tr>	
 		<tr>
 			<th>패스워드 확인</th>
-			<td><input class="blackText" type="password" name="passconfirm" required="required"></td>
+			<td><input class="blackText value" type="password" name="passconfirm" required="required"></td>
 		</tr>
 		<tr>	
 			<th>사용중인 OTT</th>
