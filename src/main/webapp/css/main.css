@@ -37,3 +37,7 @@ img#banner {
 	width: 750px;
 	height: 300px;
 }
+
+a#pick {
+	cursor: cell;
+}
