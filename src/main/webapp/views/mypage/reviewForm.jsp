@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 <%@include file="../member_sessionChk.jsp"%>
 <style type="text/css">
+#title{margin-top: 3%;}
 #review{width:650px; position: absolute; left: 33%; top:20%; }
 #reviewupdate{float: right; margin-right: 5px;}
  #reviewdelete{float: right;}
-#paging {text-align: center; margin-top: 33%}
+#paging {text-align: center; margin-top: 32%}
 #moviename{ margin-right: 5px; border-right:gray 1px solid; width: 120px; font-size: 18px;
 	text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden;}
 #content{text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden;
