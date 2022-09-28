@@ -87,6 +87,4 @@
 	<select id="ottSearch" parameterType="map" resultType="movie">
 		select * from movie where ${ottName} = 'Y'								 
 	</select>
-
-
 </mapper>
