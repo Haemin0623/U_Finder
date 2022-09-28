@@ -99,20 +99,17 @@
 </script>
 </head>
 <body>
-<div id="all_list"> <!-- 전체 -->
-	<div id="movieInfoForm"> <!-- 영화 정보 -->
-		<div id="one">	<!-- one 포스터 -->
-			<img id="poster" src="/project_semi/posterUpload/${mvInfo.poster}" >
-		</div>
-		
-		<div id="two"><span>  <!-- two 제목부터 ott까지 -->
-				<span>
-					<span id="title">${mvInfo.moviename}</span>
+<div class="all_list"> <!-- 전체 -->
+	<div> <!-- 영화 정보 -->
+		<div class="movieInfoForm">
+			<tr><th class="th1" rowspan="6" ><img id="bigMv" src="/project_semi/posterUpload/${mvInfo.poster}" ></th>
+				<th>${mvInfo.moviename}</th>
+				<th class="zzim">
+					<c:if test="${empty id }">
+						<button id="nonoPick" type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
+					</c:if>
 					<div id="zzim">
-						<c:if test="${empty id }">
-							<button id="nonoPick" type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-						</c:if>
 						<c:if test="${not empty id }">
 								<c:if test="${pickResult == 1 }">	<!-- 찜O인 상태 -->
 									<button id="yesPick" type="button" class="btn btn-default">
@@ -123,11 +120,9 @@
 										<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
 								</c:if>
 						</c:if>
-					</div>	<!-- zzim -->
-				</span>
-				
-				<div id="info_in"><br>
-					감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }">${mvInfo.director }</a><br>
+					</div>
+					</th></tr>
+			<tr><th colspan="2">감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }">${mvInfo.director }</a><br>
 					배우 : <c:forEach varStatus="a" var="actor" items="${actorList}">
 							 <c:if test="${a.last }">
 							 	<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname}</a>
@@ -135,60 +130,12 @@
 							 <c:if test="${!a.last }">
 								<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname} , </a>
 							 </c:if>
-						 </c:forEach><br>
-					줄거리 : ${mvInfo.story }<br>
-					상영시간 : ${mvInfo.playtime } 분 <br><br>
-					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-					<ul id="ott_list">
-						<c:if test="${empty id }">
-							<li><a href="https://www.netflix.com/kr/">
-								<img id="ott" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
-							<li><a href="https://www.disneyplus.com/ko-kr">
-								<img id="ott" alt="누르시면 디즈니플러스로 이동합니다." src="/project_semi/images/disney.png"></a>
-							<li><a href="https://www.coupangplay.com/?returnpath=%2Fhome">
-								<img id="ott" alt="누르시면 쿠팡플레이로 이동합니다." src="/project_semi/images/coupang.png"></a>
-							<li><a href="https://www.tving.com/onboarding">
-								<img id="ott" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
-						</c:if>
-						<c:if test="${not empty id }">
-							<c:if test="${mvInfo.netflix == 'y'}">
-								<li><a href="https://www.netflix.com/kr/">
-								<img id="ott" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.netflix != 'y'}">
-								<li><a href="https://www.netflix.com/kr/">
-								<img id="ottNo" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.disney == 'y'}">
-								<li><a href="https://www.disneyplus.com/ko-kr">
-								<img id="ott" alt="누르시면 디즈니플러스로 이동합니다." src="/project_semi/images/disney.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.disney != 'y'}">
-								<li><a href="https://www.disneyplus.com/ko-kr">
-								<img id="ottNo" alt="누르시면 디즈니플러스로 이동합니다." src="/project_semi/images/disney.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.coupang == 'y'}">
-								<li><a href="https://www.coupangplay.com/?returnpath=%2Fhome">
-								<img id="ott" alt="누르시면 쿠팡플레이로 이동합니다." src="/project_semi/images/coupang.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.coupang != 'y'}">
-								<li><a href="https://www.coupangplay.com/?returnpath=%2Fhome">
-								<img id="ottNo" alt="누르시면 쿠팡플레이로 이동합니다." src="/project_semi/images/coupang.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.tving == 'y'}">
-								<li><a href="https://www.tving.com/onboarding">
-								<img id="ott" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
-							</c:if>
-							<c:if test="${mvInfo.tving != 'y'}">
-								<li><a href="https://www.tving.com/onboarding">
-								<img id="ottNo" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
-							</c:if>
-						</c:if>
-					</ul>
-					<br>
-				</div>
-				
-		</span></div>	<!-- two -->
+						 </c:forEach></th>
+			<tr><th colspan="2">줄거리 : ${mvInfo.story }<br>
+					상영시간 : ${mvInfo.playtime } 분 </th></tr>
+			<tr><th colspan="2"><iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></th></tr>
+			<tr><th colspan="2">NETFLIX: ${mvInfo.netflix }, DISNEY : ${mvInfo.disney }, COUPANG : ${mvInfo.coupang }, TVING : ${mvInfo.tving }</th></tr>
+		</div>
 	</div> <!-- 영화 정보 -->
 	
 	<!-- 전체 리뷰 리스트  -->
@@ -225,7 +172,7 @@
 											<input type="hidden" name="movieno" value = "${rv.movieno }">
 											<input type="hidden" name="memberno" value = "${rv.memberno }">
 											<table>
-												<tr><th><textarea name="content" required="required">${rv.content }</textarea></th></tr>
+												<tr><th><textarea name="content" >${rv.content }</textarea></th></tr>
 												<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
 												<tr><th><input type="submit" value="확인"></th></tr>
 											</table>
@@ -266,7 +213,7 @@
 		<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
 			<h1 class="sub_title">리뷰와 점수 등록</h1>                   
 			<table>
-				<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" required="required"></textarea></th></tr>
+				<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" ></textarea></th></tr>
 				<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>
 				<tr><th><input type="submit" value="등록"></th></tr>
 			</table>
