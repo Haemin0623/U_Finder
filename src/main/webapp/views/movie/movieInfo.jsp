@@ -33,44 +33,39 @@
 
 <script type="text/javascript">
 	
-	$(function(){
-		// 찜되있는 상태에서 누를시 찜 삭제
-		$("#yesPick").click(function(){
-			$.post("/project_semi/views/movie/pickDel.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
-					function (data) {
-						alert(data);
-						location.reload();
-                		$('#yesPick').hide();	//   성공하면 #yesPick 숨기고
-                		$('#noPick').show(); 	//			#noPick 보여주기
-               });
-		});
-		// 누를시 찜 추가
-		$("#noPick").click(function(){
-			$.post("/project_semi/views/movie/pickPick.do","movieno=${mvInfo.movieno}&memberno=${memberno}",
-					function (data) {
-						alert(data);
-						location.reload();
-			          	$('#noPick').hide();	//   성공하면 #nosPick 숨기고
-                		$('#yesPick').show(); 	//			#yesPick 보여주기
-
-               });
-		});
+	function pickChange(movieno) {
+		$.post("/project_semi/views/main/pickChange.do","memberno=${memberno}&movieno="+movieno,
+				function (data) {
+					alert(data);
+					location.reload();
+	       });
+	}
+	
+	function pickCheck(movieno) {
+		$.post("/project_semi/views/main/pickCheck.do","memberno=${memberno}&movieno="+movieno,
+				function (data) {
+					if(data == 1){						
+						$('.pickChk'+movieno).css('color', '#C01616');
+					}					
+	       });
+	}
+	$(function() {
 		//로그인 안 됐을 때 누르면 찜 로그인하라고 안내
 		$('#nonoPick').click(function() {
 			alert("회원만 찜할 수 있습니다.");
 		});
-		
-
 	});
 	
 	
 	// 추천작
 	$(function() {
 		$('#genBtn').click(function() {
-			$('.recGenre').toggle();
+			$('.recGenre').show();
+			$('.recActor').hide();
 		});
 		$('#actBtn').click(function() {
-			$('.recActor').toggle();
+			$('.recActor').show();
+			$('.recGenre').hide();
 		});
 	});
 	
@@ -109,19 +104,22 @@
 				<span>
 					<span id="title">${mvInfo.moviename}</span>
 					<div id="zzim">
+					<script type="text/javascript">
+						pickCheck(${mvInfo.movieno });
+					</script>
 						<c:if test="${empty id }">
-							<button id="nonoPick" type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
+							<a id="nonoPick" onclick="pickChange(${mvInfo.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
 						</c:if>
 						<c:if test="${not empty id }">
-								<c:if test="${pickResult == 1 }">	<!-- 찜O인 상태 -->
-									<button id="yesPick" type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-heart"></span>찜하기</button>
-								</c:if>
-								<c:if test="${pickResult == 0 }">    <!-- 찜x인 상태 -->
-									<button  id="noPick" type="button" class="btn btn-default">
-										<span class="glyphicon glyphicon-heart-empty"></span>찜하기</button>
-								</c:if>
+							<a id="pick" onclick="pickChange(${mvInfo.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
 						</c:if>
 					</div>	<!-- zzim -->
 				</span>
@@ -191,12 +189,13 @@
 		</span></div>	<!-- two -->
 	</div> <!-- 영화 정보 -->
 	
-	<!-- 전체 리뷰 리스트  -->
+	<!-- 리뷰부터 추천작까지  -->
 	<div class="a">
 	<div class="review_list">
-		<h1>리뷰</h1>
+		<hr>
+		<h1>리뷰</h1><br>
 		<!-- 평균 점수? -->
-		<div>평균 리뷰 점수 : ${rvPoint } 점<p></div>
+		<div>평균 리뷰 점수 : ${rvPoint } 점<br></div><br><br>
 		<div> <!-- 전체리뷰  -->
 			<c:if test="${empty rvPaging }">
 				리뷰 없음
@@ -204,31 +203,52 @@
 			<c:if test="${not empty rvPaging}">
 					<c:forEach var="rv" items="${rvPaging}">
 						<c:if test="${rv.del == 'Y' }">
-						 삭제된 리뷰입니다. <p>
+						 <span id="delRv"> 삭제된 리뷰입니다. </span><p>
 						</c:if>
 						<c:if test="${rv.del != 'Y' }">
 							<!--  마이페이지의 내 리뷰 중 수정할 리뷰를 클릭시 movieInfo 페이지에서 바로 볼수있게 표시하는 기능 -->
 							<c:if test="${reviewno == rv.reviewno }">
-								<strong> ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname } </strong>
+								<strong> 
+									<span id="content">
+									 ${rv.content }
+									 </span>
+									 <span id="point">
+									 ${rv.movielike }점
+									 </span>
+									 <span id="nick">
+									 ${rv.nickname }
+									 </span>
+								 </strong>
 							</c:if>
 							<c:if test="${reviewno != rv.reviewno }">
-								 ${rv.reviewno } | ${rv.content } | ${rv.movielike }점 | ${rv.nickname }
+								 <span id="content">
+								 ${rv.content }
+								 </span>
+								 <span id="point">
+								 ${rv.movielike }점
+								 </span>
+								 <span id="nick">
+								 ${rv.nickname }
+								 </span>
 							</c:if>
 							<!-- 리뷰수정 -->
 							<c:if test="${id == rv.id }"> 
-								<button class="updateBtn">수정</button> 
-								<button onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
+								<button style="color: gray;" class="updateBtn">수정</button> 
+								<button style="color: gray;" onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">삭제</button>
 									<div class="updateform">
-										<h3>리뷰 수정하기</h3>
+										<span style="color: gray;"><h4>리뷰 수정하기</h4></span>
 										<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
 											<input type="hidden" name="reviewno" value = "${rv.reviewno }">
 											<input type="hidden" name="movieno" value = "${rv.movieno }">
 											<input type="hidden" name="memberno" value = "${rv.memberno }">
-											<table>
-												<tr><th><textarea name="content" required="required">${rv.content }</textarea></th></tr>
-												<tr><th><input type="range" name="star" min="0" max="5" step="1" value="${rv.movielike }" required="required"></th></tr>
-												<tr><th><input type="submit" value="확인"></th></tr>
-											</table>
+											<span>
+												<textarea name="content" placeholder="영화를 봤으면 리뷰 등록" required="required" style="color: gray; width: 75%; float: left;	margin-right: 3%;"></textarea>
+												<div>
+													<input type="range" name="star" min="0" max="5" step="1" value="0" required="required" style="color: gray; width: 15%;">
+													<input type="submit" value="등록" style="color: gray; margin-left: 50px;">
+												</div>
+											</span>
+											<br><br>
 										</form>
 									</div> 
 							</c:if><p>
@@ -264,12 +284,17 @@
 		<!-- 짧은댓글리뷰자리 -->
 		<hr>
 		<form action="/project_semi/views/movie/reviewWrite.do?movieno=${mvInfo.movieno }&id=${id}" method="post" onsubmit="return sessionChk()">
-			<h1 class="sub_title">리뷰와 점수 등록</h1>                   
-			<table>
-				<tr><th><textarea name="content" placeholder="영화를 봤으면 리뷰 등록" required="required"></textarea></th></tr>
-				<tr><th><input type="range" name="star" min="0" max="5" step="1" value="0" required="required"></th></tr>
-				<tr><th><input type="submit" value="등록"></th></tr>
-			</table>
+			<h1 class="sub_title">리뷰와 점수 등록</h1><br>              
+				<span>
+					<textarea name="content" placeholder="영화를 봤으면 리뷰 등록" required="required" style="color: gray; width: 75%; float: left;	margin-right: 3%;"></textarea>
+					<div>
+						<input type="range" name="star" min="0" max="5" step="1" value="0" required="required" style="color: gray; width: 15%;">
+						<input type="submit" value="등록" style="color: gray; margin-left: 50px;">
+					</div>
+				</span>
+				
+				<br>
+				<br>
 		</form>
 	</div>		<!-- review_list -->
 	
@@ -277,20 +302,22 @@
 	
 	
 	<!-- 비슷한 컨텐츠 -->
-	<div> 
+	<div id="rec"> 
+		<hr>
+		<br>
 		<h1>추천작</h1>
-		<button id="genBtn">영화 장르</button> <button id="actBtn">출연 배우</button>
+		<button id="genBtn" style="color: gray;" >영화 장르</button> <button id="actBtn" style="color: gray;">출연 배우</button>
 		
 		<div class="recGenre">
-		<h3> 장르 추천작</h3>
-			<ul class="searchList">
-				<c:forEach var="revGen" items="${recGenre}">
-					<li>
-						<a href="/project_semi/views/movie/movieInfo.do?movieno=${revGen.movieno }">
-						<img id="mv" src="/project_semi/posterUpload/${revGen.poster}"> <span> ${revGen.moviename} </span> </a>
-					</li>
-				</c:forEach>
-			</ul>
+			<h3> 장르 추천작</h3>
+				<ul class="searchList">
+					<c:forEach var="revGen" items="${recGenre}">
+						<li>
+							<a href="/project_semi/views/movie/movieInfo.do?movieno=${revGen.movieno }">
+							<img id="mv" src="/project_semi/posterUpload/${revGen.poster}"> <span> ${revGen.moviename} </span> </a>
+						</li>
+					</c:forEach>
+				</ul>
 		</div>
 		<div class="recActor">
 		<h3> 동일 배우 추천작</h3>
