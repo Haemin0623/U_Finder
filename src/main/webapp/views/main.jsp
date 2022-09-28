@@ -13,8 +13,20 @@
 <c:set var="id" value="${sessionScope.id }"></c:set>
 
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-
 <script type="text/javascript">
+	
+	function pickCheck(movieno) {
+		$.post("/project_semi/views/main/pickCheck.do","memberno=${memberno}&movieno="+movieno,
+				function (data) {
+					if(data == 1){						
+						$('.pickChk'+movieno).css('color', '#C01616');
+					}					
+           });
+	}
+	
+	function loopNext(){
+	    $('#scroll').stop().animate({scrollLeft:'+=5'}, 'fast', 'linear', loopNext1);
+	}
 	function loopNext1(){
 	    $('#scroll').stop().animate({scrollLeft:'+=20'}, 'fast', 'linear', loopNext1);
 	}
@@ -41,32 +53,17 @@
 	
 	$(function() {
 		
-		loopNext1();
+		loopNext();
 		
 		$('#scroll').mouseenter(function() {
 			stop();
 		});
 		$('#scroll').mouseleave(function() {
-			loopNext1();
+			loopNext();
 		});
 		
-		
-		$('#scroll').on('scroll', function() {
-			var scleft = $('#scroll').scrollLeft();
-			var browser = window.innerWidth;
-		    
-			if (scleft == 0) {
-				loopNext1();
-			}
-			
-			if ((scleft + browser) > 2555) {
-				loopPrev1();
-			}
-		});
-	    
 		$('#leftScroll3').hover(function() {
-			loopNext3();
-			
+			loopNext3();			
 		});
 		$('#leftScroll2').hover(function() {
 			loopNext2();
@@ -139,7 +136,13 @@
 			<div class="main_hot">
 				<ul>
 					<c:forEach var="pickMovie" items="${pickList }" >
+					<script type="text/javascript">
+						pickCheck(${pickMovie.movieno });
+					</script>
 						<li>
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${pickMovie.movieno }" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+							</svg>						
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
 							<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
 						</li>
@@ -157,8 +160,14 @@
 		<div id="rightScroll2" style="background-color: blue; opacity:0; width:33px; height:250px; position:absolute; right: 33px;"></div>
 		<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
 			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
-				<c:forEach var="movie" items="${hotList }" varStatus="v">
+				<c:forEach var="movie" items="${hotList }">
+				<script type="text/javascript">
+						pickCheck(${movie.movieno });
+				</script>
 					<li>
+						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${movie.movieno }" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+						</svg>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 						<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
 					</li>

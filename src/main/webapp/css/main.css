@@ -8,8 +8,6 @@
 	list-style: none;
 	float: left;
 } */
-
-	
 .main_hot {
 	max-width: 100%;
 	width: 100%;
@@ -20,12 +18,18 @@
 	list-style: none;
 	white-space: nowrap;
 	overflow-x: hidden;
-	
 }
 
 .main_hot ul li {
 	display: inline-block;
 	margin-right: 10px;
+}
+
+svg.bi.bi-heart-fill {
+	position: relative;
+	left: 42px;
+	bottom: 112px;
+	opacity: .7;
 }
 
 img#banner {

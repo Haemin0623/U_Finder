@@ -10,5 +10,6 @@
 		<pattern>/views/movie/pickDel.*</pattern>
 		<pattern>/views/movie/pickPick.*</pattern>
 		<pattern>/views/movie/pickUpdate.*</pattern>
+		<pattern>/views/main/pickCheck.*</pattern>
 	</excludes>
 </decorators>
