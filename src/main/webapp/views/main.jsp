@@ -143,20 +143,32 @@
 			찜목록
 			<div class="main_hot">
 				<ul>
-					<c:forEach var="pickMovie" items="${pickList }" >
-					<script type="text/javascript">
-						pickCheck(${pickMovie.movieno });
-					</script>
-						<li>
-							<a id="pick" onclick="pickChange(${pickMovie.movieno })">
-								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${pickMovie.movieno }" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-								</svg>
-							</a>					
-							<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
-							<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
-						</li>
+					<c:set var="breakDone" value="false"></c:set>
+					<c:forEach var="pickMovie" items="${pickList }" varStatus="v">
+						<c:if test="${not breakDone }">
+							<script type="text/javascript">
+								pickCheck(${pickMovie.movieno });
+							</script>
+							<c:if test="${v.index == 6}">
+								<c:set var="breakDone" value="true"></c:set>
+							</c:if>
+							<li>
+								<a id="pick" onclick="pickChange(${pickMovie.movieno })">
+									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${pickMovie.movieno }" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+									</svg>
+								</a>
+												
+								<a href="/project_semi/views/movie/movieInfo.do?movieno=${pickMovie.movieno }">
+								<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${pickMovie.poster }"></a>
+							</li>
+						</c:if>
 					</c:forEach>
+					<a href="/project_semi/views/mypage/pickListForm.do?id=${id}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+	  					<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+						</svg>
+					</a>
 				</ul>
 			</div>			
 		</c:if>
@@ -171,23 +183,23 @@
 		<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
 			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
 				<c:forEach var="movie" items="${hotList }">
-				<script type="text/javascript">
-						pickCheck(${movie.movieno });
-				</script>
+					<script type="text/javascript">
+							pickCheck(${movie.movieno });
+					</script>
 					<li>
-						<a id="pick" onclick="pickChange(${movie.movieno })">
-							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${movie.movieno }" viewBox="0 0 16 16">
-							<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-							</svg>
-						</a>
+						<c:if test="${not empty id }">
+							<a id="pick" onclick="pickChange(${movie.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${movie.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
+						</c:if>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 						<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
 					</li>
 				</c:forEach>
 			</ul>
 		</div>
-	</div>
-	<span id="check"></span>
 	
 </body>
 </html>

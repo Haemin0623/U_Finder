@@ -32,6 +32,10 @@ svg.bi.bi-heart-fill {
 	opacity: .7;
 }
 
+svg.bi.bi-plus-square-fill {
+	margin-left: 50px;
+}
+
 img#banner {
 	margin: auto;
 	width: 750px;
