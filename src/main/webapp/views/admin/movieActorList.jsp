@@ -11,7 +11,8 @@
 
 </head>
 <body>
-
+	<button onclick="location.href='/project_semi/views/admin/actorAddForm.do?movieno=${movieno}'">배우추가</button>
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<table><caption>${movieno}번 영화 배우 목록</caption>
 		<tr>
 			<th>번호</th>
@@ -35,8 +36,7 @@
 			</c:forEach>
 		</c:if>
 	</table>
-	<button onclick="location.href='/project_semi/views/admin/actorAddForm.do?movieno=${movieno}'">배우추가</button>
-	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
+	
 
 </body>
 </html>

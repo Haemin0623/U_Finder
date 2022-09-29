@@ -106,6 +106,10 @@ public class MovieDao {
 		return session.selectList("moviens.ottSearch", map);
 	}
 
+	public List<Movie> newList() {
+		return session.selectList("moviens.newList");
+	}
+
 
 	// 수정시 reload되면서 조회수 증가하는 것 방지
 //	public void minusCount(int movieno) {

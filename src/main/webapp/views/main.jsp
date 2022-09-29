@@ -38,71 +38,41 @@
            });
 	}
 	
-	function loopNext(){
-	    $('#scroll').stop().animate({scrollLeft:'+=5'}, 'fast', 'linear', loopNext1);
-	}
 	function loopNext1(){
-	    $('#scroll').stop().animate({scrollLeft:'+=20'}, 'fast', 'linear', loopNext1);
+	    $('#sc1').stop().animate({scrollLeft:'+=15'}, 'fast', 'linear', loopNext1);
 	}
+
+	function stop1(){
+	    $('#sc1').stop();
+	}
+	
 	function loopNext2(){
-	    $('#scroll').stop().animate({scrollLeft:'+=50'}, 'fast', 'linear', loopNext2);
+	    $('#sc2').stop().animate({scrollLeft:'+=15'}, 'fast', 'linear', loopNext2);
 	}
-	function loopNext3(){
-	    $('#scroll').stop().animate({scrollLeft:'+=90'}, 'fast', 'linear', loopNext3);
-	}
-	
-	function loopPrev1(){
-	    $('#scroll').stop().animate({scrollLeft:'-=20'}, 'fast', 'linear', loopPrev1);
-	}
-	function loopPrev2(){
-	    $('#scroll').stop().animate({scrollLeft:'-=50'}, 'fast', 'linear', loopPrev2);
-	}
-	function loopPrev3(){
-	    $('#scroll').stop().animate({scrollLeft:'-=90'}, 'fast', 'linear', loopPrev3);
-	}
-	
-	function stop(){
-	    $('#scroll').stop();
+
+	function stop2(){
+	    $('#sc2').stop();
 	}
 	
 	$(function() {
 		
-		loopNext();
+		loopNext1();
+		loopNext2();
 		
-		$('#scroll').mouseenter(function() {
-			stop();
+		$('#sc1').mouseenter(function() {
+			stop1();
 		});
-		$('#scroll').mouseleave(function() {
-			loopNext();
+		$('#sc1').mouseleave(function() {
+			loopNext1();
 		});
 		
-		$('#leftScroll3').hover(function() {
-			loopNext3();			
+		$('#sc2').mouseenter(function() {
+			stop2();
 		});
-		$('#leftScroll2').hover(function() {
+		$('#sc2').mouseleave(function() {
 			loopNext2();
-		});
-		$('#leftScroll1').hover(function() {
-			loopNext1();
-		});
+		});		
 		
-		
-		$('#rightScroll1').hover(function() {
-			loopPrev1();
-		});
-		$('#rightScroll2').hover(function() {
-			loopPrev2();
-		});
-		$('#rightScroll3').hover(function() {
-			loopPrev3();
-		});
-		
-		$('#leftScroll1, #rleftScroll2, #leftScroll3').mouseleave(function() {
-			loopNext1();
-		});
-		$('#rightScroll1, #rightScroll2, #rightScroll3').mouseleave(function() {
-			loopPrev1();
-		});
 	});
 </script>
 
@@ -184,13 +154,7 @@
 		
 		<h2>인기작</h2>
 		<div class="main_hot">
-			<div id="leftScroll3" style="background-color: red; opacity:0; width:33px; height:250px; position:absolute;"></div>
-			<div id="leftScroll2" style="background-color: orange; opacity:0; width:33px; height:250px; position:absolute; left: 33px;"></div>
-			<div id="leftScroll1" style="background-color: yellow; opacity:0; width:33px; height:250px; position:absolute; left: 66px"></div>
-			<div id="rightScroll1" style="background-color: green; opacity:0; width:33px; height:250px; position:absolute; right: 66px;"></div>
-			<div id="rightScroll2" style="background-color: blue; opacity:0; width:33px; height:250px; position:absolute; right: 33px;"></div>
-			<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
-			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
+			<ul class="scroll" id="sc1"><!-- 리스트 가져와서 반복문 돌리기 -->
 				<c:forEach var="movie" items="${hotList }">
 					<script type="text/javascript">
 							pickCheck(${movie.movieno });
@@ -205,6 +169,28 @@
 						</c:if>
 						<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
 						<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${movie.poster }"></a>
+					</li>
+				</c:forEach>
+			</ul>
+		</div>
+		
+		<h2>새로 등록된 영화</h2>
+		<div class="main_hot">
+			<ul class="scroll" id="sc2">
+				<c:forEach var="newMovie" items="${newList }">
+					<script type="text/javascript">
+							pickCheck(${newMovie.movieno });
+					</script>
+					<li>
+						<c:if test="${not empty id }">
+							<a id="pick" onclick="pickChange(${newMovie.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${newMovie.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
+						</c:if>
+						<a href="/project_semi/views/movie/movieInfo.do?movieno=${newMovie.movieno }">
+						<img id="mv" class="img-rounded" alt="" src="/project_semi/posterUpload/${newMovie.poster }"></a>
 					</li>
 				</c:forEach>
 			</ul>

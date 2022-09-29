@@ -14,6 +14,7 @@ li{width:240px; text-align: center; float: left; display: inline-block;}
 .bi.bi-trash3-fill{
 	position: relative;
 	top: 115px;
+	right: 38px;
 }
 </style>
 <%@include file="../member_sessionChk.jsp"%>

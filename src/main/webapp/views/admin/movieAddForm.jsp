@@ -12,6 +12,7 @@
 
 </head>
 <body>
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<form action="/project_semi/views/admin/movieAddAction.do" method="post" enctype="multipart/form-data">
 		<table><caption>*은 필수</caption>
 			<tr>

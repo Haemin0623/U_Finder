@@ -12,7 +12,7 @@
 
 </head>
 <body>
-
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<form action="/project_semi/views/admin/tagUpdateAction.do">
 		<input type="hidden" name="tagno" value=${tagno }>
 		<input type="hidden" name="movieno" value=${movieno }>

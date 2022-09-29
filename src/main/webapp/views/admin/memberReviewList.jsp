@@ -13,7 +13,7 @@
 
 </head>
 <body>
-	
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<table><caption>${memberno }번 회원의 리뷰 목록</caption>
 		<tr>
 			<th>번호</th>
@@ -57,7 +57,7 @@
 			<button onclick="location.href='/project_semi/views/admin/memberReviewList.do?pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
-	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
+	
 
 </body>
 </html>

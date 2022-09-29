@@ -19,6 +19,7 @@
 </head>
 <body>
 
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<table>
 		<tr>
 			<th>배너번호</th>
@@ -76,7 +77,7 @@
 			</td>	
 		</tr>
 	</table>
-	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
+	
 
 </body>
 </html>

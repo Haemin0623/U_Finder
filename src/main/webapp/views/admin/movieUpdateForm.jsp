@@ -13,7 +13,7 @@
 
 </head>
 <body>
-
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<form action="/project_semi/views/admin/movieUpdateAction.do" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="movieno"value="${movie.movieno }">
 		<table><caption>*은 필수</caption>

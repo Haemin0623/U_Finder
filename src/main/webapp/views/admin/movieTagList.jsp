@@ -13,7 +13,8 @@
 
 </head>
 <body>
-	
+	<button onclick="location.href='/project_semi/views/admin/tagAddForm.do?movieno=${movieno}'">태그추가</button>
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<table><caption>태그 목록</caption>
 		<tr>
 			<th>태그번호</th>
@@ -37,5 +38,4 @@
 			</c:forEach>
 		</c:if>
 	</table>
-	<button onclick="location.href='/project_semi/views/admin/tagAddForm.do?movieno=${movieno}'">태그추가</button>
-	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
+	

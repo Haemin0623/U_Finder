@@ -32,6 +32,8 @@
 
 </head>
 <body>
+	<button onclick="location.href='/project_semi/views/admin/movieAddForm.do'">영화등록</button>
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<form action="/project_semi/views/admin/adminMovieSearch.do">
 		<input id="search" type="text" name="searchWord"  placeholder="작품명(또는 키워드)을 입력해주세요.">
 	</form>
@@ -105,8 +107,7 @@
 			<button onclick="location.href='/project_semi/views/admin/movieList.do?pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
-	<button onclick="location.href='/project_semi/views/admin/movieAddForm.do'">영화등록</button>
-	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
+	
 
 </body>
 </html>

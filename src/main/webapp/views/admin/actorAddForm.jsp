@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	
+	<button onclick="location.href='/project_semi/views/admin/admin_main.do'">메인으로</button>
 	<form action="/project_semi/views/admin/actorAddAction.do">
 		<input type="hidden" name="movieno" value=${movieno }>
 		<table><caption>${movieno }번 영화</caption>

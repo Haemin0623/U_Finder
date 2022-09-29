@@ -17,7 +17,7 @@
 .main_hot ul {
 	list-style: none;
 	white-space: nowrap;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .main_hot ul li {
@@ -32,9 +32,7 @@ svg.bi.bi-heart-fill {
 	opacity: .7;
 }
 
-svg.bi.bi-plus-square-fill {
-	margin-left: 50px;
-}
+
 
 img#banner {
 	margin: auto;
@@ -46,7 +44,7 @@ a#pick {
 	cursor: cell;
 }
 
-ul#scroll {	
+ul.scroll {	
 	margin-left: 54px;
 	margin-right: 54px;
 }

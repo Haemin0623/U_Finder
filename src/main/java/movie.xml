@@ -87,4 +87,9 @@
 	<select id="ottSearch" parameterType="map" resultType="movie">
 		select * from movie where ${ottName} = 'Y'								 
 	</select>
+	
+	<!-- 새로 등록된 영화 -->
+	<select id="newList" resultType="movie">
+		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 10 order by movieno desc
+	</select>
 </mapper>

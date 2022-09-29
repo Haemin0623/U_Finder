@@ -20,6 +20,8 @@ public class MainAction implements CommandProcess {
 
 		MovieDao md = MovieDao.getInstance();
 		List<Movie> hotList = md.hotMovie();
+		
+		List<Movie> newList = md.newList();
 
 		if (id != null) {
 			PickDao pd = PickDao.getInstance();
@@ -28,6 +30,7 @@ public class MainAction implements CommandProcess {
 		}
 
 		request.setAttribute("hotList", hotList);
+		request.setAttribute("newList", newList);
 
 		return "main";
 	}
