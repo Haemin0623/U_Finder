@@ -89,19 +89,29 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
+				<a href="">
+					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
+				</a>
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
+				<a href="/project_semi/views/movie/movieInfo.do?movieno=2">
+					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner2.jpg" alt="Second slide">
+				</a>
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
+				<a href="/project_semi/views/movie/searchResult.do?searchWord='해리포터'">
+					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
+				</a>
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
+				<a href="/project_semi/views/movie/movieInfo.do?movieno=16">
+					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner4.jpg" alt="Fourth slide">
+				</a>
 			</div>
 			<div class="carousel-item">
-				<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner5.jpg" alt="Fifth slide">
+				<a href="/project_semi/views/movie/movieInfo.do?movieno=6">
+					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner5.jpg" alt="Fifth slide">
+				</a>
 			</div>
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
