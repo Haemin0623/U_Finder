@@ -153,6 +153,7 @@
 	</div>
 		
 		<h2>인기작</h2>
+		
 		<div class="main_hot">
 			<ul class="scroll" id="sc1"><!-- 리스트 가져와서 반복문 돌리기 -->
 				<c:forEach var="movie" items="${hotList }">
