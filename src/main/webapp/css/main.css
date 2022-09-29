@@ -38,10 +38,19 @@ svg.bi.bi-plus-square-fill {
 
 img#banner {
 	margin: auto;
-	width: 750px;
-	height: 300px;
+	width: 600px;
+	height: 200px;
 }
 
 a#pick {
 	cursor: cell;
+}
+
+ul#scroll {	
+	margin-left: 54px;
+	margin-right: 54px;
+}
+
+h2 {
+	margin-left: 50px;
 }

@@ -16,7 +16,12 @@
 	.otticon { position: absolute; left:48%; top:13%;  }
 	#updateinfo {position: absolute; top:28%; left: 48%;}
 	#paging{width:50% position: absolute; left:49%; top:80%; text-align: center; }
-
+	#icon {
+		background: none;
+		border: none;
+		margin-right: 10px;
+		
+	}
 </style>
 <%@ include file="../member_sessionChk.jsp" %>
 </head>
@@ -24,16 +29,28 @@
 <div id="up">
 	<span class="profile">
 		<c:if test="${empty member.profile }">
-			<img alt="" src="/project_semi/images/기본이미지.jpg" >
+			<img alt="" src="/project_semi/images/기본이미지.jpg"  class="img-rounded">
 		</c:if>
 		<c:if test="${not empty member.profile }">
 			<a href="/project_semi/views/mypage/InfoChk.do?id${id }">
-			<img alt="" src="/project_semi/posterUpload/${member.profile }"></a>
+			<img alt="" src="/project_semi/posterUpload/${member.profile }"  class="img-rounded"></a>
 		</c:if>
 		<span id="updateinfo">
-			<button style="color: black;" onclick="location.href='/project_semi/views/mypage/InfoChk.do?id=${id}'">정보수정</button>
-		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/reviewForm.do?memberno=${member.memberno}'">내 리뷰</button>
-		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}'">찜목록</button>
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+			<path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+			</svg>
+			<button id="icon" onclick="location.href='/project_semi/views/mypage/InfoChk.do?id=${id}'">정보수정</button>
+		
+			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-list-stars" viewBox="0 0 16 16">
+	  		<path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
+	  		<path d="M2.242 2.194a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.256-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53zm0 4a.27.27 0 0 1 .516 0l.162.53c.035.115.14.194.258.194h.551c.259 0 .37.333.164.493l-.468.363a.277.277 0 0 0-.094.3l.173.569c.078.255-.213.462-.423.3l-.417-.324a.267.267 0 0 0-.328 0l-.417.323c-.21.163-.5-.043-.423-.299l.173-.57a.277.277 0 0 0-.094-.299l-.468-.363c-.206-.16-.095-.493.164-.493h.55a.271.271 0 0 0 .259-.194l.162-.53z"/>
+			</svg>
+			<button id="icon" onclick="location.href='/project_semi/views/mypage/reviewForm.do?memberno=${member.memberno}'">내 리뷰</button>
+			
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+			</svg>
+			<button id="icon" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}'">찜목록</button>
 		</span>
 <%-- 		<button onclick="location.href='seenmovieForm.do?id=${id}'">시청한 영화</button> --%>
 	</span>
@@ -60,7 +77,7 @@
 		</c:if>
 		<c:forEach var="pick" items="${list }">
 				<a href="/project_semi/views/movie/movieInfo.do?movieno=${pick.movieno }">
-				<img id="mv" src="/project_semi/posterUpload/${pick.poster }"></a>
+				<img id="mv" src="/project_semi/posterUpload/${pick.poster }" class="img-rounded"></a>
 		</c:forEach>
 	</div>
 	<div id="paging">

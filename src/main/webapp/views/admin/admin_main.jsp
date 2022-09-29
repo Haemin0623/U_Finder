@@ -11,6 +11,14 @@
 
 <link rel="stylesheet" type="text/css" href="/project_semi/css/admin/admin.css">
 
+<style type="text/css">
+table {
+	position: absolute;
+	left: 25%;
+	width: 50%;
+}
+</style>
+
 </head>
 <body>
 	<table><caption>${id }님 하이!!!</caption>

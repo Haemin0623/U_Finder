@@ -51,7 +51,7 @@
 								</svg>
 							</a>
 							<a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">
-							<img id="mv" src="/project_semi/posterUpload/${movie.poster}"> <span> ${movie.moviename} </span> </a>
+							<img id="mv" src="/project_semi/posterUpload/${movie.poster}" class="img-rounded"> <span> ${movie.moviename} </span> </a>
 						</li>
 					</c:forEach>
 				</ul>

@@ -14,11 +14,6 @@ public class MainAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-	
-		// 캐시 삭제, 배너 이미지 바로 적용위해서 추가
-		response.setHeader("Pragma", "no-cache");
-		response.setDateHeader("Expires", -1);
-		response.setHeader("Cache-Control", "no-cache");
 
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");

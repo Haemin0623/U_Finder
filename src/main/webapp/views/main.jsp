@@ -13,6 +13,12 @@
 <c:set var="id" value="${sessionScope.id }"></c:set>
 
 <link rel="stylesheet" type="text/css" href="../css/main.css">
+<style type="text/css">
+.carousel-indicators .active {
+	width: 30px;
+	height: 3px;
+}
+</style>
 <script type="text/javascript">
 	
 	function pickChange(movieno) {
@@ -140,7 +146,7 @@
 
 	<div class="main">		
 		<c:if test="${not empty id}">
-			찜목록
+			<h2>찜목록</h2>
 			<div class="main_hot">
 				<ul>
 					<c:set var="breakDone" value="false"></c:set>
@@ -149,7 +155,7 @@
 							<script type="text/javascript">
 								pickCheck(${pickMovie.movieno });
 							</script>
-							<c:if test="${v.index == 6}">
+							<c:if test="${v.index == 4}">
 								<c:set var="breakDone" value="true"></c:set>
 							</c:if>
 							<li>
@@ -164,23 +170,26 @@
 							</li>
 						</c:if>
 					</c:forEach>
-					<a href="/project_semi/views/mypage/pickListForm.do?id=${id}">
-						<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-	  					<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-						</svg>
-					</a>
+					<li>
+						<a href="/project_semi/views/mypage/pickListForm.do?id=${id}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+		  					<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+							</svg>
+						</a>
+					</li>
 				</ul>
 			</div>			
 		</c:if>
+	</div>
 		
-		인기작
+		<h2>인기작</h2>
 		<div class="main_hot">
-		<div id="leftScroll3" style="background-color: red; opacity:0; width:33px; height:250px; position:absolute;"></div>
-		<div id="leftScroll2" style="background-color: orange; opacity:0; width:33px; height:250px; position:absolute; left: 33px;"></div>
-		<div id="leftScroll1" style="background-color: yellow; opacity:0; width:33px; height:250px; position:absolute; left: 66px"></div>
-		<div id="rightScroll1" style="background-color: green; opacity:0; width:33px; height:250px; position:absolute; right: 66px;"></div>
-		<div id="rightScroll2" style="background-color: blue; opacity:0; width:33px; height:250px; position:absolute; right: 33px;"></div>
-		<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
+			<div id="leftScroll3" style="background-color: red; opacity:0; width:33px; height:250px; position:absolute;"></div>
+			<div id="leftScroll2" style="background-color: orange; opacity:0; width:33px; height:250px; position:absolute; left: 33px;"></div>
+			<div id="leftScroll1" style="background-color: yellow; opacity:0; width:33px; height:250px; position:absolute; left: 66px"></div>
+			<div id="rightScroll1" style="background-color: green; opacity:0; width:33px; height:250px; position:absolute; right: 66px;"></div>
+			<div id="rightScroll2" style="background-color: blue; opacity:0; width:33px; height:250px; position:absolute; right: 33px;"></div>
+			<div id="rightScroll3" style="background-color: violet; opacity:0; width:33px; height:250px; position:absolute; right: 0;"></div>
 			<ul id="scroll"><!-- 리스트 가져와서 반복문 돌리기 -->
 				<c:forEach var="movie" items="${hotList }">
 					<script type="text/javascript">
