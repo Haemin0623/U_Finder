@@ -40,16 +40,16 @@
 	<div class="otticon">
 		<h2 style="font-size: 24px;">사용중인 OTT</h2>
 			<c:if test="${member.netflix == 'Y' }">
-				<img alt="" src="../../images/넷플릭스.jpg">
+				<img alt="" src="../../images/netflix.png">
 			</c:if>
 			<c:if test="${member.disney == 'Y' }">
-				<img alt=""src="../../images/디즈니플러스.jpg"> 
+				<img alt=""src="../../images/disney.png"> 
 			</c:if>
 			<c:if test="${member.coupang == 'Y' }">
-				<img alt="" src="../../images/티빙.jpg"> 
+				<img alt="" src="../../images/tving.png"> 
 			</c:if>
 			<c:if test="${member.tving == 'Y' }">	
-				<img alt=""	src="../../images/쿠팡플레이.jpg">
+				<img alt=""	src="../../images/coupang.png">
 			</c:if>
 	</div>
 </div>	

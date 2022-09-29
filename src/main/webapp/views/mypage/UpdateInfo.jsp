@@ -11,17 +11,19 @@
 <style type="text/css">
 
 #background{width: 100%; height: 100%;  }
- h2{text-align: center;}
+ h2{text-align: center; }
  td{border: 1px solid gray; } 
 .profile{ margin-left: 45%;}
 .profile > img{width: 120px; height: 140px;}
-table {width:500px; margin:0 auto;}
+table {width:500px; height:200px; margin:0 auto;}
 td{margin: 1px;}
 #memberout {width: 50px;}
 input[type=checkbox]{ width:10px; } 
 #boutton {width: 50px;}
 #line {position: absolute; top:48%; left:50%;}
 .value{width: 410px;}
+th{font-size: 14px; }
+#hide{border:1px solid black; border-top:1px solid gray;}
 
 </style>
 <script type="text/javascript">
