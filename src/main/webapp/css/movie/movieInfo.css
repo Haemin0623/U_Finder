@@ -7,7 +7,7 @@
 /* } */
 
 #movieInfoForm {
-/* 	width: 1000px; */
+	width: 1000px;
 	margin-top: 2%;
 	margin-bottom: 5%;
 	position: relative;
@@ -63,8 +63,12 @@
 	position: relative;
 	margin: 10px;
 }
-
-
+#story {
+	text-overflow: ellipsis; display: inline-block;  overflow: auto;
+	width: 560px; height: 150px;     
+	color: #d2d2d2;
+    background-color: #6464645c;
+}
 
 #delRv, #content, #point, #nick {
 	font-size: medium;
@@ -86,8 +90,8 @@ button {
 }
 
 .updateform {
-	left: 20%;
-	border: 1px solid gray;
+	left: 15%;
+	display: contents;
 }
 
 .searchList>li {

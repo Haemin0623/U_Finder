@@ -202,7 +202,7 @@
 					상영시간 : ${mvInfo.playtime } 분 <br><br>
 					</h3>
 					줄거리<br></span>
-					<span style="font-weight: lighter; color: #d2d2d2; display: block; border: 1px; ">${mvInfo.story }</span><br><br>
+					<span id="story">${mvInfo.story }</span><br><br>
 					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
 					<br>
@@ -255,24 +255,24 @@
 							</c:if>
 							<!-- 리뷰수정 -->
 							<c:if test="${id == rv.id }"> 
-								<span style="cursor: pointer; margin-right: 10px" class="updateBtn">
+								<span style="cursor: pointer; margin: 10px; margin-bottom: 5px;" class="updateBtn">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
 									<path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
 									</svg>
 								</span> 
-								<span style="cursor: pointer;" onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">
+								<span style="cursor: pointer; margin: 10px" onclick="reviewDel(${rv.reviewno}, ${rv.movieno})">
 									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
 									<path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
 									</svg>
 								</span>
 									<div class="updateform">
-										<span style="color: gray;"><h4>리뷰 수정하기</h4></span>
+										<span style="color: gray; margin-left: 10%; font-size: 1.5em;">리뷰 수정하기</span>
 										<form action="/project_semi/views/movie/reviewUpdate.do" method="post">
 											<input type="hidden" name="reviewno" value = "${rv.reviewno }">
 											<input type="hidden" name="movieno" value = "${rv.movieno }">
 											<input type="hidden" name="memberno" value = "${rv.memberno }">
 											<span>
-												<textarea name="content" placeholder="영화를 봤으면 리뷰 등록" required="required" style="color: gray; width: 75%; float: left;	margin-right: 3%;"></textarea>					
+												<textarea name="content" required="required" style="color: gray; width: 65%; float: left; margin-left: 10%; margin-right: 3%;">${rv.content }</textarea>					
 												<div>
 													<div class="star-rating">
 														<input type="radio" id="up5-stars" name="star" value="5" />
@@ -288,9 +288,9 @@
 													</div>
 													<!-- <input type="range" name="star" min="0" max="5" step="1" value="0" required="required" style="color: gray; width: 15%;"> -->
 <!-- 													<input type="submit" value="등록" style="color: gray; margin-left: 50px;"> -->
-														<button>
-															<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
-															  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+														<button style="padding: 0; border: none; background: none; cursor: pointer; margin-left: 20px; ">
+															<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#C01616" class="bi bi-send-fill" viewBox="0 0 16 16">
+															  <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
 															</svg>
 														</button>
 												</div>
@@ -349,7 +349,12 @@
 							<label for="1-star" class="star">★</label>
 						</div>
 						<!-- <input type="range" name="star" min="0" max="5" step="1" value="0" required="required" style="color: gray; width: 15%;"> -->
-						<input type="submit" value="등록" style="color: gray; margin-left: 50px;">
+<!-- 						<input type="submit" value="등록" style="color: gray; margin-left: 50px;"> -->
+						<button style="padding: 0; border: none; background: none; cursor: pointer; margin-left: 20px; ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  fill="#C01616" class="bi bi-send-fill" viewBox="0 0 16 16">
+								<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+							</svg>
+						</button>
 					</div>
 				</span>
 				
@@ -365,8 +370,23 @@
 	<div id="rec"> 
 		<hr>
 		<br>
-		<h1>추천작</h1>
-		<button id="genBtn" style="color: gray;" >영화 장르</button> <button id="actBtn" style="color: gray;">출연 배우</button>
+		<span>
+			<span style="font-size: 3em; margin-right: 20px; margin-bottom: 50px;">추천작</span>
+			
+				<button id="genBtn" style="color: gray; padding: 0; border: none; background: none; cursor: pointer; padding-right: 15px;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#C01616" class="bi bi-film" viewBox="0 0 16 16">
+					  <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+					</svg>
+				같은 장르</button>
+			
+				<button id="actBtn"  style="color: gray; padding: 0; border: none; background: none; cursor: pointer;" >
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#C01616" class="bi bi-person-video2" viewBox="0 0 16 16">
+					  <path d="M10 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+					  <path d="M2 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2ZM1 3a1 1 0 0 1 1-1h2v2H1V3Zm4 10V2h9a1 1 0 0 1 1 1v9c0 .285-.12.543-.31.725C14.15 11.494 12.822 10 10 10c-3.037 0-4.345 1.73-4.798 3H5Zm-4-2h3v2H2a1 1 0 0 1-1-1v-1Zm3-1H1V8h3v2Zm0-3H1V5h3v2Z"/>
+					</svg>
+				출연 배우</button> 
+			
+		</span>
 		
 		<div class="recGenre">
 			<h3> 장르 추천작</h3>
