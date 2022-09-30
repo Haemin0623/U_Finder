@@ -105,6 +105,7 @@ insert into actor values (247, '김동욱', 49);
 
 insert into movie values (50, '밀정', '1920년대 일제강점기. 조선인 출신 일본경찰 이정출(송강호)은 무장독립운동 단체 의열단의 뒤를 캐라는 특명으로 의열단의 리더 김우진(공유)에게 접근하고, 한 시대의 양 극단에 서 있는 두 사람은 서로의 정체와 의도를 알면서도 속내를 감춘 채 가까워진다. 출처를 알 수 없는 정보가 쌍방간에 새어나가고 누가 밀정인지 알 수 없는 가운데,의열단은 일제의 주요 시설을 파괴할 폭탄을 경성으로 들여오기 위해, 그리고 일본제국 경찰은 그들을 쫓아 모두 상해에 모인다.'
 , '김지운', 140, 'N','Y','N','Y','액션', 0,'TheAgeofShadows.jpg','https://www.youtube.com/embed/bVXhxAdytfI');
+
 insert into tag values (225, '스릴러', 59);
 insert into tag values (226, '첩보물', 59);
 insert into actor values (248, '송강호', 50);
@@ -113,3 +114,4 @@ insert into actor values (250, '한지민', 50);
 insert into actor values (251, '츠루미신고', 50);
 insert into actor values (252, '엄태구', 50);
 insert into actor values (253, '신성록', 50);
+

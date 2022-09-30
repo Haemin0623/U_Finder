@@ -22,7 +22,7 @@ insert into movie values(29, '부산행', '정체불명의 바이러스가 전�
 						'연상호', 118, 'N', 'N', 'Y', 'Y', '액션', 600,'busan.jpg', 'https://www.youtube.com/embed/UOTOjA0ngmk' );
 
 update movie set poster='LostinTranslation.jpg' where movieno=27;
-
+update movie set moviename='아이언맨3' where movieno=25;
 
 -- 태그
 select * from tag;
