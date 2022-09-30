@@ -13,6 +13,7 @@ public class ConfirmId implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String msg="";
+		
 		MemberDao md = MemberDao.getInstance();
 		Member member = md.select(id);
 		if(member==null) {

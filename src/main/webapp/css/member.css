@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
-.container {
-   width: 400px;
+div.container {
+   width: 300px;
    margin: 0 auto;
    margin-top:5%;
 
+}
+
+div.container input{
+	height: 30px;
+	
 }
 
 
@@ -19,11 +24,13 @@
 
 }
 
-div.form-group {
-	width: 350px;
-    height: 15px;
+div.form-group input {
+    width: 400px;
+    height: 30px;
     border-radius: 5px;	
+    color: black;
 }
+
 
 div.form-group input[type="submit"] {
 	color:black;
@@ -32,8 +39,4 @@ div.form-group input[type="submit"] {
 	height: 30px;
 	border-radius: 5px;
 	
-}
-
-input[type="email"] {
-	color:black;
 }

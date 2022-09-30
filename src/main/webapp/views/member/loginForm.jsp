@@ -18,16 +18,16 @@
 		
 		<div class="form-group">
 			<label for = "id"></label>
-			<input class="blackText" type="text" name="id" required="required" autofocus="autofocus"
+			<input type="text" name="id" required="required" autofocus="autofocus"
 			placeholder="이메일 주소">
 		</div>
 		<div class="form-group">
 			<label for = "password"></label>
-			<input class="blackText" type="password" name="password" required="required" placeholder="비밀번호" >
+			<input type="password" name="password" required="required" placeholder="비밀번호" >
 		</div>
 		<br>
 		<div class="form-group">
-			<input class="blackText" type="submit" value="로그인" >
+			<input type="submit" value="로그인" >
 		</div>
 	</form>
 		<div class="form-group">

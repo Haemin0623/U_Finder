@@ -11,5 +11,7 @@
 		<pattern>/views/movie/pickPick.*</pattern>
 		<pattern>/views/movie/pickUpdate.*</pattern>
 		<pattern>/views/main/*</pattern>
+		<pattern>/views/member/exclude/*</pattern>
+
 	</excludes>
 </decorators>
