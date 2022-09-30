@@ -50,7 +50,7 @@
 	
 	<!-- 조회수 TOP10 리스트 조회 -->
 	<select id="hotList" resultType="movie">
-		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 10 order by mvcnt desc
+		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 30 order by mvcnt desc
 	</select>
 	
 	<!-- 조회수 증가 -->
@@ -90,6 +90,6 @@
 	
 	<!-- 새로 등록된 영화 -->
 	<select id="newList" resultType="movie">
-		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 10 order by movieno desc
+		select m.*, rowNum from movie m where rowNum <![CDATA[<=]]> 30 order by movieno desc
 	</select>
 </mapper>
