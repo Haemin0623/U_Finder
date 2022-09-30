@@ -1,4 +1,4 @@
-]-- 영화
+-- 영화
 select * from movie;
 insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
 insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'N', 'N', 'N', 'Y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
@@ -122,11 +122,6 @@ insert into actor values (27, '윤계상', 15);
 insert into actor values (28, '손석구', 16);
 insert into actor values (29, '마동석', 17);
 
--- 캘린더 (나중에)
-select * from calendar;
-
---insert into calendar values
-
 -- 찜
 select * from pick;
 
@@ -200,35 +195,3 @@ insert into review values (30, 7, 10, '삭제', 5, 'Y');
 insert into review values (31, 8, 11, '너무 재밋엉', 5, 'N');
 insert into review values (32, 9, 11, '깔깔깔', 4, 'N');
 insert into review values (33, 13, 11, '후', 2, 'N');
-
--- ------------------------------------------
-
-select r.*, m.moviename from review r, movie m where r.movieno = m.movieno;
-
-select m.*, rowNum from movie m where rowNum  <=  10 order by cnt desc;
-
-select count(*) from member;
-
-select moviename from movie where movieno in(select movieno from pick where memberno in(select memberno from member where id = #{id));
-
-select mm.*, pp.*  from (select * from (select rowNum rn, a.* from (select * from movie order by movieno) a) where rn between 1 and 10) mm, (select count(*) from pick, movie where pick.movieno=movie.movieno ) pp;
-
-select m.*, count(p.memberno) from pick p, movie m where p.movieno=m.movieno;
-
-<
-update review set del='N' where memberno=1;
-
-select * from (select rowNum rn, a.* from
-		(select p.*, m.poster from pick p, movie m, member mb where p.movieno=m.movieno and p.memberno=mb.memberno and id='test@test.com') a)
-	where rn between 3 and 4;
-
-select * from review;
-
-select * from movie where trim(both '''' from '''disney''') = 'y';
-
-select trim(both '''' from ' ''disney'' ') from dual;
-
-select count(*) from pick where movieno=1;
-select avg(movielike) from review where movieno = 1;
-
-select nvl(round(avg(movielike),2),0) movielike from review where movieno = 16 and del='N';
