@@ -21,6 +21,7 @@ insert into movie values(28, '조조래빗', '제2차 세계 대전 말기, 엄�
 insert into movie values(29, '부산행', '정체불명의 바이러스가 전국으로 확산되고 대한민국 긴급재난경보령이 선포된 가운데, 열차에 몸을 실은 사람들은 단 하나의 안전한 도시 부산까지 살아가기 위한 치열한 사투를 벌이게 된다. 서울에서 부산까지의 거리 442 ㎞[9] 지키고 싶은, 지켜야만 하는 사람들의 극한의 사투!', 
 						'연상호', 118, 'N', 'N', 'Y', 'Y', '액션', 0,'busan.jpg', 'https://www.youtube.com/embed/UOTOjA0ngmk' );
 
+update movie set poster='LostinTranslation.jpg' where movieno=27;
 
 
 -- 태그
