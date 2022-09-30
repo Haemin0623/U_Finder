@@ -35,7 +35,7 @@ alter table member add profile varchar2(100);
 select * from member;
 
 -- 태그 
-drop table tag;
+drop table tag cascade constraints;
 create table tag (
     tagno number(4) primary key not null,
     tag varchar2(50) not null,
@@ -55,7 +55,7 @@ select * from tag;
 --select * from calendar;
 
 -- 찜
-drop table pick;
+drop table pick cascade constraints;
 create table pick (
     pickno number(4) primary key not null,
     movieno number(4) not null,

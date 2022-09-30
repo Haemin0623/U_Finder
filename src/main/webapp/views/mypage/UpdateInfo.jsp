@@ -12,7 +12,7 @@
 
 #background{width: 100%; height: 100%;  }
  h2{text-align: center; }
- td{border: 1px solid gray; } 
+ #td{border: 1px solid gray; } 
 .profile{ margin-left: 45%;}
 .profile > img{width: 120px; height: 140px;}
 table {width:500px; height:200px; margin:0 auto;}
@@ -20,7 +20,7 @@ td{margin: 1px;}
 #memberout {width: 50px;}
 input[type=checkbox]{ width:10px; } 
 #boutton {width: 50px;}
-#line {position: absolute; top:48%; left:50%;}
+#line {position: absolute; top:49%; left:44%;}
 .value{width: 410px;}
 th{font-size: 14px; }
 #hide{border:1px solid black; border-top:1px solid gray;}
@@ -50,11 +50,13 @@ th{font-size: 14px; }
 <form action="/project_semi/views/mypage/UpdateInfoResult.do" method="post" name="frm" onsubmit="return passwordchk()" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${id }">
 		<div class="profile">
-			<c:if test="${empty member.profile }">
-				<img alt="" src="/project_semi/images/기본이미지.jpg">
+			<c:if test="${member.profile == 'default' }">
+				<svg xmlns="http://www.w3.org/2000/svg" width="120" height="140" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>
 				<input class="blackText" type="file" name="profile" value="${member.profile }">
 			</c:if>
-			<c:if test="${not empty member.profile }">
+			<c:if test="${member.profile != 'default' }">
 				<img alt="" src="/project_semi/posterUpload/${member.profile }">
 				<input class="blackText" type="file" name="profile" value="${member.profile }">
 			</c:if>
@@ -66,19 +68,19 @@ th{font-size: 14px; }
 		</tr>
 		<tr>
 			<th>닉네임</th>
-			<td><input class="blackText value" type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
+			<td id="td"><input class="blackText value" type="text" name="nickname" autofocus="autofocus" required="required" value="${member.nickname }"></td>
 		</tr>
 		<tr>
 			<th>패스워드</th>
-			<td><input class="blackText value" type="password" name="password" required="required"></td>
+			<td id="td"><input class="blackText value" type="password" name="password" required="required"></td>
 		</tr>	
 		<tr>
 			<th>패스워드 확인</th>
-			<td><input class="blackText value" type="password" name="passconfirm" required="required"></td>
+			<td id="td"><input class="blackText value" type="password" name="passconfirm" required="required"></td>
 		</tr>
 		<tr>	
 			<th>사용중인 OTT</th>
-			<td>
+			<td id="td">
 				<c:if test="${member.netflix != 'Y' }">
 					<label>넷플릭스</label>
 					<input type="checkbox"name="netflix" value="Y">

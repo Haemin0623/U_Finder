@@ -28,10 +28,12 @@
 <body>
 <div id="up">
 	<span class="profile">
-		<c:if test="${empty member.profile }">
-			<img alt="" src="/project_semi/images/기본이미지.jpg"  class="img-rounded">
+		<c:if test="${member.profile == 'default' }">
+			<svg xmlns="http://www.w3.org/2000/svg" width="160" height="210" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+				<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+			</svg>
 		</c:if>
-		<c:if test="${not empty member.profile }">
+		<c:if test="${member.profile != 'default' }">
 			<a href="/project_semi/views/mypage/InfoChk.do?id${id }">
 			<img alt="" src="/project_semi/posterUpload/${member.profile }"  class="img-rounded"></a>
 		</c:if>
