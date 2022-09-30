@@ -1,6 +1,5 @@
 ]-- 영화
 select * from movie;
-
 insert into movie values (1, '탑건', '비행기가 슝슝', '토니 스콧', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TopGun.jpg', 'https://www.youtube.com/watch?v=ArOMXELHiLw');
 insert into movie values (2, '탑건: 매버릭', '비행기가 쿠와우오앙', '조셉 코신스키', 130, 'N', 'N', 'N', 'Y', '액션', 0, 'TopGunMaverick.png', 'https://www.youtube.com/watch?v=Mrj9XACVJ8U');
 insert into movie values (3, '공조', '남/북 형사의 예측불가 공조수사', '김성훈', 125, 'Y', 'N', 'N', 'Y', '범죄', 0, 'ConfidentialAssignment.jpg', 'https://www.youtube.com/watch?v=g4qQXXtaMqc');
@@ -16,10 +15,9 @@ insert into movie values (12, '해리 포터와 혼혈 왕자', '와! 세베루�
 insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 호크룩스!', '데이비드 예이츠', 146, 'N', 'N', 'Y', 'N', '판타지', 0, 'DeathlyHallowsPart1.jpg', 'https://www.youtube.com/watch?v=tM7gsg1cGu0');
 insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'N', 'N', 'Y', 'N', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
 insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
-insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
+insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity2.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
 insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
 
-update movie set poster='CriminalCity2.jpg' where movieno=16;
 update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;
 update movie set trailer='https://www.youtube.com/embed/Mrj9XACVJ8U' where movieno=2;
 update movie set trailer='https://www.youtube.com/embed/g4qQXXtaMqc' where movieno=3;

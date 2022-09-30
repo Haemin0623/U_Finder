@@ -28,9 +28,8 @@
 	flex-direction: row-reverse;
 	font-size: 1.5em;
 	justify-content: space-around;
-	padding: 0 .2em;
+	padding: 0.2em;
 	text-align: center;
-	width: 5em;
 }
 
 .star-rating input {
@@ -167,17 +166,6 @@
 					상영시간 : ${mvInfo.playtime } 분 <br><br>
 					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 					<ul id="ott_list">
-						<c:if test="${empty id }">
-							<li><a href="https://www.netflix.com/kr/">
-								<img id="ott" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
-							<li><a href="https://www.disneyplus.com/ko-kr">
-								<img id="ott" alt="누르시면 디즈니플러스로 이동합니다." src="/project_semi/images/disney.png"></a>
-							<li><a href="https://www.coupangplay.com/?returnpath=%2Fhome">
-								<img id="ott" alt="누르시면 쿠팡플레이로 이동합니다." src="/project_semi/images/coupang.png"></a>
-							<li><a href="https://www.tving.com/onboarding">
-								<img id="ott" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
-						</c:if>
-						<c:if test="${not empty id }">
 							<c:if test="${mvInfo.netflix == 'Y'}">
 								<li><a href="https://www.netflix.com/kr/">
 								<img id="ott" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
@@ -209,8 +197,8 @@
 							<c:if test="${mvInfo.tving != 'Y'}">
 								<li><a href="https://www.tving.com/onboarding">
 								<img id="ottNo" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
+								</li>
 							</c:if>
-						</c:if>
 					</ul>
 					<br>
 				</div>

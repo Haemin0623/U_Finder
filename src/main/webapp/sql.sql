@@ -45,14 +45,14 @@ create table tag (
 select * from tag;
 
 -- 캘린더
-drop table calendar;
-create table calendar (
-    calno number(4) primary key not null,
-    movieno number(4) not null,
-    opendate date not null,
-    constraint fk_calendar foreign key(movieno) references movie(movieno)
-);
-select * from calendar;
+--drop table calendar;
+--create table calendar (
+--   calno number(4) primary key not null,
+--    movieno number(4) not null,
+--    opendate date not null,
+--    constraint fk_calendar foreign key(movieno) references movie(movieno)
+--);
+--select * from calendar;
 
 -- 찜
 drop table pick;

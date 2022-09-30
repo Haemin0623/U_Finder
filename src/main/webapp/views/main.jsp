@@ -99,7 +99,7 @@
 				</a>
 			</div>
 			<div class="carousel-item">
-				<a href="/project_semi/views/movie/searchResult.do?searchWord='해리포터'">
+				<a href="/project_semi/views/movie/searchResult.do?searchWord=해리포터">
 					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner3.jpg" alt="Third slide">
 				</a>
 			</div>
