@@ -52,7 +52,7 @@ insert into member values (9, 'dddd@kakao.com', '888', '탈퇴', 'N', 'N', 'Y', 
 insert into member values (10, 'abcd@test.com', '999', '유재석', 'Y', 'Y', 'Y', 'N', 'N', 'default');
 insert into member values (11, 'dcba@test.com', '000', '박명수', 'Y', 'Y', 'Y', 'Y', 'N', 'default');
 insert into member values (12, 'test@test.com', '123', '테스트', 'Y', 'N', 'N', 'N', 'N', 'default');
-
+select distinct a.* from actor a, movie m where a.movieno = m.movieno and m.movieno = 47;
 -- 태그
 select * from tag;
 

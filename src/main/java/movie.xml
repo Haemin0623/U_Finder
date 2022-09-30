@@ -65,7 +65,7 @@
 	
 	<!-- 장르가 같은 영화리스트 -->
 	<select id="genreList" parameterType="map" resultType="movie">
-		select * from movie where genre = #{genre} and not(movieno = #{movieno})
+		select distinct * from movie where genre = #{genre} and not(movieno = #{movieno})
 	</select>
 	
 	<!-- 영화에 출연하는 영화배우리스트 -->
@@ -75,7 +75,7 @@
 	
 	<!-- 영화배우가 같은 영화리스트 -->
 	<select id="actMvList" parameterType="integer" resultType="movie">
-		select m.* from movie m, (select movieno from actor where actorname in (select distinct actorname from actor a, movie m where a.movieno=m.movieno and m.movieno = #{movieno})) mm where m.movieno = mm.movieno and not(m.movieno = #{movieno})		
+		select distinct m.* from movie m, (select movieno from actor where actorname in (select distinct actorname from actor a, movie m where a.movieno=m.movieno and m.movieno = #{movieno})) mm where m.movieno = mm.movieno and not(m.movieno = #{movieno})		
 	</select>
 	
 	<!-- 수정시 reload되면서 조회수 증가하는 것 방지 -->

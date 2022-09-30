@@ -12,7 +12,6 @@ public class MoviePickCount implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		int movieno = Integer.valueOf(request.getParameter("movieno"));
-		
 		PickDao pd = PickDao.getInstance();
 		
 		int pickCount = pd.moviePickCount(movieno);
