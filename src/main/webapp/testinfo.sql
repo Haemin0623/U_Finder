@@ -16,7 +16,7 @@ insert into movie values (13, '해리 포터와 죽음의 성물 - 1부', '와! 
 insert into movie values (14, '해리 포터와 죽음의 성물 - 2부', '와! 해피엔딩!', '데이비드 예이츠', 130, 'N', 'N', 'Y', 'N', '판타지', 0, 'DeathlyHallowsPart2.jpg', 'https://www.youtube.com/watch?v=mObK5XD8udk');
 insert into movie values (15, '범죄도시', '니 내 누군지 아니', '강윤성', 121, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity.jpg', 'https://www.youtube.com/watch?v=n-dYGqVVgU4');
 insert into movie values (16, '범죄도시2', '형은 다 알 수가 있는데..', '이상용', 106, 'N', 'Y', 'N', 'N', '액션', 0, 'CriminalCity2.jpg', 'https://www.youtube.com/watch?v=DfqBfjboSNE');
-insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE')
+insert into movie values (17, '악인전', '표적은 하나, 룰도 하나! 먼저 잡는 놈이 갖는다!', '이원태', 110, 'Y', 'Y', 'N', 'N', '액션', 0, 'TheGangster,TheCop,TheDevil.jpg', 'https://www.youtube.com/watch?v=bdv76JwvfIE');
 
 update movie set trailer='https://www.youtube.com/embed/ArOMXELHiLw' where movieno=1;
 update movie set trailer='https://www.youtube.com/embed/Mrj9XACVJ8U' where movieno=2;
@@ -40,19 +40,18 @@ update movie set trailer='https://www.youtube.com/embed/bdv76JwvfIE' where movie
 -- 회원
 select * from member;
 
-insert into member values (1, 'test@test.com', '123', '테스트', 'Y', 'N', 'N', 'N', 'N');
-insert into member values (2, 'haemin@test.com', '111', '해민', 'Y', 'Y', 'N', 'N', 'N');
-insert into member values (3, 'sooin@test.com', '222', '수인', 'Y', 'N', 'Y', 'N', 'N');
-insert into member values (4, 'sunny@test.com', '333', '선희', 'Y', 'N', 'N', 'Y', 'N');
-insert into member values (5, 'changryul@test.com', '444', '창률', 'N', 'Y', 'N', 'N', 'N');
-insert into member values (6, 'chim@naver.com', '555', '침착맨', 'N', 'Y', 'Y', 'N', 'N');
-insert into member values (7, 'joo@daum.com', '666', '주호민', 'N', 'Y', 'N', 'Y', 'N');
-insert into member values (8, 'poong@google.com', '777', '김풍', 'N', 'N', 'Y', 'N', 'N');
-insert into member values (9, 'dddd@kakao.com', '888', '탈퇴', 'N', 'N', 'Y', 'Y', 'Y');
-insert into member values (10, 'abcd@test.com', '999', '유재석', 'Y', 'Y', 'Y', 'N', 'N');
-insert into member values (11, 'dcba@test.com', '000', '박명수', 'Y', 'Y', 'Y', 'Y', 'N');
-
-update member set id='master', password='123456', nickname='마스터' where memberno=1;
+insert into member values (1, 'master', '123456', '마스터', 'Y', 'N', 'N', 'N', 'N', 'default');
+insert into member values (2, 'haemin@test.com', '111', '해민', 'Y', 'Y', 'N', 'N', 'N', 'default');
+insert into member values (3, 'sooin@test.com', '222', '수인', 'Y', 'N', 'Y', 'N', 'N', 'default');
+insert into member values (4, 'sunny@test.com', '333', '선희', 'Y', 'N', 'N', 'Y', 'N', 'default');
+insert into member values (5, 'changryul@test.com', '444', '창률', 'N', 'Y', 'N', 'N', 'N', 'default');
+insert into member values (6, 'chim@naver.com', '555', '침착맨', 'N', 'Y', 'Y', 'N', 'N', 'default');
+insert into member values (7, 'joo@daum.com', '666', '주호민', 'N', 'Y', 'N', 'Y', 'N', 'default');
+insert into member values (8, 'poong@google.com', '777', '김풍', 'N', 'N', 'Y', 'N', 'N', 'default');
+insert into member values (9, 'dddd@kakao.com', '888', '탈퇴', 'N', 'N', 'Y', 'Y', 'Y', 'default');
+insert into member values (10, 'abcd@test.com', '999', '유재석', 'Y', 'Y', 'Y', 'N', 'N', 'default');
+insert into member values (11, 'dcba@test.com', '000', '박명수', 'Y', 'Y', 'Y', 'Y', 'N', 'default');
+insert into member values (12, 'test@test.com', '123', '테스트', 'Y', 'N', 'N', 'N', 'N', 'default');
 
 -- 태그
 select * from tag;
