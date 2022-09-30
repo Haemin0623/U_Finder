@@ -39,13 +39,17 @@
 }
 #poster {
 	width: 400px;
+	height: 600px;
 	margin: 20px;
+	margin-top: 20px;
 }
 
 #ott {
 	width: 60px;
 	height: 60px;
 	margin: 10px;
+/* 	margin-top: 50px; */
+/* 	margin-bottom: 50px; */
 }
 #ottNo {
 	width: 60px;
@@ -57,19 +61,16 @@
 #ott_list > li {
 	display: inline-block;
 	position: relative;
-	margin-right: 30px;
-	margin-left: 30px;
+	margin: 10px;
 }
-#ottname {
-	font-size: small;
-}
+
 
 
 #delRv, #content, #point, #nick {
 	font-size: medium;
 }
-#review_list {
-	margin-left: 30px;
+.review_list {
+	margin-top: 200px;
 }
 #content{ text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden;
  width: 500px; font-size: 16px; border-right:gray 1px solid;}

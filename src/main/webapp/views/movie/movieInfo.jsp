@@ -24,7 +24,7 @@
 
 .star-rating {
 	border: none;
-	display: flex;
+	display: inline-flex;
 	flex-direction: row-reverse;
 	font-size: 1.5em;
 	justify-content: space-around;
@@ -126,46 +126,7 @@
 	<div id="movieInfoForm"> <!-- 영화 정보 -->
 		<div id="one">	<!-- one 포스터 -->
 			<img id="poster" src="/project_semi/posterUpload/${mvInfo.poster}" >
-		</div>
-		
-		<div id="two"><span>  <!-- two 제목부터 ott까지 -->
-				<span>
-					<span id="title">${mvInfo.moviename}</span>
-					<div id="zzim">
-					<script type="text/javascript">
-						pickCheck(${mvInfo.movieno });
-					</script>
-						<c:if test="${empty id }">
-							<a id="nonoPick" onclick="pickChange(${mvInfo.movieno })">
-								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-								</svg>
-							</a>
-						</c:if>
-						<c:if test="${not empty id }">
-							<a id="pick" onclick="pickChange(${mvInfo.movieno })">
-								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
-								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-								</svg>
-							</a>
-						</c:if>
-					</div>	<!-- zzim -->
-				</span>
-				
-				<div id="info_in"><br>
-					감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }">${mvInfo.director }</a><br>
-					배우 : <c:forEach varStatus="a" var="actor" items="${actorList}">
-							 <c:if test="${a.last }">
-							 	<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname}</a>
-							 </c:if>
-							 <c:if test="${!a.last }">
-								<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname} , </a>
-							 </c:if>
-						 </c:forEach><br>
-					줄거리 : ${mvInfo.story }<br>
-					상영시간 : ${mvInfo.playtime } 분 <br><br>
-					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-					<ul id="ott_list">
+								<ul id="ott_list">
 							<c:if test="${mvInfo.netflix == 'Y'}">
 								<li><a href="https://www.netflix.com/kr/">
 								<img id="ott" alt="누르시면 넷플릭스로 이동합니다." src="/project_semi/images/netflix.png"></a>
@@ -199,7 +160,51 @@
 								<img id="ottNo" alt="누르시면 티빙으로 이동합니다." src="/project_semi/images/tving.png"></a>
 								</li>
 							</c:if>
-					</ul>
+<!-- 						</ul> -->
+		</div>
+		
+		<div id="two"><span>  <!-- two 제목부터 ott까지 -->
+				<span>
+					<span id="title">${mvInfo.moviename}</span>
+					<div id="zzim">
+					<script type="text/javascript">
+						pickCheck(${mvInfo.movieno });
+					</script>
+						<c:if test="${empty id }">
+							<a id="nonoPick" onclick="pickChange(${mvInfo.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
+						</c:if>
+						<c:if test="${not empty id }">
+							<a id="pick" onclick="pickChange(${mvInfo.movieno })">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill pickChk${mvInfo.movieno }" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+								</svg>
+							</a>
+						</c:if>
+					</div>	<!-- zzim -->
+				</span>
+				
+				<div id="info_in"><br>
+					<span style="font-weight: bold; ">
+					<h3>
+					감독 : <a href="/project_semi/views/movie/searchResult.do?searchWord=${mvInfo.director }">${mvInfo.director }</a><br>
+					배우 : <c:forEach varStatus="a" var="actor" items="${actorList}">
+							 <c:if test="${a.last }">
+							 	<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname}</a>
+							 </c:if>
+							 <c:if test="${!a.last }">
+								<a href="/project_semi/views/movie/searchResult.do?searchWord=${actor.actorname}">${actor.actorname} , </a>
+							 </c:if>
+						 </c:forEach><br>
+					상영시간 : ${mvInfo.playtime } 분 <br><br>
+					</h3>
+					줄거리<br></span>
+					<span style="font-weight: lighter; color: #d2d2d2; display: block; border: 1px; ">${mvInfo.story }</span><br><br>
+					<iframe width="560" height="315" src="${mvInfo.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+
 					<br>
 				</div>
 				
@@ -282,7 +287,12 @@
 														<label for="up1-star" class="star">★</label>
 													</div>
 													<!-- <input type="range" name="star" min="0" max="5" step="1" value="0" required="required" style="color: gray; width: 15%;"> -->
-													<input type="submit" value="등록" style="color: gray; margin-left: 50px;">
+<!-- 													<input type="submit" value="등록" style="color: gray; margin-left: 50px;"> -->
+														<button>
+															<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+															  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+															</svg>
+														</button>
 												</div>
 											</span>
 											<br><br>
