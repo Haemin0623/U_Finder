@@ -16,5 +16,4 @@ public class Logout implements CommandProcess {
 
 		return "logout";
 	}
-
 }
