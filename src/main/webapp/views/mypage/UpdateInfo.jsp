@@ -14,16 +14,18 @@
  h2{text-align: center; }
  #td{border: 1px solid gray; } 
 .profile{ margin-left: 45%;}
-.profile > img{width: 120px; height: 140px;}
+.profile > img{width: 120px; height: 140px; margin-bottom: 20px;}
 table {width:500px; height:200px; margin:0 auto;}
 td{margin: 1px;}
 #memberout {width: 50px;}
 input[type=checkbox]{ width:10px; } 
-#boutton {width: 50px;}
-#line {position: absolute; top:49%; left:44%;}
+#button {width: 50px;}
+#line {position: absolute; top:49.1%; left:61.6%;}
 .value{width: 410px;}
 th{font-size: 14px; }
 #hide{border:1px solid black; border-top:1px solid gray;}
+#memberoutcss{ position: absolute; top:52.9%; left: 50.7%;}
+#pimg{position: absolute; top:25%; left: 53%;}
 
 </style>
 <script type="text/javascript">
@@ -52,13 +54,17 @@ th{font-size: 14px; }
 		<div class="profile">
 			<c:if test="${member.profile == 'default' }">
 				<svg xmlns="http://www.w3.org/2000/svg" width="120" height="140" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-</svg>
-				<input class="blackText" type="file" name="profile" value="${member.profile }">
+				  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+				</svg>
+				<span id="pimg">
+				<input class="blackText" type="file" name="profile" value="${member.profile }" >
+				</span>
 			</c:if>
 			<c:if test="${member.profile != 'default' }">
 				<img alt="" src="/project_semi/posterUpload/${member.profile }">
+				<span id="pimg">
 				<input class="blackText" type="file" name="profile" value="${member.profile }">
+				</span>
 			</c:if>
 		</div>
 	<table>
@@ -81,43 +87,59 @@ th{font-size: 14px; }
 		<tr>	
 			<th>사용중인 OTT</th>
 			<td id="td">
-				<c:if test="${member.netflix != 'Y' }">
+				<c:if test="${member.netflix != 'Y' }" >
 					<label>넷플릭스</label>
-					<input type="checkbox"name="netflix" value="Y">
+					<input type="checkbox"name="netflix" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.netflix == 'Y' }">
-					<label>넷플릭스</label><input type="checkbox"name="netflix" checked="checked" value="Y">
+					<label>넷플릭스</label><input type="checkbox"name="netflix" checked="checked" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.disney != 'Y' }">
-					디즈니+<input type="checkbox" name="disney" value="Y">
+					디즈니+<input type="checkbox" name="disney" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.disney == 'Y' }">
-					디즈니+<input type="checkbox" name="disney" checked="checked" value="Y">
+					디즈니+<input type="checkbox" name="disney" checked="checked" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.coupang != 'Y' }">
-					쿠팡플레이<input type="checkbox" name="coupang" value="Y">
+					쿠팡플레이<input type="checkbox" name="coupang" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.coupang == 'Y' }">
-					쿠팡플레이<input type="checkbox" name="coupang" checked="checked" value="Y">
+					쿠팡플레이<input type="checkbox" name="coupang" checked="checked" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.tving != 'Y' }">
-					티빙<input type="checkbox" name="tving" value="Y">
+					티빙<input type="checkbox" name="tving" value="Y" style="margin-right: 10px;">
 				</c:if>
 				<c:if test="${member.tving == 'Y' }">
-					티빙<input type="checkbox" name="tving" checked="checked" value="Y">
+					티빙<input type="checkbox" name="tving" checked="checked" value="Y" style="margin-right:10px;">
 				</c:if>
 			</td>
 		</tr>
 		<tr>
 		<th>
 			</th>
-			<td id="hide"><input class="blackText" type="submit" value="확인" id="boutton">
+			<td id="hide">
+				<button class="blackText" id="button" style="padding: 0; border: none; background: none; color:white">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="steelblue" class="bi bi-check-circle" viewBox="0 0 16 16">
+				  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+				  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+				</svg>확인
+			</button>
 	</table>
 </form>
 	<div id="line">
-		<button style="color: black;" id="delchk" onclick="delchk1()">회원탈퇴</button>
-		<button style="color: black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>
+		<button style="padding: 0; border: none; background: none;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'"  >
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="yellow" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+			</svg>이전
+		</button>
 	</div>
+	<span id="memberoutcss">
+		<button style="color: white; padding: 0; border: none; background: none;" id="delchk" onclick="delchk1()" >
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+			</svg>회원탈퇴
+		</button>
+	</span>
 </div>
 </body>
 </html>

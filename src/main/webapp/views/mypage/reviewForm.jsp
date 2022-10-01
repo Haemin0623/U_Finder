@@ -8,15 +8,47 @@
 <title>Insert title here</title>
 <%@include file="../member_sessionChk.jsp"%>
 <style type="text/css">
-#title{margin-top: 3%;}
-#review{width:650px; position: absolute; left: 33%; top:20%; }
-#reviewupdate{float: right; margin-right: 5px;}
- #reviewdelete{float: right;}
-#paging {text-align: center; margin-top: 32%}
-#moviename{ margin-right: 5px; border-right:gray 1px solid; width: 120px; font-size: 18px;
-	text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden;}
-#content{text-overflow: ellipsis; display: inline-block; white-space: nowrap; overflow: hidden;
- width: 400px; font-size: 16px;}
+#title{
+	margin-top: 3%;
+}
+#review{
+	width:650px; 
+	position: absolute; 
+	left: 33%; 
+	top:20%; 
+}
+#reviewdelete{
+	float: right;
+}
+#reviewupdate{
+	float: right; 
+	margin-left: 20px;
+}
+
+#paging {
+	text-align: center; 
+	margin-top: 32%;
+}
+#moviename{ margin-right: 5px; 
+	border-right:gray 1px solid; 
+	width: 120px; 
+	font-size: 18px;
+	text-overflow: ellipsis; 
+	display: inline-block; 
+	white-space: nowrap; 
+	overflow: hidden;
+}
+#content{
+	text-overflow: ellipsis; 
+	display: inline-block; 
+	white-space: nowrap; 
+	overflow: hidden;
+ 	width: 400px; 
+ 	font-size: 16px;
+}
+#historyback{
+	margin-top: 15px;
+}
 </style>
 
 <script type="text/javascript">
@@ -41,10 +73,18 @@
 						${movieReview.content }
 					</span>
 				<span id="reviewupdate">
-					<input class="blackText" type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}&reviewno=${movieReview.reviewno}'" value="수정"> <!-- 영화 정보 페이지로 이동 -->
+					<button class="blackText" style="padding: 0; border: none; background: none; ma" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}&reviewno=${movieReview.reviewno}'" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+							<path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+						</svg>
+					</button> <!-- 영화 정보 페이지로 이동 -->
 				</span>
 				<span id="reviewdelete">
-					<input class="blackText" type="button" onclick="delchk(${movieReview.reviewno})" value="삭제">
+					<button class="blackText" style="padding: 0; border: none; background: none;" onclick="delchk(${movieReview.reviewno})" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+							<path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+						</svg>
+					</button>
 				</span>
 				<br><br>
 			</c:if>	
@@ -73,7 +113,11 @@
 			</c:if>
 	</div>
 	<div id="historyback" align="center">
-		<button class="blackText" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">이전</button>
+		<button style="padding: 0; border: none; background: none; color:white" class="blackText" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="yellow" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+			</svg>이전
+		</button>
 	</div>
 </body>
 </html>
