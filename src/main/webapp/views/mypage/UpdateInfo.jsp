@@ -48,7 +48,7 @@ input[type=checkbox]{
 #line {
 	position: absolute; 
 	top:49.1%; 
-	left:61.6%;
+	left:60%;
 }
 .value{
 	width: 410px;
@@ -59,11 +59,12 @@ th{
 #hide{
 	border:1px solid black; 
 	border-top:1px solid gray;
+	padding-left: 25px;
 }
 #memberoutcss{ 
 	position: absolute; 
 	top:52.9%; 
-	left: 50.4%;
+	left: 50.7%;
 }
 #pimg{
 	position: absolute; 
