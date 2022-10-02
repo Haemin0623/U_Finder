@@ -12,6 +12,8 @@
 		<pattern>/views/movie/pickUpdate.*</pattern>
 		<pattern>/views/main/*</pattern>
 		<pattern>/views/member/exclude/*</pattern>
+		<pattern>/views/member/confirmId.*</pattern>
+		<pattern>/views/member/confirmNick_nm.*</pattern>
 
 	</excludes>
 </decorators>

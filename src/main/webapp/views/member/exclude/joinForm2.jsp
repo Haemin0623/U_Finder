@@ -14,6 +14,32 @@
 
 <script type="text/javascript">
 
+function chkId(){
+	 /* 이메일 유효성 검사 */
+	var reg_id = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+	//id 값이 없을때
+ 	if(!frm.id.value) {
+		alert("이메일을 입력하세요")
+		frm.id.focus();
+		return false;
+		
+	//id 값이 있을떄
+	} else{
+		if(!reg_id.test(frm.id.value)){ 	//아이디 유효성검사 통과 못했을떄
+			alert("올바른 이메일 형식이 아닙니다.");
+			frm.id.focus();
+			return false;
+			//아이디 유효성검사 통과했을떄
+ 		} else{
+			/* 아이디 중복확인 */
+	 			// jQuery Ajax이용하는 방법. data는 confirmId.do를 실행한 결과
+	 			// 아이디가 err_id인 곳에 data를 html 형식으로 넣어라  
+			$.post("/project_semi/views/member/confirmId.do", "id="+frm.id.value, function(data){
+				$('#err_id').html(data);
+			});
+		} 	
+} 
+
 </script>
 </head>
 <body>

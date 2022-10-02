@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 div.container {
-   width: 300px;
+   width: 600px;
    margin: 0 auto;
    margin-top:5%;
 
@@ -19,8 +19,8 @@ div.container input{
 	font-weight: 600;
 	text-align: right;
 	cursor: pointer;
-	border-radius: 3px;
-	background-color: lightgrey;
+	border-radius: 5px;
+	background-color: #C01616;
 
 }
 
@@ -31,6 +31,14 @@ div.form-group input {
     color: black;
 }
 
+.btn_lg {
+	color: #2970A6;
+}
+
+button.chk-btn {
+	color: black;
+}
+
 
 div.form-group input[type="submit"] {
 	color:black;
@@ -39,4 +47,12 @@ div.form-group input[type="submit"] {
 	height: 30px;
 	border-radius: 5px;
 	
+}
+
+div.form-group #email {
+	width: 320px;
+}
+
+div.form-group #nickname {
+	width: 320px;
 }

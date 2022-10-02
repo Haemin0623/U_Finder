@@ -31,8 +31,8 @@
 		</div>
 	</form>
 		<div class="form-group">
-		<a class = "btn" href="/project_semi/views/member/joinForm.do">회원가입</a> 
-		<a class = "btn" href="/project_semi/views/member/findPwForm.do">비밀번호 찾기</a> 
+		<a class = "btn_lg" href="/project_semi/views/member/joinForm.do">회원가입</a> &nbsp;&nbsp;&nbsp;   
+		<a class = "btn_lg" href="/project_semi/views/member/findPwForm.do">비밀번호 찾기</a> 
 		</div>
 	</div> <!-- container -->
 	
