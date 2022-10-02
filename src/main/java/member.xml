@@ -26,6 +26,7 @@
 	<update id ="reset" parameterType="string">
 		update member set password='123456' where id=#{id}	
 	</update>
+	
 	<!-- DB에 등록된 총 회원 수 -->
 	<select id="getTotal" resultType="integer">
 		select count(*) from member
@@ -37,14 +38,15 @@
 			where rn between #{startRow} and #{endRow}
 	</select>
 
-<!-- 	회원정보 수정 -->
+	<!-- 	회원정보 수정 -->
 	<update id="updateInfo" parameterType="member" >
 		update member set nickname=#{nickname},password=#{password},netflix=#{netflix},disney=#{disney},coupang=#{coupang},tving=#{tving}
 		<if test="profile != null and profile != ''">
 				,profile=#{profile}
 		</if> where id=#{id}
 	</update>
-<!-- 	회원 탈퇴 -->
+	
+	<!-- 	회원 탈퇴 -->
 	<update id="memberOut" parameterType="string" >
 		update member set memberout='Y' where id=#{id}
 	</update>

@@ -44,12 +44,13 @@ public class JoinResult implements CommandProcess {
 		
 		//member2 DB에서 중복있는지 확인하기 위한 객체
 		MemberDao md = MemberDao.getInstance();
-		Member member2 = md.select(id);
-		
+		Member member1 = md.select(id);
 		int result = 0;
-		if (member2 == null) {
+		
+		// 조회해서 없으면, DB에 입력, result는 1
+		if (member1 == null) {
 			result = md.insert(member);
-		} else
+		} else // 있으면 입력x(이미존재하는 회원)
 			result = -1;
 		request.setAttribute("result", result);
 		return "joinResult";

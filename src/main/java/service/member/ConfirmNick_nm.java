@@ -20,13 +20,13 @@ public class ConfirmNick_nm implements CommandProcess {
 		if(member==null) {
 			msg = "사용가능한 별명입니다";
 			result = 1;
-		}
-		else {
+		} else {
 			msg = "이미 사용중인 별명입니다";
 			result = 0;
 		}
 		request.setAttribute("msg", msg);
 		request.setAttribute("result", result);
+		
 		return "confirmNick_nm";
 	}
 }
