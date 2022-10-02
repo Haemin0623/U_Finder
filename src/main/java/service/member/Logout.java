@@ -12,7 +12,6 @@ public class Logout implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		//세션 초기화
 		HttpSession session = request.getSession();
-		session.invalidate();
 
 		return "logout";
 	}
