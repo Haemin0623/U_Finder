@@ -7,10 +7,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#line{display: inline-block; width: 1250px; height: 800 ; margin-left: 13.6%}
-li{width:240px; text-align: center; float: left; display: inline-block;}
-#button{align: center; color: black; margin-left: 48.6%}
-#title{color:white; margin-left: 10%}
+#line{
+	display: inline-block; 
+	width: 1250px; 
+	height: 800 ; 
+	margin-left: 13.6%;
+}
+li{
+	width:240px; 
+	text-align: center; 
+	float: left;
+	display: inline-block;
+}
+#button{
+	align: center; 
+	color: black; 
+	margin-left: 48.6%;
+}
+#title{
+	color:white; 
+	margin-left: 10%;
+}
 .bi.bi-trash3-fill{
 	position: relative;
 	top: 115px;

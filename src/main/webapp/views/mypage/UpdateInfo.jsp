@@ -10,22 +10,66 @@
 <%@include file="../member_sessionChk.jsp"%>
 <style type="text/css">
 
-#background{width: 100%; height: 100%;  }
- h2{text-align: center; }
- #td{border: 1px solid gray; } 
-.profile{ margin-left: 45%;}
-.profile > img{width: 120px; height: 140px; margin-bottom: 20px;}
-table {width:500px; height:200px; margin:0 auto;}
-td{margin: 1px;}
-#memberout {width: 50px;}
-input[type=checkbox]{ width:10px; } 
-#button {width: 50px;}
-#line {position: absolute; top:49.1%; left:61.6%;}
-.value{width: 410px;}
-th{font-size: 14px; }
-#hide{border:1px solid black; border-top:1px solid gray;}
-#memberoutcss{ position: absolute; top:52.9%; left: 50.7%;}
-#pimg{position: absolute; top:25%; left: 53%;}
+#background{
+	width: 100%; 
+	height: 100%;  
+}
+ h2{
+ 	text-align: center; 
+}
+ #td{
+ 	border: 1px solid gray; 
+} 
+.profile{ 
+	margin-left: 45%;
+}
+.profile > img{
+	width: 120px; 
+	height: 140px; 
+	margin-bottom: 20px;
+}
+table {
+	width:500px; 
+	height:200px; 
+	margin:0 auto;
+}
+td{
+	margin: 1px;
+}
+#memberout {
+	width: 50px;
+}
+input[type=checkbox]{ 
+	width:10px; 
+} 
+#button {
+	width: 50px;
+}
+#line {
+	position: absolute; 
+	top:49.1%; 
+	left:61.6%;
+}
+.value{
+	width: 410px;
+}
+th{
+	font-size: 14px; 
+}
+#hide{
+	border:1px solid black; 
+	border-top:1px solid gray;
+}
+#memberoutcss{ 
+	position: absolute; 
+	top:52.9%; 
+	left: 50.4%;
+}
+#pimg{
+	position: absolute; 
+	top:25%; 
+	left: 53%;
+}
 
 </style>
 <script type="text/javascript">

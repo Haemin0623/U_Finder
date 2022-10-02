@@ -8,20 +8,50 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#up {width: 50%; margin-left: 37%;  margin-top: 2%; margin-bottom: 3%}
-	.profile img {width:160px; height:210px; margin: 2px;}
-	.picklist { border:1px solid gray; margin-left:15%; text-align: center; width: 1200px; ;height: 350px;
-	}
-	.otticon > img{height:60px;width:60px; left:20%} 
-	.otticon { position: absolute; left:48%; top:13%;  }
-	#updateinfo {position: absolute; top:28%; left: 48%;}
-	#paging{width:50% position: absolute; left:49%; top:80%; text-align: center; }
-	#icon {
-		background: none;
-		border: none;
-		margin-right: 10px;
-		
-	}
+#up {
+	width: 50%; 
+	margin-left: 37%;  
+	margin-top: 2%; 
+	margin-bottom: 3%;
+}
+.profile img {
+	width:160px; 
+	height:210px; 
+	margin: 2px;
+}
+.picklist { 
+	border:1px solid gray; 
+	margin-left:15%; 
+	text-align: center; 
+	width: 1200px; 
+	height: 350px;
+}
+.otticon > img{
+	height:60px;
+	width:60px; 
+	left:20%;
+} 
+.otticon { 
+	position: absolute; 
+	left:48%; 
+	top:13%;  
+}
+#updateinfo {
+	position: absolute; 
+	top:28%; 
+	left: 48%;
+}
+#paging{
+	position: absolute; 
+	left:49%; 
+	top:80%; 
+	text-align: center; 
+}
+#icon {
+	background: none;
+	border: none;
+	margin-right: 10px;
+}
 </style>
 <%@ include file="../member_sessionChk.jsp" %>
 </head>

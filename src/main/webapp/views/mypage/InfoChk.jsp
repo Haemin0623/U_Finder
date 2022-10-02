@@ -7,8 +7,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#title{position: absolute; left:38%; top:15%}
-#table{width:50%; position: absolute; left:40%; top:25%}
+#title{
+	position: absolute; 
+	left:38%; 
+	top:15%;
+}
+#table{width:50%; 
+	position: absolute; 
+	left:40%; 
+	top:25%;
+}
 
 </style>
 <script type="text/javascript">
