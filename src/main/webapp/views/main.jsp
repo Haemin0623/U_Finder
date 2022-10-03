@@ -89,7 +89,7 @@
 		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<a href="">
+				<a href="/project_semi/views/movie/movieInfo.do?movieno=93	">
 					<img id="banner" class="d-block w-75" src="/project_semi/bannerImage/banner1.jpg" alt="First slide">
 				</a>
 			</div>

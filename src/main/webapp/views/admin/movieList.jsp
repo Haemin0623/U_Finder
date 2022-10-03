@@ -39,23 +39,23 @@
 	</form>
 	<table>
 		<tr>
-			<th>번호</th>
+			<th>번호(이동)</th>
 			<th>제목(수정)</th>
-			<th>줄거리</th>
+			<!-- <th>줄거리</th> -->
 			<th>감독</th>
-			<th>상영시간</th>
-			<th>넷플릭스</th>
-			<th>디즈니</th>
-			<th>쿠팡</th>
-			<th>티빙</th>
+			<th>시간</th>
+			<th>넷</th>
+			<th>디</th>
+			<th>쿠</th>
+			<th>티</th>
 			<th>장르</th>
 			<th>조회수</th>
 			<th>포스터</th>
 			<th>트레일러</th>
-			<th>찜한 회원 수</th>
+			<th>찜한 수</th>
 			<th>배우</th>
 			<th>태그</th>
-			<th>평균리뷰점수</th>
+			<th>리뷰점수</th>
 		</tr>
 		<c:if test="${empty list }">
 			<tr>
@@ -65,9 +65,9 @@
 		<c:if test="${not empty list }">
 			<c:forEach var="movie" items="${list }">
 				<tr>
-					<td>${movie.movieno }</td>
+					<td><a href="/project_semi/views/movie/movieInfo.do?movieno=${movie.movieno }">${movie.movieno }</a></td>
 					<td><a href="/project_semi/views/admin/movieUpdateForm.do?movieno=${movie.movieno }">${movie.moviename }</a></td>
-					<td>${movie.story }</td>
+					<%-- <td>${movie.story }</td> --%>
 					<td>${movie.director }</td>
 					<td>${movie.playtime }</td>
 					<td>${movie.netflix }</td>
@@ -77,12 +77,12 @@
 					<td>${movie.genre }</td>
 					<td>${movie.mvcnt }</td>
 					<c:if test="${not empty movie.poster }">
-						<td><img style="width: 100px" alt="" src="/project_semi/posterUpload/${movie.poster }"> ${movie.poster }</td>					
+						<td><img style="width: 100px" alt="" src="/project_semi/posterUpload/${movie.poster }"></td>					
 					</c:if>
 					<c:if test="${empty movie.poster }">
 						<td>no poster</td>					
 					</c:if>
-					<td>${movie.trailer }</td>
+					<td><iframe width="180" height="100" src="${movie.trailer }" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
 					<td id="count${movie.movieno }"><script type="text/javascript">pickCount(${movie.movieno })</script></td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieActorList.do?movieno=${movie.movieno }'">확인</button></td>
 					<td><button onclick="location.href='/project_semi/views/admin/movieTagList.do?movieno=${movie.movieno }'">확인</button></td>				

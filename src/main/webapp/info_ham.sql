@@ -141,3 +141,18 @@ insert into actor values (437, '송강호', 92);
 insert into actor values (438, '이병헌', 92);
 insert into actor values (439, '신하균', 92);
 insert into actor values (440, '이영애', 92);
+
+-- 추가 ========================================================
+
+insert into movie values (93, '수리남', '속이면 살고 속으면 죽는다
+남미에서 마약 조직을 운영하는 한국인 마약왕.
+그를 체포하려는 정부의 비밀 작전에 한 평범한 사업가가 합류한다.',
+	'윤종빈', 371, 'Y', 'N', 'N', 'N', '범죄', 0, 'Narco-Saints.jpg', 'https://www.youtube.com/embed/BvP6t_jkJMM');
+insert into tag values (437, '스릴러', 93);
+insert into tag values (438, '액션', 93);
+insert into tag values (439, '느와르', 93);
+insert into actor values (446, '하정우', 93);
+insert into actor values (445, '황정민', 93);
+insert into actor values (443, '박해수', 93);
+insert into actor values (444, '조우진', 93);
+
