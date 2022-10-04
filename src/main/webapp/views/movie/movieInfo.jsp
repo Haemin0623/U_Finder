@@ -311,18 +311,18 @@
 		<!-- 리뷰 리스트 페이징 -->
 		<div align="center">
 			<c:if test="${currentPage > PAGE_PER_BLOCK }">
-				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${startPage - 1 }'">이전</button>
+				<button style="color:black;" onclick="location.href='/project_semi/views/movie/movieInfo.do?pageNum=${startPage - 1 }&movieno=${mvInfo.movieno }'">이전</button>
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				<c:if test="${i == currentPage }">
-					<button style="background: #C01616" onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+					<button style="color:black; background: #C01616" onclick="location.href='/project_semi/views/movie/movieInfo.do?pageNum=${i}&movieno=${mvInfo.movieno }'">${i }</button>
 				</c:if>
 				<c:if test="${i != currentPage }">
-					<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${i}'">${i }</button>
+					<button style="color:black;" onclick="location.href='/project_semi/views/movie/movieInfo.do?pageNum=${i}&movieno=${mvInfo.movieno }'">${i }</button>
 				</c:if>		
 			</c:forEach>
 			<c:if test="${endPage < totalPage }">
-				<button onclick="location.href='/project_semi/views/movie/reviewUpdate.do?pageNum=${endPage + 1 }'">다음</button>
+				<button style="color:black;" onclick="location.href='/project_semi/views/movie/movieInfo.do?pageNum=${endPage + 1 }&movieno=${mvInfo.movieno }'">다음</button>
 			</c:if>
 		</div>
 		

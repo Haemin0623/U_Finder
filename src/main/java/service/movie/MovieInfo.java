@@ -30,7 +30,7 @@ public class MovieInfo implements CommandProcess {
 		int movieno = Integer.parseInt(request.getParameter("movieno"));
 		
 		// 리뷰 페이징
-		final int ROW_PER_PAGE = 10;
+		final int ROW_PER_PAGE = 5;
 		final int PAGE_PER_BLOCK = 10;
 		
 		String pageNum = request.getParameter("pageNum");

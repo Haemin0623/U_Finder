@@ -54,7 +54,7 @@
 	<select id="rvList" parameterType="map" resultType="review">
 		select r.*, mm.nickname, mm.id from 
 		(select * from (select rowNum rn, a.* from 
-		(select r.* from review r, movie m where r.movieno=m.movieno and m.movieno=#{movieno}) a)
+		(select r.* from review r, movie m where r.movieno=m.movieno and m.movieno=#{movieno} order by reviewno desc) a)
 			where rn between #{startRow} and #{endRow}) r,
 		 member mm where mm.memberno=r.memberno
 		

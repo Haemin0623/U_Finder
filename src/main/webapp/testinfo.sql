@@ -194,3 +194,5 @@ insert into review values (30, 7, 10, '삭제', 5, 'Y');
 insert into review values (31, 8, 11, '너무 재밋엉', 5, 'N');
 insert into review values (32, 9, 11, '깔깔깔', 4, 'N');
 insert into review values (33, 13, 11, '후', 2, 'N');
+
+select*from member;
