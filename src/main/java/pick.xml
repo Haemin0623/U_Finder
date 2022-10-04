@@ -21,7 +21,7 @@
 	<!-- 회원 한명의 찜리스트 -->
 	<select id="memberPickList" parameterType="map" resultType="movie">
 		select mv.* from (select p.movieno from pick p, member m where p.memberno=m.memberno 
-			and m.id=#{id}) a, movie mv where a.movieno=mv.movieno
+			and m.id=#{id} order by p.pickno desc) a, movie mv where a.movieno=mv.movieno
 	</select>
 	
 	<!-- 특정 회원 찜리스트 페이징용 -->

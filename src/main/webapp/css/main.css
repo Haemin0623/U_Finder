@@ -23,6 +23,7 @@
 .main_hot ul li {
 	display: inline-block;
 	margin-right: 10px;
+	width: 190px;
 }
 
 svg.bi.bi-heart-fill {
@@ -51,4 +52,8 @@ ul.scroll {
 
 h2 {
 	margin-left: 50px;
+}
+
+svg.bi.bi-plus-square-fill {
+	margin-left: 60px;
 }
