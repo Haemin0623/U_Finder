@@ -10,8 +10,7 @@
 	var chk = confirm("유 Finder 이용을 종료하실건가요?")
 	if (chk) {
 		alert("유 Finder를 이용해주셔서 감사합니다")
-		<% session.invalidate(); %>
-		location.href = "/project_semi/views/main.do"
+		location.href = "/project_semi/views/member/logout.do"
 		
 	} else {
 		history.go(-1);
