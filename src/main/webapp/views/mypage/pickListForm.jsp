@@ -33,6 +33,12 @@ li{
 	top: 115px;
 	right: 38px;
 }
+#picklist{
+	margin-top: 15px;
+}
+#mv{
+	margin-top: 15px;
+}
 </style>
 <%@include file="../member_sessionChk.jsp"%>
 </head>
@@ -63,18 +69,18 @@ li{
 </c:if>
 	<div align="center">
 		<c:if test="${currentPage > PAGE_PER_BLOCK }" >
-			<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
+			<button style="color:black;" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
 		</c:if>
 		<c:forEach var="i" begin="${startPage }" end="${endPage }">
 			<c:if test="${i == currentPage }">
-				<button style="background: red" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
+				<button style="color:black; background: red" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
 			</c:if>
 			<c:if test="${i != currentPage }">
-				<button onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
+				<button style="color:black;" onclick="location.href='/project_semi/views/mypage/pickListForm.do?id=${id}&pageNum=${i}'">${i }</button>
 			</c:if>		
 		</c:forEach>
 		<c:if test="${endPage < totalPage }">
-			<button onclick="location.href='/project_semi/views/mypage/pickListForm?id=${id}&pageNum=${endPage + 1 }'">다음</button>
+			<button style="color:black;" onclick="location.href='/project_semi/views/mypage/pickListForm?id=${id}&pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
 	<button id="button" style="padding: 0; border: none; background: none; color:white; margin-top: 15px;"  onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}'">

@@ -22,6 +22,8 @@
 } 
 .profile{ 
 	margin-left: 45%;
+	width: 120px;
+	height: 140px;
 }
 .profile > img{
 	width: 120px; 
@@ -47,7 +49,7 @@ input[type=checkbox]{
 }
 #line {
 	position: absolute; 
-	top:49.1%; 
+	top:47%; 
 	left:60%;
 }
 .value{
@@ -63,7 +65,7 @@ th{
 }
 #memberoutcss{ 
 	position: absolute; 
-	top:52.9%; 
+	top:50.4%; 
 	left: 50.7%;
 }
 #pimg{

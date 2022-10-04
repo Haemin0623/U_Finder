@@ -87,13 +87,7 @@
 					</button>
 				</span>
 				<br><br>
-			</c:if>	
-<%-- 			<c:if test="${movieReview.del =='Y'}"> --%>
-<%-- 				${movieReview.moviename }		<!-- db에서 받아올 값 --> --%>
-<!-- 				삭제된 댓글입니다.<br>		db에서 받아올 값 -->
-<%-- 					<input class="blackText reviewdelete reviewupdate" type="button" onclick="location.href='/project_semi/views/movie/movieInfo.do?movieno=${movieReview.movieno}'" value="리뷰쓰기"> <!-- 영화 정보 페이지로 이동 --> --%>
-<!-- 			<br> -->
-<%-- 			</c:if> --%>
+			</c:if>
 		</c:forEach>
 	</div>
 	<div id="paging">

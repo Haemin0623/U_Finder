@@ -59,7 +59,7 @@
 <div id="up">
 	<span class="profile">
 		<c:if test="${member.profile == 'default' }">
-			<svg xmlns="http://www.w3.org/2000/svg" width="160" height="210" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+			<svg xmlns="http://www.w3.org/2000/svg" width="160" height="210" fill="steelblue" class="bi bi-person-fill" viewBox="0 0 16 16">
 				<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
 			</svg>
 		</c:if>
@@ -114,18 +114,18 @@
 	</div>
 	<div id="paging">
 		<c:if test="${currentPage > PAGE_PER_BLOCK }" >
-			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
+			<button style="color:black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${startPage - 1 }'">이전</button>
 		</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				<c:if test="${i == currentPage }">
-					<button style="background: red" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
+					<button style="color:black; background: red" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
 				</c:if>
 				<c:if test="${i != currentPage }">
-					<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
+					<button style="color:black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${i}'">${i }</button>
 				</c:if>		
 			</c:forEach>
 		<c:if test="${endPage < totalPage }">
-			<button onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${endPage + 1 }'">다음</button>
+			<button style="color:black;" onclick="location.href='/project_semi/views/mypage/mypageForm.do?id=${id}&pageNum=${endPage + 1 }'">다음</button>
 		</c:if>
 	</div>
 </body>
