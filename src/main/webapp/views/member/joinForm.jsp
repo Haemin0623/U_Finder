@@ -134,14 +134,15 @@ function chkNick() {
 			alert("닉네임 중복체크 버튼을 눌러주세요")
 			return false;
 		}
+		if (dubIdCheked != 'Y') {
+				alert("다른 ID로 변경 후 중복체크를 눌러주세요")
+				return false;
+		} 
 		if (dubNickCheked != 'Y') {
 			alert("다른 닉네임으로 변경 후 중복체크를 눌러주세요")
 			return false;
 		}
-		 if (dubIdCheked != 'Y') {
-			alert("다른 ID로 변경 후 중복체크를 눌러주세요")
-			return false;
-		} 
+		
 		
 	}
 </script>
