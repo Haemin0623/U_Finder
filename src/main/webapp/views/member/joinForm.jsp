@@ -30,6 +30,11 @@ input[type=checkbox] {
 <link rel="stylesheet" type="text/css" href="../../css/member.css">
 
 <script type="text/javascript">
+	let isIdChecked = 'N';
+	let isNickChecked = 'N';
+	let dubNickCheked = 'N';
+	let dubIdCheked = 'N';
+
 
 /* 아이디 중복체크 */
 function chkId() {
@@ -38,8 +43,8 @@ function chkId() {
 		// 문장의 처음은 ^, 끝은 $
 		// [0-9a-zA-Z_-]+ : 숫자 또는 영문자 또는 _ 또는 -이 1개이상(+)이상 
 		// \. : . 이 들어감
+	isIdChecked ='Y';	
 	var reg_id = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-	var isIdChecked = 'Y';
 	
 //id 값이 없을때
 	if (!frm.id.value) {
@@ -60,6 +65,12 @@ function chkId() {
 			$.post("/project_semi/views/member/confirmId.do", "id="
 					+ frm.id.value, function(data) {
 				$('#err_id').html(data);
+				/* 중복체크 시 사용가능한 ID일때만 회원가입되게 */
+					//태그 안의 내용 가져오기
+				var ch = document.getElementById('err_id').innerText;
+				if ( ch == "사용가능한 ID 입니다") {
+					dubIdCheked = 'Y';
+				}
 			});
 		}
 	}
@@ -92,7 +103,8 @@ function chkPassword() {
 
 /* 닉네임 중복체크 */
 function chkNick() {
-	var isNickChecked = 'Y';
+	isNickChecked = 'Y';
+	
 	if (!frm.nickname.value) {
 		alert("별명을 입력하세요")
 		frm.nickname.focus();
@@ -100,16 +112,21 @@ function chkNick() {
 		$.post("/project_semi/views/member/confirmNick_nm.do", "nickname="
 				+ frm.nickname.value, function(data) {
 			$('#err_nm').html(data);
+			/* 중복체크 시 사용가능한 닉네임일때만 회원가입되게 */
+			var ch = document.getElementById('err_nm').innerText;
+			if (ch == "사용가능한 별명입니다") {
+				dubNickCheked = 'Y';
+			}
 		});
 	}
 	return false;
 }
 
-/* 아이디, 닉네임 중복체크 버튼 눌렀는지 더블체크 */
+/* 아이디, 닉네임 중복체크 버튼 눌렀는지&사용가능한지 회원가입전 더블체크 */
 	
 	function doublechk() {
 
-		if (isIdchecked != 'Y') {
+		if (isIdChecked != 'Y') {
 			alert("아이디 중복체크 버튼을 눌러주세요")
 			return false;
 		}
@@ -117,7 +134,15 @@ function chkNick() {
 			alert("닉네임 중복체크 버튼을 눌러주세요")
 			return false;
 		}
-
+		if (dubNickCheked != 'Y') {
+			alert("다른 닉네임으로 변경 후 중복체크를 눌러주세요")
+			return false;
+		}
+		 if (dubIdCheked != 'Y') {
+			alert("다른 ID로 변경 후 중복체크를 눌러주세요")
+			return false;
+		} 
+		
 	}
 </script>
 
@@ -125,7 +150,7 @@ function chkNick() {
 <body>
 
 	<div class="container" >
-	<form action="/project_semi/views/member/joinResult.do" method="post" name ="frm" onsubmit="return doublechk()">
+	<form action="/project_semi/views/member/joinResult.do" method="post" name ="frm" onsubmit="return doublechk();">
 	
 	<h1> 회원가입 </h1>
 
