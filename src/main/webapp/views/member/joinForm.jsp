@@ -124,6 +124,7 @@ function chkNick() {
 
 /* 아이디, 닉네임 중복체크 버튼 눌렀는지&사용가능한지 회원가입전 더블체크 */
 	
+	
 	function doublechk() {
 
 		if (isIdChecked != 'Y') {
@@ -134,16 +135,16 @@ function chkNick() {
 			alert("닉네임 중복체크 버튼을 눌러주세요")
 			return false;
 		}
+
 		if (dubIdCheked != 'Y') {
-				alert("다른 ID로 변경 후 중복체크를 눌러주세요")
-				return false;
-		} 
+			alert("다른 ID로 변경 후 중복체크를 눌러주세요")
+			return false;
+		}
 		if (dubNickCheked != 'Y') {
 			alert("다른 닉네임으로 변경 후 중복체크를 눌러주세요")
 			return false;
 		}
-		
-		
+
 	}
 </script>
 
